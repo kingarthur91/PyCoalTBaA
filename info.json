@@ -1,0 +1,31 @@
+{
+	"name": "PyCoalTBaA",
+	"version": "0.0.33",
+	"factorio_version": "0.16",
+	"title": "PyCoal Touched By an Angel",
+	"author": "KingArthur",
+	"contact": "PM on the Factorio Forums",
+	"homepage": "",
+	"description": "Mod for pymods to make them compatible with other mods and mod packs like angels mods",
+	"dependencies": [
+	"base >= 0.13.0",
+	"pycoalprocessing >= 0.3.7",
+	"?aai-industry >= 0.1.11",
+	"?angelsbioprocessing >= 0.5.0",
+	"?angelspetrochem >= 0.5.13",
+	"?angelssmelting >= 0.4.3",
+	"?Bio_Industries >= 2.6.5",
+	"?bobelectronics >= 0.0.1",
+	"?bobplates >= 0.15.12",
+	"?Clowns-Extended-Minerals >= 1.0.10",
+	"?Clowns-Processing >= 1.2.6",
+	"?DeadlockStacking >= 1.6.3",
+	"?DeadlocksStackingForPyanadon >= 0.1.9",
+	"?KaoExtended >= 0.16.13",
+	"?omnimatter >= 2.0.6",
+	"?pyfusionenergy >= 0.1.3",
+	"?pyhightech >= 1.0.0",
+	"?pyindustry >= 1.0.10",
+	"?SpaceMod >= 0.3.4"
+	]
+}

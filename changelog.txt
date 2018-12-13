@@ -1,0 +1,71 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.0.32
+  Changes:
+	- add code for bob compatibilty with pymods. first round just getting bobs mods to work with pymods with full suite running.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.32
+  Changes:
+	- made changes for bobextended to work with pyht.
+	- removed optional dependency for omnipermute. it works for me so hopefully it doesnt cuase any errors
+---------------------------------------------------------------------------------------------------
+Version: 0.0.31
+  Changes:
+	- made some tweaks to spacex.lua to correct an error with omnipermute
+---------------------------------------------------------------------------------------------------
+Version: 0.0.30
+  Changes:
+	- Modified py difficultly adjuster script to account for mods having multiple results in normal and expensive recipes
+	- fixed error in same script due to local for loop varible used outside of loop
+---------------------------------------------------------------------------------------------------
+Version: 0.0.29
+  Changes:
+	- Added a check to the py difficultly adjuster to avoid erroring out on recipes that dont have results to adjust
+	- Changed the py difficultly adjuster script into a function that should be open for other mods to call to if they want
+---------------------------------------------------------------------------------------------------
+Version: 0.0.28
+  Changes:
+    - made adjustments to the paper to fiberboard recipes to be able to craft pcb1 with assember 2s
+	- adjusted processed to crushed to pellet ore chains to the chain more balanced againt regular crushed ores
+	- finally fixed the pymods difficultly adjusted and removed the need for spacex to activate it. you can now use the productivity adjustment setting in mod setting menu
+---------------------------------------------------------------------------------------------------
+Version: 0.0.27
+  Changes:
+    - added a carbon to carbon conveter recipe as a temp fix due to mod conflict that readds bobs basic electronic components with bobs carbon
+---------------------------------------------------------------------------------------------------
+Version: 0.0.26
+  Changes:
+    - Fixed error that was cuased by factorio attempting to load an item that didnt exist if pyhightech wasnt loaded
+---------------------------------------------------------------------------------------------------
+Version: 0.0.25
+  Changes:
+    - added changelog
+---------------------------------------------------------------------------------------------------
+Version: 0.0.24
+  Changes:
+    - Merged raw meat and meat
+    - added blood and bones to animals in bioprocessing when pyfusion and/ or pyht is active
+    - added recipes to crush processed ores to get a boost when using the angels smelting chains
+---------------------------------------------------------------------------------------------------
+Version: 0.0.23
+  Changes:
+    - fixed error with pyht overrides when trying to load without angels mods active
+---------------------------------------------------------------------------------------------------
+Version: 0.0.22
+  Changes:
+    - adjusted code to attempt to fix MP load issues to to conditional requirements in data.lua files
+    - combined angels and py ethylene fluids
+    - added settings to enable and disable finite py ores independent of infinite py ores patch and them being part of angels sorting
+    - fixed issue with pyangels not being able to load without bobs mods active
+---------------------------------------------------------------------------------------------------
+Version: 0.0.21
+  Changes:
+    - Fixed the issue with blue science needing blue science to unlock ingredients
+    - added compatibility for deadlockstackingforpyanodons
+    - added setting option to remove pymod ores from angels sorting methods and they can only be gathered by py methods
+    - defaults to angels sorting being turned on
+---------------------------------------------------------------------------------------------------
+Version: 0.0.20
+  Changes:
+    - Added py ores to madclowns extended materials ore sorting
+    - disabled spacex productively multiplier as it was causing some issues
+    - organized dependency list to be in alphabetical order because i felt like it
