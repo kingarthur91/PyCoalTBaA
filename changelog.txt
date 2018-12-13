@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.0.32
+Version: 0.0.33
   Changes:
 	- add code for bob compatibilty with pymods. first round just getting bobs mods to work with pymods with full suite running.
 ---------------------------------------------------------------------------------------------------
