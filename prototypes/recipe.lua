@@ -1,7 +1,10 @@
 data.raw.item["landfill"].stack_size = 1000
 
 --bob recipes
-if mods["boblibrary"] and not mods["pyrawores"] then
+if mods["boblibrary"] then
+
+if mods["bobores"] and not mods["pyrawores"] then
+
     --BAUXITE
     RECIPE {
         type = "recipe",
@@ -455,7 +458,7 @@ RECIPE {
     icon = data.raw.item.carbon.icon,
     icon_size = 32
 }:add_unlock("coal-processing-1")
-
+ 
 --alternative silicon plate
 RECIPE {
     type = "recipe",
@@ -1016,7 +1019,69 @@ RECIPE {
     subgroup = "py-items",
     order = "m"
 }:add_unlock("aluminium-processing")
-	
+
+end
+
+if mods["bobplates"] then
+
+RECIPE {
+    type = "recipe",
+    name = "ammonia2",
+    category = "chemistry",
+    enabled = false,
+    energy_required = 10,
+    ingredients = {
+        {type = "fluid", name = "nitrogen", amount = 100},
+        {type = "fluid", name = "hydrogen", amount = 300},
+    },
+    results = {
+        {type = "fluid", name = "ammonia", amount = 100},
+    },
+}:add_unlock("advanced-electronics")
+
+RECIPE {
+    type = "recipe",
+    name = "pa-cobalt",
+    category = "pa",
+    enabled = false,
+    energy_required = 15,
+    ingredients = {
+        {type = "item", name = "iron-plate", amount = 10},
+        {type = "item", name = "proton-donor", amount = 1},
+    },
+    results = {
+        {type = "item", name = "cobalt-plate", amount = 20},
+        {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
+    },
+    main_product = "cobalt-plate",
+    icon = "__pyhightech__/graphics/icons/pa/pa-cobalt.png",
+	icon_size = 32,
+    subgroup = "py-hightech-recipes",
+    order = "f"
+}:add_unlock("nucleo")
+
+end
+
+if mods["pyhightech"] then
+
+RECIPE {
+    type = 'recipe',
+    name = 'electronic-circuit-initial',
+    category = 'handcrafting',
+    enabled = true,
+    energy_required = 2,
+    ingredients = {
+        {type = 'item', name = 'copper-plate', amount = 10},
+        {type = 'item', name = 'copper-cable', amount = 10},
+        {type = 'item', name = 'wood', amount = 2}
+    },
+    results = {
+        {type = 'item', name = 'pcb1', amount = 3}
+    }
+}
+
+end
+
 end
 
 --angel related recipes

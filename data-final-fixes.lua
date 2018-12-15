@@ -31,8 +31,3 @@
 end
 
 recipe_output_mod()
-
-
-log(serpent.block(data.raw.recipe["chloromethane"]))
-
-log(serpent.block(data.raw.recipe["ech"]))
