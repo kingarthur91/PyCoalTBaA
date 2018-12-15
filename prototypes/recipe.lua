@@ -1039,6 +1039,8 @@ RECIPE {
     },
 }:add_unlock("advanced-electronics")
 
+if mods["pyfusion"] then
+
 RECIPE {
     type = "recipe",
     name = "pa-cobalt",
@@ -1059,6 +1061,8 @@ RECIPE {
     subgroup = "py-hightech-recipes",
     order = "f"
 }:add_unlock("nucleo")
+
+end
 
 end
 
