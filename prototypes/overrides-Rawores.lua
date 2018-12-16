@@ -78,6 +78,9 @@ if mods["pyrawores"] then
 				RECIPE('processing-unit'):remove_ingredient('solder')
 
 			end
+			
+			data.raw.recipe["tinned-copper-cable"] = null
+			data.raw.item["tinned-copper-cable"] = null
 		
 		end
 	

@@ -1,3 +1,5 @@
+	require("functions/functions")
+
 	require("updates.aai-updates")
 
 	require("prototypes.overrides-Fusion")
@@ -30,4 +32,10 @@
 
 end
 
+if settings.startup["py-prod-adjust"].value == true then
+
 recipe_output_mod()
+
+end
+
+global_item_replacer('iron-plate','tin-plate')

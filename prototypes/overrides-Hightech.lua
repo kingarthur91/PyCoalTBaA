@@ -8,6 +8,13 @@ if mods["boblibrary"] then
 local add_result = bobmods.lib.recipe.add_result
 local remove_result = bobmods.lib.recipe.remove_result
 
+
+--new code
+RECIPE("module-circuit-board"):replace_ingredient('phenolic-board','phenolicboard')
+
+
+
+--old py code
 RECIPE("electronic-circuit"):remove_unlock("electronics")
 RECIPE("basic-electronic-components"):remove_unlock("electronics")
 --RECIPE("silicon-plate"):remove_unlock("basic-electronics"):remove_unlock("silicon-processing")
@@ -58,7 +65,7 @@ end
 --angels mod stuff
 if mods["angelspetrochem"] then
 
-data.raw.entity["chipshooter"].ingredient_count = 15
+--data.raw.["assembling-machine"]["chipshooter"].ingredient_count = 15
 
 local OV = angelsmods.functions.OV
 

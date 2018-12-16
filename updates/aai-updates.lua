@@ -1,6 +1,8 @@
 
 if mods["aai-industry"] then
 
+if mods["angelspetrochem"] then
+
 local OV = angelsmods.functions.OV
 
   OV.patch_recipes({
@@ -10,7 +12,9 @@ local OV = angelsmods.functions.OV
             { name = "copper-cable",  amount = 4 }
          } }
       })
-  
+
+end
+	  
   data.raw.container["aai-big-ship-wreck-1"].inventory_size = 6
   
 end

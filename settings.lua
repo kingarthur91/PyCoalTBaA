@@ -1,11 +1,11 @@
 data:extend(
 {
 	{
-		type = "bool-setting",
-		name = "pymods-acid-increase",
-		setting_type = "startup",
-		default_value = true,
-		order = "a",
+	type = "bool-setting",
+	name = "pymods-acid-increase",
+	setting_type = "startup",
+	default_value = true,
+	order = "a",
 	},
 	{
 	type = "bool-setting",
@@ -50,6 +50,13 @@ data:extend(
 	order = "d",
 	},
 	{
+	type = "bool-setting",
+	name = "py-prod-adjust",
+	setting_type = "startup",
+	default_value = false,
+	order = "e",
+	},
+	{
 	type = "int-setting",
 	name = "SpaceX",
 	setting_type = "startup",
@@ -62,7 +69,7 @@ data:extend(
 	name = "addpyoretoangelsorting",
 	setting_type = "startup",
 	default_value = true,
-	order = "e",
+	order = "g",
 	}
 }
 )

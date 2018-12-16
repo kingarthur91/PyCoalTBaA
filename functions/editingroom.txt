@@ -1,0 +1,14 @@
+if mods["bobores"] then
+
+--replace result
+remove_result("cobalt-solvent", "ash")
+add_result("cobalt-solvent", {type = "item", name = "cobalt-ore", amount = 5})
+
+remove_result("calcinate-separation", "iron-ore")
+remove_result("calcinate-separation", "copper-ore")
+add_result("calcinate-separation", {type = "item", name = "quartz", amount = 1, probability = 0.6})
+add_result("calcinate-separation", {type = "item", name = "lead-ore", amount = 1, probability = 0.3})
+add_result("calcinate-separation", {type = "item", name = "zinc-ore", amount = 1, probability = 0.3})
+add_result("calcinate-separation", {type = "item", name = "silver-ore", amount = 1, probability = 0.3})
+
+end

@@ -1,3 +1,5 @@
+if settings.startup["py-prod-adjust"].value == true then
+
 	local recipes_list = 
 	{
 		"biofilm",
@@ -439,3 +441,5 @@ for i, test in pairs(data.raw.recipe["water-saline-separation"]) do
 	
 end
 ]]--
+
+end

@@ -28,6 +28,7 @@ local remove_result = bobmods.lib.recipe.remove_result
 		RECIPE("botanical-nursery"):rep_ing("electronic-circuit", "basic-circuit-board")
 		RECIPE("science-pack-3"):rep_ing("copper-cable", "insulated-cable")
 		RECIPE("circuit-board"):rep_ing("ferric-chloride-solution", "boric-acid")
+		
 			
 		--add ingredients
 		RECIPE("superior-circuit-board"):rep_ing("gold-plate", "nexelit-plate")
@@ -103,7 +104,12 @@ local remove_result = bobmods.lib.recipe.remove_result
 		
 		--add ingrediants
 		RECIPE("botanical-nursery"):add_ing({name = "glass", amount = 10})
+		
+		if not mods["pyrawores"] then
+		
 		RECIPE("filtration-media"):add_ing({type = "item", name = "glass", amount = 5})
+		
+		end
 		
 		local foundry = data.raw["assembling-machine"]["advanced-foundry-mk01"]
 		foundry.crafting_categories[#foundry.crafting_categories + 1] = "chemical-furnace"
@@ -146,7 +152,7 @@ RECIPE("zinc-chloride"):rep_ing("water", "hydrogen-chloride"):rem_ing("copper-pl
 
 add_result("zinc-chloride", {name = "hydrogen", amount = 20})
 
-RECIPE("active-carbon"):rep_ing("water", "nitrogen"):add_ing({name = "sodium-hydroxide", amount = 7})
+RECIPE("active-carbon"):rep_ing("water", "nitrogen")--:add_ing({name = "sodium-hydroxide", amount = 7})
 
 remove_result("refsyngas-from-meth", "water")
 remove_result("refsyngas-from-meth-canister", "water")
