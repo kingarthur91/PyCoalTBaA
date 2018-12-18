@@ -38,4 +38,4 @@ recipe_output_mod()
 
 end
 
-global_item_replacer('iron-plate','tin-plate')
+global_item_replacer("electronic-circuit","cm-electronic-circuit")

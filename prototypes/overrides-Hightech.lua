@@ -12,8 +12,16 @@ local remove_result = bobmods.lib.recipe.remove_result
 --new code
 RECIPE("module-circuit-board"):replace_ingredient('phenolic-board','phenolicboard')
 
+	if mods["bobelectronics"] then
+		--TODO:find out why the blue board isnt getting replaced
+		global_item_replacer("basic-circuit-board","pcb1")
+		global_item_replacer("electronic-circuit","cm-electronic-circuit")
+		global_item_replacer("advanced-circuit","cm-advanced-circuit")
+		global_item_replacer("processing-unit","cm-processing-unit")
+		global_item_replacer("advanced-processing-unit","intelligent-unit")
 
-
+	end
+	
 --old py code
 RECIPE("electronic-circuit"):remove_unlock("electronics")
 RECIPE("basic-electronic-components"):remove_unlock("electronics")

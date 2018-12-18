@@ -1214,7 +1214,7 @@ if mods["angelssmelting"] then
 
 	local CrushedOres = {'iron','copper'}
 	
-	if mods["bobores"] then
+	if mods["bobores"] and not mods["pyrawores"] then
 	
 		table.insert(CrushedOres,'bauxite')
 		table.insert(CrushedOres,'gold')
