@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.34
+  Changes:
+	- started on function for global item recipe script
+	- copied recipes for circuits 1 -3 in pyht to stop bobs electronics from overriding them
+	- 
+---------------------------------------------------------------------------------------------------
 Version: 0.0.33
   Changes:
 	- add code for bob compatibilty with pymods
