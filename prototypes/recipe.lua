@@ -1084,6 +1084,69 @@ RECIPE {
     }
 }
 
+RECIPE {
+    type = 'recipe',
+    name = 'cm-electronic-circuit',
+    category = 'chip',
+    enabled = true,
+    energy_required = 6,
+    ingredients = {
+        {type = 'item', name = 'pcb1', amount = 1},
+        {type = 'item', name = 'valve', amount = 3},
+        {type = 'item', name = 'inductor1', amount = 3},
+        {type = 'item', name = 'capacitor1', amount = 5},
+        {type = 'item', name = 'resistor1', amount = 6}
+    },
+    results = {
+        {type = 'item', name = 'cm-electronic-circuit', amount = 5}
+    },
+    main_product = 'cm-electronic-circuit'
+}
+
+RECIPE {
+    type = 'recipe',
+    name = 'cm-advanced-circuit',
+    category = 'chip',
+    enabled = false,
+    energy_required = 5,
+    ingredients = {
+        {type = 'item', name = 'pcb2', amount = 1},
+        {type = 'item', name = 'cm-electronic-circuit', amount = 1},
+        {type = 'item', name = 'transistor', amount = 3},
+        {type = 'item', name = 'microchip', amount = 3},
+        {type = 'item', name = 'inductor2', amount = 4},
+        {type = 'item', name = 'diode', amount = 3},
+        {type = 'item', name = 'capacitor2', amount = 5},
+        {type = 'item', name = 'resistor2', amount = 15}
+    },
+    results = {
+        {type = 'item', name = 'cm-advanced-circuit', amount = 5}
+    },
+    main_product = 'cm-advanced-circuit'
+}:add_unlock('basic-electronics')
+
+RECIPE {
+    type = 'recipe',
+    name = 'cm-processing-unit',
+    category = 'chip',
+    enabled = false,
+    energy_required = 10,
+    ingredients = {
+        {type = 'item', name = 'pcb3-2', amount = 1},
+        {type = 'item', name = 'cm-advanced-circuit', amount = 1},
+        {type = 'item', name = 'resistor3', amount = 3},
+        {type = 'item', name = 'inductor3', amount = 3},
+        {type = 'item', name = 'capacitor3', amount = 3},
+        {type = 'item', name = 'microchip', amount = 3},
+        {type = 'item', name = 'optical-fiber', amount = 3},
+        {type = 'item', name = 'processor', amount = 1},
+        {type = 'item', name = 'diode3', amount = 5}
+    },
+    results = {
+        {type = 'item', name = 'cm-processing-unit', amount = 5}
+    }
+}:add_unlock('advanced-electronics')
+
 end
 
 end
