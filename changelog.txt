@@ -3,7 +3,9 @@ Version: 0.0.34
   Changes:
 	- started on function for global item recipe script
 	- copied recipes for circuits 1 -3 in pyht to stop bobs electronics from overriding them
-	- 
+	- fixed spacex error
+	- fixed error with ingredient count on chipshooter
+	- fixed error cuased by missing crushed ore with pyro and angels active
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.33
   Changes:

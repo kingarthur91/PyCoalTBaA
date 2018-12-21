@@ -19,7 +19,6 @@ RECIPE("module-circuit-board"):replace_ingredient('phenolic-board','phenolicboar
 		global_item_replacer("advanced-circuit","cm-advanced-circuit")
 		global_item_replacer("processing-unit","cm-processing-unit")
 		global_item_replacer("advanced-processing-unit","intelligent-unit")
-
 	end
 	
 --old py code
@@ -95,6 +94,9 @@ OV.global_replace_item('ammonia','gas-ammonia')
 OV.global_replace_item('ech','gas-epichlorhydrin')
 OV.global_replace_item('ethylene','gas-ethylene')
 
+OV.global_replace_item("electronic-circuit","cm-electronic-circuit")
+OV.global_replace_item("advanced-circuit","cm-advanced-circuit")
+OV.global_replace_item("processing-unit","cm-processing-unit")
 
 data.raw.resource["phosphate-rock"].minable.required_fluid = "gas-synthesis"
 

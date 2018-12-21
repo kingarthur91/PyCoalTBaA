@@ -1,17 +1,21 @@
 global_item_replacer = function (old, new)
 
-ingredient_replace(old,new)
+local recipes = table.deepcopy(data.raw.recipe)
 
-results_replacer(old,new)
+--log(serpent.block(data.raw.recipe["ore-sorting-facility-2"]))
+
+	for i, recipe in pairs(recipes) do
+
+		ingredient_replace(recipe,old,new)
+
+		results_replacer(recipe,old,new)
+		
+	end
 
 end
 
-ingredient_replace = function (old, new)
+ingredient_replace = function (recipe, old, new)
 
-local recipes = table.deepcopy(data.raw.recipe)
-
-	for i, recipe in pairs(recipes) do
-	
 		if recipe.ingredients ~= null then
 			
 			local ingredients = recipe.ingredients
@@ -171,17 +175,11 @@ local recipes = table.deepcopy(data.raw.recipe)
 			end
 		
 		end
-			
-	end
-
+		
 end
 
-results_replacer = function (old, new)
+results_replacer = function (recipe, old, new)
 
-	local Recipes = table.deepcopy(data.raw.recipe)
-	
-	for i, recipe in pairs(Recipes) do
-	
 	--log(recipe.name)
 	--log(serpent.block(recipe))
 	
@@ -299,7 +297,5 @@ results_replacer = function (old, new)
 			end
 			
 		end
-				
-	end
-
+		
 end
