@@ -37,5 +37,3 @@ if settings.startup["py-prod-adjust"].value == true then
 recipe_output_mod()
 
 end
-
-global_item_replacer("electronic-circuit","cm-electronic-circuit")

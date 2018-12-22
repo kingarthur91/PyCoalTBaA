@@ -16,7 +16,15 @@ end
 
 ingredient_replace = function (recipe, old, new)
 
-		if recipe.ingredients ~= null then
+if type(recipe) == "string" then
+
+local R = data.raw.recipe[recipe]
+
+recipe = R
+
+end
+
+		if recipe.ingredients ~= nil then
 			
 			local ingredients = recipe.ingredients
 			
@@ -87,12 +95,15 @@ ingredient_replace = function (recipe, old, new)
 				--log("get past for loop into normal ingredients")
 				--log("ningredients")
 				--log(serpent.block(ningredients))
-				--log("ing name")
 				--log(serpent.block(ing))
+				--log("ing name")
+				--log(ing.name)
+				--log("old")
+				--log(old)
 				
 					if ing.name ~= nil then
 						
-						if ing == old then
+						if ing.name == old then
 						
 							--log("pasted check for if ingredients = old item")
 							--log(recipe.name)
@@ -106,7 +117,8 @@ ingredient_replace = function (recipe, old, new)
 							--log(recipe.name)
 							--log(serpent.block(recipe.ingredients))
 							--log("hit count")
-								
+							--log(serpent.block(data.raw.recipe[recipe.name]))
+							
 						end
 					
 					else

@@ -798,126 +798,6 @@ RECIPE {
     order = "a [coal-gas]"
 }:add_unlock("coal-processing-2")
 
--- CRUSHED BAUXITE
-ITEM {
-    type = "item",
-    name = "crushed-bauxite",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-bauxite.png",
-    icon_size = 32,
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
-
--- CRUSHED GOLD
-ITEM {
-    type = "item",
-    name = "crushed-gold",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-gold.png",
-    icon_size = 32,
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
-
--- CRUSHED LEAD
-ITEM {
-    type = "item",
-    name = "crushed-lead",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-lead.png",
-    icon_size = 32,
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
-
--- CRUSHED NICKEL
-ITEM {
-    type = "item",
-    name = "crushed-nickel",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-nickel.png",
-    icon_size = 32,
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
-
--- CRUSHED RUTILE
-ITEM {
-    type = "item",
-    name = "crushed-rutile",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-rutile.png",
-    icon_size = 32,
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
-
--- CRUSHED SILVER
-ITEM {
-    type = "item",
-    name = "crushed-silver",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-silver.png",
-    icon_size = 32,
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
-
--- CRUSHED QUARTZ
-ITEM {
-    type = "item",
-    name = "crushed-quartz",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-quartz.png",
-    icon_size = 32,
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
-
--- CRUSHED TIN
-ITEM {
-    type = "item",
-    name = "crushed-tin",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tin.png",
-    icon_size = 32,
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
-
--- CRUSHED TUNGSTEN
-ITEM {
-    type = "item",
-    name = "crushed-tungsten",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tungsten.png",
-    icon_size = 32,
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
-
--- CRUSHED ZINC
-ITEM {
-    type = "item",
-    name = "crushed-zinc",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-zinc.png",
-    icon_size = 32,
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
-
 --WOOD-TO-WOODEN BOARD override bobs?
 RECIPE {
     type = "recipe",
@@ -1062,6 +942,238 @@ RECIPE {
     order = "f"
 }:add_unlock("nucleo")
 
+
+RECIPE {
+    type = "recipe",
+    name = "pa-oxygen",
+    category = "pa",
+    enabled = false,
+    energy_required = 15,
+    ingredients = {
+        {type = "item", name = "graphite", amount = 5},
+        {type = "item", name = "proton-donor", amount = 2},
+    },
+    results = {
+        {type = "fluid", name = "oxygen", amount = 200},
+        {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
+    },
+    main_product = "oxygen",
+    icon = "__pyhightech__/graphics/icons/pa/pa-oxygen.png",
+	icon_size = 32,
+    subgroup = "py-hightech-recipes",
+    order = "f"
+}:add_unlock("nucleo")
+
+RECIPE {
+    type = "recipe",
+    name = "pa-helium",
+    category = "pa",
+    enabled = false,
+    energy_required = 15,
+    ingredients = {
+        {type = "fluid", name = "hydrogen", amount = 1000},
+        {type = "item", name = "proton-donor", amount = 20},
+    },
+    results = {
+        {type = "fluid", name = "helium", amount = 100},
+        {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
+    },
+    main_product = "helium",
+    icon = "__pyhightech__/graphics/icons/pa/pa-helium.png",
+	icon_size = 32,
+    subgroup = "py-hightech-recipes",
+    order = "f"
+}:add_unlock("helium-processing")
+
+RECIPE {
+    type = "recipe",
+    name = "pa-hydrogen",
+    category = "pa",
+    enabled = false,
+    energy_required = 15,
+    ingredients = {
+        {type = "fluid", name = "helium", amount = 100},
+        {type = "item", name = "proton-receiver", amount = 4},
+    },
+    results = {
+        {type = "fluid", name = "hydrogen", amount = 1000},
+        {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
+    },
+    main_product = "hydrogen",
+    icon = "__pyhightech__/graphics/icons/pa/pa-hydrogen.png",
+	icon_size = 32,
+    subgroup = "py-hightech-recipes",
+    order = "f"
+}:add_unlock("helium-processing")
+
+RECIPE {
+    type = "recipe",
+    name = "pa-boron",
+    category = "pa",
+    enabled = false,
+    energy_required = 15,
+    ingredients = {
+        {type = "item", name = "lithium", amount = 5},
+        {type = "item", name = "proton-donor", amount = 2},
+    },
+    results = {
+        {type = "item", name = "boron", amount = 10},
+        {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
+    },
+    main_product = "boron",
+    icon = "__pyhightech__/graphics/icons/pa/pa-boron.png",
+	icon_size = 32,
+    subgroup = "py-hightech-recipes",
+    order = "f"
+}:add_unlock("nucleo")
+
+RECIPE {
+    type = "recipe",
+    name = "pa-coal2",
+    category = "pa",
+    enabled = false,
+    energy_required = 15,
+    ingredients = {
+        {type = "fluid", name = "nitrogen", amount = 1000},
+        {type = "item", name = "proton-receiver", amount = 2},
+    },
+    results = {
+        {type = "item", name = "coal", amount = 100},
+        {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
+    },
+    main_product = "coal",
+    icon = "__pyhightech__/graphics/icons/pa/pa-coal.png",
+	icon_size = 32,
+    subgroup = "py-hightech-recipes",
+    order = "f"
+}:add_unlock("nucleo")
+
+RECIPE {
+    type = "recipe",
+    name = "pa-aluminium",
+    category = "pa",
+    enabled = false,
+    energy_required = 15,
+    ingredients = {
+        {type = "item", name = "silicon", amount = 10},
+        {type = "item", name = "proton-receiver", amount = 1},
+    },
+    results = {
+        {type = "item", name = "aluminium-plate", amount = 10},
+        {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
+    },
+    main_product = "aluminium-plate",
+    icon = "__pyhightech__/graphics/icons/pa/pa-aluminium.png",
+	icon_size = 32,
+    subgroup = "py-hightech-recipes",
+    order = "f"
+}:add_unlock("nucleo")
+
+RECIPE {
+    type = "recipe",
+    name = "pa-nickel",
+    category = "pa",
+    enabled = false,
+    energy_required = 15,
+    ingredients = {
+        {type = "item", name = "copper-plate", amount = 10},
+        {type = "item", name = "proton-receiver", amount = 1},
+    },
+    results = {
+        {type = "item", name = "nickel-plate", amount = 20},
+        {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
+    },
+    main_product = "nickel-plate",
+    icon = "__pyhightech__/graphics/icons/pa/pa-nickel.png",
+	icon_size = 32,
+    subgroup = "py-hightech-recipes",
+    order = "f"
+}:add_unlock("nucleo")
+
+RECIPE {
+    type = "recipe",
+    name = "pa-zinc",
+    category = "pa",
+    enabled = false,
+    energy_required = 15,
+    ingredients = {
+        {type = "item", name = "copper-plate", amount = 10},
+        {type = "item", name = "proton-donor", amount = 1},
+    },
+    results = {
+        {type = "item", name = "zinc-plate", amount = 20},
+        {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
+    },
+    main_product = "zinc-plate",
+    icon = "__pyhightech__/graphics/icons/pa/pa-zinc.png",
+	icon_size = 32,
+    subgroup = "py-hightech-recipes",
+    order = "f"
+}:add_unlock("nucleo")
+
+RECIPE {
+    type = "recipe",
+    name = "pa-silver",
+    category = "pa",
+    enabled = false,
+    energy_required = 15,
+    ingredients = {
+        {type = "item", name = "copper-plate", amount = 10},
+        {type = "item", name = "proton-donor", amount = 2},
+    },
+    results = {
+        {type = "item", name = "silver-plate", amount = 20},
+        {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
+    },
+    main_product = "silver-plate",
+    icon = "__pyhightech__/graphics/icons/pa/pa-silver.png",
+	icon_size = 32,
+    subgroup = "py-hightech-recipes",
+    order = "f"
+}:add_unlock("nucleo")
+
+RECIPE {
+    type = "recipe",
+    name = "pa-gold",
+    category = "pa",
+    enabled = false,
+    energy_required = 15,
+    ingredients = {
+        {type = "item", name = "silver-plate", amount = 10},
+        {type = "item", name = "proton-donor", amount = 2},
+    },
+    results = {
+        {type = "item", name = "gold-plate", amount = 20},
+        {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
+    },
+    main_product = "gold-plate",
+    icon = "__pyhightech__/graphics/icons/pa/pa-gold.png",
+	icon_size = 32,
+    subgroup = "py-hightech-recipes",
+    order = "f"
+}:add_unlock("nucleo")
+
+RECIPE {
+    type = "recipe",
+    name = "pa-vanadium2",
+    category = "pa",
+    enabled = false,
+    energy_required = 15,
+    ingredients = {
+        {type = "item", name = "titanium-plate", amount = 10},
+        {type = "item", name = "proton-donor", amount = 2},
+    },
+    results = {
+        {type = "item", name = "vanadium-oxide", amount = 10},
+        {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
+    },
+    main_product = "vanadium-oxide",
+    icon = "__pyhightech__/graphics/icons/pa/pa-vanadium.png",
+	icon_size = 32,
+    subgroup = "py-hightech-recipes",
+    order = "f"
+}:add_unlock("vanadium-processing")
+
 end
 
 end
@@ -1148,6 +1260,126 @@ RECIPE {
 }:add_unlock('advanced-electronics')
 
 end
+
+--pycoal bob recipes
+RECIPE {
+    type = "recipe",
+    name = "methanol-from-hydrogen",
+    category = "methanol",
+    enabled = false,
+    energy_required = 3,
+    ingredients = {
+        {type = "fluid", name = "carbon-dioxide", amount = 30},
+        {type = "fluid", name = "hydrogen", amount = 50},
+        {type = "item", name = "zinc-plate", amount = 1},
+        {type = "item", name = "nichrome", amount = 2}
+    },
+    results = {
+        {type = "fluid", name = "methanol", amount = 40}
+    },
+    subgroup = "py-methanol",
+    icon = "__pycoalprocessing__/graphics/icons/methanol.png",
+    icon_size = 32,
+    order = "b"
+}:add_unlock("methanol-processing-2")
+
+RECIPE {
+    type = "recipe",
+    name = "syngas2",
+    category = "gasifier",
+    enabled = false,
+    energy_required = 3,
+    ingredients = {
+        {type = "fluid", name = "coal-gas", amount = 40},
+        {type = "fluid", name = "oxygen", amount = 50},
+        {type = "fluid", name = "water", amount = 100}
+    },
+    results = {
+        {type = "fluid", name = "syngas", amount = 100},
+        {type = "fluid", name = "tar", amount = 30},
+        {type = "item", name = "ash", amount = 1}
+    },
+    icon = "__pycoalprocessing__/graphics/icons/syngas.png",
+    icon_size = 32,
+    subgroup = "py-syngas",
+    order = "a-b-[syn-gas]"
+}:add_unlock("coal-processing-2")
+
+
+--Pyfusion bob recipes
+RECIPE {
+    type = "recipe",
+    name = "liquid-nitrogen",
+    category = "compressor",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {type = "fluid", name = "nitrogen", amount = 50},
+        {type = "fluid", name = "water", amount = 100},
+        {type = "fluid", name = "gasoline", amount = 5}
+    },
+    results = {
+        {type = "fluid", name = "liquid-nitrogen", amount = 5},
+        {type = "fluid", name = "steam", amount = 100}
+    },
+    main_product = "liquid-nitrogen",
+    icon = "__pyfusionenergy__/graphics/icons/compress-nitrogen.png",
+	icon_size = 32,
+    subgroup = "py-fusion-gases",
+    order = "a"
+}:add_unlock("helium-processing")
+
+RECIPE {
+    type = "recipe",
+    name = "evaporate-nitrogen",
+    category = "evaporator",
+    enabled = false,
+    energy_required = 2,
+    ingredients = {
+        {type = "fluid", name = "liquid-nitrogen", amount = 5}
+    },
+    results = {
+        {type = "fluid", name = "nitrogen", amount = 50}
+    },
+    main_product = "nitrogen",
+    icon = "__bobplates__/graphics/icons/nitrogen.png",
+	icon_size = 32,
+    subgroup = "py-fusion-gases",
+    order = "b"
+}:add_unlock("helium-processing")
+
+--Pyhightech bob recipes
+RECIPE {
+    type = "recipe",
+    name = "ammonia2",
+    category = "chemistry",
+    enabled = false,
+    energy_required = 10,
+    ingredients = {
+        {type = "fluid", name = "nitrogen", amount = 100},
+        {type = "fluid", name = "hydrogen", amount = 300},
+    },
+    results = {
+        {type = "fluid", name = "ammonia", amount = 100},
+    },
+}:add_unlock("advanced-electronics")
+
+RECIPE {
+    type = 'recipe',
+    name = 'electronic-circuit-initial',
+    category = 'handcrafting',
+    enabled = true,
+    energy_required = 2,
+    ingredients = {
+        {type = 'item', name = 'copper-plate', amount = 10},
+        {type = 'item', name = 'copper-cable', amount = 10},
+        {type = 'item', name = 'wood', amount = 2}
+    },
+    results = {
+        {type = 'item', name = 'pcb1', amount = 3}
+    }
+}
+
 
 end
 

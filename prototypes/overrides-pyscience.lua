@@ -1,7 +1,7 @@
 
 if mods["pyscience"] then
 
-data.raw.recipe["sct-htech-thermalstore"].ingredients[1] = {"gold-plate", 20}
+ingredient_replace("sct-htech-thermalstore","electrum-alloy","gold-plate")
 
 table.insert(data.raw.technology["fine-electronics"].effects,{type = "unlock-recipe", recipe = "tcp-t3"})
 table.insert(data.raw.technology["fine-electronics"].effects,{type = "unlock-recipe", recipe = "sct-t3-flash-fuel"})

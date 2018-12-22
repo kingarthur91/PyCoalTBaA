@@ -66,7 +66,29 @@ if mods["pyrawores"] then
 				data.raw.resource["gold-ore"]["autoplace"] = nil
 				data.raw["autoplace-control"]["gold"] = nil
 			end
+				
+			results_replacer("tailings-tin-lead","tin-ore","ore-tin")
+			results_replacer("tailings-tin-lead","lead-ore","ore-lead")
 			
+			results_replacer("tailings_nickel_zinc","nickel-ore","ore-nickel")
+			results_replacer("tailings_nickel_zinc","zinc-ore","ore-zinc")
+			
+			results_replacer("tailings_gold_silver","gold-ore","ore-gold")
+			results_replacer("tailings_gold_silver","silver-ore","ore-silver")
+			
+			results_replacer("tailings_bauxite_cobalt","bauxite-ore","ore-aluminium")
+			--results_replacer("tailings_bauxite_cobalt","cobalt-ore","ore-cobalt")
+			
+			--results_replacer("tailings_rutile_tungsten","","")
+			--results_replacer("tailings_rutile_tungsten","","")
+			
+				-- tailings_nickel_zinc
+				-- tailings_tin_lead
+				-- tailings_gold_silver
+				-- tailings_gemstones
+				-- tailings_bauxite_cobalt
+				-- tailings_rutile_tungsten
+				
 		end
 		
 		if mods["bobelectronics"] then
@@ -84,16 +106,6 @@ if mods["pyrawores"] then
 		
 		end
 	
-			-- tailings_nickel_zinc
-			-- tailings_tin_lead
-			-- tailings_gold_silver
-			-- tailings_gemstones
-			-- tailings_bauxite_cobalt
-			-- tailings_rutile_tungsten
-			
-		--not working. do it the hard way
-		--RECIPE('tailings-tin-lead'):replace_result('tin-ore','ore-tin')
-
 		--remove bob techs and remove them from prerequisites script
 		--TODO: convert into callable funtion and move to a functions file 
 		local TechList = {}
