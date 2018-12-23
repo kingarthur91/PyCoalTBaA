@@ -37,3 +37,5 @@ if settings.startup["py-prod-adjust"].value == true then
 recipe_output_mod()
 
 end
+
+--duplicatechecker()

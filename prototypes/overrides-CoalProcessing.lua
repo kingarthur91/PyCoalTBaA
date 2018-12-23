@@ -257,14 +257,14 @@ RECIPE("fawogae-plantation"):rep_ing("electronic-circuit", "basic-circuit-board"
 
 RECIPE("ulric-corral"):rep_ing("electronic-circuit", "basic-circuit-board"):rep_ing("iron-gear-wheel", "steel-bearing")
 
-RECIPE("advanced-foundry"):rep_ing("iron-plate", "titanium-plate"):rep_ing("concrete", "glass"):rep_ing("steel-plate", "invar-alloy")
+RECIPE("advanced-foundry-mk01"):rep_ing("iron-plate", "titanium-plate"):rep_ing("concrete", "glass"):rep_ing("steel-plate", "invar-alloy")
 
 RECIPE("solid-separator"):rep_ing("iron-gear-wheel", "steel-gear-wheel")
 RECIPE("solid-separator"):rep_ing("advanced-circuit", "basic-circuit-board")
 
 RECIPE("classifier"):rep_ing("iron-stick", "brass-gear-wheel")
 
-RECIPE("automated-factory"):rep_ing("electronic-circuit", "basic-circuit-board")
+RECIPE("automated-factory-mk01"):rep_ing("electronic-circuit", "basic-circuit-board")
 
 RECIPE("borax-mine"):rep_ing("electronic-circuit", "basic-circuit-board")
 RECIPE("borax-mine"):rep_ing("iron-gear-wheel", "steel-bearing")
@@ -275,13 +275,11 @@ RECIPE("ulric-corral"):rep_ing("iron-gear-wheel", "steel-bearing"):rep_ing("elec
 
 RECIPE("jaw-crusher"):rep_ing("steel-plate", "invar-alloy"):rep_ing("electronic-circuit", "basic-circuit-board"):add_ing({name = "rubber", amount = 10})
 
-RECIPE("ball-mill"):add_ingredient({name = "steel-bearing-ball", amount = 1000})
+RECIPE("ball-mill-mk01"):add_ingredient({name = "steel-bearing-ball", amount = 1000})
 
 RECIPE("sand-extractor"):rep_ing("iron-gear-wheel", "brass-gear-wheel"):rep_ing("electronic-circuit", "basic-circuit-board")
 
 RECIPE("botanical-nursery"):rep_ing("electronic-circuit", "basic-circuit-board"):add_ing({name = "glass", amount = 10})
-
-RECIPE("glycerol-hydrogen"):rep_ing("water", "liquid-air")
 
 remove_result("glycerol-hydrogen", "petroleum-gas")
 add_result("glycerol-hydrogen", {type = "fluid", name = "hydrogen", amount = 300})
@@ -292,9 +290,6 @@ add_result("aromatics-to-rubber", {type = "item", name = "rubber", amount = 1})
 RECIPE("laser-turret"):add_ing({name = "lens", amount = 1})
 
 RECIPE("superior-circuit-board"):rep_ing("gold-plate", "nexelit-plate")
-
-RECIPE("alumina"):rep_ing("bauxite-ore", "crushed-bauxite")
-RECIPE("lead-oxide"):rep_ing("lead-ore", "crushed-lead")
 
 RECIPE("zinc-chloride"):rep_ing("iron-plate", "zinc-plate"):rep_ing("water", "hydrogen-chloride"):rem_ing("copper-plate")
 
@@ -329,8 +324,6 @@ RECIPE("flask"):rep_ing("iron-plate", "glass")
 RECIPE("ref-to-light-oil"):add_ing({type = "fluid", name = "hydrogen", amount = 250})
 
 RECIPE("combustion-olefin"):add_ing({type = "fluid", name = "hydrogen", amount = 150})
-
-RECIPE("niobium-oxide"):rep_ing("water", "nitrogen-dioxide")
 
 RECIPE("filtration-media"):add_ing({type = "item", name = "glass", amount = 5})
 

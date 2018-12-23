@@ -192,6 +192,14 @@ end
 
 results_replacer = function (recipe, old, new)
 
+if type(recipe) == "string" then
+
+local R = data.raw.recipe[recipe]
+
+recipe = R
+
+end
+
 	--log(recipe.name)
 	--log(serpent.block(recipe))
 	
@@ -310,4 +318,94 @@ results_replacer = function (recipe, old, new)
 			
 		end
 		
+end
+
+duplicatechecker = function()
+
+local AR = table.deepcopy(data.raw.recipe)
+
+local recipeswithdups = {}
+
+for i, recipe in pairs(AR) do
+
+	local ings = {}
+	
+	if recipe.ingredients ~= nil then
+	
+		for a, ing in pairs(recipe.ingredients) do
+		
+			for b, INGS in pairs(ings) do
+				
+				if ing.name ~= INGS then
+				
+				log("this working")
+				
+					table.insert(ings, ing.name)
+					
+				elseif ing.name == INGS then
+				
+					table.insert(recipeswithdups, recipe.name)
+					
+				end
+				
+				log(serpent.block(ings))
+			
+			end
+			
+		end
+		
+	end
+	
+	if recipe.normal or recipe.expensive then
+	
+		if recipe.normal.ingredients ~= nil then
+		
+			for a, ing in pairs(recipe.normal.ingredients) do
+		
+				for b, INGS in pairs(ings) do
+					
+					if ing.name ~= INGS then
+					
+						table.insert(ings, ing.name)
+						
+					elseif ing.name == INGS then
+					
+						table.insert(recipeswithdups, recipe.name)
+						
+					end
+					
+				end
+				
+			end
+			
+		end
+		
+		if recipe.expensive.ingredients ~= nil then
+		
+			for a, ing in pairs(recipe.expensive.ingredients) do
+		
+				for b, INGS in pairs(ings) do
+					
+					if ing.name ~= INGS then
+					
+						table.insert(ings, ing.name)
+						
+					elseif ing.name == INGS then
+					
+						table.insert(recipeswithdups, recipe.name)
+						
+					end
+					
+				end
+				
+			end
+			
+		end
+		
+	end
+	
+end
+
+log(serpent.block(recipeswithdups))
+
 end
