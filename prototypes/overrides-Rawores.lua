@@ -1,3 +1,5 @@
+require("functions/functions")
+
 if mods["pyrawores"] then
 
 	--bob mods stuff
@@ -10,73 +12,68 @@ if mods["pyrawores"] then
 
 		if mods["bobores"] then
 
+		if bobmods.ores then
 		--log(serpent.block(data.raw["autoplace-control"]))
+			data.raw.resource["bauxite-ore"] = nil
+			data.raw["autoplace-control"]["bauxite-ore"] = nil
 
-			if data.raw.resource["rutile-ore"] then
-				data.raw.resource["rutile-ore"]["autoplace"] = nil
-				data.raw["autoplace-control"]["rutile"] = nil
+			data.raw.resource["cobalt-ore"] = nil
+			data.raw["autoplace-control"]["cobalt-ore"] = nil
+
+			data.raw.resource["gem-ore"] = nil
+			data.raw["autoplace-control"]["gem-ore"] = nil
+
+			data.raw.resource["gold-ore"] = nil
+			data.raw["autoplace-control"]["gold-ore"] = nil
+
+			data.raw.resource["lead-ore"] = nil
+			data.raw["autoplace-control"]["lead-ore"] = nil
+
+			data.raw.resource["nickel-ore"] = nil
+			data.raw["autoplace-control"]["nickel-ore"] = nil
+
+			data.raw.resource["quartz"] = nil
+			data.raw["autoplace-control"]["quartz"] = nil
+
+			data.raw.resource["rutile-ore"] = nil
+			data.raw["autoplace-control"]["rutile-ore"] = nil
+
+			data.raw.resource["silver-ore"] = nil
+			data.raw["autoplace-control"]["silver-ore"] = nil
+
+			data.raw.resource["sulfur"] = nil
+			data.raw["autoplace-control"]["sulfur"] = nil
+
+			data.raw.resource["tin-ore"] = nil
+			data.raw["autoplace-control"]["tin-ore"] = nil
+
+			data.raw.resource["tungsten-ore"] = nil
+			data.raw["autoplace-control"]["tungsten-ore"] = nil
+
+			data.raw.resource["zinc-ore"] = nil
+			data.raw["autoplace-control"]["zinc-ore"] = nil
+
+			--data.raw.resource["lithia-water"] = nil
+			--data.raw["autoplace-control"]["lithia-water"] = nil
+
+			--data.raw.resource["ground-water"] = nil
+			--data.raw["autoplace-control"]["ground-water"] = nil
 			end
 			
-			if data.raw.resource["cobalt-ore"] then
-				data.raw.resource["cobalt-ore"]["autoplace"] = nil
-				data.raw["autoplace-control"]["cobalt-ore"] = nil
-			end
+			data.raw["map-gen-presets"]["default"]["rail-world"]["basic_settings"] = nil
+			data.raw["map-gen-presets"]["default"]["rich-resources"]["basic_settings"] = nil
 			
-			if data.raw.resource["bauxite-ore"] then
-				data.raw.resource["bauxite-ore"]["autoplace"] = nil
-				data.raw["autoplace-control"]["bauxite"] = nil
-			end
 			
-			if data.raw.resource["zinc-ore"] then
-				data.raw.resource["zinc-ore"]["autoplace"] = nil
-				data.raw["autoplace-control"]["zinc"] = nil
-			end
-			
-			if data.raw.resource["tungsten-ore"] then
-				data.raw.resource["tungsten-ore"]["autoplace"] = nil
-				data.raw["autoplace-control"]["tungsten"] = nil
-			end
-			
-			if data.raw.resource["tin-ore"] then
-				data.raw.resource["tin-ore"]["autoplace"] = nil
-				data.raw["autoplace-control"]["tin"] = nil
-			end
-			
-			if data.raw.resource["silver-ore"] then
-				data.raw.resource["silver-ore"]["autoplace"] = nil
-				data.raw["autoplace-control"]["silver"] = nil
-			end
-			
-			if data.raw.resource["quartz"] then
-				data.raw.resource["quartz"]["autoplace"] = nil
-				data.raw["autoplace-control"]["quartz-ore"] = nil
-			end
-			
-			if data.raw.resource["nickel-ore"] then
-				data.raw.resource["nickel-ore"]["autoplace"] = nil
-				data.raw["autoplace-control"]["nickel"] = nil
-			end
-			
-			if data.raw.resource["lead-ore"] then
-				data.raw.resource["lead-ore"]["autoplace"] = nil
-				data.raw["autoplace-control"]["lead"] = nil
-			end
-			
-			if data.raw.resource["gold-ore"] then
-				data.raw.resource["gold-ore"]["autoplace"] = nil
-				data.raw["autoplace-control"]["gold"] = nil
-			end
-				
 			results_replacer("tailings-tin-lead","tin-ore","ore-tin")
 			results_replacer("tailings-tin-lead","lead-ore","ore-lead")
 			
-			results_replacer("tailings_nickel_zinc","nickel-ore","ore-nickel")
-			results_replacer("tailings_nickel_zinc","zinc-ore","ore-zinc")
+			results_replacer("tailings-nickel-zinc","nickel-ore","ore-nickel")
+			results_replacer("tailings-nickel-zinc","zinc-ore","ore-zinc")
 			
-			results_replacer("tailings_gold_silver","gold-ore","ore-gold")
-			results_replacer("tailings_gold_silver","silver-ore","ore-silver")
+			--results_replacer("tailings-gold-silver","gold-ore","ore-gold")
+			--results_replacer("tailings-gold-silver","silver-ore","ore-silver")
 			
-			results_replacer("tailings_bauxite_cobalt","bauxite-ore","ore-aluminium")
+			results_replacer("tailings-bauxite-cobalt","bauxite-ore","ore-aluminium")
 			--results_replacer("tailings_bauxite_cobalt","cobalt-ore","ore-cobalt")
 			
 			--results_replacer("tailings_rutile_tungsten","","")
@@ -101,7 +98,9 @@ if mods["pyrawores"] then
 
 			end
 			
-			data.raw.recipe["tinned-copper-cable"] = null
+			global_item_replacer("tinned-copper-cable","tinned-cable")
+			
+			--data.raw.recipe["tinned-copper-cable"] = null
 			data.raw.item["tinned-copper-cable"] = null
 		
 		end

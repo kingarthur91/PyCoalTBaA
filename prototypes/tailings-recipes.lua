@@ -1,7 +1,8 @@
 if mods["bobores"] then
 	
 	local tailings_copper_iron =
-    RECIPE {
+    
+	RECIPE {
     type = "recipe",
     name = "tailings-copper-iron",
     localised_name = {"recipe-name.tailings-ore-extraction", {"item-name.copper-ore"}, {"item-name.iron-ore"}, {"fluid-name.tar"}},

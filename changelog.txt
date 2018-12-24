@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.35
+  Changes:
+   - fixed mutiple duplicated items in recipes
+   - activated rawores overrides and removed bobs ores from spawning
+   - fixed several issues related to mods refernceing old names in pymods
+   - fixed locale for circuits now display item names
+---------------------------------------------------------------------------------------------------
 Version: 0.0.34
   Changes:
 	- started on function for global item recipe script
