@@ -1,3 +1,5 @@
+require("functions/functions")
+
 --bob mods stuff
 if mods["boblibrary"] then
 
@@ -83,7 +85,7 @@ local remove_result = bobmods.lib.recipe.remove_result
 		RECIPE("desulfurizator-unit"):rep_ing("iron-plate", "invar-alloy")
 		RECIPE("ground-borer"):rep_ing("iron-plate", "titanium-plate")
 		RECIPE("fts-reactor"):rep_ing("iron-plate", "invar-alloy")
-		--RECIPE("advanced-foundry-mk01"):rep_ing("iron-plate", "titanium-plate"):rep_ing("steel-plate", "invar-alloy")
+		RECIPE("advanced-foundry-mk01"):rep_ing("iron-plate", "titanium-plate"):rep_ing("steel-plate", "invar-alloy")
 		RECIPE("jaw-crusher"):rep_ing("steel-plate", "invar-alloy")
 		RECIPE("methanol-from-syngas"):rep_ing("iron-plate", "zinc-plate")
 		RECIPE("equipment-chassi"):rep_ing("copper-plate", "bronze-alloy")
@@ -158,22 +160,24 @@ remove_result("refsyngas-from-meth-canister", "water")
 add_result("refsyngas-from-meth", {type = "fluid", name = "hydrogen", amount = 30})
 add_result("refsyngas-from-meth-canister", {type = "fluid", name = "hydrogen", amount = 30})
 
-RECIPE("olefin"):rem_ing("water"):add_ing({type = "fluid", name = "hydrogen", amount = 600})
+--RECIPE("olefin"):rem_ing("water"):add_ing({type = "fluid", name = "hydrogen", amount = 600})
 
 remove_result("aromatics", "water")
 add_result("aromatics", {type = "fluid", name = "hydrogen", amount = 100})
 
-RECIPE("gasoline"):rem_ing("gasoline", "water"):add_ing({type = "fluid", name = "hydrogen", amount = 200})
+--RECIPE("gasoline"):rem_ing("gasoline", "water"):add_ing({type = "fluid", name = "hydrogen", amount = 200})
 
 RECIPE("lithium-peroxide"):rem_ing("water"):add_ing({type = "fluid", name = "lithia-water", amount = 300})
 
 RECIPE("anthraquinone"):rep_ing("steam", "liquid-air")
 
-RECIPE("ref-to-light-oil"):add_ing({type = "fluid", name = "hydrogen", amount = 250})
+--RECIPE("ref-to-light-oil"):add_ing({type = "fluid", name = "hydrogen", amount = 250})
 
 RECIPE("combustion-olefin"):add_ing({type = "fluid", name = "hydrogen", amount = 150})
 
-RECIPE("niobium-oxide"):rep_ing("water", "nitrogen-dioxide")
+--RECIPE("niobium-oxide"):rep_ing("water", "nitrogen-dioxide")
+ingredient_replace("niobium-oxide","nitrogen","nitrogen-dioxide")
+
 RECIPE("ralesia"):rep_ing("water", "hydrogen")
 RECIPE("diborane"):rep_ing("water", "hydrogen")
 RECIPE("oleochemicals-distilation"):rep_ing("water", "oxygen")
@@ -296,8 +300,6 @@ RECIPE("zinc-chloride"):rep_ing("iron-plate", "zinc-plate"):rep_ing("water", "hy
 add_result("zinc-chloride", {name = "hydrogen", amount = 20})
 add_result("ash-separation", {type = "item", name = "cobalt-ore", amount = 3, probability = 0.3})
 
-RECIPE("active-carbon"):rep_ing("water", "nitrogen"):add_ing({name = "sodium-hydroxide", amount = 7})
-
 RECIPE("advanced-circuit"):add_ing({name = "optical-fiber", amount = 2})
 RECIPE("fibreglass-board"):add_ing({name = "glass", amount = 2})
 
@@ -309,30 +311,13 @@ remove_result("refsyngas-from-meth-canister", "water")
 add_result("refsyngas-from-meth", {type = "fluid", name = "hydrogen", amount = 30})
 add_result("refsyngas-from-meth-canister", {type = "fluid", name = "hydrogen", amount = 30})
 
-RECIPE("olefin"):rem_ing("water"):add_ing({type = "fluid", name = "hydrogen", amount = 600})
-
 remove_result("aromatics", "water")
 add_result("aromatics", {type = "fluid", name = "hydrogen", amount = 100})
-
-RECIPE("gasoline"):rem_ing("gasoline", "water"):add_ing({type = "fluid", name = "hydrogen", amount = 200})
 
 RECIPE("lithium-peroxide"):rem_ing("water"):add_ing({type = "fluid", name = "lithia-water", amount = 300})
 
 RECIPE("anthraquinone"):rep_ing("steam", "liquid-air")
-RECIPE("flask"):rep_ing("iron-plate", "glass")
-
-RECIPE("ref-to-light-oil"):add_ing({type = "fluid", name = "hydrogen", amount = 250})
-
-RECIPE("combustion-olefin"):add_ing({type = "fluid", name = "hydrogen", amount = 150})
-
-RECIPE("filtration-media"):add_ing({type = "item", name = "glass", amount = 5})
-
-RECIPE("methanol-from-syngas"):rep_ing("iron-plate", "zinc-plate")
-RECIPE("flying-robot-frame"):rep_ing("steel-plate", "niobium-plate")
-RECIPE("ralesia"):rep_ing("water", "hydrogen")
-RECIPE("equipment-chassi"):rep_ing("copper-plate", "bronze-alloy")
-RECIPE("lens"):rep_ing("stone", "glass")
-RECIPE("diborane"):rep_ing("water", "hydrogen")
+--[[
 RECIPE("oleochemicals-distilation"):rep_ing("water", "oxygen")
 RECIPE("oleo-gasification"):rep_ing("water", "oxygen")
 RECIPE("tar-gasification"):rep_ing("water", "liquid-air")
@@ -356,8 +341,7 @@ RECIPE("superior-circuit-board"):rep_ing("ferric-chloride-solution", "boric-acid
 RECIPE("multi-layer-circuit-board"):rep_ing("ferric-chloride-solution", "boric-acid")
 RECIPE("cladding"):rep_ing("sand", "glass")
 RECIPE("aromatics-to-rubber"):rep_ing("plastic-bar", "rubber")
-RECIPE("nas-battery"):rep_ing("copper-ore", "sodium-hydroxide")
-
+]]--
 end
 
 --angels mod stuff
