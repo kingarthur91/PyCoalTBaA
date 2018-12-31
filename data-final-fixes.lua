@@ -17,8 +17,6 @@
 	require("prototypes.overrides-bioindustries")
 	
 	require("prototypes.overrides-pyscience")
-	
-	require("prototypes.overrides-Rawores")
 
    if mods["angelspetrochem"] then
 	

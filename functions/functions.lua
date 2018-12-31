@@ -200,7 +200,6 @@ recipe = R
 
 end
 
-	if recipe ~= nil then
 	--log(recipe.name)
 	--log(serpent.block(recipe))
 	
@@ -318,8 +317,6 @@ end
 			end
 			
 		end
-		
-	end
 		
 end
 
