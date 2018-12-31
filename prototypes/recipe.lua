@@ -1204,7 +1204,7 @@ RECIPE {
     energy_required = 6,
     ingredients = {
         {type = 'item', name = 'pcb1', amount = 1},
-        {type = 'item', name = 'valve', amount = 3},
+        {type = 'item', name = 'valvea', amount = 3},
         {type = 'item', name = 'inductor1', amount = 3},
         {type = 'item', name = 'capacitor1', amount = 5},
         {type = 'item', name = 'resistor1', amount = 6}
@@ -1258,6 +1258,23 @@ RECIPE {
         {type = 'item', name = 'cm-processing-unit', amount = 5}
     }
 }:add_unlock('advanced-electronics')
+
+RECIPE {
+    type = 'recipe',
+    name = 'valvea',
+    category = 'electronic',
+    enabled = true,
+    energy_required = 15,
+    ingredients = {
+        {type = 'item', name = 'iron-plate', amount = 5},
+        {type = 'item', name = 'copper-plate', amount = 2},
+        {type = 'item', name = 'graphite', amount = 2}
+    },
+    results = {
+        {type = 'item', name = 'valvea', amount = 2}
+    },
+    main_product = 'valvea'
+}:add_ingredient({type = 'fluid', name = 'vacuum', amount = 50})
 
 end
 
@@ -1363,23 +1380,6 @@ RECIPE {
         {type = "fluid", name = "ammonia", amount = 100},
     },
 }:add_unlock("advanced-electronics")
-
-RECIPE {
-    type = 'recipe',
-    name = 'electronic-circuit-initial',
-    category = 'handcrafting',
-    enabled = true,
-    energy_required = 2,
-    ingredients = {
-        {type = 'item', name = 'copper-plate', amount = 10},
-        {type = 'item', name = 'copper-cable', amount = 10},
-        {type = 'item', name = 'wood', amount = 2}
-    },
-    results = {
-        {type = 'item', name = 'pcb1', amount = 3}
-    }
-}
-
 
 end
 

@@ -30,6 +30,16 @@ ITEM {
     order = "h",
     stack_size = 200
 }
+ITEM {
+    type = "item",
+    name = "valvea",
+    icon = "__pyhightech__/graphics/icons/valve.png",
+	icon_size = 32,
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-hightech-items",
+    order = "f",
+    stack_size = 100
+}
 
 end
 

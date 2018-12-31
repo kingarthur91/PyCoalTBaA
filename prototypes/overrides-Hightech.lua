@@ -1,5 +1,3 @@
-require("functions/functions")
-
 if mods["pyhightech"] then
 
 --bob mods stuff
@@ -13,7 +11,8 @@ local remove_result = bobmods.lib.recipe.remove_result
 
 --new code
 RECIPE("module-circuit-board"):replace_ingredient('phenolic-board','phenolicboard')
-ingredient_replace("sub-denier-microfiber","ammonia","nitrogen-dioxide")
+
+--ingredient_replace ("cm-electronic-circuit","valve","valvea")
 
 	if mods["bobelectronics"] then
 		--TODO:
