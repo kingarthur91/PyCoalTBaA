@@ -4,6 +4,8 @@ Version: 0.0.36
 	- removed invar from advanced foundry
 	- replaced duralimiun with aluminium plate in gun turrent
 	- fixed error with vacum tube description and name
+	- made adjustment to aaii-sp0 to fix that storage tank 0 attempted to use angels storage tank subgroup when angels wasnt installed
+	- removed science pack 1 from electric miner 1 tech as its needed for tin with pyro 
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.35
   Changes:

@@ -1,5 +1,11 @@
 require("functions.functions")
 
+if mods["aai-industry-sp0"] and not mods["angelspetrochem"] then
+
+	data.raw.item["storage-tank-0"].subgroup = "storage"
+
+end
+
 --bob mods stuff
 if mods["boblibrary"] then
 
@@ -24,7 +30,6 @@ local remove_result = bobmods.lib.recipe.remove_result
 		RECIPE("automated-factory-mk01"):rep_ing("electronic-circuit", "basic-circuit-board")
 		RECIPE("borax-mine"):rep_ing("electronic-circuit", "basic-circuit-board")
 		RECIPE("ralesia-plantation"):rep_ing("electronic-circuit", "basic-circuit-board")
-		RECIPE("ulric-corral"):rep_ing("electronic-circuit", "basic-circuit-board")
 		RECIPE("jaw-crusher"):rep_ing("electronic-circuit", "basic-circuit-board")
 		RECIPE("sand-extractor"):rep_ing("electronic-circuit", "basic-circuit-board")
 		RECIPE("botanical-nursery"):rep_ing("electronic-circuit", "basic-circuit-board")
@@ -65,7 +70,6 @@ local remove_result = bobmods.lib.recipe.remove_result
 		RECIPE("classifier"):rep_ing("iron-stick", "brass-gear-wheel")
 		RECIPE("borax-mine"):rep_ing("iron-gear-wheel", "steel-bearing")
 		RECIPE("ralesia-plantation"):rep_ing("pipe", "steel-pipe")
-		RECIPE("ulric-corral"):rep_ing("iron-gear-wheel", "steel-bearing")
 		RECIPE("sand-extractor"):rep_ing("iron-gear-wheel", "brass-gear-wheel")
 		RECIPE("flying-robot-frame"):rep_ing("steel-plate", "niobium-plate")
 
@@ -260,8 +264,6 @@ RECIPE("washer"):rep_ing("electronic-circuit", "basic-circuit-board")
 RECIPE("fawogae-plantation"):rep_ing("electronic-circuit", "basic-circuit-board")
 
 RECIPE("ulric-corral"):rep_ing("electronic-circuit", "basic-circuit-board"):rep_ing("iron-gear-wheel", "steel-bearing")
-
-RECIPE("advanced-foundry-mk01"):rep_ing("iron-plate", "titanium-plate"):rep_ing("concrete", "glass"):rep_ing("steel-plate", "invar-alloy")
 
 RECIPE("solid-separator"):rep_ing("iron-gear-wheel", "steel-gear-wheel")
 RECIPE("solid-separator"):rep_ing("advanced-circuit", "basic-circuit-board")

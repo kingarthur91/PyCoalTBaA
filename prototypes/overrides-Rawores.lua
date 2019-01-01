@@ -2,6 +2,12 @@ require("functions/functions")
 
 if mods["pyrawores"] then
 
+	if mods["aai-industry-sp0"] then
+	
+		table.remove(data.raw.technology["electric-mining"].unit.ingredients, 1)
+	
+	end
+
 	--bob mods stuff
 	if mods["boblibrary"] then
 
