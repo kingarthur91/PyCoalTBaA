@@ -1,3 +1,5 @@
+require("functions/functions")
+
 if mods["pyfusionenergy"] then
 
 --bob mods stuff
@@ -25,12 +27,14 @@ local remove_result = bobmods.lib.recipe.remove_result
 	end
 
 
-RECIPE("molybdenum-oxide"):add_ingredient({type = "fluid", name = "oxygen", amount = 100})
+--RECIPE("molybdenum-oxide"):add_ingredient({type = "fluid", name = "oxygen", amount = 100})
 remove_result("molybdenum-oxide", "sulfur")
 add_result("molybdenum-oxide", {type = "fluid", name = "sulfur-dioxide", amount = 50})
 
 RECIPE("soda-ash"):replace_ingredient("ppd", "sodium-hydroxide")
-RECIPE("vpulp3"):replace_ingredient("petroleum-gas", "nitrogen-dioxide")
+--RECIPE("vpulp3"):replace_ingredient("petroleum-gas", "nitrogen-dioxide")
+ingredient_replace("vpulp3","ammonia","nitrogen-dioxide")
+ingredient_replace("vpulp-precip","ammonia","nitrogen-dioxide")
 
 add_result("sodium-chlorate", {type = "fluid", name = "hydrogen", amount = 150})
 
@@ -62,7 +66,9 @@ RECIPE("bio-reactor"):add_ingredient({type = "item", name = "glass", amount = 50
 RECIPE("nmf"):add_ingredient({type = "item", name = "glass", amount = 50})
 RECIPE("gas-separator"):replace_ingredient("pipe", "stone-pipe")
 RECIPE("fusion-reactor-mk01"):add_ingredient({type = "item", name = "glass", amount = 200})
-RECIPE("molybdenum-concentrate"):replace_ingredient("water", "nitrogen-dioxide")
+--RECIPE("molybdenum-concentrate"):replace_ingredient("water", "nitrogen-dioxide")
+ingredient_replace("molybdenum-concentrate","nitrogen","nitrogen-dioxide")
+
 RECIPE("phytoplankton"):replace_ingredient("crushed-iron", "crushed-tin")
 
 RECIPE("molybdenum-plate"):add_ingredient({type = "fluid", name = "hydrogen", amount = 100}):change_category("electrolysis")
