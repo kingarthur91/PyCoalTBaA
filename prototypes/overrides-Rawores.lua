@@ -89,6 +89,12 @@ if mods["pyrawores"] then
 				-- tailings_bauxite_cobalt
 				-- tailings_rutile_tungsten
 				
+			global_item_replacer("bauxite-ore","ore-aluminium")
+			global_item_replacer("tin-ore","ore-tin")
+			global_item_replacer("lead-ore","ore-lead")
+			global_item_replacer("nickel-ore","ore-nickel")
+			global_item_replacer("zinc-ore","ore-zinc")
+				
 		end
 		
 		if mods["bobelectronics"] then
@@ -158,6 +164,18 @@ if mods["pyrawores"] then
 		--remove unneeded recipes
 		TECHNOLOGY("chemical-processing-2"):remove_effect('ferric-chloride-solution')
 			
+		local recipe = table.deepcopy(data.raw.recipe)
+
+		for r, rec in pairs(recipe) do
+		
+			if rec.category == "electrolysis" then
+			
+				data.raw.recipe[rec.name].category = "electrolyzer"
+				
+			end
+		
+		end
+		
 	end
 	
 	if mods["angelssmelting"] then
@@ -172,6 +190,12 @@ if mods["pyrawores"] then
 		global_item_replacer("liquid-molten-tin","molten-tin")
 		global_item_replacer("liquid-molten-titanium","molten-titanium")
 		global_item_replacer("liquid-molten-zinc","molten-zinc")
+	
+	end
+	
+	if mods["angelsrefining"] then
+	
+		results_replacer("angelsore5-crushed-processing","ore-nickel","ore-aluminium")
 	
 	end
 

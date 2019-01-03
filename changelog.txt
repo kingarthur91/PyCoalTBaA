@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.37
+  Changes:
+	- removed a number of duplicaled items from recipes
+	- fixed a missing check for angels bioprocessing
+	- fixed that some recipes hadnt been transfered to a different building with the removeal of bobs electrolysers
+	- replaced nickel with aluminum ore in angels crushed rubyte sorting
+---------------------------------------------------------------------------------------------------
 Version: 0.0.36
   Changes:
 	- removed invar from advanced foundry

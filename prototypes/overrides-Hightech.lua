@@ -283,6 +283,26 @@ angelsmods.functions.make_converter("acetic-acid","liquid-acetic-acid")
 		
 	)
 
+data:extend({
+	{
+		type = "recipe",
+		name = "steak",
+		category = "hpf",
+		enabled = false,
+		energy_required = .75,
+		ingredients = 
+			{
+				{type = "item", name = "meat", amount = 1}
+			},
+		results = 
+			{
+				{type = "item", name = "solid-carbon", amount = 1}
+			}
+	}
+})			
+		
+table.insert(data.raw["technology"] ["bio-refugium-puffer"].effects, {type = "unlock-recipe", recipe = "steak"})	
+
 end
 
 if mods["angelssmelting"] then
@@ -344,27 +364,6 @@ angelsmods.functions.make_converter("chloromethane","gas-chlor-methane")
 angelsmods.functions.make_converter("methane","gas-methane")
 angelsmods.functions.make_converter("ammonia","gas-ammonia")
 angelsmods.functions.make_converter("ech","gas-epichlorhydrin")
-
-
-data:extend({
-	{
-		type = "recipe",
-		name = "steak",
-		category = "hpf",
-		enabled = false,
-		energy_required = .75,
-		ingredients = 
-			{
-				{type = "item", name = "meat", amount = 1}
-			},
-		results = 
-			{
-				{type = "item", name = "solid-carbon", amount = 1}
-			}
-	}
-})			
-		
-table.insert(data.raw["technology"] ["bio-refugium-puffer"].effects, {type = "unlock-recipe", recipe = "steak"})	
 
 end
 
