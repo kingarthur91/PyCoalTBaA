@@ -47,7 +47,7 @@ RECIPE("multi-layer-circuit-board"):remove_unlock("advanced-electronics-3")
 RECIPE("module-processor-board-3"):remove_unlock("advanced-electronics-3")
 RECIPE("module-processor-board-2"):remove_unlock("advanced-electronics-2")
 RECIPE("module-processor-board"):remove_unlock("modules")
-RECIPE("silicon-nitride"):remove_unlock("ceramics")
+--RECIPE("silicon-nitride"):remove_unlock("ceramics")
 RECIPE("bob-silicon-plate"):remove_unlock("silicon-processing")
 RECIPE("silicon-plate2"):remove_unlock("silicon-processing")
 RECIPE("silicon-wafer"):remove_unlock("silicon-processing")
@@ -77,7 +77,7 @@ RECIPE('high-flux-core'):replace_ingredient('liquid-pure-air', 'liquid-nitrogen'
 RECIPE('diode-core'):replace_ingredient('liquid-pure-air', 'liquid-nitrogen')
 RECIPE('capacitor-termination'):replace_ingredient('boric-acid', 'liquid-nitrogen')
 RECIPE('carbon-aerogel'):replace_ingredient('syngas', 'nitrogen')
-RECIPE('superconductor'):replace_ingredient('liquid-helium', 'liquid-nitrogen')
+--RECIPE('superconductor'):replace_ingredient('liquid-helium', 'liquid-nitrogen')
 
 end
 

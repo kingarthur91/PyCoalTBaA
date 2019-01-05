@@ -2,10 +2,62 @@ data:extend(
 {
 	{
 	type = "bool-setting",
+	name = "py-prod-adjust",
+	setting_type = "startup",
+	default_value = false,
+	order = "e",
+	},
+	{
+	type = "int-setting",
+	name = "SpaceX",
+	setting_type = "startup",
+	minimum_value = 1,
+	default_value = 1,
+	maximum_value = 50
+	}
+}
+)
+
+if mods["angelspetrochem"] then
+
+data:extend(
+{
+	{
+	type = "bool-setting",
 	name = "pymods-acid-increase",
 	setting_type = "startup",
 	default_value = true,
 	order = "a",
+	}
+}
+)
+
+end
+
+if mods["angelsrefining"] then
+
+data:extend(
+{
+	{
+	type = "bool-setting",
+	name = "addpyoretoangelsorting",
+	setting_type = "startup",
+	default_value = true,
+	order = "g",
+	},
+	{
+	type = "bool-setting",
+	name = "pymods-remove-regular-ores",
+	setting_type = "startup",
+	default_value = false,
+	order = "b",
+	},
+	{
+	type = "bool-setting",
+	name = "pymods-remove-rocks",
+	setting_type = "startup",
+	default_value = false,
+	order = "b",
 	},
 	{
 	type = "bool-setting",
@@ -19,7 +71,7 @@ data:extend(
 	name = "pymods-infinite-borax",
 	setting_type = "startup",
 	default_value = true,
-	order = "b",
+	order = "c",
 	},
 	{
 	type = "bool-setting",
@@ -49,27 +101,8 @@ data:extend(
 	default_value = true,
 	order = "d",
 	},
-	{
-	type = "bool-setting",
-	name = "py-prod-adjust",
-	setting_type = "startup",
-	default_value = false,
-	order = "e",
-	},
-	{
-	type = "int-setting",
-	name = "SpaceX",
-	setting_type = "startup",
-	minimum_value = 1,
-	default_value = 1,
-	maximum_value = 50
-	},
-	{
-	type = "bool-setting",
-	name = "addpyoretoangelsorting",
-	setting_type = "startup",
-	default_value = true,
-	order = "g",
-	}
+	
 }
 )
+
+end

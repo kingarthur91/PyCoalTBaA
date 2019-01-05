@@ -1,4 +1,4 @@
-require("functions.functions")
+require("functions/functions")
 
 if mods["aai-industry-sp0"] and not mods["angelspetrochem"] then
 
@@ -38,7 +38,7 @@ local remove_result = bobmods.lib.recipe.remove_result
 		
 		--add ingredients
 		RECIPE("superior-circuit-board"):rep_ing("gold-plate", "nexelit-plate")
-		RECIPE("advanced-circuit"):add_ing({name = "optical-fiber", amount = 2})
+		--RECIPE("advanced-circuit"):add_ing({name = "optical-fiber", amount = 2})
 		RECIPE("fibreglass-board"):add_ing({name = "glass", amount = 2})
 		remove_result("bob-resin-wood", "resin")
 		add_result("bob-resin-wood", {type = "item", name = "resin", amount = 3})
@@ -474,6 +474,12 @@ if mods["Clowns-Extended-Minerals"] then
 	)
 end
 
+end
+
+if mods["angelssmelting"] then
+
+	global_item_replacer("angels-plate-chrome","chromium")
+	
 end
 
 end

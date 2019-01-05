@@ -178,6 +178,8 @@ if mods["pyrawores"] then
 		
 	end
 	
+if mods["angelspetrochem"] then
+
 	if mods["angelssmelting"] then
 	
 		global_item_replacer("liquid-molten-aluminium","molten-aluminium")
@@ -190,13 +192,24 @@ if mods["pyrawores"] then
 		global_item_replacer("liquid-molten-tin","molten-tin")
 		global_item_replacer("liquid-molten-titanium","molten-titanium")
 		global_item_replacer("liquid-molten-zinc","molten-zinc")
+		global_item_replacer("liquid-molten-chrome","molten-chromium")
 	
 	end
 	
 	if mods["angelsrefining"] then
 	
 		results_replacer("angelsore5-crushed-processing","ore-nickel","ore-aluminium")
+		
+		
 	
 	end
 
+	global_item_replacer("hydrogen","gas-hydrogen")
+	global_item_replacer("chlorine","gas-chlorine")
+	global_item_replacer("oxygen","gas-oxygen")
+	global_item_replacer("nitrogen","gas-nitrogen")
+	global_item_replacer("hydrogen-chloride","gas-hydrogen-chloride")
+	
+end
+	
 end
