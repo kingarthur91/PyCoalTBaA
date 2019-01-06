@@ -26,8 +26,21 @@ local remove_result = bobmods.lib.recipe.remove_result
 
 	end
 
+if not mods["pyrawores"] then
 
---RECIPE("molybdenum-oxide"):add_ingredient({type = "fluid", name = "oxygen", amount = 100})
+RECIPE("molybdenum-oxide"):add_ingredient({type = "fluid", name = "oxygen", amount = 100})
+RECIPE("bio-reactor"):add_ingredient({type = "item", name = "glass", amount = 50})
+RECIPE("nmf"):add_ingredient({type = "item", name = "glass", amount = 50})
+RECIPE("genlab"):add_ingredient({type = "item", name = "glass", amount = 50})
+RECIPE("molybdenum-plate"):add_ingredient({type = "fluid", name = "hydrogen", amount = 100})
+RECIPE("helium"):add_ingredient({type = "fluid", name = "hydrogen", amount = 10})
+RECIPE("sc-unit"):add_ingredient({type = "fluid", name = "liquid-nitrogen", amount = 100})
+RECIPE("boron-mixture"):add_ingredient({type = "item", name = "aluminium-plate", amount = 5})
+RECIPE("boron"):add_ingredient({type = "fluid", name = "hydrogen-chloride", amount = 500})
+RECIPE("blanket"):add_ingredient({type = "item", name = "lead-plate", amount = 40})
+
+end
+
 remove_result("molybdenum-oxide", "sulfur")
 add_result("molybdenum-oxide", {type = "fluid", name = "sulfur-dioxide", amount = 50})
 
@@ -61,9 +74,8 @@ RECIPE("regolite-mine"):replace_ingredient("iron-plate", "tungsten-plate")
 RECIPE("jig"):replace_ingredient("pipe", "titanium-pipe")
 RECIPE("centrifugal-pan"):replace_ingredient("pipe", "titanium-pipe"):add_ingredient({type = "item", name = "tungsten-plate", amount = 20})
 RECIPE("compressor"):replace_ingredient("iron-gear-wheel", "titanium-bearing"):add_ingredient({type = "item", name = "tungsten-plate", amount = 20})
-RECIPE("genlab"):replace_ingredient("iron-gear-wheel", "nitinol-bearing")--:add_ingredient({type = "item", name = "glass", amount = 50})
---RECIPE("bio-reactor"):add_ingredient({type = "item", name = "glass", amount = 50})
---RECIPE("nmf"):add_ingredient({type = "item", name = "glass", amount = 50})
+RECIPE("genlab"):replace_ingredient("iron-gear-wheel", "nitinol-bearing")
+
 RECIPE("gas-separator"):replace_ingredient("pipe", "stone-pipe")
 RECIPE("fusion-reactor-mk01"):add_ingredient({type = "item", name = "glass", amount = 200})
 --RECIPE("molybdenum-concentrate"):replace_ingredient("water", "nitrogen-dioxide")
@@ -71,7 +83,7 @@ ingredient_replace("molybdenum-concentrate","nitrogen","nitrogen-dioxide")
 
 RECIPE("phytoplankton"):replace_ingredient("crushed-iron", "crushed-tin")
 
-RECIPE("molybdenum-plate"):change_category("electrolysis")--:add_ingredient({type = "fluid", name = "hydrogen", amount = 100})
+RECIPE("molybdenum-plate"):change_category("electrolysis")
 
 remove_result("cobalt-solvent", "ash")
 add_result("cobalt-solvent", {type = "item", name = "cobalt-ore", amount = 5})
@@ -102,20 +114,17 @@ remove_result("liquid-rich-gas-distilation", "water")
 add_result("liquid-rich-gas-distilation", {type = "fluid", name = "liquid-nitrogen", amount = 10})
 
 add_result("purier-helium", {type = "fluid", name = "liquid-nitrogen", amount = 1})
---RECIPE("helium"):add_ingredient({type = "fluid", name = "hydrogen", amount = 10})
+
 
 RECIPE("nexelit-matrix"):replace_ingredient("wood", "resin")
 RECIPE("nbti-alloy"):replace_ingredient("steel-plate", "titanium-plate"):add_ingredient({type = "fluid", name = "nitrogen", amount = 150})
 RECIPE("sc-wire"):replace_ingredient("iron-plate", "tin-plate")
 RECIPE("ferrite"):add_ingredient({type = "item", name = "zinc-plate", amount = 10})
 RECIPE("coil-core"):replace_ingredient("copper-cable", "gilded-copper-cable")
---RECIPE("sc-unit"):add_ingredient({type = "fluid", name = "liquid-nitrogen", amount = 100})
+
 RECIPE("sc-wire"):add_ingredient({type = "item", name = "glass", amount = 12})
---RECIPE("boron-mixture"):add_ingredient({type = "item", name = "aluminium-plate", amount = 5})
---RECIPE("boron"):add_ingredient({type = "fluid", name = "hydrogen-chloride", amount = 500})
 RECIPE("boron-carbide"):replace_ingredient("coke", "carbon")
 RECIPE("blanket"):add_ingredient({type = "item", name = "lithium", amount = 10})
---RECIPE("blanket"):add_ingredient({type = "item", name = "lead-plate", amount = 40})
 RECIPE("blanket"):add_ingredient({type = "item", name = "tungsten-plate", amount = 40})
 RECIPE("lead-container"):replace_ingredient("iron-plate", "lead-plate")
 RECIPE("science-coating"):replace_ingredient("steel-plate", "titanium-plate")

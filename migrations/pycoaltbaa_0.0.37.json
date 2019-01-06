@@ -1,0 +1,10 @@
+{
+"item":
+	[
+		["bauxite-ore","ore-aluminium"],
+		["tin-ore","ore-tin"],
+		["lead-ore","ore-lead"],
+		["nickel-ore","ore-nickel"],
+		["zinc-ore","ore-zinc"]
+	]
+}

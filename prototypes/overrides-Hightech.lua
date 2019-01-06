@@ -77,7 +77,12 @@ RECIPE('high-flux-core'):replace_ingredient('liquid-pure-air', 'liquid-nitrogen'
 RECIPE('diode-core'):replace_ingredient('liquid-pure-air', 'liquid-nitrogen')
 RECIPE('capacitor-termination'):replace_ingredient('boric-acid', 'liquid-nitrogen')
 RECIPE('carbon-aerogel'):replace_ingredient('syngas', 'nitrogen')
---RECIPE('superconductor'):replace_ingredient('liquid-helium', 'liquid-nitrogen')
+
+if not mods["pyrawores"] then
+
+RECIPE('superconductor'):replace_ingredient('liquid-helium', 'liquid-nitrogen')
+
+end
 
 end
 
@@ -102,7 +107,6 @@ OV.global_replace_item('chloromethane','gas-chlor-methane')
 OV.global_replace_item('methane','gas-methane')
 OV.global_replace_item('methanal','gas-formaldehyde')
 OV.global_replace_item('ammonia','gas-ammonia')
---OV.global_replace_item('solid-clay','clay')
 OV.global_replace_item('ech','gas-epichlorhydrin')
 OV.global_replace_item('ethylene','gas-ethylene')
 

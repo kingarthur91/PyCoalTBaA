@@ -38,7 +38,13 @@ local remove_result = bobmods.lib.recipe.remove_result
 		
 		--add ingredients
 		RECIPE("superior-circuit-board"):rep_ing("gold-plate", "nexelit-plate")
-		--RECIPE("advanced-circuit"):add_ing({name = "optical-fiber", amount = 2})
+		
+		if not mods["pyrawores"] then
+		
+			RECIPE("advanced-circuit"):add_ing({name = "optical-fiber", amount = 2})
+		
+		end
+		
 		RECIPE("fibreglass-board"):add_ing({name = "glass", amount = 2})
 		remove_result("bob-resin-wood", "resin")
 		add_result("bob-resin-wood", {type = "item", name = "resin", amount = 3})
@@ -89,7 +95,13 @@ local remove_result = bobmods.lib.recipe.remove_result
 		RECIPE("desulfurizator-unit"):rep_ing("iron-plate", "invar-alloy")
 		RECIPE("ground-borer"):rep_ing("iron-plate", "titanium-plate")
 		RECIPE("fts-reactor"):rep_ing("iron-plate", "invar-alloy")
-		--RECIPE("advanced-foundry-mk01"):rep_ing("iron-plate", "titanium-plate"):rep_ing("steel-plate", "invar-alloy")
+		
+		if not mods["pyrawores"] then
+		
+			RECIPE("advanced-foundry-mk01"):rep_ing("iron-plate", "titanium-plate"):rep_ing("steel-plate", "invar-alloy")
+		
+		end
+		
 		RECIPE("jaw-crusher"):rep_ing("steel-plate", "invar-alloy")
 		RECIPE("methanol-from-syngas"):rep_ing("iron-plate", "zinc-plate")
 		RECIPE("equipment-chassi"):rep_ing("copper-plate", "bronze-alloy")
@@ -157,25 +169,19 @@ RECIPE("zinc-chloride"):rep_ing("water", "hydrogen-chloride"):rem_ing("copper-pl
 
 add_result("zinc-chloride", {name = "hydrogen", amount = 20})
 
-RECIPE("active-carbon"):rep_ing("water", "nitrogen")--:add_ing({name = "sodium-hydroxide", amount = 7})
+RECIPE("active-carbon"):rep_ing("water", "nitrogen")
 
 remove_result("refsyngas-from-meth", "water")
 remove_result("refsyngas-from-meth-canister", "water")
 add_result("refsyngas-from-meth", {type = "fluid", name = "hydrogen", amount = 30})
 add_result("refsyngas-from-meth-canister", {type = "fluid", name = "hydrogen", amount = 30})
 
---RECIPE("olefin"):rem_ing("water"):add_ing({type = "fluid", name = "hydrogen", amount = 600})
-
 remove_result("aromatics", "water")
 add_result("aromatics", {type = "fluid", name = "hydrogen", amount = 100})
-
---RECIPE("gasoline"):rem_ing("gasoline", "water"):add_ing({type = "fluid", name = "hydrogen", amount = 200})
 
 RECIPE("lithium-peroxide"):rem_ing("water"):add_ing({type = "fluid", name = "lithia-water", amount = 300})
 
 RECIPE("anthraquinone"):rep_ing("steam", "liquid-air")
-
---RECIPE("ref-to-light-oil"):add_ing({type = "fluid", name = "hydrogen", amount = 250})
 
 RECIPE("combustion-olefin"):add_ing({type = "fluid", name = "hydrogen", amount = 150})
 
@@ -211,7 +217,17 @@ if data.raw["recipe-category"]["electrolysis"] then
     RECIPE("glycerol-hydrogen").category = "electrolysis"
 end
 
+if not mods["pyrawores"] then
+
 TECHNOLOGY("coal-processing-2"):add_prereq("electrolysis-1")
+
+RECIPE("ref-to-light-oil"):add_ing({type = "fluid", name = "hydrogen", amount = 250})
+RECIPE("gasoline"):rem_ing("gasoline", "water"):add_ing({type = "fluid", name = "hydrogen", amount = 200})
+RECIPE("olefin"):rem_ing("water"):add_ing({type = "fluid", name = "hydrogen", amount = 600})
+RECIPE("active-carbon"):add_ing({name = "sodium-hydroxide", amount = 7})
+
+
+end
 
 RECIPE("bob-resin-wood").energy_required = 10
 RECIPE("bob-resin-wood").category = "wpu"
