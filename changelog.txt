@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.38
+  Changes:
+	- added checks for pyro in override code for bob mod changes
+	- added item migration file to convert any bob ores to pyro ores
+	- merged molten metals and gases of pyro and angel mods
+---------------------------------------------------------------------------------------------------
 Version: 0.0.37
   Changes:
 	- removed a number of duplicaled items from recipes
