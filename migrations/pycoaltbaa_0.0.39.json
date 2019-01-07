@@ -5,6 +5,11 @@
 		["tin-ore","ore-tin"],
 		["lead-ore","ore-lead"],
 		["nickel-ore","ore-nickel"],
-		["zinc-ore","ore-zinc"]
+		["zinc-ore","ore-zinc"],
+		["valve","valvea"]
+	],
+"recipe":
+	[
+		["valve","valvea"]
 	]
 }

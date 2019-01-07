@@ -68,7 +68,15 @@ add_result("purier-helium", {type = "fluid", name = "liquid-nitrogen", amount = 
 RECIPE("agitator"):replace_ingredient("iron-plate", "glass"):replace_ingredient("electronic-circuit", "basic-circuit-board")
 RECIPE("thickener"):replace_ingredient("electronic-circuit", "basic-circuit-board"):replace_ingredient("pipe", "brass-alloy")
 RECIPE("hydrocyclone"):replace_ingredient("iron-gear-wheel", "titanium-bearing")
+if not mods["angelspetrochem"] then
+
 RECIPE("mixer"):replace_ingredient("iron-gear-wheel", "titanium-bearing"):replace_ingredient("iron-plate", "titanium-plate")
+
+else
+
+RECIPE("mixer"):replace_ingredient("iron-gear-wheel", "cobalt-steel-bearing"):replace_ingredient("iron-plate", "cobalt-steel-alloy")
+
+end
 RECIPE("diamond-mine"):replace_ingredient("iron-plate", "titanium-plate")
 RECIPE("regolite-mine"):replace_ingredient("iron-plate", "tungsten-plate")
 RECIPE("jig"):replace_ingredient("pipe", "titanium-pipe")
