@@ -1,4 +1,5 @@
 data.raw.item["landfill"].stack_size = 1000
+data.raw["furnace"]["py-sinkhole"].crafting_speed = 10
 
 --bob recipes
 if mods["boblibrary"] then
