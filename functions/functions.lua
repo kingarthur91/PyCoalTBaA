@@ -83,8 +83,17 @@ end
 			--TODO:need to check for ingredients that dont have name declared
 		elseif recipe.normal or recipe.expensive then
 		
+			if recipe.normal ~= nil then
+			
 			local ningredients = recipe.normal.ingredients 
+			
+			end
+			
+			if recipe.expensive ~= nil then
+			
 			local eingredients = recipe.expensive.ingredients
+			
+			end
 			
 			if recipe.normal then
 			
