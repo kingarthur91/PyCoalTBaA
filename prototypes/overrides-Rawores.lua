@@ -79,7 +79,7 @@ if mods["pyrawores"] then
 			results_replacer("tailings-bauxite-cobalt","bauxite-ore","ore-aluminium")
 			--results_replacer("tailings-bauxite-cobalt","cobalt-ore","ore-cobalt")
 			
-			--results_replacer("tailings-rutile-tungsten","","")
+			results_replacer("tailings-rutile-tungsten","rutile-ore","ore-titanium")
 			--results_replacer("tailings-rutile-tungsten","","")
 			
 				-- tailings_nickel_zinc
@@ -94,6 +94,7 @@ if mods["pyrawores"] then
 			global_item_replacer("lead-ore","ore-lead")
 			global_item_replacer("nickel-ore","ore-nickel")
 			global_item_replacer("zinc-ore","ore-zinc")
+			global_item_replacer("rutile-ore","ore-titanium")
 				
 		end
 		
