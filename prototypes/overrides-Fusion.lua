@@ -333,4 +333,15 @@ OV.global_replace_item('solid-sodium-chlorate','sodium-chlorate')
 	
 end
 
+
+if mods["omnimatter_compression"] then
+
+data.raw.recipe["dt-fusion"].normal.results[3] = nil
+data.raw.recipe["dt-fusion"].expensive.results[3] = nil
+log(serpent.block(data.raw.recipe["dt-fusion"].normal.results))
+
+data.raw["fluid"]["pressured-steam"].heat_capacity = "1KJ"
+
+end
+
 end
