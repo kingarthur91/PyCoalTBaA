@@ -210,6 +210,11 @@ if mods["angelspetrochem"] then
 	global_item_replacer("oxygen","gas-oxygen")
 	global_item_replacer("nitrogen","gas-nitrogen")
 	global_item_replacer("hydrogen-chloride","gas-hydrogen-chloride")
+	global_item_replacer("solid-salt","salt")
+	global_item_replacer("solid-sodium-carbonate","sodium-carbonate")
+	global_item_replacer("solid-sodium-hydroxide","sodium-hydroxide")
+	global_item_replacer("solid-sodium-sulfate","sodium-sulfate")
+	
 	
 end
 

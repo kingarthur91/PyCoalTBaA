@@ -11,3 +11,9 @@ if mods["bobplates"] then
 data.raw.technology["titanium-processing"].unit.ingredients[3] = nil
 
 end
+
+if mods["pyfusion"] and mods["angelssmelting"] then
+
+data.raw.technology["angels-tungsten-smelting"].unit.ingredients[3] = nil
+
+end

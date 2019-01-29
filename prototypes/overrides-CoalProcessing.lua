@@ -163,7 +163,11 @@ RECIPE("glycerol-hydrogen"):rep_ing("water", "liquid-air")
 remove_result("glycerol-hydrogen", "petroleum-gas")
 add_result("glycerol-hydrogen", {type = "fluid", name = "hydrogen", amount = 300})
 
+if not mods["pyrawores"] then
+
 RECIPE("laser-turret"):add_ing({name = "lens", amount = 1})
+
+end
 
 RECIPE("zinc-chloride"):rep_ing("water", "hydrogen-chloride"):rem_ing("copper-plate")
 

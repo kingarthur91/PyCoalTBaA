@@ -96,8 +96,14 @@ RECIPE("molybdenum-plate"):change_category("electrolysis")
 remove_result("cobalt-solvent", "ash")
 add_result("cobalt-solvent", {type = "item", name = "cobalt-ore", amount = 5})
 
-RECIPE("sodium-chlorate"):remove_ingredient('sodium-chlorate', 'water-saline'):add_ingredient({type = "item", name = "salt", amount = 20}):change_category('electrolysis')
+RECIPE("sodium-chlorate"):remove_ingredient('sodium-chlorate', 'water-saline'):change_category('electrolysis')
+
+if not mods["pyrawores"] then
+
+RECIPE("sodium-chlorate"):add_ingredient({type = "item", name = "salt", amount = 20})
 add_result("sodium-chlorate", {type = "fluid", name = "hydrogen", amount = 150})
+
+end
 
 RECIPE("super-alloy"):replace_ingredient("steel-plate", "nickel-plate")
 RECIPE("grease"):add_ingredient({type = "item", name = "lithium", amount = 15})

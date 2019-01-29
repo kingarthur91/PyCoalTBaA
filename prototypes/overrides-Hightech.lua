@@ -57,7 +57,13 @@ RECIPE("wood-board"):set_enabled(false):remove_unlock()
 
 
 RECIPE("phosphate-glass"):replace_ingredient('glass-fiber', 'crushed-quartz')
+
+if not mods["pyrawores"] then
+
 RECIPE("silicon-wafer"):add_ingredient({type = 'item', name = 'crushed-quartz', amount = 2})
+
+end
+
 RECIPE('small-lamp'):replace_ingredient('basic-circuit-board', 'copper-plate')
 RECIPE("nano-wires"):add_ingredient({type = 'item', name = 'crushed-gold', amount = 10})
 

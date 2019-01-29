@@ -1,4 +1,3 @@
-
 if mods["angelspetrochem"] then
 	   
 	if mods["pyfusionenergy"] then
@@ -9,15 +8,14 @@ if mods["angelspetrochem"] then
 		if data.raw.item["molybdenum-ore"] and angelsmods.refining then
 		   data.raw.resource["molybdenum-ore"]["autoplace"] = nil
 		   data.raw["autoplace-control"]["molybdenum-ore"] = nil
-		   
+		end
+		
    end
 	
 	if settings.startup["pymods-infinite-moly"].value then
 
-local OV = angelsmods.functions.OV
-
    -- Infinity ore patches
-   if angelsmods.ores and angelsmods.ores.enableinfiniteuraniumpower then -- TO DO: change to molybdenum ore settings
+   if angelsmods.ores then -- TO DO: change to molybdenum ore settings
 
       if not angelsmods.ores.enablersomode then
       data:extend(
@@ -179,8 +177,6 @@ local OV = angelsmods.functions.OV
    end
 end   
 
-
-end
 
 end
 

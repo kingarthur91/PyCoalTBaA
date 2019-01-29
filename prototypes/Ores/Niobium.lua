@@ -1,4 +1,3 @@
-
 if mods["angelspetrochem"] then
 
 	if settings.startup["pymods-remove-regular-niobium"].value then
@@ -7,15 +6,14 @@ if mods["angelspetrochem"] then
 		if data.raw.item["niobium-ore"] and angelsmods.refining then
 		   data.raw.resource["niobium"]["autoplace"] = nil
 		   data.raw["autoplace-control"]["niobium"] = nil
-	   
 	   end
+	   
+	end
 
 if settings.startup["pymods-infinite-niobium"].value then
 
-local OV = angelsmods.functions.OV
-
    -- Infinity ore patches
-   if angelsmods.ores and angelsmods.ores.enableinfiniteuraniumpower then -- TO DO: change to molybdenum ore settings
+   if angelsmods.ores then -- TO DO: change to molybdenum ore settings
 
       if not angelsmods.ores.enablersomode then
       data:extend(
@@ -178,7 +176,5 @@ local OV = angelsmods.functions.OV
       end
    end
 end   
-
-end
 
 end
