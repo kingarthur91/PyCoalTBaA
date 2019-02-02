@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.40
+  Changes:
+	- added all pyro ores to omnimatter
+	- fixed issues with recycled factory and madclowns mods with pycoaltbaa
+---------------------------------------------------------------------------------------------------
 Version: 0.0.39
   Changes:
 	- merged several sodium products from pyrawores and angels mods
