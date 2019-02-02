@@ -35,15 +35,21 @@
 		
 		if recipe.results ~= nil then
 			
-			if recipe.results[1].name == "slag" and recipe.results[2] == nil then
+			--log(serpent.block(recipe))
 			
-			data.raw.recipe[name].hidden = true
+			if recipe.results[1] ~= nil then
 			
-			end
-			
-			if recipe.results[1].name == "angels-void" and recipe.results[2] == nil then
-			
-			data.raw.recipe[name].hidden = true
+				if recipe.results[1].name == "slag" and recipe.results[2] == nil then
+				
+				data.raw.recipe[name].hidden = true
+				
+				end
+				
+				if recipe.results[1].name == "angels-void" and recipe.results[2] == nil then
+				
+				data.raw.recipe[name].hidden = true
+				
+				end
 			
 			end
 			
