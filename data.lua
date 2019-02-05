@@ -8,3 +8,6 @@ require("stdlib/data/data").create_data_globals()
 	require("updates.acid-changes")
 
 	require("updates.pyproductivityadjuster")
+
+	require("uberhaul.recipe")
+	require("uberhaul.technology")

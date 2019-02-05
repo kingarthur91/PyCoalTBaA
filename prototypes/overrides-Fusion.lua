@@ -1,5 +1,7 @@
 require("functions/functions")
 
+if not settings.startup["uberhaul"].value then
+
 if mods["pyfusionenergy"] then
 
 --bob mods stuff
@@ -347,6 +349,8 @@ data.raw.recipe["dt-fusion"].expensive.results[3] = nil
 log(serpent.block(data.raw.recipe["dt-fusion"].normal.results))
 
 data.raw["fluid"]["pressured-steam"].heat_capacity = "1KJ"
+
+end
 
 end
 

@@ -1,3 +1,5 @@
+if not settings.startup["uberhaul"].value then
+
 if mods["angelspetrochem"] then
 
 data.raw["technology"]["angels-nitrogen-processing-1"].prerequisites = nil
@@ -15,5 +17,7 @@ end
 if mods["pyfusion"] and mods["angelssmelting"] then
 
 data.raw.technology["angels-tungsten-smelting"].unit.ingredients[3] = nil
+
+end
 
 end

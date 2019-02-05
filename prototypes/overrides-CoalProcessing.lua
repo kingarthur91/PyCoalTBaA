@@ -1,5 +1,7 @@
 require("functions/functions")
 
+if not settings.startup["uberhaul"].value then
+
 if mods["aai-industry-sp0"] and not mods["angelspetrochem"] then
 
 	data.raw.item["storage-tank-0"].subgroup = "storage"
@@ -500,6 +502,8 @@ if mods["angelssmelting"] then
 
 	global_item_replacer("angels-plate-chrome","chromium")
 	
+end
+
 end
 
 end

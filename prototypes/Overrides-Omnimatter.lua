@@ -1,4 +1,6 @@
 
+if not settings.startup["uberhaul"].value then
+
 if mods["omnimatter"] then
 
 omni.add_resource("raw-borax",1,"__PyCoalTBaA__/graphics/technology/extraction-borax.png","PyCoalTBaA")
@@ -176,6 +178,8 @@ if mods["pyrawores"] then
 )
 	
 	
+end
+
 end
 
 end

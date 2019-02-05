@@ -1,3 +1,5 @@
+if not settings.startup["uberhaul"].value then
+
 if mods["pyhightech"] then
 
 ITEM {
@@ -164,5 +166,7 @@ ITEM {
     order = "g",
     stack_size = 1000
 }
+
+end
 
 end

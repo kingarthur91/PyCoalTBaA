@@ -1,3 +1,5 @@
+if not settings.startup["uberhaul"].value then
+
 
 if mods["Bio_Industries"] then
 
@@ -131,6 +133,8 @@ for i, recipe_name in ipairs(result_list) do
 			
 		end
 		
+end
+
 end
 
 end

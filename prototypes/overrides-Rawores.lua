@@ -1,5 +1,7 @@
 require("functions/functions")
 
+if not settings.startup["uberhaul"].value then
+
 if mods["pyrawores"] then
 
 	if mods["aai-industry-sp0"] then
@@ -249,4 +251,6 @@ data.raw.resource["quartz-rock"].minable.results = {{type = "item", name = "ore-
 
 end
 	
+end
+
 end

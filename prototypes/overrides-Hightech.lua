@@ -1,5 +1,7 @@
 require("functions/functions")
 
+if not settings.startup["uberhaul"].value then
+
 if mods["pyhightech"] then
 
 --bob mods stuff
@@ -389,6 +391,8 @@ if mods["KaoExtended"] then
 	RECIPE("predictive-io"):replace_ingredient('basic-electronic-components','resistor1')
 	
 	RECIPE("intelligent-unit"):add_ingredient({type = 'item', name = 'predictive-io', amount = 2})
+end
+
 end
 
 end
