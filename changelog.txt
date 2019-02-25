@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.41
+  Changes:
+	- added check for pyfusion with bobs mods active
+	- added check for bio-processing refer being enabled
+	- fixed errror for py+angel balance uberhaul
+---------------------------------------------------------------------------------------------------
 Version: 0.0.40
   Changes:
 	- added all pyro ores to omnimatter

@@ -206,114 +206,118 @@ OV.global_replace_item('bio-raw-meat','meat')
 angelsmods.functions.make_converter("black-liquor","liquid-black-liquor")
 angelsmods.functions.make_converter("acetic-acid","liquid-acetic-acid")
 
-	OV.patch_recipes(
-	
-		{
-			{
-				name = "solid-alginic-acid",
-				category = "crafting"
-			},
-			
-			{
-				name = "wooden-board-paper",
-				category = "crafting",
-				ingredients = 
-				{
-					{type = "item", name = "solid-paper", amount = 4}
-				}
-			},
-			
-			{
-				name = "biter-small-butchering",
-				category = "crafting-with-fluid",
-				results =
-				
-					{
-						{type = "fluid", name = "blood", amount = 20},
-						{type = "item", name = "bones", amount = 3}
-					}
-			},
-		
-			{
-				name = "biter-medium-butchering",
-				category = "crafting-with-fluid",
-				results =
-				
-					{
-						{type = "fluid", name = "blood", amount = 30},
-						{type = "item", name = "bones", amount = 3}
-					}
-			},
-		
-			{
-				name = "biter-big-butchering",
-				category = "crafting-with-fluid",
-				results =
-				
-					{
-						{type = "fluid", name = "blood", amount = 60},
-						{type = "item", name = "bones", amount = 5}
-					}
-			},
-		
-			{
-				name = "fish-butchery-1",
-				category = "crafting-with-fluid",
-				results =
-				
-					{
-						{type = "fluid", name = "blood", amount = 15},
-						{type = "item", name = "bones", amount = 3}
-					},
-				main_product = "meat"
-			},
-		
-			{
-				name = "fish-butchery-2",
-				category = "crafting-with-fluid",
-				results =
-				
-					{
-						{type = "fluid", name = "blood", amount = 25},
-						{type = "item", name = "bones", amount = 2}
-					},
-				main_product = "meat"
-			},
-		
-			{
-				name = "fish-butchery-3",
-				category = "crafting-with-fluid",
-				results =
-				
-					{
-						{type = "fluid", name = "blood", amount = 40},
-						{type = "item", name = "bones", amount = 5}
-					},
-				main_product = "meat"
-			}
-		}
-		
-	)
+	if data.raw.technology["bio-refugium-puffer"] ~= nil then
 
-data:extend({
-	{
-		type = "recipe",
-		name = "steak",
-		category = "hpf",
-		enabled = false,
-		energy_required = .75,
-		ingredients = 
-			{
-				{type = "item", name = "meat", amount = 1}
-			},
-		results = 
-			{
-				{type = "item", name = "solid-carbon", amount = 1}
-			}
-	}
-})			
+		OV.patch_recipes(
 		
-table.insert(data.raw["technology"] ["bio-refugium-puffer"].effects, {type = "unlock-recipe", recipe = "steak"})	
+			{
+				{
+					name = "solid-alginic-acid",
+					category = "crafting"
+				},
+				
+				{
+					name = "wooden-board-paper",
+					category = "crafting",
+					ingredients = 
+					{
+						{type = "item", name = "solid-paper", amount = 4}
+					}
+				},
+				
+				{
+					name = "biter-small-butchering",
+					category = "crafting-with-fluid",
+					results =
+					
+						{
+							{type = "fluid", name = "blood", amount = 20},
+							{type = "item", name = "bones", amount = 3}
+						}
+				},
+			
+				{
+					name = "biter-medium-butchering",
+					category = "crafting-with-fluid",
+					results =
+					
+						{
+							{type = "fluid", name = "blood", amount = 30},
+							{type = "item", name = "bones", amount = 3}
+						}
+				},
+			
+				{
+					name = "biter-big-butchering",
+					category = "crafting-with-fluid",
+					results =
+					
+						{
+							{type = "fluid", name = "blood", amount = 60},
+							{type = "item", name = "bones", amount = 5}
+						}
+				},
+			
+				{
+					name = "fish-butchery-1",
+					category = "crafting-with-fluid",
+					results =
+					
+						{
+							{type = "fluid", name = "blood", amount = 15},
+							{type = "item", name = "bones", amount = 3}
+						},
+					main_product = "meat"
+				},
+			
+				{
+					name = "fish-butchery-2",
+					category = "crafting-with-fluid",
+					results =
+					
+						{
+							{type = "fluid", name = "blood", amount = 25},
+							{type = "item", name = "bones", amount = 2}
+						},
+					main_product = "meat"
+				},
+			
+				{
+					name = "fish-butchery-3",
+					category = "crafting-with-fluid",
+					results =
+					
+						{
+							{type = "fluid", name = "blood", amount = 40},
+							{type = "item", name = "bones", amount = 5}
+						},
+					main_product = "meat"
+				}
+			}
+			
+		)
+
+	data:extend({
+		{
+			type = "recipe",
+			name = "steak",
+			category = "hpf",
+			enabled = false,
+			energy_required = .75,
+			ingredients = 
+				{
+					{type = "item", name = "meat", amount = 1}
+				},
+			results = 
+				{
+					{type = "item", name = "solid-carbon", amount = 1}
+				}
+		}
+	})			
+			
+	table.insert(data.raw["technology"] ["bio-refugium-puffer"].effects, {type = "unlock-recipe", recipe = "steak"})	
+
+	end
 
 end
 

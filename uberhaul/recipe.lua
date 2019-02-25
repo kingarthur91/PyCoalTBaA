@@ -1,5 +1,7 @@
 if settings.startup["uberhaul"].value then
 
+if mods["angelsbioprocessing"] then
+
 -- remove all recipes and remake them?
 
 --TODO: sci 1 - fawage substrate replace coke with alge.
@@ -18,5 +20,7 @@ data.raw.recipe["fawogae-substrate"].ingredients =
 --change quartz recipes to give molten glass and flask made from molten glass. glass panes made from molten glass
 
 --made molten glass icon need to update angels molten glass item icon for recipes
+
+end
 
 end

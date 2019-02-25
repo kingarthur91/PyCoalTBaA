@@ -442,6 +442,8 @@ if mods["bobores"] and not mods["pyrawores"] then
         order = "n"
     }:add_unlock("excavation-2")
 	
+if data.raw.item["carbon"] ~= nil then
+
 	--uses bob_carbon
 RECIPE {
     type = "recipe",
@@ -461,6 +463,8 @@ RECIPE {
     icon = data.raw.item.carbon.icon,
     icon_size = 32
 }:add_unlock("coal-processing-1")
+
+end
  
 --alternative silicon plate
 RECIPE {
@@ -801,6 +805,8 @@ RECIPE {
     order = "a [coal-gas]"
 }:add_unlock("coal-processing-2")
 
+if data.raw.item["wooden-board"] ~= nil then
+
 --WOOD-TO-WOODEN BOARD override bobs?
 RECIPE {
     type = "recipe",
@@ -819,6 +825,8 @@ RECIPE {
     subgroup = "py-items",
     order = "a8"
 }
+
+end
 
 --HYDROGEN to CM1
 RECIPE {
@@ -1327,6 +1335,8 @@ RECIPE {
 
 
 --Pyfusion bob recipes
+if mods["pyfusion"] then
+
 RECIPE {
     type = "recipe",
     name = "liquid-nitrogen",
@@ -1367,6 +1377,8 @@ RECIPE {
     subgroup = "py-fusion-gases",
     order = "b"
 }:add_unlock("helium-processing")
+
+end
 
 end
 

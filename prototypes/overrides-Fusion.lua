@@ -135,7 +135,13 @@ add_result("purier-helium", {type = "fluid", name = "liquid-nitrogen", amount = 
 RECIPE("nexelit-matrix"):replace_ingredient("wood", "resin")
 RECIPE("nbti-alloy"):replace_ingredient("steel-plate", "titanium-plate"):add_ingredient({type = "fluid", name = "nitrogen", amount = 150})
 RECIPE("sc-wire"):replace_ingredient("iron-plate", "tin-plate")
+
+if not mods["pyrawores"] then
+
 RECIPE("ferrite"):add_ingredient({type = "item", name = "zinc-plate", amount = 10})
+
+end
+
 RECIPE("coil-core"):replace_ingredient("copper-cable", "gilded-copper-cable")
 
 RECIPE("sc-wire"):add_ingredient({type = "item", name = "glass", amount = 12})
