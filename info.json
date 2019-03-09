@@ -1,6 +1,6 @@
 {
 	"name": "PyCoalTBaA",
-	"version": "0.0.42",
+	"version": "0.0.43",
 	"factorio_version": "0.17",
 	"title": "PyCoal Touched By an Angel",
 	"author": "KingArthur",
@@ -14,7 +14,7 @@
 	"?angelsbioprocessing >= 0.5.0",
 	"?angelspetrochem >= 0.5.13",
 	"?angelssmelting >= 0.4.3",
-	"?Bio_Industries >= 2.6.5",
+	"?Bio_Industries >= 0.17.0",
 	"?bobelectronics >= 0.16.0",
 	"?boblogistics >= 0.16.23",
 	"?bobores >= 0.16.2",

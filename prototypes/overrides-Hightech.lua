@@ -20,6 +20,8 @@ ingredient_replace("sub-denier-microfiber","ammonia","nitrogen-dioxide")
 --ingredient_replace ("cm-electronic-circuit","valve","valvea")
 
 	if mods["bobelectronics"] then
+	
+	--log("this is working yes?")
 		--TODO:
 		global_item_replacer("basic-circuit-board","pcb1")
 		global_item_replacer("circuit-board","pcb2")
@@ -28,6 +30,9 @@ ingredient_replace("sub-denier-microfiber","ammonia","nitrogen-dioxide")
 		global_item_replacer("advanced-circuit","cm-advanced-circuit")
 		global_item_replacer("processing-unit","cm-processing-unit")
 		global_item_replacer("advanced-processing-unit","intelligent-unit")
+		
+		--ingredient_replace("offshore-pump","pcb1","cm-electronic-circuit")
+		
 	end
 	
 --old py code

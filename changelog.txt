@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.43
+  Changes:
+	- corrected bio industries dependency number
+	- fixed? error with offshore pump when bob electronics and pyht loaded
+---------------------------------------------------------------------------------------------------
 Version: 0.0.41
   Changes:
 	- added check for pyfusion with bobs mods active
