@@ -1287,7 +1287,42 @@ RECIPE {
     main_product = 'valvea'
 }:add_ingredient({type = 'fluid', name = 'vacuum', amount = 50})
 
+	if data.raw.recipe["valve"].category == "electronic" then
+
+		data.raw.recipe["valve"].enabled = false
+
+	end
+	
+	data.raw.recipe["electronic-circuit"].enabled = false
+		
+		for t, tech in pairs(data.raw.technology["basic-electronics"].effects) do
+			
+			if tech.recipe == "electronic-circuit" then
+			
+				table.remove(data.raw.technology["basic-electronics"].effects,t)
+
+			end
+			
+			if tech.recipe == "advanced-circuit" then
+			
+				table.remove(data.raw.technology["basic-electronics"].effects,t)
+				
+			end
+			
+		end
+		
+		for t, tech in pairs(data.raw.technology["advanced-electronics"].effects) do
+			
+			if tech.recipe == "processing-unit" then
+			
+				table.remove(data.raw.technology["advanced-electronics"].effects,t)
+
+			end
+			
+		end
 end
+
+log(serpent.block(data.raw.technology["basic-electronics"]))
 
 --pycoal bob recipes
 RECIPE {
