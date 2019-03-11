@@ -10,15 +10,15 @@ if mods["pyrawores"] then
 	
 	end
 
-	if mods["pyhightech"] then
-	
-	table.insert(data.raw.recipe["valvea"].ingredients,{type = "item", name = "glass", amount = 2})
-	
-	end
-	
 	--bob mods stuff
 	if mods["boblibrary"] then
-
+			
+		if mods["pyhightech"] then
+		
+		table.insert(data.raw.recipe["valvea"].ingredients,{type = "item", name = "glass", amount = 2})
+		
+		end
+		
 		--[[bob-updates.lua]] -- luacheck: globals bobmods
 
 	local add_result = bobmods.lib.recipe.add_result

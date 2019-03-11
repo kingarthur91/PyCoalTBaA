@@ -1,4 +1,9 @@
 
+--need electric miner for crystal miner
+--need pipes
+--need tin wire / cant get tin without electric miner
+
+
 if mods["aai-industry"] then
 
 if mods["angelspetrochem"] then
@@ -15,6 +20,6 @@ local OV = angelsmods.functions.OV
 
 end
 	  
-  data.raw.container["aai-big-ship-wreck-1"].inventory_size = 6
+  data.raw.container["aai-big-ship-wreck-1"].inventory_size = 20
   
 end

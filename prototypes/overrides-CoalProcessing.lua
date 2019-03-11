@@ -76,7 +76,13 @@ local remove_result = bobmods.lib.recipe.remove_result
 		RECIPE("ulric-corral"):rep_ing("iron-gear-wheel", "steel-bearing")
 		RECIPE("solid-separator"):rep_ing("iron-gear-wheel", "steel-gear-wheel")
 		RECIPE("classifier"):rep_ing("iron-stick", "brass-gear-wheel")
-		RECIPE("borax-mine"):rep_ing("iron-gear-wheel", "steel-bearing")
+			
+			if not mods["pyrawores"] then
+			
+				RECIPE("borax-mine"):rep_ing("iron-gear-wheel", "steel-bearing")
+			
+			end
+			
 		RECIPE("ralesia-plantation"):rep_ing("pipe", "steel-pipe")
 		RECIPE("sand-extractor"):rep_ing("iron-gear-wheel", "brass-gear-wheel")
 		RECIPE("flying-robot-frame"):rep_ing("steel-plate", "niobium-plate")
