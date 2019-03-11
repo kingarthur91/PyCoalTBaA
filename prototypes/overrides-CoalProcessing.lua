@@ -128,10 +128,9 @@ local remove_result = bobmods.lib.recipe.remove_result
 		RECIPE("cladding"):rep_ing("sand", "glass")
 		
 		--add ingrediants
-		RECIPE("botanical-nursery"):add_ing({name = "glass", amount = 10})
-		
 		if not mods["pyrawores"] then
 		
+		RECIPE("botanical-nursery"):add_ing({name = "glass", amount = 10})
 		RECIPE("filtration-media"):add_ing({type = "item", name = "glass", amount = 5})
 		
 		end
