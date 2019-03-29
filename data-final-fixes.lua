@@ -65,4 +65,5 @@ recipe_output_mod()
 
 end
 
---duplicatechecker()
+--productivity recipe checker
+--try copying limitaion list and resetting it to updated list afterwards
