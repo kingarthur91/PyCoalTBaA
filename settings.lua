@@ -108,7 +108,7 @@ data:extend(
 end
 
 --if mods["angelsbioprocessing"] and mods["pycoalprocessing"] and mods["pyfusionenergy"] and mods["pyhightech"] and mods["pyindustry"] and mods["pyrawores"] then
-
+--[[
 data:extend(
 {
 	{
@@ -120,5 +120,5 @@ data:extend(
 	}
 }
 )
-
+]]--
 --end

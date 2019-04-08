@@ -1,5 +1,5 @@
 
-if not settings.startup["uberhaul"].value then
+--if not settings.startup["uberhaul"].value then
 
 if mods["pyscience"] then
 
@@ -14,4 +14,4 @@ table.insert(data.raw.technology["fine-electronics"].effects,{type = "unlock-rec
 
 end
 
-end
+--end

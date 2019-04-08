@@ -1,4 +1,4 @@
-if not settings.startup["uberhaul"].value then
+--if not settings.startup["uberhaul"].value then
 
 if mods["angelspetrochem"] then
 
@@ -20,4 +20,4 @@ data.raw.technology["angels-tungsten-smelting"].unit.ingredients[3] = nil
 
 end
 
-end
+--end

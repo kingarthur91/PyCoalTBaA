@@ -1,4 +1,4 @@
-if not settings.startup["uberhaul"].value then
+--if not settings.startup["uberhaul"].value then
 
 if mods["pyhightech"] then
 
@@ -169,4 +169,4 @@ ITEM {
 
 end
 
-end
+--end

@@ -1,0 +1,58 @@
+data:extend(
+{
+	{
+    type = "item",
+    name = "electric-motor-1",
+    icon = "__angelsindustries__/graphics/icons/electric-motor-1.png",
+    icon_size = 32,
+    subgroup = "angels-motors",
+    order = "a",
+    stack_size = 100,
+	},
+	{
+    type = "item",
+    name = "iron-magnet-1",
+    icon = "",
+    icon_size = 32,
+    subgroup = "",
+    order = "a",
+    stack_size = 100,
+	},
+	{
+    type = "item",
+    name = "copper-winding",
+    icon = "",
+    icon_size = 32,
+    subgroup = "",
+    order = "a",
+    stack_size = 100,
+	},
+	{
+    type = "item",
+    name = "empty-casing",
+    icon = "",
+    icon_size = 32,
+    subgroup = "",
+    order = "a",
+    stack_size = 100,
+	},
+	{
+    type = "item",
+    name = "complete-casing",
+    icon = "",
+    icon_size = 32,
+    subgroup = "",
+    order = "a",
+    stack_size = 100,
+	},
+	{
+    type = "item",
+    name = "assmbled-shaft",
+    icon = "",
+    icon_size = 32,
+    subgroup = "",
+    order = "a",
+    stack_size = 100,
+	},
+}
+)

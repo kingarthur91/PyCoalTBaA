@@ -1,7 +1,12 @@
 data.raw.item["landfill"].stack_size = 1000
-data.raw["furnace"]["py-sinkhole"].crafting_speed = 10
 
-if not settings.startup["uberhaul"].value then
+if data.raw["furnace"]["py-sinkhole"] ~= nil then
+
+	data.raw["furnace"]["py-sinkhole"].crafting_speed = 10
+
+end
+
+--if not settings.startup["uberhaul"].value then
 
 --bob recipes
 if mods["boblibrary"] then
@@ -1620,4 +1625,4 @@ data:extend(
 
 end
 
-end
+--end

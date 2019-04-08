@@ -67,3 +67,18 @@ end
 
 --productivity recipe checker
 --try copying limitaion list and resetting it to updated list afterwards
+
+log("assembly machine recipes")
+log(serpent.block(data.raw.recipe["assembling-machine-1"]))
+log(serpent.block(data.raw.recipe["assembling-machine-2"]))
+log(serpent.block(data.raw.recipe["assembling-machine-3"]))
+
+local recipecount = 0
+
+for _,r in pairs(data.raw.recipe) do
+
+	recipecount = recipecount + 1
+	
+end
+
+log(recipecount)

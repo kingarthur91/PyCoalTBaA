@@ -1,6 +1,6 @@
 require("functions/functions")
 
-if not settings.startup["uberhaul"].value then
+--if not settings.startup["uberhaul"].value then
 
 if mods["aai-industry-sp0"] and not mods["angelspetrochem"] then
 
@@ -511,4 +511,4 @@ end
 
 end
 
-end
+--end

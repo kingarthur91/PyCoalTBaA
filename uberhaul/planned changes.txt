@@ -1,0 +1,46 @@
+	--((Science and tech changes))--
+
+make early game sample analizer. see if i can borrow angels basic lab if industries isnt coming back soonish
+
+rename sciences
+	science 1 gets changed to astrobiology science pack
+	add ground sample to science 1
+		
+		make an exobiology tech 
+			- realign farming to branch from exobiology
+			- move lab equipment, ground sample,  seeded dish, petri dish and substrate dish
+			
+		move chlorine processing to t1
+
+	--Science pack 2 changes
+add seeded dish to science 2
+replace ground sample with puffer eggs?, puffers?. some puffer related item
+
+world gen changes
+make changes so that getting a swamp tree is easyier or add a different way to get the needed seeds
+
+
+	--((Automation changes))--
+	
+	all base game assembly machines will be limited to 1 ingrediant.
+		might have to adjust this based on planned path and make it lvl 1 is 1. lvl 2 is 2 and lvl 3 is 3 ingrediants
+	
+	assembly machines will have energy source changes and automated factorys will have energy usage increased. base game ass 3 is at 375kw automated factory starts at 100kw for an extra .25 crafting speed
+	
+	assembly machine 1 will be steam powered and limited to 1 item tasks
+	
+	assembly machine 2 will come in 2 versions. 1 will be electric powered and require electric motors/engines. 2 will be gas (hydrocarbon most fuels) powered and require regular engines. 
+	
+		electric engines will tech will remove the prereq of regular motors as they are pretty much unrelated
+			change around techs related to electric generation and transmission
+				electric motors will be part of the first tech
+					need to make a lub recipe availble early (probalbly from the farms)
+				steam engines, py turbines and power equipment all fall under here
+					nuclear and fusion will also branch off of here later in tree
+					
+	--(Fluids)--
+	
+	find all oil based fluids and sort out names and where they belong in the "distilation" tree
+		naptha is duplicated and angels is a rename of petroleum gas
+			petroleum gas icon is ethylene
+			
