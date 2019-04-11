@@ -1,6 +1,6 @@
 require("functions/functions")
 
---if not settings.startup["uberhaul"].value then
+if not settings.startup["uberhaul"].value then
 
 if mods["pyhightech"] then
 
@@ -23,13 +23,13 @@ ingredient_replace("sub-denier-microfiber","ammonia","nitrogen-dioxide")
 	
 	--log("this is working yes?")
 		--TODO:
-		global_item_replacer("basic-circuit-board","pcb1")
-		global_item_replacer("circuit-board","pcb2")
-		global_item_replacer("superior-circuit-board","pcb3")
-		global_item_replacer("electronic-circuit","cm-electronic-circuit")
-		global_item_replacer("advanced-circuit","cm-advanced-circuit")
-		global_item_replacer("processing-unit","cm-processing-unit")
-		global_item_replacer("advanced-processing-unit","intelligent-unit")
+		FUN.global_item_replacer("basic-circuit-board","pcb1")
+		FUN.global_item_replacer("circuit-board","pcb2")
+		FUN.global_item_replacer("superior-circuit-board","pcb3")
+		FUN.global_item_replacer("electronic-circuit","cm-electronic-circuit")
+		FUN.global_item_replacer("advanced-circuit","cm-advanced-circuit")
+		FUN.global_item_replacer("processing-unit","cm-processing-unit")
+		FUN.global_item_replacer("advanced-processing-unit","intelligent-unit")
 		
 		--ingredient_replace("offshore-pump","pcb1","cm-electronic-circuit")
 		
@@ -404,4 +404,4 @@ end
 
 end
 
---end
+end

@@ -1,4 +1,4 @@
---if not settings.startup["uberhaul"].value then
+if not settings.startup["uberhaul"].value then
 
 
 if mods["Bio_Industries"] then
@@ -139,4 +139,4 @@ end
 
 end
 
---end
+end

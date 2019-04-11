@@ -6,7 +6,7 @@ if data.raw["furnace"]["py-sinkhole"] ~= nil then
 
 end
 
---if not settings.startup["uberhaul"].value then
+if not settings.startup["uberhaul"].value then
 
 --bob recipes
 if mods["boblibrary"] then
@@ -1625,4 +1625,4 @@ data:extend(
 
 end
 
---end
+end

@@ -1,6 +1,6 @@
 require("functions/functions")
 
---if not settings.startup["uberhaul"].value then
+if not settings.startup["uberhaul"].value then
 
 if mods["pyfusionenergy"] then
 
@@ -360,4 +360,4 @@ end
 
 end
 
---end
+end

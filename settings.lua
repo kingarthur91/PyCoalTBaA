@@ -107,18 +107,19 @@ data:extend(
 
 end
 
---if mods["angelsbioprocessing"] and mods["pycoalprocessing"] and mods["pyfusionenergy"] and mods["pyhightech"] and mods["pyindustry"] and mods["pyrawores"] then
---[[
+if mods["angelsbioprocessing"] and mods["pycoalprocessing"] and mods["pyfusionenergy"] and mods["pyhightech"] and mods["pyindustry"] and mods["pyrawores"] then
+
 data:extend(
 {
 	{
 	type = "bool-setting",
 	name = "uberhaul",
 	setting_type = "startup",
-	default_value = false,
+	--undo this later
+	default_value = true,
 	order = "a",
 	}
 }
 )
-]]--
---end
+
+end

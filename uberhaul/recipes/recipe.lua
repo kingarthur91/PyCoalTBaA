@@ -35,7 +35,7 @@ local glassrecipes =
 	}
 	
 for _,g in pairs(glassrecipes) do
-	get the recipe
+	--get the recipe
 	local r = data.raw.recipe[g]
 	--get old amount to multiply it by 10 molten glass
 	local amount = r.results[1].amount * 10
@@ -53,7 +53,7 @@ data:extend(
 	--basic magnet
 	{
 	type = "recipe",
-	name = "iron-magnet-1"
+	name = "iron-magnet-1",
 	energy_required = 1,
 	category = "crafting",
 	enabled = false,
@@ -69,7 +69,7 @@ data:extend(
 	--copper-winding
 	{
 	type = "recipe",
-	name = "copper-winding"
+	name = "copper-winding",
 	energy_required = 2,
 	category = "crafting",
 	enabled = false,
@@ -85,7 +85,7 @@ data:extend(
 	--empty-casing
 	{
 	type = "recipe",
-	name = "empty-caseing"
+	name = "empty-caseing",
 	energy_required = 2.5,
 	category = "crafting",
 	enabled = false,
@@ -101,7 +101,7 @@ data:extend(
 	--assemble shaft and center magnet
 	{
 	type = "recipe",
-	name = "assembled-shaft-1"
+	name = "assembled-shaft-1",
 	energy_required = 2.5,
 	category = "crafting",
 	enabled = false,
@@ -118,7 +118,7 @@ data:extend(
 	--assemble case and coil windings
 	{
 	type = "recipe",
-	name = "complete-casing-1"
+	name = "complete-casing-1",
 	energy_required = 2.5,
 	category = "crafting",
 	enabled = false,
@@ -135,7 +135,7 @@ data:extend(
 	--assemble outer and inner parts
 	{
 	type = "recipe",
-	name = "electric-motor-1"
+	name = "electric-motor-1",
 	energy_required = 2.5,
 	category = "crafting",
 	enabled = false,
@@ -152,7 +152,7 @@ data:extend(
 	--molten glass to flasks
 	{
 	type = "recipe",
-	name = "flasks-1"
+	name = "flasks-1",
 	energy_required = 1,
 	category = "crafting-with-fluid",
 	enabled = false,
@@ -170,7 +170,7 @@ data:extend(
 	--molten glass to glass sheet
 	{
 	type = "recipe",
-	name = "glass-sheet-1"
+	name = "glass-sheet-1",
 	energy_required = 1,
 	category = "crafting-with-fluid",
 	enabled = false,

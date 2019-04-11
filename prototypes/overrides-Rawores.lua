@@ -1,6 +1,6 @@
-require("functions/functions")
+local FUN = require("functions/functions")
 
---if not settings.startup["uberhaul"].value then
+if not settings.startup["uberhaul"].value then
 
 if mods["pyrawores"] then
 
@@ -75,20 +75,20 @@ if mods["pyrawores"] then
 			data.raw["map-gen-presets"]["default"]["rail-world"]["basic_settings"] = nil
 			data.raw["map-gen-presets"]["default"]["rich-resources"]["basic_settings"] = nil
 			
-			results_replacer("tailings-tin-lead","tin-ore","ore-tin")
-			results_replacer("tailings-tin-lead","lead-ore","ore-lead")
+			FUN.FUN.results_replacer("tailings-tin-lead","tin-ore","ore-tin")
+			FUN.results_replacer("tailings-tin-lead","lead-ore","ore-lead")
 			
-			results_replacer("tailings-nickel-zinc","nickel-ore","ore-nickel")
-			results_replacer("tailings-nickel-zinc","zinc-ore","ore-zinc")
+			FUN.results_replacer("tailings-nickel-zinc","nickel-ore","ore-nickel")
+			FUN.results_replacer("tailings-nickel-zinc","zinc-ore","ore-zinc")
 			
-			--results_replacer("tailings-gold-silver","gold-ore","ore-gold")
-			--results_replacer("tailings-gold-silver","silver-ore","ore-silver")
+			--FUN.results_replacer("tailings-gold-silver","gold-ore","ore-gold")
+			--FUN.results_replacer("tailings-gold-silver","silver-ore","ore-silver")
 			
-			results_replacer("tailings-bauxite-cobalt","bauxite-ore","ore-aluminium")
-			--results_replacer("tailings-bauxite-cobalt","cobalt-ore","ore-cobalt")
+			FUN.results_replacer("tailings-bauxite-cobalt","bauxite-ore","ore-aluminium")
+			--FUN.results_replacer("tailings-bauxite-cobalt","cobalt-ore","ore-cobalt")
 			
-			results_replacer("tailings-rutile-tungsten","rutile-ore","ore-titanium")
-			--results_replacer("tailings-rutile-tungsten","","")
+			FUN.results_replacer("tailings-rutile-tungsten","rutile-ore","ore-titanium")
+			--FUN.results_replacer("tailings-rutile-tungsten","","")
 			
 				-- tailings_nickel_zinc
 				-- tailings_tin_lead
@@ -97,12 +97,12 @@ if mods["pyrawores"] then
 				-- tailings_bauxite_cobalt
 				-- tailings_rutile_tungsten
 				
-			global_item_replacer("bauxite-ore","ore-aluminium")
-			global_item_replacer("tin-ore","ore-tin")
-			global_item_replacer("lead-ore","ore-lead")
-			global_item_replacer("nickel-ore","ore-nickel")
-			global_item_replacer("zinc-ore","ore-zinc")
-			global_item_replacer("rutile-ore","ore-titanium")
+			FUN.global_item_replacer("bauxite-ore","ore-aluminium")
+			FUN.global_item_replacer("tin-ore","ore-tin")
+			FUN.global_item_replacer("lead-ore","ore-lead")
+			FUN.global_item_replacer("nickel-ore","ore-nickel")
+			FUN.global_item_replacer("zinc-ore","ore-zinc")
+			FUN.global_item_replacer("rutile-ore","ore-titanium")
 				
 		end
 		
@@ -116,7 +116,7 @@ if mods["pyrawores"] then
 
 			end
 			
-			global_item_replacer("tinned-copper-cable","tinned-cable")
+			FUN.global_item_replacer("tinned-copper-cable","tinned-cable")
 
 			--data.raw.recipe["tinned-copper-cable"] = null
 			data.raw.item["tinned-copper-cable"] = null
@@ -191,41 +191,41 @@ if mods["angelspetrochem"] then
 
 	if mods["angelssmelting"] then
 	
-		global_item_replacer("liquid-molten-aluminium","molten-aluminium")
-		global_item_replacer("liquid-molten-copper","molten-copper")
-		global_item_replacer("liquid-molten-iron","molten-iron")
-		global_item_replacer("liquid-molten-lead","molten-lead")
-		global_item_replacer("liquid-molten-silver","molten-silver")
-		global_item_replacer("liquid-molten-nickel","molten-nickel")
-		global_item_replacer("liquid-molten-steel","molten-steel")
-		global_item_replacer("liquid-molten-tin","molten-tin")
-		global_item_replacer("liquid-molten-titanium","molten-titanium")
-		global_item_replacer("liquid-molten-zinc","molten-zinc")
-		global_item_replacer("liquid-molten-chrome","molten-chromium")
+		FUN.global_item_replacer("liquid-molten-aluminium","molten-aluminium")
+		FUN.global_item_replacer("liquid-molten-copper","molten-copper")
+		FUN.global_item_replacer("liquid-molten-iron","molten-iron")
+		FUN.global_item_replacer("liquid-molten-lead","molten-lead")
+		FUN.global_item_replacer("liquid-molten-silver","molten-silver")
+		FUN.global_item_replacer("liquid-molten-nickel","molten-nickel")
+		FUN.global_item_replacer("liquid-molten-steel","molten-steel")
+		FUN.global_item_replacer("liquid-molten-tin","molten-tin")
+		FUN.global_item_replacer("liquid-molten-titanium","molten-titanium")
+		FUN.global_item_replacer("liquid-molten-zinc","molten-zinc")
+		FUN.global_item_replacer("liquid-molten-chrome","molten-chromium")
 	
 	end
 	
 	if mods["angelsrefining"] then
 	
-		results_replacer("angelsore5-crushed-processing","ore-nickel","ore-aluminium")
+		FUN.results_replacer("angelsore5-crushed-processing","ore-nickel","ore-aluminium")
 		
 		
 	
 	end
 
-	global_item_replacer("hydrogen","gas-hydrogen")
-	global_item_replacer("chlorine","gas-chlorine")
-	global_item_replacer("oxygen","gas-oxygen")
-	global_item_replacer("nitrogen","gas-nitrogen")
-	global_item_replacer("hydrogen-chloride","gas-hydrogen-chloride")
-	global_item_replacer("solid-salt","salt")
-	global_item_replacer("solid-sodium-carbonate","sodium-carbonate")
-	global_item_replacer("solid-sodium-hydroxide","sodium-hydroxide")
-	global_item_replacer("solid-sodium-sulfate","sodium-sulfate")
+	FUN.global_item_replacer("hydrogen","gas-hydrogen")
+	FUN.global_item_replacer("chlorine","gas-chlorine")
+	FUN.global_item_replacer("oxygen","gas-oxygen")
+	FUN.global_item_replacer("nitrogen","gas-nitrogen")
+	FUN.global_item_replacer("hydrogen-chloride","gas-hydrogen-chloride")
+	FUN.global_item_replacer("solid-salt","salt")
+	FUN.global_item_replacer("solid-sodium-carbonate","sodium-carbonate")
+	FUN.global_item_replacer("solid-sodium-hydroxide","sodium-hydroxide")
+	FUN.global_item_replacer("solid-sodium-sulfate","sodium-sulfate")
 	
 	
 end
 	
 end
 
---end
+end

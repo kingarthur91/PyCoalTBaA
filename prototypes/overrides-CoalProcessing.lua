@@ -1,6 +1,6 @@
-require("functions/functions")
+local FUN = require("functions/functions")
 
---if not settings.startup["uberhaul"].value then
+if not settings.startup["uberhaul"].value then
 
 if mods["aai-industry-sp0"] and not mods["angelspetrochem"] then
 
@@ -505,10 +505,10 @@ end
 
 if mods["angelssmelting"] then
 
-	global_item_replacer("angels-plate-chrome","chromium")
+	FUN.global_item_replacer("angels-plate-chrome","chromium")
 	
 end
 
 end
 
---end
+end

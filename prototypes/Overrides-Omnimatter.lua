@@ -1,5 +1,5 @@
 
---if not settings.startup["uberhaul"].value then
+if not settings.startup["uberhaul"].value then
 
 if mods["omnimatter"] then
 
@@ -182,4 +182,4 @@ end
 
 end
 
---end
+end

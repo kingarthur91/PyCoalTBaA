@@ -1,6 +1,6 @@
 require("functions/functions")
 
---if not settings.startup["uberhaul"].value then
+if not settings.startup["uberhaul"].value then
 
 if mods["pyrawores"] then
 
@@ -37,4 +37,4 @@ end
 	
 end
 
---end
+end

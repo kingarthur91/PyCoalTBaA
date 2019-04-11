@@ -2,6 +2,10 @@
 --adding steam as fuel source
 --set ingredient_count to 1
 
+--require angel industry files to use the stuff from it
+require("__angelsindustries__/prototypes/items/components-mechanical")
+require("__angelsindustries__/prototypes/items/components-electronics")
+
 data.raw["assembling-machine"]["assembling-machine-1"].fluid_box =
     {
       base_area = 1,
@@ -33,7 +37,7 @@ data.raw.recipe["assembling-machine-1"].ingredients =
 		},
 		{
 		type = "item",
-		name = "iron-pipe",
+		name = "pipe",
 		amount = 5
 		},
 		{
@@ -53,11 +57,13 @@ data.raw.recipe["assembling-machine-2"].normal = nil
 data.raw.recipe["assembling-machine-2"].expensive = nil
 data.raw.recipe["assembling-machine-2"].ingredients =
 	{
+		--[[
 		{
 		amount = 7,
 		name = "duralumin",
 		type = "item"
 		},
+		]]--
 		{
 		amount = 2,
 		name = "circuit-grey-board",
@@ -76,21 +82,35 @@ data.raw.recipe["assembling-machine-2"].ingredients =
 	}
 data.raw.recipe["assembling-machine-2"].results =
 	{
-	type = "item",
-	name = "assembling-machine-2",
-	amount = 1
+		{
+		type = "item",
+		name = "assembling-machine-2",
+		amount = 1
+		}
 	}
-
 data:extend(
 {
 	{
 	type = "assembling-machine",
-	name = "liquid-burner-assembling-machine-2"
+	name = "liquid-burner-assembling-machine-2",
+	},
+	{
+	type = "recipe",
+	name = "liquid-burner-assembling-machine-2",
+	},
+	{
+	type = "item",
+	name = "liquid-burner-assembling-machine-2",
 	}
 }
 )
 
-local ass2 = table.deepcopy(data.raw["assembling-machine"]["assembling-machine-2"]
+local ass2rec = table.deepcopy(data.raw.recipe["assembling-machine-2"])
+local ass2 = table.deepcopy(data.raw["assembling-machine"]["assembling-machine-2"])
+
+ass2rec.name = "liquid-burner-assembling-machine-2"
+
+data.raw.recipe["liquid-burner-assembling-machine-2"] = ass2rec
 
 ass2.name = "liquid-burner-assembling-machine-2"
 
@@ -107,12 +127,12 @@ data.raw["assembling-machine"]["liquid-burner-assembling-machine-2"].energy_sour
 		base_level = -1,
 		pipe_connections =
 			{
-			{type = "input", postion = {2,0}}
+			{type = "input", position = {2,0}}
 			},
 		pipe_covers = pipecoverspictures(),
         pipe_picture = assembler2pipepictures(),
         production_type = "input",
-		}
+		},
 	burns_fluid = true,
 	scale_fluid_usage = true,
     smoke =
@@ -129,12 +149,19 @@ data.raw["assembling-machine"]["liquid-burner-assembling-machine-2"].energy_sour
         }
       }
 	}
-	
+	--log(serpent.block(data.raw.recipe["assembling-machine-2"]))
 	--adding engines to the assembling machines
 	--electric motor
 table.insert(data.raw.recipe["assembling-machine-2"].ingredients,{type = "item", name = "electric-motor-1", amount = 2})
 	--ice engine
 table.insert(data.raw.recipe["liquid-burner-assembling-machine-2"].ingredients,{type = "item", name = "motor-1", amount = 2})
+
+local ass2it = table.deepcopy(data.raw.item["assembling-machine-2"])
+
+ass2it.name = "liquid-burner-assembling-machine-2"
+
+data.raw.item["liquid-burner-assembling-machine-2"] = ass2it
+data.raw.item["liquid-burner-assembling-machine-2"].place_result = "liquid-burner-assembling-machine-2"
 
 --Assembling machine 3 modifications
 --set ingredient_count to 3

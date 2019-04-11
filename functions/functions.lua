@@ -44,7 +44,7 @@ local eingredients
 			end
 			--TODO:need to check for ingredients that dont have name declared
 		elseif recipe.normal or recipe.expensive then
-		log(serpent.block(recipe))
+		--log(serpent.block(recipe))
 			if recipe.normal ~= nil then
 			--log("is check good")
 				ningredients = recipe.normal.ingredients
@@ -133,6 +133,7 @@ end
 		end
 		if recipe.results then
 			for r, result in pairs(recipe.results) do
+			--log(serpent.block(result))
 				if result.name == old then
 					data.raw.recipe[recipe.name].results[r].name = new
 				end
@@ -206,8 +207,8 @@ local brecipeset = {}
 				--log(serpent.block(recipe))
 				--log(serpent.block(recipe.name))
 				--log(serpent.block(brecipeset))
-				ingredient_replace(recipe,old,new)
-				results_replacer(recipe,old,new)
+				overrides.ingredient_replace(recipe,old,new)
+				overrides.results_replacer(recipe,old,new)
 			end
 		--end
 	end

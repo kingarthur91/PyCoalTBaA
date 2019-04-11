@@ -11,5 +11,8 @@ require("stdlib/data/data").create_data_globals()
 
 	require("updates.pyproductivityadjuster")
 	
-	--require("uberhaul.recipe")
-	--require("uberhaul.technology")
+	require("uberhaul.buildings.assembly-machines")
+	require("uberhaul.items.items")
+	require("uberhaul.items.fluids")
+	require("uberhaul.recipes.recipe")
+	require("uberhaul.technology")
