@@ -2,14 +2,20 @@
 
 make early game sample analizer. see if i can borrow angels basic lab if industries isnt coming back soonish
 
+it has so use those parts as they are not yet being used
+
 rename sciences
 	science 1 gets changed to astrobiology science pack
 	add ground sample to science 1
+	move recipes to game start
+		- carbon dioxide from tar recipe
+		- organic matter to carbon dioxide
+		- green algae and algae farm? need unlocked
+		- coarse faction needs a starter recipe
+	
 		
 		make an exobiology tech 
 			- realign farming to branch from exobiology
-			- move lab equipment, ground sample,  seeded dish, petri dish and substrate dish
-			
 		move chlorine processing to t1
 
 	--Science pack 2 changes
@@ -44,3 +50,137 @@ make changes so that getting a swamp tree is easyier or add a different way to g
 		naptha is duplicated and angels is a rename of petroleum gas
 			petroleum gas icon is ethylene
 			
+			
+	--(OIL CHANGES)--
+	
+	angel petrochem favors and handles natural gas and light crude oils
+		change crude oil in angels recipes to light crude
+	
+	pycoal and pypetrohandling favor and handle heavy crude oils
+		change crude oil in py recipes to heavy crude
+		
+	--(list of hydrocarbons)--
+	Ordered from highest to lowest hydrocarbon
+	
+	kerosene - c10-16
+	gasoline - c4-12
+	naptha - c4-12 - same level as gasoline but is used for heavy oil thining and higher octane fuel. lighter naptha isnt used in gasoline while heavyer naptha can be cracked into componets of gasoline. light is 6 or less. heavy 7+
+	BTX - c6-12 - aromatics(benzene, toluene, xylenes - c6-8) carbon bonds are different from naptha and gasoline
+	xylene - c8h10
+	toluene - c7h8 - componet of gasoline
+	benzene - c6h6 - not in gasoline
+	
+	
+--(current recipes)--
+
+oil refinery outputs
+	mineral oil - just bunch of raw lubricants
+	fuel oil - aka heating oil. heavy hydrocarbons only good for as "fuel"
+	naptha - see above - cracked into gasoline
+	
+--(maybe petrochemicals)--
+
+	need checked
+
+angels natural gas products	
+	gas-methane
+	gas-ethane
+	gas-butane
+	gas-propene
+
+angels oil products
+	liquid-naphtha
+	liquid-mineral-oil
+	liquid-fuel-oil
+
+more angels natural gas products
+	gas-methanol
+	gas-ethylene
+	gas-benzene
+	
+angels syngas
+	gas-synthesis
+	
+
+liquid-toluene
+gas-butadiene
+gas-phenol
+gas-ethylbenzene
+gas-styrene
+gas-formaldehyde
+gas-polyethylene
+gas-glycerol
+gas-bisphenol-a
+gas-acetone
+gas-allylchlorid
+gas-epichlorhydrin
+gas-dinitrogen-tetroxide
+gas-monochloramine
+gas-hydrazine
+gas-methylamine
+gas-dimethylamine
+gas-dimethylhydrazine
+gas-natural-1
+liquid-multi-phase-oil
+gas-raw-1
+liquid-condensates
+gas-acid
+liquid-ngl
+gas-residual
+coal-gas
+creosote
+methanol
+refsyngas
+syngas
+tar
+flue-gas
+aromatics
+diesel
+gasoline
+olefin
+coal-slurry
+acetylene
+high-purified-gas
+liquid-petgas
+rich-gas
+liquid-rich-gas
+liquid-raw-vegetable-oil
+liquid-vegetable-oil
+gas-ethanol
+methane
+methanal
+tall-oil
+benzene
+propene
+ethylene
+acetone
+cumene
+ech
+dms
+msa
+chloromethane
+dimethyldichlorosilane
+bitumen-froth
+bitumen
+scrude
+fuel-oil
+natural-gas
+naphtha
+polybutadiene
+hot-air
+styrene
+btx
+tholins
+processed-light-oil
+hot-reaction-gas
+coalbed-gas
+ethylene-glycol
+chloroethanol
+ethylene-chlorohydrin
+condensates
+raw-gas
+refined-natural-gas
+purified-natural-gas
+pure-natural-gas
+residual-gas
+petroleum-sulfonates

@@ -109,6 +109,7 @@ local ass2rec = table.deepcopy(data.raw.recipe["assembling-machine-2"])
 local ass2 = table.deepcopy(data.raw["assembling-machine"]["assembling-machine-2"])
 
 ass2rec.name = "liquid-burner-assembling-machine-2"
+ass2rec.results[1].name = "liquid-burner-assembling-machine-2"
 
 data.raw.recipe["liquid-burner-assembling-machine-2"] = ass2rec
 

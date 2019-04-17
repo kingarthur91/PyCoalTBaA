@@ -67,7 +67,7 @@ end
 
 --productivity recipe checker
 --try copying limitaion list and resetting it to updated list afterwards
-
+--[[
 log("assembly machine recipes")
 log(serpent.block(data.raw.recipe["assembling-machine-1"]))
 log(serpent.block(data.raw.recipe["assembling-machine-2"]))
@@ -82,3 +82,30 @@ for _,r in pairs(data.raw.recipe) do
 end
 
 log(recipecount)
+]]--
+----[[
+local fcount = 0
+
+for _, f in pairs(data.raw.fluid) do
+
+	log(f.name)
+	--log(f.fuel_value)
+	fcount=fcount+1
+end
+
+log(fcount)
+--]]--
+--[[
+for _, i in pairs(data.raw["item-group"]) do
+
+	data.raw["item-group"]["py-rawores"] = nil
+	for _, g in pairs(data.raw["item-subgroup"]) do
+		if g.group == "py-rawores" then
+			g.group = "test-group"
+		end
+	end
+	
+	log(i.name)
+	
+end
+]]--
