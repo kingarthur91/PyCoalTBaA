@@ -10,7 +10,7 @@ require("stdlib/data/data").create_data_globals()
 	require("updates.acid-changes")
 
 	require("updates.pyproductivityadjuster")
-	
+	--[[
 	require("uberhaul.buildings.assembly-machines")
 	require("uberhaul.items.items")
 	require("uberhaul.item-groups")
@@ -20,3 +20,5 @@ require("stdlib/data/data").create_data_globals()
 	require("uberhaul.technology.technology")
 	require("uberhaul.technology.technology-updates")
 	require("uberhaul.buildings.building-updates")
+	
+	]]--

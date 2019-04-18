@@ -13,3 +13,7 @@ if mods["angelspetrochem"] then
 end
 
 require("prototypes.Overrides-Omnimatter")
+
+table.remove(data.raw.recipe["rocket-fuel"],ingredients)
+
+log(serpent.block(data.raw.recipe["rocket-fuel"]))

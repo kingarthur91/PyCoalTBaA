@@ -197,7 +197,7 @@ RECIPE("anthraquinone"):rep_ing("steam", "liquid-air")
 RECIPE("combustion-olefin"):add_ing({type = "fluid", name = "hydrogen", amount = 150})
 
 --RECIPE("niobium-oxide"):rep_ing("water", "nitrogen-dioxide")
-ingredient_replace("niobium-oxide","nitrogen","nitrogen-dioxide")
+FUN.ingredient_replace("niobium-oxide","nitrogen","nitrogen-dioxide")
 
 RECIPE("ralesia"):rep_ing("water", "hydrogen")
 RECIPE("diborane"):rep_ing("water", "hydrogen")

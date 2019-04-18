@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.47
+  Changes:
+	- fix error from trying to replace items with items that dont exist without specific mod loaded
+---------------------------------------------------------------------------------------------------
+Version: 0.0.46
+  Changes:
+	- fixed duplicated ingrediants in recipes. should no long have any duplicated ingredients from anything listed as a dependency for pycoaltbaa.
+---------------------------------------------------------------------------------------------------
 Version: 0.0.45
   Changes:
 	- bug fixes

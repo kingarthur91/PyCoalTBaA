@@ -1,121 +1,123 @@
 local overrides={}
 
 function overrides.ingredient_replace(recipe, old, new)
-if type(recipe) == "string" then
-local R = data.raw.recipe[recipe]
-recipe = R
-end
-local ningredients
-local eingredients
-		if recipe.ingredients ~= nil then
-			local ingredients = recipe.ingredients
-			for i, ing in pairs(ingredients) do
-			--log("get past for loop into ingredients")
-				if ing.name ~= nil then
-					if ing.name == old then
-					--log("pasted check for if ingredients = old item")
-					--log(recipe.name)
-					--log(serpent.block(ing))
-					local T = table.deepcopy(ing.type)
-					local A = table.deepcopy(ing.amount)
-					data.raw.recipe[recipe.name].ingredients[i] = {type = T, name = new, amount = A}
-					--log(recipe.name)
-					--log(serpent.block(recipe.ingredients))
-					--log("hit count")
-					end
-				else
-					--for j, v in pairs(ing) do
-					--TODO:fix duplicated ingredients on some items
-						if ing[1] == old then
-						--log("pasted check for if ingredients = old item")
-						--log(recipe.name)
-						--log(serpent.block(ing))
-						--local T = table.deepcopy(ing.type)
-						local A = table.deepcopy(ing[2])
-						--log(new)
-						--log(A)
-						data.raw.recipe[recipe.name].ingredients[i] = {new, A}
-						--log(recipe.name)
-						--log(serpent.block(data.raw.recipe[recipe.name].ingredients))
-						--log("hit count")
-						end
-					--end
-				end
-			end
-			--TODO:need to check for ingredients that dont have name declared
-		elseif recipe.normal or recipe.expensive then
-		--log(serpent.block(recipe))
-			if recipe.normal ~= nil then
-			--log("is check good")
-				ningredients = recipe.normal.ingredients
-			end
-			if recipe.expensive ~= nil then
-				eingredients = recipe.expensive.ingredients
-			end
-			if recipe.normal then
-			--log(serpent.block(recipe.normal))
-			--log(serpent.block(ningredients))
-				for i, ing in pairs(ningredients) do
-				--log("get past for loop into normal ingredients")
-				--log("ningredients")
-				--log(serpent.block(ningredients))
-				--log(serpent.block(ing))
-				--log("ing name")
-				--log(ing.name)
-				--log("old")
-				--log(old)
-					if ing.name ~= nil then
-						if ing.name == old then
-							--log("pasted check for if ingredients = old item")
-							--log(recipe.name)
-							--log(serpent.block(ing))
-							local T = table.deepcopy(ing.type)
-							local A = table.deepcopy(ing.amount)
-							data.raw.recipe[recipe.name].normal.ingredients[i] = {type = T, name = new, amount = A}
-							--log(recipe.name)
-							--log(serpent.block(recipe.ingredients))
-							--log("hit count")
-							--log(serpent.block(data.raw.recipe[recipe.name]))
-						end
-					else
-						--for j,v in pairs(ing) do
-							if ing[1] == old then
-							local A = table.deepcopy(ing[2])
-							data.raw.recipe[recipe.name].normal.ingredients[i] = {new, A}
-							end
-						--end
-					end
-				end
-			end
-			if recipe.expensive then
-				for i, ing in pairs(eingredients) do
+if data.raw.item[new] ~= nil or data.raw.fluid[new] ~= nil then
+	if type(recipe) == "string" then
+	local R = data.raw.recipe[recipe]
+	recipe = R
+	end
+	local ningredients
+	local eingredients
+			if recipe.ingredients ~= nil then
+				local ingredients = recipe.ingredients
+				for i, ing in pairs(ingredients) do
 				--log("get past for loop into ingredients")
 					if ing.name ~= nil then
 						if ing.name == old then
+						--log("pasted check for if ingredients = old item")
+						--log(recipe.name)
+						--log(serpent.block(ing))
+						local T = table.deepcopy(ing.type)
+						local A = table.deepcopy(ing.amount)
+						data.raw.recipe[recipe.name].ingredients[i] = {type = T, name = new, amount = A}
+						--log(recipe.name)
+						--log(serpent.block(recipe.ingredients))
+						--log("hit count")
+						end
+					else
+						--for j, v in pairs(ing) do
+						--TODO:fix duplicated ingredients on some items
+							if ing[1] == old then
 							--log("pasted check for if ingredients = old item")
 							--log(recipe.name)
 							--log(serpent.block(ing))
-							local T = table.deepcopy(ing.type)
-							local A = table.deepcopy(ing.amount)
-							data.raw.recipe[recipe.name].expensive.ingredients[i] = {type = T, name = new, amount = A}
-							--log(recipe.name)
-							--log(serpent.block(recipe.ingredients))
-							--log("hit count")
-						end
-					else
-						--for j,v in pairs(ing) do
-						--log("check this still works")
-						--log(serpent.block(ing))
-							if ing[1] == old then
+							--local T = table.deepcopy(ing.type)
 							local A = table.deepcopy(ing[2])
-							data.raw.recipe[recipe.name].expensive.ingredients[i] = {new, A}
+							--log(new)
+							--log(A)
+							data.raw.recipe[recipe.name].ingredients[i] = {new, A}
+							--log(recipe.name)
+							--log(serpent.block(data.raw.recipe[recipe.name].ingredients))
+							--log("hit count")
 							end
-						--log(serpent.block(recipe))
 						--end
 					end
 				end
+				--TODO:need to check for ingredients that dont have name declared
+			elseif recipe.normal or recipe.expensive then
+			--log(serpent.block(recipe))
+				if recipe.normal ~= nil then
+				--log("is check good")
+					ningredients = recipe.normal.ingredients
+				end
+				if recipe.expensive ~= nil then
+					eingredients = recipe.expensive.ingredients
+				end
+				if recipe.normal then
+				--log(serpent.block(recipe.normal))
+				--log(serpent.block(ningredients))
+					for i, ing in pairs(ningredients) do
+					--log("get past for loop into normal ingredients")
+					--log("ningredients")
+					--log(serpent.block(ningredients))
+					--log(serpent.block(ing))
+					--log("ing name")
+					--log(ing.name)
+					--log("old")
+					--log(old)
+						if ing.name ~= nil then
+							if ing.name == old then
+								--log("pasted check for if ingredients = old item")
+								--log(recipe.name)
+								--log(serpent.block(ing))
+								local T = table.deepcopy(ing.type)
+								local A = table.deepcopy(ing.amount)
+								data.raw.recipe[recipe.name].normal.ingredients[i] = {type = T, name = new, amount = A}
+								--log(recipe.name)
+								--log(serpent.block(recipe.ingredients))
+								--log("hit count")
+								--log(serpent.block(data.raw.recipe[recipe.name]))
+							end
+						else
+							--for j,v in pairs(ing) do
+								if ing[1] == old then
+								local A = table.deepcopy(ing[2])
+								data.raw.recipe[recipe.name].normal.ingredients[i] = {new, A}
+								end
+							--end
+						end
+					end
+				end
+				if recipe.expensive then
+					for i, ing in pairs(eingredients) do
+					--log("get past for loop into ingredients")
+						if ing.name ~= nil then
+							if ing.name == old then
+								--log("pasted check for if ingredients = old item")
+								--log(recipe.name)
+								--log(serpent.block(ing))
+								local T = table.deepcopy(ing.type)
+								local A = table.deepcopy(ing.amount)
+								data.raw.recipe[recipe.name].expensive.ingredients[i] = {type = T, name = new, amount = A}
+								--log(recipe.name)
+								--log(serpent.block(recipe.ingredients))
+								--log("hit count")
+							end
+						else
+							--for j,v in pairs(ing) do
+							--log("check this still works")
+							--log(serpent.block(ing))
+								if ing[1] == old then
+								local A = table.deepcopy(ing[2])
+								data.raw.recipe[recipe.name].expensive.ingredients[i] = {new, A}
+								end
+							--log(serpent.block(recipe))
+							--end
+						end
+					end
+				end
 			end
-		end
+end
 end
 
 function overrides.results_replacer(recipe, old, new)

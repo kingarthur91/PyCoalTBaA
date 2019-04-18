@@ -116,7 +116,7 @@ data:extend(
 	name = "uberhaul",
 	setting_type = "startup",
 	--undo this later
-	default_value = true,
+	default_value = false,
 	order = "a",
 	}
 }

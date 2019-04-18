@@ -1,4 +1,4 @@
-require("functions/functions")
+local FUN = require("functions/functions")
 
 if not settings.startup["uberhaul"].value then
 
@@ -48,8 +48,8 @@ add_result("molybdenum-oxide", {type = "fluid", name = "sulfur-dioxide", amount 
 
 RECIPE("soda-ash"):replace_ingredient("ppd", "sodium-hydroxide")
 --RECIPE("vpulp3"):replace_ingredient("petroleum-gas", "nitrogen-dioxide")
-ingredient_replace("vpulp3","ammonia","nitrogen-dioxide")
-ingredient_replace("vpulp-precip","ammonia","nitrogen-dioxide")
+FUN.ingredient_replace("vpulp3","ammonia","nitrogen-dioxide")
+FUN.ingredient_replace("vpulp-precip","ammonia","nitrogen-dioxide")
 
 add_result("sodium-chlorate", {type = "fluid", name = "hydrogen", amount = 150})
 
@@ -89,7 +89,7 @@ RECIPE("genlab"):replace_ingredient("iron-gear-wheel", "nitinol-bearing")
 RECIPE("gas-separator"):replace_ingredient("pipe", "stone-pipe")
 RECIPE("fusion-reactor-mk01"):add_ingredient({type = "item", name = "glass", amount = 200})
 --RECIPE("molybdenum-concentrate"):replace_ingredient("water", "nitrogen-dioxide")
-ingredient_replace("molybdenum-concentrate","nitrogen","nitrogen-dioxide")
+FUN.ingredient_replace("molybdenum-concentrate","nitrogen","nitrogen-dioxide")
 
 RECIPE("phytoplankton"):replace_ingredient("crushed-iron", "crushed-tin")
 

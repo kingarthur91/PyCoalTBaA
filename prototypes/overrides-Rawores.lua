@@ -75,7 +75,7 @@ if mods["pyrawores"] then
 			data.raw["map-gen-presets"]["default"]["rail-world"]["basic_settings"] = nil
 			data.raw["map-gen-presets"]["default"]["rich-resources"]["basic_settings"] = nil
 			
-			FUN.FUN.results_replacer("tailings-tin-lead","tin-ore","ore-tin")
+			FUN.results_replacer("tailings-tin-lead","tin-ore","ore-tin")
 			FUN.results_replacer("tailings-tin-lead","lead-ore","ore-lead")
 			
 			FUN.results_replacer("tailings-nickel-zinc","nickel-ore","ore-nickel")
@@ -123,7 +123,7 @@ if mods["pyrawores"] then
 			
 		end
 	
-	ingredient_replace("gun-turret","duralumin","aluminium-plate")
+	FUN.ingredient_replace("gun-turret","duralumin","aluminium-plate")
 	
 		--remove bob techs and remove them from prerequisites script
 		--TODO: convert into callable funtion and move to a functions file 
