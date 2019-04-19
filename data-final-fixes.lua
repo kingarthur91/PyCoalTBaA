@@ -56,7 +56,25 @@
 		end
 	end
 	
+end
 
+if mods["bobrevamp"] then
+
+	if not data.raw.item["enriched-fuel"] then
+	
+		for t, tech in pairs(data.raw.technology["hydrazine"].effects) do
+		
+			if tech.recipe == "enriched-fuel-from-hydrazine" then
+			
+				table.remove(data.raw.technology["hydrazine"].effects, t)
+				log(serpent.block(data.raw.technology["hydrazine"]))
+				
+			end
+			
+		end
+		
+	end
+	
 end
 
 if settings.startup["py-prod-adjust"].value == true then
