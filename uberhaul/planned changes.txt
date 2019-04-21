@@ -59,6 +59,51 @@ make changes so that getting a swamp tree is easyier or add a different way to g
 	pycoal and pypetrohandling favor and handle heavy crude oils
 		change crude oil in py recipes to heavy crude
 		
+		--(THINGS TO CHANGE)--
+	--(light crude processing)--
+	light crude oil -> lpg gases, light/heavy naptha, kerosene, diesel, atmo gas, atmo bottoms
+	
+	lpg gases -> fuel gas, lpg(i.e. propane), butane
+	
+	light naphtha , h2, clorinated alumina x 10 -> lpg gases, isomerate, clorinated alumina x 9
+	
+	heavy naphtha, h2 -> reformate, net h2
+	
+	atmo gas, light vac gas, h2 -> lpg gases, naphtha
+	
+		--(multiple uses for atmo bottoms)--
+		--high tech method--
+	atmo bottom -> light vac gas, heavy vac gas, vac residuals
+		--low tech method--
+	atmo bottom -> heavy fuel oil
+	
+	heavy vac gas, h2 -> lpg gases, hydrocracked gasoline, diesel, butane
+	
+	light vac gas, atmo gas, h2 -> lpg gases, ffc vac gas
+	
+	fcc vac gas -> lpg gases, naphtha, butane, fcc gas oil
+	
+	naphtha, h2 -> lpg gases, fcc gasoline
+	
+	vac residual, air -> asphalt
+	
+	vac residual -> lpg gases, coker naphtha, coker gas oil, coke
+	
+	fcc gas oil, coker gas oil -> fuel oil
+	
+	isomerate, reformate, hydrocracked gasoline, alkylate, fcc gasoline, coker naptha -> gasoline
+	
+	
+	--(H2 SYNTHESIS)--
+		might already be in here
+	
+	natural gas, steam -> co2, h2
+	
+-----------------------------------------------------------------------
+
+	--(ITEMS/ FLUIDS NEEDING MADE)--
+	clorinated alumina - could also use angels aluminum cataylist
+	
 	--(list of hydrocarbons)--
 	Ordered from highest to lowest hydrocarbon
 	
