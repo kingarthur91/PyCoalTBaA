@@ -61,15 +61,25 @@ make changes so that getting a swamp tree is easyier or add a different way to g
 		
 		--(THINGS TO CHANGE)--
 	--(light crude processing)--
-	light crude oil -> lpg gases, light/heavy naptha, kerosene, diesel, atmo gas, atmo bottoms
+		--TO MANY FOR OIL REFINERY--
+		--SPILT INTO LIGHT DISTALLATES AND HEAVY DISTALLATES
+	light crude oil -> lpg gases, light naptha, heavy naptha, kerosene, diesel, atmo gas oil, atmo bottoms
 	
+		--SPILT VERSION--
+	light crude oil -> light distallates, kerosene, heavy distallates
+	
+	light distallates -> lpg gases, light naptha, heavy naptha
+	
+	heavy distallates -> diesel, atmo gas oil, atmo bottoms
+	
+	--DISTALLATES PRODUCTS--
 	lpg gases -> fuel gas, lpg(i.e. propane), butane
 	
 	light naphtha , h2, clorinated alumina x 10 -> lpg gases, isomerate, clorinated alumina x 9
 	
 	heavy naphtha, h2 -> reformate, net h2
 	
-	atmo gas, light vac gas, h2 -> lpg gases, naphtha
+	atmo gas oil, light vac gas, h2 -> lpg gases, naphtha
 	
 		--(multiple uses for atmo bottoms)--
 		--high tech method--
@@ -79,7 +89,7 @@ make changes so that getting a swamp tree is easyier or add a different way to g
 	
 	heavy vac gas, h2 -> lpg gases, hydrocracked gasoline, diesel, butane
 	
-	light vac gas, atmo gas, h2 -> lpg gases, ffc vac gas
+	light vac gas, atmo gas oil, h2 -> lpg gases, ffc vac gas
 	
 	fcc vac gas -> lpg gases, naphtha, butane, fcc gas oil
 	
