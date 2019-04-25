@@ -57,7 +57,7 @@
 	end
 	
 end
-
+--[[
 if mods["bobrevamp"] then
 
 	if not data.raw.item["enriched-fuel"] then
@@ -76,7 +76,7 @@ if mods["bobrevamp"] then
 	end
 	
 end
-
+]]--
 if settings.startup["py-prod-adjust"].value == true then
 
 recipe_output_mod()
@@ -210,39 +210,46 @@ local inglist = {}
 	inglist = {}
 	
 	if ings.expensive ~= nil then
-	
-		for a,ing in pairs(ings.expensive.ingredients) do
-		
-			if ing.name ~= nil then
+		--log(serpent.block(ings))
+		--log(serpent.block(ings.expensive))
+		if ings.expensive ~= false then
+			if ings.expensive.ingredients ~= nil then
 				
-				if not inglist[ing.name] then
-					--log(serpent.block(ing))
-					--log(ing.name)
-					inglist[ing.name] = true
+				for a,ing in pairs(ings.expensive.ingredients) do
 				
-				else
-				
-					data.raw.recipe[ings.name].expensive.ingredients[a] = nil
+					if ing.name ~= nil then
+						
+						if not inglist[ing.name] then
+							--log(serpent.block(ing))
+							--log(ing.name)
+							inglist[ing.name] = true
+						
+						else
+						
+							data.raw.recipe[ings.name].expensive.ingredients[a] = nil
+							
+						end
 					
-				end
-			
-			elseif type(ing[1]) == "string" then
-			
-				--log(serpent.block(ing))
-				if not inglist[ing[1]] then
-				
-					inglist[ing[1]] = true
+					elseif type(ing[1]) == "string" then
 					
-				else
-				
-					data.raw.recipe[ings.name].expensive.ingredients[a] = nil
+						--log(serpent.block(ing))
+						if not inglist[ing[1]] then
+						
+							inglist[ing[1]] = true
+							
+						else
+						
+							data.raw.recipe[ings.name].expensive.ingredients[a] = nil
+							
+						end
+						
+					end
 					
 				end
 				
 			end
 			
 		end
-		
 	end
 	
 end
@@ -250,3 +257,15 @@ end
 table.remove(data.raw.recipe["rocket-fuel"],ingredients)
 
 log(serpent.block(data.raw.recipe["rocket-fuel"]))
+
+if mods["Advanced-Solar"] then
+
+	data.raw.technology["electric-energy-accumulators-2"].prerequisites = {"electric-energy-accumulators"}
+	
+end
+
+if mods["BlackMarket"] then
+
+	data.raw.technology["black-market-energy"].prerequisites = { "black-market-item", "electric-energy-accumulators" }
+	
+end
