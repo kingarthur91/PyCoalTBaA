@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.48
+  Changes:
+	- fixed errors with bob mods and angels mods from pyph
+---------------------------------------------------------------------------------------------------
 Version: 0.0.47
   Changes:
 	- fix error from trying to replace items with items that dont exist without specific mod loaded

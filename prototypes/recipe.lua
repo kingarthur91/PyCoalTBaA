@@ -1451,7 +1451,7 @@ data:extend(
 )	
 	end
 	
-if mods["boblibrary"] then
+if mods["boblibrary"] and not mods["pyrawores"] then
 data:extend(
 {	
 	{
