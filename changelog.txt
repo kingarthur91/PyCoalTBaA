@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.50
+  Changes:
+	- fixed errors with replacing items when using py, angels and amator phasma mods
+	- fixed errors with trying to replace items with angel smelting not loaded
+---------------------------------------------------------------------------------------------------
 Version: 0.0.49
   Changes:
 	- fixed errors from angels mods renamed slag processing subgroup from slag-processing to slag-processing-1

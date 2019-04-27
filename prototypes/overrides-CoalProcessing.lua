@@ -257,7 +257,6 @@ local OV = angelsmods.functions.OV
 
 OV.global_replace_item("coke", "solid-coke")
 OV.global_replace_item("limestone", "solid-limestone")
-OV.global_replace_item("lime", "solid-lime")
 OV.global_replace_item("acidgas", "gas-acid")
 OV.global_replace_item("salt", "solid-salt")
 OV.global_replace_item("sand", "solid-sand")
@@ -265,6 +264,12 @@ OV.global_replace_item("syngas", "gas-synthesis")
 OV.global_replace_item("methanol", "gas-methanol")
 OV.global_replace_item("carbon-dioxide", "gas-carbon-dioxide")
 OV.global_replace_item("carbon","solid-carbon")
+
+if mods["angelssmelting"] then
+
+OV.global_replace_item("lime", "solid-lime")
+
+end
 
 --Fluid Converter Recipes
 angelsmods.functions.make_converter("acidgas", "gas-acid")

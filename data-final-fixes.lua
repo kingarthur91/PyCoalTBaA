@@ -269,3 +269,5 @@ if mods["BlackMarket"] then
 	data.raw.technology["black-market-energy"].prerequisites = { "black-market-item", "electric-energy-accumulators" }
 	
 end
+
+log(serpent.block(data.raw.recipe["electronic-components"]))

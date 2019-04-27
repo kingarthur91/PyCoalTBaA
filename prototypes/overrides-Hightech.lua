@@ -109,7 +109,6 @@ local OV = angelsmods.functions.OV
 OV.global_replace_item('basic-circuit-board', 'pcb1')
 OV.global_replace_item('solid-clay', 'clay')
 OV.global_replace_item('phenolic-board','phenolicboard')
-OV.global_replace_item('glass-fiber','angels-coil-glass-fiber')
 OV.global_replace_item('fibreglass-board','fiberglass')
 OV.global_replace_item('fertiliser','py-fertilizer')
 OV.global_replace_item('solid-fertilizer','py-fertilizer')
@@ -128,6 +127,12 @@ OV.global_replace_item('ethylene','gas-ethylene')
 --OV.global_replace_item("processing-unit","cm-processing-unit")
 
 data.raw.resource["phosphate-rock"].minable.required_fluid = "gas-synthesis"
+
+if mods["angelssmelting"] then
+
+OV.global_replace_item('glass-fiber','angels-coil-glass-fiber')
+
+end
 
 if mods["omnimatter_permutation"] then
 
@@ -163,7 +168,8 @@ if mods["bobelectronics"] then
 OV.global_replace_item('wooden-board','fiberboard')
 OV.global_replace_item('advanced-processing-unit','intelligent-unit')
 OV.global_replace_item('multi-layer-circuit-board','pcb4')
-OV.global_replace_item('electronic-components','transistor')
+--OV.global_replace_item('electronic-components','transistor')
+FUN.global_item_replacer("electronic-components","transistor")
 
 	if mods["MomoTweak"] then
 	
@@ -195,9 +201,12 @@ end
 
 if mods["bobmodules"] then
 
-OV.global_replace_item('basic-electronic-components','resistor2')
-OV.global_replace_item('processing-electronics','kondo-processor')
-OV.global_replace_item('intergrated-electronics','microchip')
+--OV.global_replace_item('basic-electronic-components','resistor2')
+FUN.global_item_replacer("basic-electronic-components","resistor2")
+--OV.global_replace_item('processing-electronics','kondo-processor')
+FUN.global_item_replacer("processing-electronics","kondo-processor")
+--OV.global_replace_item('intergrated-electronics','microchip')
+FUN.global_item_replacer("intergrated-electronics","microchip")
 OV.global_replace_item('module-processor-board','pcb2')
 OV.global_replace_item('module-processor-board-2','pcb3')
 OV.global_replace_item('module-processor-board-3','pcb4')
