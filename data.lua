@@ -23,11 +23,3 @@ require("stdlib/data/data").create_data_globals()
 	
 	]]--
 	
-	log(serpent.block(data.raw.recipe["steel-plate"]))
-	
-	data.raw.recipe["steel-plate"].expensive.ingredients = {}
-	
-	data.raw.recipe["steel-plate"].normal.ingredients = {}
-	
-	log(serpent.block(data.raw.recipe["steel-plate"]))
-	

@@ -197,7 +197,7 @@ OV.global_replace_item('solid-sodium-chlorate','sodium-chlorate')
       type = "recipe",
       name = "slag-processing-mol",
       category = "crystallizing",
-      subgroup = "slag-processing",
+      subgroup = "slag-processing-1",
       energy_required = 8,
       enabled = "false",
       ingredients =

@@ -323,7 +323,7 @@ if settings.startup["addpyoretoangelsorting"].value then
       type = "recipe",
       name = "slag-processing-nio",
       category = "crystallizing",
-      subgroup = "slag-processing",
+      subgroup = "slag-processing-1",
       energy_required = 8,
       enabled = "false",
       ingredients =
@@ -405,7 +405,7 @@ if settings.startup["addpyoretoangelsorting"].value then
       type = "recipe",
       name = "slag-processing-bor",
       category = "crystallizing",
-      subgroup = "slag-processing",
+      subgroup = "slag-processing-1",
       energy_required = 8,
       enabled = "false",
       ingredients =

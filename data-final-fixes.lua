@@ -256,7 +256,7 @@ end
 
 table.remove(data.raw.recipe["rocket-fuel"],ingredients)
 
-log(serpent.block(data.raw.recipe["rocket-fuel"]))
+--log(serpent.block(data.raw.recipe["rocket-fuel"]))
 
 if mods["Advanced-Solar"] then
 
