@@ -254,10 +254,6 @@ local inglist = {}
 	
 end
 
-table.remove(data.raw.recipe["rocket-fuel"],ingredients)
-
---log(serpent.block(data.raw.recipe["rocket-fuel"]))
-
 if mods["Advanced-Solar"] then
 
 	data.raw.technology["electric-energy-accumulators-2"].prerequisites = {"electric-energy-accumulators"}
