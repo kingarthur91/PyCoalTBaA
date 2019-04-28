@@ -1,3 +1,5 @@
+if mods["aai-industry"] then
+
 data:extend({
   {
     type = "tool",
@@ -36,3 +38,4 @@ data:extend({
 })
 
 
+end

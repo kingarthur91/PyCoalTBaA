@@ -1,3 +1,5 @@
+if mods["aai-industry"] then
+
 data:extend({
 	{
     type = "recipe",
@@ -21,3 +23,5 @@ data:extend({
     order = "f"
 	},
 })
+
+end
