@@ -2,6 +2,21 @@ local FUN = require("functions/functions")
 
 if not settings.startup["uberhaul"].value then
 
+if mods["aai-industry"] then
+
+--need to add sci pack 0 and adjust starting techs to use it and not sp1
+--sp0 script in functions
+
+table.insert(data.raw["lab"]["lab"].inputs, "science-pack-0")
+
+--remove sci pack 1 from:
+--basic automation
+--electricity
+--basic fluid handleing
+FUN.removescipack({"basic-automation","electricity","basic-fluid-handling","steam-power","basic-logistics","electric-mining"},"automation-science-pack")
+
+end
+
 if mods["aai-industry-sp0"] and not mods["angelspetrochem"] then
 
 	data.raw.item["storage-tank-0"].subgroup = "storage"
@@ -60,6 +75,16 @@ local remove_result = bobmods.lib.recipe.remove_result
 	end
 	
 	if mods["boblogistics"] then
+	
+		if data.raw.item["basic-transport-belt"] ~= nil then
+		
+			if mods["pyrawores"] then
+		
+				FUN.ingredient_replace("borax-mine","transport-belt","basic-transport-belt")
+			
+			end
+			
+		end
 
 		--replace ingrediants
 		RECIPE("distilator"):rep_ing("pipe", "copper-pipe")

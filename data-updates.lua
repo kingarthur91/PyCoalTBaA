@@ -1,4 +1,5 @@
 require("stdlib/data/data").create_data_globals()
+local FUN = require("functions/functions")
 
 require("prototypes.recipe")
 require("prototypes.tailings-recipes")
@@ -13,7 +14,3 @@ if mods["angelspetrochem"] then
 end
 
 require("prototypes.Overrides-Omnimatter")
-
---table.remove(data.raw.recipe["rocket-fuel"],ingredients)
-
---log(serpent.block(data.raw.recipe["rocket-fuel"]))

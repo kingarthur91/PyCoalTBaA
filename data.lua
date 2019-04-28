@@ -1,5 +1,13 @@
 require("stdlib/data/data").create_data_globals()
+local FUN = require("functions/functions")
 
+	--aaii stuff
+	require("prototypes.aaii.prototypes.coal-gas-from-fawogae")
+	require("prototypes.aaii.prototypes.science-pack-0")
+	--require("prototypes.aaii.prototypes.storage-tank-0")
+	--require("prototypes.aaii.prototypes.storage-tank-0-updates")
+	
+	
 	require("prototypes.items")
 	--require("prototypes.item")
 	-- require("prototypes.entity")
@@ -23,3 +31,7 @@ require("stdlib/data/data").create_data_globals()
 	
 	]]--
 	
+	FUN.findtechswithpack("automation-science-pack")
+	FUN.addscipack("science-pack-0")
+	
+	FUN.global_item_replacer("iron-gear-wheel","small-parts-01",{"iron-gear-wheel","small-parts-01"})

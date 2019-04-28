@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.52
+  Changes:
+	- added science pack 0 for aai industries
+	- changed several early techs to only use the sci pack 0
+	- added sp0 to all other techs that have sci pack 1 included
+	- fixed deadlock with abpy and bobs belt overhaul due to crystal mine needing trasport belt that requires science that requires glass that requires crystal mine
+---------------------------------------------------------------------------------------------------
 Version: 0.0.50
   Changes:
 	- fixed errors with replacing items when using py, angels and amator phasma mods

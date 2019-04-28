@@ -355,4 +355,58 @@ local altrec = 0
 --log(altrec)
 end
 
+local techlist = {}
+
+function overrides.findtechswithpack(scipack)
+	for t,tech in pairs(data.raw.technology) do
+	log(tech.name)
+		for p, pack in pairs(tech.unit.ingredients) do
+		log(serpent.block(pack))
+			if pack[1] == scipack then
+				log(pack[1] .. " " .. scipack)
+				--for s,sp in pairs(techlist) do
+					--log(serpent.block(sp))
+					--if sp ~= tech.name then
+						log("stuffs")
+						table.insert(techlist,tech.name)
+					--end
+				--end
+			end
+		end
+	end
+	
+log(serpent.block(techlist))
+
+end
+
+function overrides.addscipack(scipack)
+local scilist = {}
+	for tn,tname in pairs(techlist) do
+		for t, tech in pairs(data.raw.technology) do
+			for s, sci in pairs(tech.unit.ingredients) do
+				scilist[sci[1]] = true
+			end
+			if not scilist[scipack] then
+				table.insert(data.raw.technology[tech.name].unit.ingredients,{"science-pack-0",1})
+			end
+		end
+	end
+	techlist = {}
+end
+
+function overrides.removescipack(techs,scipack)
+	if type(techs) ~= "table" and techs ~= nil then
+		techs = {techs}
+	end
+	for t,tech in pairs(techs) do
+		if data.raw.technology[tech] ~= nil then
+			for p, pack in pairs(data.raw.technology[tech].unit.ingredients) do
+				if pack[1] == scipack then
+					table.remove(data.raw.technology[tech].unit.ingredients,p)
+				end
+			end
+		end
+	end
+end
+
 return overrides
