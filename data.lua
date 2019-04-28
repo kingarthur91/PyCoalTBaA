@@ -31,7 +31,11 @@ local FUN = require("functions/functions")
 	
 	]]--
 	
-	FUN.findtechswithpack("automation-science-pack")
-	FUN.addscipack("science-pack-0")
+	if mods["aai-industry"] then
+
+		FUN.findtechswithpack("automation-science-pack")
+		FUN.addscipack("science-pack-0")
+
+		FUN.global_item_replacer("iron-gear-wheel","small-parts-01",{"iron-gear-wheel","small-parts-01"})
 	
-	FUN.global_item_replacer("iron-gear-wheel","small-parts-01",{"iron-gear-wheel","small-parts-01"})
+	end
