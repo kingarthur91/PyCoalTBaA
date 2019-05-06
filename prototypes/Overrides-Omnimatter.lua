@@ -180,6 +180,19 @@ if mods["pyrawores"] then
 	
 end
 
+if mods["pypetroleumhandling"] then
+
+data.raw.resource["oil-sand"]["autoplace"] = nil
+data.raw["autoplace-control"]["oil-sand"] = nil
+
+data.raw.resource["tar-patch"]["autoplace"] = nil
+data.raw["autoplace-control"]["tar-patch"] = nil
+
+data.raw.resource["sulfur-patch"]["autoplace"] = nil
+data.raw["autoplace-control"]["sulfur-patch"] = nil
+
+end
+
 end
 
 end

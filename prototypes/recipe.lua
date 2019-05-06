@@ -1327,7 +1327,7 @@ RECIPE {
 		end
 end
 
-log(serpent.block(data.raw.technology["basic-electronics"]))
+--log(serpent.block(data.raw.technology["basic-electronics"]))
 
 --pycoal bob recipes
 RECIPE {

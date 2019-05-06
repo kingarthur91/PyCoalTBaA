@@ -14,8 +14,22 @@ if mods["pyrawores"] then
 	if mods["boblibrary"] then
 			
 		if mods["pyhightech"] then
-		
-		table.insert(data.raw.recipe["valvea"].ingredients,{type = "item", name = "glass", amount = 2})
+		log(serpent.block(data.raw.recipe["valvea"]))
+			if data.raw.recipe["valvea"].normal ~= nil then
+			
+				table.insert(data.raw.recipe["valvea"].normal.ingredients,{type = "item", name = "glass", amount = 2})
+				
+			end
+			if data.raw.recipe["valvea"].expensive ~= nil then
+			
+				table.insert(data.raw.recipe["valvea"].expensive.ingredients,{type = "item", name = "glass", amount = 4})
+			
+			end
+			if data.raw.recipe["valvea"].ingredients ~= nil then
+			
+				table.insert(data.raw.recipe["valvea"].ingredients,{type = "item", name = "glass", amount = 2})
+			
+			end
 		
 		end
 		

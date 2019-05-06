@@ -84,7 +84,7 @@ recipe_output_mod()
 end
 
 --productivity recipe checker
---try copying limitaion list and resetting it to updated list afterwards
+--try copying limitation list and resetting it to updated list afterwards
 --[[
 log("assembly machine recipes")
 log(serpent.block(data.raw.recipe["assembling-machine-1"]))
@@ -266,4 +266,60 @@ if mods["BlackMarket"] then
 	
 end
 
-log(serpent.block(data.raw.recipe["electronic-components"]))
+if mods["omnimatter"] then
+-- need to find recipe with num 6 graphic and replace it
+	for r, rec in pairs(data.raw.recipe) do
+	
+		if rec.icons ~= nil then
+		
+			for i, icon in pairs(rec.icons) do
+				--log(serpent.block(icon))
+				if type(icon) == "string" then
+				
+					if string.find(icon, "num_6.png") then
+					
+						--log(serpent.block(rec))
+						icon = "__PyCoalTBaA__/graphics/icons/num_6.png"
+						
+					end
+					--log(serpent.block(rec))
+				else
+				
+					--log(serpent.block(rec))
+				
+				end
+			end
+		end
+		
+	end
+
+data.raw.recipe["omnirec-base-6-extraction-2"].icons[2].icon = "__PyCoalTBaA__/graphics/icons/num_6.png"
+	
+end
+
+
+
+if mods["omnimatter_wood"] then
+
+local limit = {}
+
+		if data.raw.module["productivity-module"].limitation ~= nil then
+			for l, lim in pairs(data.raw.module["productivity-module"].limitation) do
+				if lim ~= "log1" and lim ~= "log2" and lim ~= "log3" and lim ~= "log4" and lim ~= "log5" and lim ~= "log6" and lim ~= "log-organics" and lim ~= "log-wood" and lim ~= "botanical-nursery" then
+					table.insert(limit, lim)
+				end
+			end
+		end
+	
+--log(serpent.block(limit))
+data.raw.module["productivity-module"].limitation = limit
+data.raw.module["productivity-module-2"].limitation = limit
+data.raw.module["productivity-module-3"].limitation = limit
+
+for m, mod in pairs(data.raw.module) do
+	if mod.name:find("productivity%-module") and mod.limitation then
+		mod.limitation = limit
+	end
+end
+
+end
