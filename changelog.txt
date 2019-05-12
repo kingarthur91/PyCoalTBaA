@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.54
+  Changes:
+	- fixed issue with titanium deadlock with angels mods
+	- added pyrawores into angels ores
+	- added settings to enable spwaning infinite version of py ores
+	- added settings to enable spwaning of reqular py ores
+---------------------------------------------------------------------------------------------------
 Version: 0.0.52
   Changes:
 	- added science pack 0 for aai industries
