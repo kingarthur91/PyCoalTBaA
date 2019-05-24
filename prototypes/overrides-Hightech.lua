@@ -97,6 +97,12 @@ RECIPE('superconductor'):replace_ingredient('liquid-helium', 'liquid-nitrogen')
 
 end
 
+	if mods["boblogistics"] then
+		if settings.startup["bobmods-logistics-inserteroverhaul"].value then
+		FUN.ingredient_replace("rare-earth-mine","fast-inserter","long-handed-inserter")
+		end
+	end
+	
 end
 
 --angels mod stuff

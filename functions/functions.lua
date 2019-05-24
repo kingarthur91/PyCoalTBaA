@@ -378,7 +378,7 @@ function overrides.findtechswithpack(scipack)
 log(serpent.block(techlist))
 
 end
-
+--fix that this is adding sci pack 0 to techs that dont have sp1 in them
 function overrides.addscipack(scipack)
 local scilist = {}
 	for tn,tname in pairs(techlist) do
