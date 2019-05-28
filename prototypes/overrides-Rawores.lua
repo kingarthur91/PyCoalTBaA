@@ -4,6 +4,21 @@ if not settings.startup["uberhaul"].value then
 
 if mods["pyrawores"] then
 
+	if mods["aai-industry"] then
+	
+	data.raw.technology["electric-lab"].prerequisites = {"electronics"}
+	data.raw.technology["glass-processing"] = nil
+	data.raw.technology["sand-processing"] = nil
+	
+	--lazy dont wanna make function. will do manual for now
+	--for _, t in pairs(data.raw.technology) do
+	
+	
+	
+	--end
+	
+	end
+
 	if mods["aai-industry-sp0"] then
 	
 		table.remove(data.raw.technology["electric-mining"].unit.ingredients, 1)

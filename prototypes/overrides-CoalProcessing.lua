@@ -15,6 +15,8 @@ table.insert(data.raw["lab"]["lab"].inputs, "science-pack-0")
 --basic fluid handleing
 FUN.removescipack({"basic-automation","electricity","basic-fluid-handling","steam-power","basic-logistics","electric-mining"},"automation-science-pack")
 
+FUN.ingredient_replace(data.raw.recipe["big-electric-pole"],"niobium-plate","chromium")
+
 end
 
 if mods["aai-industry-sp0"] and not mods["angelspetrochem"] then
