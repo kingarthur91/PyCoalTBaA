@@ -4,6 +4,27 @@ if not settings.startup["uberhaul"].value then
 
 if mods["pyrawores"] then
 
+	if mods["aai-industry"] then
+
+log(serpent.block(data.raw.technology["optics"]))
+log("fucking askey")
+	--lazy dont wanna make function. will do manual for now
+		for _, t in pairs(data.raw.technology) do
+		log(serpent.block(t.name))
+			if t.prerequisites ~= nil then
+			log(serpent.block(t.prerequisites))
+				for n, p in pairs(t.prerequisites) do
+				log(serpent.block(p))
+					if p == "glass-processing" then
+						data.raw.technology[t.name].prerequisites[n] = nil
+					end
+				end
+			end
+		end	
+	end
+	
+	log(serpent.block(data.raw.technology["optics"]))
+
 if mods["omnimatter_compression"] then
 
 data.raw.resource["raw-coal"].minable.results = {{type = "item", name = "raw-coal", amount = 1}}

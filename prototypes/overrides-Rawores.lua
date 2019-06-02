@@ -8,14 +8,26 @@ if mods["pyrawores"] then
 	
 	data.raw.technology["electric-lab"].prerequisites = {"electronics"}
 	data.raw.technology["glass-processing"] = nil
-	data.raw.technology["sand-processing"] = nil
+	--data.raw.technology["sand-processing"] = nil
 	
 	--lazy dont wanna make function. will do manual for now
-	--for _, t in pairs(data.raw.technology) do
-	
-	
-	
-	--end
+		for _, t in pairs(data.raw.technology) do
+		
+			if t.prerequisites ~= nil then
+			
+				for _, p in pairs(t.prerequisites) do
+					
+					if p == "glass-processing" then
+					
+						p = ""
+						
+					end
+					
+				end
+				
+			end
+		
+		end
 	
 	end
 

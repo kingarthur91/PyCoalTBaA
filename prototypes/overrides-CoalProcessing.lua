@@ -8,6 +8,7 @@ if mods["aai-industry"] then
 --sp0 script in functions
 
 table.insert(data.raw["lab"]["lab"].inputs, "science-pack-0")
+table.insert(data.raw["lab"]["burner-lab"], "science-pack-0")
 
 --remove sci pack 1 from:
 --basic automation
