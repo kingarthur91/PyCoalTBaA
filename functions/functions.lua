@@ -359,15 +359,15 @@ local techlist = {}
 
 function overrides.findtechswithpack(scipack)
 	for t,tech in pairs(data.raw.technology) do
-	log(tech.name)
+	--log(tech.name)
 		for p, pack in pairs(tech.unit.ingredients) do
-		log(serpent.block(pack))
+		--log(serpent.block(pack))
 			if pack[1] == scipack then
-				log(pack[1] .. " " .. scipack)
+				--log(pack[1] .. " " .. scipack)
 				--for s,sp in pairs(techlist) do
 					--log(serpent.block(sp))
 					--if sp ~= tech.name then
-						log("stuffs")
+						--log("stuffs")
 						table.insert(techlist,tech.name)
 					--end
 				--end
@@ -375,7 +375,7 @@ function overrides.findtechswithpack(scipack)
 		end
 	end
 	
-log(serpent.block(techlist))
+--log(serpent.block(techlist))
 
 end
 --fix that this is adding sci pack 0 to techs that dont have sp1 in them

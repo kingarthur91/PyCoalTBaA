@@ -332,3 +332,14 @@ for m, mod in pairs(data.raw.module) do
 end
 
 end
+
+for _, i in pairs(data.raw.recipe) do
+
+	if i.icon == "__pycoalprocessing__/graphics/icons/sand.png" then
+	
+		log(serpent.block(i.name))
+		log(serpent.block(i))
+		
+	end
+	
+end

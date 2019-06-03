@@ -4,7 +4,7 @@ if not settings.startup["uberhaul"].value then
 
 if mods["pyrawores"] then
 
-	if mods["aai-industry"] then
+	if mods["aai-industry"] and not mods["space-exploration"] then
 	
 	data.raw.technology["electric-lab"].prerequisites = {"electronics"}
 	data.raw.technology["glass-processing"] = nil
