@@ -18,6 +18,8 @@ data.raw.technology["oil-processing"].prerequisites =
 
 end
 
+if data.raw.technology["se-thruster-suit"] ~= nil then
+
 if data.raw.technology["se-thruster-suit"].prerequisites[1] == nil then
 
 data.raw.technology["se-thruster-suit"].prerequisites =
@@ -27,6 +29,8 @@ data.raw.technology["se-thruster-suit"].prerequisites =
     "se-space-lifesupport-facility"
 	}
 	
+end
+
 end
 
 --[[
