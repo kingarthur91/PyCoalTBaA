@@ -333,7 +333,7 @@ end
 
 end
 
-for _, i in pairs(data.raw.recipe) do
+for _, i in pairs(data.raw.item) do
 
 	if i.icon == "__pycoalprocessing__/graphics/icons/sand.png" then
 	
@@ -342,4 +342,56 @@ for _, i in pairs(data.raw.recipe) do
 		
 	end
 	
+	if i.name == "sand" then
+	
+		log(serpent.block(i.name))
+		log(serpent.block(i))
+		
+	end
+	
+	if i.icon_size == 64 then
+	
+		log(serpent.block(i.name))
+		log(serpent.block(i))
+		
+	end
+	
 end
+
+for _, i in pairs(data.raw.recipe) do
+
+	if i.icon_size == 64 then
+	
+		log(serpent.block(i.name))
+		log(serpent.block(i))
+		
+	end
+	
+	if i.icon == "__pycoalprocessing__/graphics/icons/sand.png" then
+	
+		log(serpent.block(i.name))
+		log(serpent.block(i))
+		
+	end
+	
+end
+--[[
+data.raw.item["deadlock-crate-sand"].icon_size = 32
+data.raw.item["deadlock-crate-sand"].icons[2].icon_size = 32
+data.raw.item["deadlock-crate-sand"].icons[3].icon_size = 32
+
+--data.raw.item["deadlock-crate-sand"].icon_size = 32
+--data.raw.recipe["deadlock-crate-sand"].icons[2].icon_size = 32
+--data.raw.recipe["deadlock-crate-sand"].icons[3].icon_size = 32
+
+--data.raw.recipe["deadlock-packrecipe-sand"].icon_size = 32
+data.raw.recipe["deadlock-packrecipe-sand"].icons[2].icon_size = 32
+data.raw.recipe["deadlock-packrecipe-sand"].icons[3].icon_size = 32
+
+--data.raw.recipe["deadlock-unpackrecipe-sand"].icon_size = 32
+data.raw.recipe["deadlock-unpackrecipe-sand"].icons[2].icon_size = 32
+data.raw.recipe["deadlock-unpackrecipe-sand"].icons[3].icon_size = 32
+
+log(serpent.block(data.raw.item["deadlock-crate-sand"]))
+log(serpent.block(data.raw.recipe["deadlock-unpackrecipe-sand"]))
+]]--
