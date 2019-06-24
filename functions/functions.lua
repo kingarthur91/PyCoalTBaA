@@ -1,5 +1,6 @@
 local overrides={}
 
+--add item/fluid to recipe ingredients
 function overrides.add_ingredient(recipe, ingredient)
 	--check that recipe exists before doing anything else
 	if data.raw.recipe[recipe] ~= nil then
@@ -11,10 +12,13 @@ function overrides.add_ingredient(recipe, ingredient)
 
 end
 
+--add item/fluid to recipe results
 function overrides.add_result(recipe, result)
 
 
 end
+
+--replace item/fluid in recipes ingredients
 function overrides.ingredient_replace(recipe, old, new)
 if type(recipe) == "string" then
 local R = data.raw.recipe[recipe]
@@ -133,6 +137,7 @@ local eingredients
 		end
 end
 
+--replace item/fluid in recipes results
 function overrides.results_replacer(recipe, old, new)
 if type(recipe) == "string" then
 local R = data.raw.recipe[recipe]
@@ -203,6 +208,8 @@ end
 	end
 end
 
+--replace an item/fluid in every recipes ingredients/results
+--best used to merge items that are duplicated in mods that should be the same 
 function overrides.global_item_replacer(old, new, blackrecipe)
 local recipes = table.deepcopy(data.raw.recipe)
 if type(blackrecipe) ~= "table" and blackrecipe ~= nil then
@@ -226,6 +233,103 @@ local brecipeset = {}
 			end
 		--end
 	end
+end
+
+--used to remove a whole category of recipes
+--use case wipe all recipes from a building
+function overrides.recipe_category_remove(category, blacklist)
+
+log("function was used")
+
+local hiddenrecipes = {}
+
+	for r, recipe in pairs(data.raw.recipe) do
+
+		if recipe.category == category then
+		--log(recipe.category)
+		--log(category)
+			data.raw.recipe[recipe.name].hidden = true
+			
+			table.insert(hiddenrecipes, recipe.name)
+			
+		end
+		
+	end
+	log(serpent.block(hiddenrecipes))
+	overrides.remove_recipe_unlock(hiddenrecipes)
+
+end
+
+--removes recipes from tech
+--main use is removing recipes hidden by recipe_category_remove function
+function overrides.remove_recipe_unlock(recipe_list)
+
+local recipelist = {}
+
+log(serpent.block(recipelist))
+
+	if type(recipe_list) ~= "table" and recipe_list ~= nil then
+	
+		recipelist[recipe_list] = true
+	
+	elseif recipe_list ~= nil then
+
+		for _, recipe in pairs(recipe_list) do
+		
+			recipelist[recipe] = true
+		
+		end
+
+	end
+	
+	log(serpent.block(recipelist))
+	
+	for t, tech in pairs(data.raw.technology) do
+	
+		if tech.effects ~= nil then
+		
+			for u, unlock in pairs(tech.effects) do
+			
+			--log(serpent.block(unlock))
+			--log(serpent.block(recipelist[unlock.recipe]))
+			--log(serpent.block(tech))
+			
+				if recipelist[unlock.recipe] ~= nil then
+				--log(serpent.block(data.raw.technology[tech.name].effects[u]))
+					data.raw.technology[tech.name].effects[u] = nil
+					
+				--log(serpent.block(data.raw.technology[tech.name].effects[u]))
+				--log(serpent.block(data.raw.technology[tech.name].effects))
+				end
+				
+			end
+			
+		end
+		--log(serpent.block(data.raw.technology[tech.name]))
+		--clean up tech effects table to not be full of nil values to avoid errors
+		
+		local cleanedtable = {}
+		
+		if data.raw.technology[tech.name].effects ~= nil then
+		
+			for _, rec in pairs(data.raw.technology[tech.name].effects) do
+			
+				if rec ~= nil then
+				
+					table.insert(cleanedtable, rec)
+					
+				end
+				
+			end
+			
+		end
+		
+		data.raw.technology[tech.name].effects = cleanedtable
+		
+		--log(serpent.block(data.raw.technology[tech.name]))
+		
+	end
+
 end
 
 local hab = {}

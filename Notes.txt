@@ -1,0 +1,4 @@
+angels refining
+
+currently ore1 goes from crushed smelted at 666 iron plate to 5600 iron plate at lvl 4 from 1000 ore1
+	might be a bit high. need to compare with angels vanilla setup
