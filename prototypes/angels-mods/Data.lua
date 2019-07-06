@@ -1,7 +1,5 @@
-require("prototypes/angels-mods/Refining/items")
-require("prototypes/angels-mods/Refining/recipes")
-
-if mods["angelsrefining"] then
+require("prototypes/angels-mods/items/items")
+require("prototypes/angels-mods/recipes/recipes")
 
 --find and fix game crashing errors first if any
 
@@ -9,10 +7,14 @@ if mods["angelsrefining"] then
 --find and remove all fuelrod + x recipes/ something went wrong recipes
 --remove all ore-sorting recipes to replace them with my own
 
-	table.insert(data.raw["assembling-machine"]["ore-sorting-facility"].crafting_categories, "tba-ore-sorting")
-	table.insert(data.raw["assembling-machine"]["ore-sorting-facility-2"].crafting_categories, "tba-ore-sorting")
-	table.insert(data.raw["assembling-machine"]["ore-sorting-facility-3"].crafting_categories, "tba-ore-sorting")
-	table.insert(data.raw["assembling-machine"]["ore-sorting-facility-4"].crafting_categories, "tba-ore-sorting")
+	if data.raw["assembling-machine"]["ore-sorting-facility"] ~= nil then
+	
+		table.insert(data.raw["assembling-machine"]["ore-sorting-facility"].crafting_categories, "tba-ore-sorting")
+		table.insert(data.raw["assembling-machine"]["ore-sorting-facility-2"].crafting_categories, "tba-ore-sorting")
+		table.insert(data.raw["assembling-machine"]["ore-sorting-facility-3"].crafting_categories, "tba-ore-sorting")
+		table.insert(data.raw["assembling-machine"]["ore-sorting-facility-4"].crafting_categories, "tba-ore-sorting")
+		
+	end
 
 --recipe replacement
 	--recipe ingredient replace
@@ -25,6 +27,9 @@ if mods["angelsrefining"] then
 	fun.ingredient_replace("angelsore3-chunk","angels-ore3-crushed","tba-ore3-crushed-slag")
 	fun.ingredient_replace("angelsore3-crystal","angels-ore3-chunk","tba-ore3-chunk-slag")
 	fun.ingredient_replace("angelsore3-pure","angels-ore3-crystal","tba-ore3-crystal-slag")
+	
+	--adjust science pack 1
+	require("prototypes/angels-mods/recipes/sci1")
 
 --tech additions
 
@@ -59,5 +64,3 @@ if mods["angelsrefining"] then
 
 
 --pya
-
-end
