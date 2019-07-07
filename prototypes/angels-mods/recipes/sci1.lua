@@ -12,15 +12,19 @@ if data.raw.recipe["ground-sample01"] ~= nil then
 
 end
 
-if data.raw.recipe["fawogae-substrate"] ~= nil then
-
-	data.raw.recipe["fawogae-substrate"].ingredients = 
+	fun.Recipe
 		{
-		{type = "item", name = "fawogae", amount = 5},
-		{type = "item", name = "algae-green", amount = 5},
+		name = "fawogae-substrate",
+		ingredients = 
+		{
+			{
+				{type = "item", name = "fawogae", amount = 5}
+			},
+			{
+				{type = "item", name = "algae-green", amount = 5}
+			}
 		}
-
-end
+		}
 
 --add fawogae-substrate and ground sample together to make biosample
 fun.Recipe

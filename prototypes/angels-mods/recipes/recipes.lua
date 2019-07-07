@@ -75,7 +75,7 @@ for _,g in pairs(glassrecipes) do
 	end
 end
 --replace angels molten glass with my own
-FUN.global_item_replacer("liquid-molten-glass","molten-glass")
+fun.global_item_replacer("liquid-molten-glass","molten-glass")
 
 --basic magnet
 fun.Recipe
@@ -113,7 +113,7 @@ fun.Recipe
 				{type = "item", name = "copper-winding", amount = 1}
 			}
 		}
-	},
+	}
 	--empty-casing
 fun.Recipe
 	{
@@ -132,7 +132,7 @@ fun.Recipe
 				{type = "item", name = "empty-caseing", amount = 1}
 			}
 		}
-	},
+	}
 	--assemble shaft and center magnet
 fun.Recipe
 	{
@@ -154,7 +154,7 @@ fun.Recipe
 				{type = "item", name = "assembled-shaft", amount = 1}
 			}
 		}
-	},
+	}
 	--assemble case and coil windings
 fun.Recipe
 	{
@@ -176,7 +176,7 @@ fun.Recipe
 				{type = "item", name = "complete-casing", amount = 1}
 			}
 		}
-	},
+	}
 	--assemble outer and inner parts
 fun.Recipe
 	{
@@ -198,7 +198,7 @@ fun.Recipe
 				{type = "item", name = "electric-motor-1", amount = 1}
 			}
 		}
-	},
+	}
 	--molten glass to flasks
 fun.Recipe
 	{
@@ -218,7 +218,7 @@ fun.Recipe
 			}
 		},
 	icon = "__pycoalprocessing__/graphics/icons/flask.png",
-	},
+	}
 	--molten glass to glass sheet
 fun.Recipe
 	{
@@ -238,5 +238,5 @@ fun.Recipe
 			}
 		},
 	icon = "__pyrawores__/graphics/icons/glass.png",
-	},
+	}
 	--add few more glass recipes that give cheap panes and different types

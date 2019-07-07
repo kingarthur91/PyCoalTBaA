@@ -63,10 +63,99 @@ data:extend(
 	stack_size = 200
 	},
 
-
-
+	--replace subgroup with proper subgroups later
+	{
+    type = "item",
+    name = "bio-sample",
+    icon = "__PyCoalTBaA__/graphics/uberhaul/icons/untextured.png",
+    icon_size = 32,
+    subgroup = "intermediate-product",
+    order = "a",
+    stack_size = 100,
+	},
+	{
+    type = "item",
+    name = "iron-magnet-1",
+    icon = "__PyCoalTBaA__/graphics/uberhaul/icons/untextured.png",
+    icon_size = 32,
+    subgroup = "intermediate-product",
+    order = "a",
+    stack_size = 100,
+	},
+	{
+    type = "item",
+    name = "copper-winding",
+    icon = "__PyCoalTBaA__/graphics/uberhaul/icons/untextured.png",
+    icon_size = 32,
+    subgroup = "intermediate-product",
+    order = "a",
+    stack_size = 100,
+	},
+	{
+    type = "item",
+    name = "empty-casing",
+    icon = "__PyCoalTBaA__/graphics/uberhaul/icons/untextured.png",
+    icon_size = 32,
+    subgroup = "intermediate-product",
+    order = "a",
+    stack_size = 100,
+	},
+	{
+    type = "item",
+    name = "complete-casing",
+    icon = "__PyCoalTBaA__/graphics/uberhaul/icons/untextured.png",
+    icon_size = 32,
+    subgroup = "intermediate-product",
+    order = "a",
+    stack_size = 100,
+	},
+	{
+    type = "item",
+    name = "assmbled-shaft",
+    icon = "__PyCoalTBaA__/graphics/uberhaul/icons/untextured.png",
+    icon_size = 32,
+    subgroup = "intermediate-product",
+    order = "a",
+    stack_size = 100,
+	},
+	{
+    type = "item",
+    name = "empty-caseing",
+    icon = "__PyCoalTBaA__/graphics/uberhaul/icons/untextured.png",
+    icon_size = 32,
+    subgroup = "intermediate-product",
+    order = "a",
+    stack_size = 100,
+	},
+	{
+    type = "item",
+    name = "assembled-shaft",
+    icon = "__PyCoalTBaA__/graphics/uberhaul/icons/untextured.png",
+    icon_size = 32,
+    subgroup = "intermediate-product",
+    order = "a",
+    stack_size = 100,
+	},
 
 }
 )
+
+	if mods["angelsindustries"] then
+	
+	data:extend(
+	{
+		{
+		type = "item",
+		name = "electric-motor-1",
+		icon = "__angelsindustries__/graphics/icons/electric-motor-1.png",
+		icon_size = 32,
+		subgroup = "angels-motors",
+		order = "a",
+		stack_size = 100,
+		},
+	}
+	)
+	
+	end
 
 end

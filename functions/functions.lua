@@ -41,27 +41,63 @@ Recipe{
 		
 
 ]]--
-function overrides.Recipe(recipe)--,category,energy_required,ingredients,results)
+function overrides.Recipe(recipe)
 
 local name = recipe.name
-local ingredients = recipe.ingredients
-local results = recipe.results
+local ingredients
+local results = {}
 
 
 local prep_ingredients = {}
 local prep_results = {}
+
+	if data.raw.recipe[recipe.name] == nil then
+		--if recipe doesnt exist create new one
+		ingredients = recipe.ingredients
+		results = recipe.results
+
+	elseif data.raw.recipe[recipe.name] ~= nil then
+		--if recipe exists load missing info from current recipe and add new info from function
+		
+			if recipe.ingredients ~= nil then
+			
+				ingredients = recipe.ingredients
+				
+			else
+			
+				ingredients = data.raw.recipe[name].ingredients
+			
+			end
+			
+			if recipe.results ~= nil then
+		
+				results = recipe.results
+				
+			else
+			
+				for _, r in pairs(data.raw.recipe[name].results) do
+				--log(serpent.block(r))
+					table.insert(results, {r})
+				
+				end
+			
+			end
+			
+			--log(serpent.block(results))
+			
+	end
 
 --log(serpent.block(name))
 --log(serpent.block(ingredients))
 --log(serpent.block(results))
 
 	--check results to make sure they exist
-	for r, restable in pairs(results) do
+	for _, restable in pairs(results) do
 	
 		for _, r in pairs(restable) do
 		
 			local result = {}
-			
+			--log(serpent.block(r))
 			if r.type ~= "fluid" then
 			
 				--if its not set to fluid its an item. check the items list for the items existance and set the type to item
@@ -176,27 +212,30 @@ local prep_results = {}
 	
 	end
 
---create the recipe
-data:extend(
-{
-	{
-	type="recipe",
-	name=name,
-	category = recipe.category or "crafting",
-	subgroup = recipe.subgroup or nil,
-	enabled = recipe.enabled or false,
-	allow_decomposition = recipe.allow_decomposition or false,
-	energy_required=energy_required or 1,
-	ingredients = prep_ingredients,
-	results = prep_results,
-	icon = recipe.icon,
-	icon_size = recipe.icon_size or 32,
-    order = recipe.order or nil,
-	}
-}
-)
+	if next(prep_ingredients) and next(prep_results) then
+		--create the recipe
+		data:extend(
+		{
+			{
+			type="recipe",
+			name=name,
+			category = recipe.category or "crafting",
+			subgroup = recipe.subgroup or nil,
+			enabled = recipe.enabled or false,
+			allow_decomposition = recipe.allow_decomposition or false,
+			energy_required=energy_required or 1,
+			ingredients = prep_ingredients,
+			results = prep_results,
+			icon = recipe.icon,
+			icon_size = recipe.icon_size or 32,
+			order = recipe.order or nil,
+			}
+		}
+		)
+		
+	end
 
-log(serpent.block(data.raw.recipe[name]))
+--log(serpent.block(data.raw.recipe[name]))
 
 end
 
@@ -433,7 +472,7 @@ end
 --use case wipe all recipes from a building
 function overrides.recipe_category_remove(category, blacklist)
 
-log("function was used")
+--log("function was used")
 
 local hiddenrecipes = {}
 
@@ -449,7 +488,7 @@ local hiddenrecipes = {}
 		end
 		
 	end
-	log(serpent.block(hiddenrecipes))
+	--log(serpent.block(hiddenrecipes))
 	overrides.remove_recipe_unlock(hiddenrecipes)
 
 end
@@ -460,7 +499,7 @@ function overrides.remove_recipe_unlock(recipe_list)
 
 local recipelist = {}
 
-log(serpent.block(recipelist))
+--log(serpent.block(recipelist))
 
 	if type(recipe_list) ~= "table" and recipe_list ~= nil then
 	
@@ -476,7 +515,7 @@ log(serpent.block(recipelist))
 
 	end
 	
-	log(serpent.block(recipelist))
+	--log(serpent.block(recipelist))
 	
 	for t, tech in pairs(data.raw.technology) do
 	

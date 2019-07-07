@@ -1,4 +1,4 @@
-if mods["angelsrefining"] then
+
 --new recipes go here
 
 --all recipes will start with tba- to make them seperate from the other mods recipes
@@ -26,7 +26,7 @@ fun.Recipe
 	ingredients =
 		{
 			{
-			{name="angels-ore1-crushed", amount="add_results"}
+				{name="angels-ore1-crushed", amount="add_results"}
 			}
 		},
     icon = "__angelsrefining__/graphics/icons/angels-ore1-crushed-sorting.png",
@@ -48,11 +48,17 @@ fun.Recipe
     results=
     {
 		{
-			{type="item", name="angels-iron-nugget", amount=2},
+			{name="angels-iron-nugget", amount=2}
 		},
-	  {type="item", name="angels-iron-pebbles", amount=2},
-	  {type="item", name="raw-borax", amount=2},
-	  {type="item", name="tba-ore1-chunk-slag", amount=4},
+		{
+			{name="angels-iron-pebbles", amount=2}
+		},
+		{
+			{name="raw-borax", amount=2}
+		},
+		{
+			{name="tba-ore1-chunk-slag", amount=4}
+		}
     },
     icon = "__angelsrefining__/graphics/icons/angels-ore1-chunk-sorting.png",
     order = "a[angelsore1-chunk-processing]",
@@ -71,10 +77,18 @@ fun.Recipe
     },
     results=
     {
-	  {type="item", name="angels-iron-nugget", amount=3},
-	  {type="item", name="angels-iron-pebbles", amount=2},
-	  {type="item", name="raw-borax", amount=3},
-	  {type="item", name="tba-ore1-crystal-slag", amount=2},
+		{
+			{name="angels-iron-nugget", amount=3}
+		},
+		{
+			{name="angels-iron-pebbles", amount=2}
+		},
+		{
+			{name="raw-borax", amount=3}
+		},
+		{
+			{name="tba-ore1-crystal-slag", amount=2}
+		}
     },
     icon = "__angelsrefining__/graphics/icons/angels-ore1-crystal-sorting.png",
     order = "a[angelsore1-crystal-processing]",
@@ -93,12 +107,16 @@ fun.Recipe
 	},
     results=
     {
-	  {type="item", name="angels-iron-nugget", amount=3},
-	  {type="item", name="angels-iron-pebbles", amount=3},
-	  {type="item", name="raw-borax", amount=4},
+		{
+			{name="angels-iron-nugget", amount=3}
+		},
+		{
+			{name="angels-iron-pebbles", amount=3}
+		},
+		{
+			{name="raw-borax", amount=4}
+		}
     },
     icon = "__angelsrefining__/graphics/icons/angels-ore1-pure-sorting.png",
     order = "a[angelsore1-pure-processing]",
 	}
-	
-end
