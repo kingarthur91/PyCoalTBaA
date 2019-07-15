@@ -14,13 +14,13 @@
 	fun.ingredient_replace("oil-breakdown","crude-oil","heavy-crude-oil")
 	
 		--results
-	fun.results_replace("tar-to-oil","crude-oil","heavy-crude-oil")
-	fun.results_replace("kerogen-extraction-3","crude-oil","heavy-crude-oil")
-	fun.results_replace("kerogen-separation","crude-oil","light-crude-oil")
+	fun.results_replacer("tar-to-oil","crude-oil","heavy-crude-oil")
+	fun.results_replacer("kerogen-extraction-3","crude-oil","heavy-crude-oil")
+	fun.results_replacer("kerogen-separation","crude-oil","light-crude-oil")
 	
 	
 	--shale oil is a light oil
-	fun.results_replace("scrude-to-crude-oil","crude-oil","light-crude-oil")
+	fun.results_replacer("scrude-to-crude-oil","crude-oil","light-crude-oil")
 
 --new oil recipes
 
@@ -32,13 +32,21 @@ fun.Recipe
 	category = "gas-refinery",
 	ingredients =
 		{
-			{type = "fluid", name = "light-crude-oil", amount = 100}
+			{
+				{type = "fluid", name = "light-crude-oil", amount = 100}
+			}
 		},
 	results =
 		{
-			{type = "fluid", name = "high-distillate", amount = 40},
-			{type = "fluid", name = "kerosene", amount = 10},
-			{type = "fluid", name = "low-distillate", amount = 50}
+			{
+				{type = "fluid", name = "high-distillate", amount = 40},
+			},
+			{
+				{type = "fluid", name = "kerosene", amount = 10},
+			},
+			{
+				{type = "fluid", name = "low-distillate", amount = 50}
+			}
 		}
 	}
 	--light distallates processing
@@ -116,7 +124,7 @@ fun.Recipe
 	{
 	name = "heavy-naphtha-processing",
 	energy_required = 4.5,
-	category = gas-refinery",
+	category = "gas-refinery",
 	ingredients =
 		{
 			{
@@ -141,7 +149,7 @@ fun.Recipe
 	{
 	name = "reformate-distillation",
 	energy_required = 4.5,
-	category = gas-refinery",
+	category = "gas-refinery",
 	ingredients =
 		{
 			{
@@ -155,7 +163,7 @@ fun.Recipe
 			},
 			{
 				{type = "fluid", name = "heavy-reformate", amount = 60}
-			}
+			},
 			{
 				{type = "fluid", name = "lpg-gases", amount = 10}
 			}
@@ -166,7 +174,7 @@ fun.Recipe
 	{
 	name = "lowt-atmo-bottom-processing",
 	energy_required = 4.5,
-	category = gas-refinery",
+	category = "gas-refinery",
 	ingredients =
 		{
 			{
@@ -186,7 +194,7 @@ fun.Recipe
 	{
 	name = "hight-atmo-bottom-processing",
 	energy_required = 4.5,
-	category = gas-refinery",
+	category = "gas-refinery",
 	ingredients =
 		{
 			{
@@ -200,7 +208,7 @@ fun.Recipe
 			},
 			{
 				{type = "fluid", name = "heavy--vac-gas", amount = 40}
-			}
+			},
 			{
 				{type = "fluid", name = "vac-residuals", amount = 20}
 			}
@@ -211,7 +219,7 @@ fun.Recipe
 	{
 	name = "",
 	energy_required = 4.5,
-	category = gas-refinery",
+	category = "gas-refinery",
 	ingredients =
 		{
 			{
@@ -225,7 +233,7 @@ fun.Recipe
 			},
 			{
 				{type = "fluid", name = "heavy--vac-gas", amount = 40}
-			}
+			},
 			{
 				{type = "fluid", name = "vac-residuals", amount = 20}
 			}
@@ -236,7 +244,7 @@ fun.Recipe
 	{
 	name = "",
 	energy_required = 4.5,
-	category = gas-refinery",
+	category = "gas-refinery",
 	ingredients =
 		{
 			{
@@ -250,7 +258,7 @@ fun.Recipe
 			},
 			{
 				{type = "fluid", name = "heavy--vac-gas", amount = 40}
-			}
+			},
 			{
 				{type = "fluid", name = "vac-residuals", amount = 20}
 			}
@@ -261,7 +269,7 @@ fun.Recipe
 	{
 	name = "",
 	energy_required = 4.5,
-	category = gas-refinery",
+	category = "gas-refinery",
 	ingredients =
 		{
 			{
@@ -275,7 +283,7 @@ fun.Recipe
 			},
 			{
 				{type = "fluid", name = "heavy--vac-gas", amount = 40}
-			}
+			},
 			{
 				{type = "fluid", name = "vac-residuals", amount = 20}
 			}
@@ -286,7 +294,7 @@ fun.Recipe
 	{
 	name = "",
 	energy_required = 4.5,
-	category = gas-refinery",
+	category = "gas-refinery",
 	ingredients =
 		{
 			{
@@ -300,7 +308,7 @@ fun.Recipe
 			},
 			{
 				{type = "fluid", name = "heavy--vac-gas", amount = 40}
-			}
+			},
 			{
 				{type = "fluid", name = "vac-residuals", amount = 20}
 			}
@@ -311,7 +319,7 @@ fun.Recipe
 	{
 	name = "",
 	energy_required = 4.5,
-	category = gas-refinery",
+	category = "gas-refinery",
 	ingredients =
 		{
 			{
@@ -325,7 +333,7 @@ fun.Recipe
 			},
 			{
 				{type = "fluid", name = "heavy--vac-gas", amount = 40}
-			}
+			},
 			{
 				{type = "fluid", name = "vac-residuals", amount = 20}
 			}
@@ -336,7 +344,7 @@ fun.Recipe
 	{
 	name = "",
 	energy_required = 4.5,
-	category = gas-refinery",
+	category = "gas-refinery",
 	ingredients =
 		{
 			{
@@ -350,7 +358,7 @@ fun.Recipe
 			},
 			{
 				{type = "fluid", name = "heavy--vac-gas", amount = 40}
-			}
+			},
 			{
 				{type = "fluid", name = "vac-residuals", amount = 20}
 			}
@@ -361,7 +369,7 @@ fun.Recipe
 	{
 	name = "",
 	energy_required = 4.5,
-	category = gas-refinery",
+	category = "gas-refinery",
 	ingredients =
 		{
 			{
@@ -375,7 +383,7 @@ fun.Recipe
 			},
 			{
 				{type = "fluid", name = "heavy--vac-gas", amount = 40}
-			}
+			},
 			{
 				{type = "fluid", name = "vac-residuals", amount = 20}
 			}
@@ -386,7 +394,7 @@ fun.Recipe
 	{
 	name = "",
 	energy_required = 4.5,
-	category = gas-refinery",
+	category = "gas-refinery",
 	ingredients =
 		{
 			{
@@ -400,7 +408,7 @@ fun.Recipe
 			},
 			{
 				{type = "fluid", name = "heavy--vac-gas", amount = 40}
-			}
+			},
 			{
 				{type = "fluid", name = "vac-residuals", amount = 20}
 			}
@@ -411,7 +419,7 @@ fun.Recipe
 	{
 	name = "",
 	energy_required = 4.5,
-	category = gas-refinery",
+	category = "gas-refinery",
 	ingredients =
 		{
 			{
@@ -425,7 +433,7 @@ fun.Recipe
 			},
 			{
 				{type = "fluid", name = "heavy--vac-gas", amount = 40}
-			}
+			},
 			{
 				{type = "fluid", name = "vac-residuals", amount = 20}
 			}
