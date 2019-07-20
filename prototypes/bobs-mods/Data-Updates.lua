@@ -10,7 +10,6 @@ end
 
 end
 ]]--
-
 fun.recipe_category_remove("ore-sorting")
 
 -- add borax and niobium to angels ores

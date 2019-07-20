@@ -46,15 +46,21 @@ function overrides.Recipe(recipe)
 local name = recipe.name
 local ingredients
 local results = {}
+local icon
 
 
 local prep_ingredients = {}
 local prep_results = {}
 
+local newingredients = false
+
 	if data.raw.recipe[recipe.name] == nil then
 		--if recipe doesnt exist create new one
 		ingredients = recipe.ingredients
 		results = recipe.results
+		icon = recipe.icon
+		
+		newingredients = true
 
 	elseif data.raw.recipe[recipe.name] ~= nil then
 		--if recipe exists load missing info from current recipe and add new info from function
@@ -62,10 +68,15 @@ local prep_results = {}
 			if recipe.ingredients ~= nil then
 			
 				ingredients = recipe.ingredients
+				newingredients = true
 				
 			else
 			
 				ingredients = data.raw.recipe[name].ingredients
+				
+				--log(serpent.block(i))
+				--log("final ingredients")
+				--log(serpent.block(ingredients))
 			
 			end
 			
@@ -81,6 +92,16 @@ local prep_results = {}
 				
 				end
 			
+			end
+			
+			if recipe.icon ~= nil then
+			
+				icon = recipe.icon
+				
+			else
+			
+				icon = data.raw.recipe[name].icon
+				
 			end
 			
 			--log(serpent.block(results))
@@ -147,67 +168,77 @@ local prep_results = {}
 
 		--item and fluid can share name assume its an item unless fluid is setfenv
 		
-		for i2,ing in pairs(ingtable) do
-			
-			local ingredient = {}
-			
-			if ing.type ~= "fluid" then
-			
-				--if its not set to fluid its an item. check the items list for the items existance and set the type to item
+		if newingredients then
+		
+			for i2,ing in pairs(ingtable) do
 				
-				if data.raw.item[ing.name] ~= nil then
+				local ingredient = {}
+				--log(serpent.block(recipe))
+				--log(serpent.block(ing))
+				--log(serpent.block(ingredients))
+				if ing.type ~= "fluid" then
+				
+					--if its not set to fluid its an item. check the items list for the items existance and set the type to item
 					
-					ingredient.type = "item"
-					
-					--insert the name and amount if the item is found
-					ingredient.name = ing.name
-					
-					if tonumber(ing.amount) ~= nil then
-					
-						ingredient.amount = ing.amount
-					
-					else
-					
-						local amount = 0
+					if data.raw.item[ing.name] ~= nil then
 						
-						for _, r in pairs(prep_results) do
+						ingredient.type = "item"
 						
-							amount = amount + r.amount
+						--insert the name and amount if the item is found
+						ingredient.name = ing.name
 						
+						if tonumber(ing.amount) ~= nil then
+						
+							ingredient.amount = ing.amount
+						
+						else
+						
+							local amount = 0
+							
+							for _, r in pairs(prep_results) do
+							
+								amount = amount + r.amount
+							
+							end
+							
+							ingredient.amount = amount
+							
 						end
 						
-						ingredient.amount = amount
+						--insert the complete ingredient into the recipe ingredients table
+						table.insert(prep_ingredients, ingredient)
+						
+						break
 						
 					end
 					
-					--insert the complete ingredient into the recipe ingredients table
-					table.insert(prep_ingredients, ingredient)
+				elseif ing.type == "fluid" then
+				
+					--its a fluid check if it exists and set the type to fluid
 					
-					break
+					if data.raw.fluid[ing.name] ~= nil then
+						
+						ingredient.type = "fluid"
 					
+						--insert the name and amount if the item is found
+						ingredient.name = ing.name
+						ingredient.amount = ing.amount
+						
+						--insert the complete ingredient into the recipe ingredients table
+						table.insert(prep_ingredients, ingredient)
+						
+						break
+						
+					end
+				
 				end
 				
-			elseif ing.type == "fluid" then
-			
-				--its a fluid check if it exists and set the type to fluid
-				
-				if data.raw.fluid[ing.name] ~= nil then
-					
-					ingredient.type = "fluid"
-				
-					--insert the name and amount if the item is found
-					ingredient.name = ing.name
-					ingredient.amount = ing.amount
-					
-					--insert the complete ingredient into the recipe ingredients table
-					table.insert(prep_ingredients, ingredient)
-					
-					break
-					
-				end
-			
 			end
 			
+		else 
+		
+			prep_ingredients = ingredients
+		
 		end
 	
 	end
@@ -226,7 +257,7 @@ local prep_results = {}
 			energy_required=energy_required or 1,
 			ingredients = prep_ingredients,
 			results = prep_results,
-			icon = recipe.icon,
+			icon = icon,
 			icon_size = recipe.icon_size or 32,
 			order = recipe.order or nil,
 			}
@@ -235,7 +266,88 @@ local prep_results = {}
 		
 	end
 
+log(serpent.block(data.raw.recipe[name]))
+
+end
+
+--add or subtract from a recipe ingredients or results
+--is used to edit already existing recipe
+function overrides.Patch(recipe)
+
+--log(serpent.block(recipe))
 --log(serpent.block(data.raw.recipe[name]))
+local name = recipe.name
+local newingredients = recipe.ingredients
+local newresults = recipe.results
+
+local currentingredients = data.raw.recipe[name].ingredients
+local currentresults = data.raw.recipe[name].results
+
+	if data.raw.recipe[name] ~= nil then
+	
+		if newingredients ~= nil then
+		
+			for i1, ing1 in pairs(currentingredients) do
+			
+				for i2, ing2 in pairs(newingredients) do
+				
+					if ing1.name == ing2.name then
+					
+						if string.find(ing2.amount, "[%+]") ~= nil then
+					
+							ing1.amount = ing1.amount + string.sub(string.find(ing2.amount, "%d"))
+							
+							data.raw.recipe[name].ingredients[i1].amount = ing1.amount
+						
+						elseif string.find(ing2.amount, "[%-]") then
+						
+							ing1.amount = ing1.amount - string.sub(string.find(ing2.amount, "%d"))
+							
+							data.raw.recipe[name].ingredients[i1].amount = ing1.amount
+						
+						end
+					
+					end
+					
+				end
+				
+			end
+		
+		end
+		
+		if newresults ~= nil then
+		
+			for r1, res1 in pairs(currentresults) do
+			
+				for r2, res2 in pairs(newresults) do
+				
+					if res1.name == res2.name then
+					
+						if string.find(res2.amount, "[%+]") ~= nil then
+					
+							res1.amount = res1.amount + string.sub(string.find(res2.amount, "%d"))
+							
+							data.raw.recipe[name].results[r1].amount = res1.amount
+						
+						elseif string.find(res2.amount, "[%-]") then
+						
+							res1.amount = res1.amount - string.sub(string.find(res2.amount, "%d"))
+							
+							data.raw.recipe[name].results[r1].amount = res1.amount
+						
+						end
+					
+					end
+					
+				end
+				
+			end
+		
+		end
+		
+	end
+	
+	log(serpent.block(data.raw.recipe[name]))
 
 end
 

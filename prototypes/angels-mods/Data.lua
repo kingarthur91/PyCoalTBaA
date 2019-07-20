@@ -1,3 +1,4 @@
+require("prototypes/angels-mods/overrides/overrides")
 require("prototypes/angels-mods/items/items")
 require("prototypes/angels-mods/fluids/fluids")
 require("prototypes/angels-mods/recipes/recipes")
