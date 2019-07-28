@@ -1,24 +1,47 @@
 
+--replace duplicated items
+fun.global_item_replacer("coke", "solid-coke")
+fun.global_item_replacer("limestone", "solid-limestone")
+fun.global_item_replacer("acidgas", "gas-acid")
+fun.global_item_replacer("salt", "solid-salt")
+fun.global_item_replacer("sand", "solid-sand")
+fun.global_item_replacer("syngas", "gas-synthesis")
+fun.global_item_replacer("methanol", "gas-methanol")
+fun.global_item_replacer("carbon-dioxide", "gas-carbon-dioxide")
+fun.global_item_replacer("carbon","solid-carbon")
+fun.global_item_replacer("lime", "solid-lime")
+fun.global_item_replacer("angels-plate-chrome","chromium")
+
 --Fluid Converter Recipes
 angelsmods.functions.make_converter("acidgas", "gas-acid")
 angelsmods.functions.make_converter("syngas", "gas-synthesis")angelsmods.functions.make_converter("methanol", "gas-methanol")
 angelsmods.functions.make_converter("carbon-dioxide", "gas-carbon-dioxide")
 
 --recipe overrides
-OV.patch_recipes({ { name = "angelsore6-crushed", enabled = true } })
+fun.Recipe
+	{
+		name = "angelsore6-crushed",
+		enabled = true,
+		subgroup = "ore-sorting-t1"
+	}
 
 data.raw.resource["borax"].minable.required_fluid = "gas-synthesis"
-
-if mods["bobelectronics"] then
-OV.patch_recipes({
-	{ name = "fibreglass-board", ingredients = {
-		{ name = "plastic-bar", amount = 1},
-		{ name = "glass", amount = 2}
+--[[
+fun.Recipe
+	{ 
+		name = "fibreglass-board", 
+		ingredients =
+		{
+			{
+				{ name = "plastic-bar", amount = 1}
+			},
+			{
+				{ name = "glass", amount = 2}
+			}
 		}	
 	}
-})
-end
-
+]]--
+--[[
 if settings.startup["addpyoretoangelsorting"].value then
 
    angelsmods.functions.OV.patch_recipes({
@@ -235,3 +258,4 @@ if mods["Clowns-Extended-Minerals"] then
 end
 
 end
+]]--

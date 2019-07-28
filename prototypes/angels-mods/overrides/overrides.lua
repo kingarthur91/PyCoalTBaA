@@ -13,9 +13,21 @@ fun.global_item_replacer("lime", "solid-lime")
 fun.global_item_replacer("angels-plate-chrome","chromium")
 
 --Fluid Converter Recipes
-angelsmods.functions.make_converter("acidgas", "gas-acid")
-angelsmods.functions.make_converter("syngas", "gas-synthesis")angelsmods.functions.make_converter("methanol", "gas-methanol")
-angelsmods.functions.make_converter("carbon-dioxide", "gas-carbon-dioxide")
+--angelsmods.functions.make_converter("acidgas", "gas-acid")
+--angelsmods.functions.make_converter("syngas", "gas-synthesis")
+--angelsmods.functions.make_converter("methanol", "gas-methanol")
+--angelsmods.functions.make_converter("carbon-dioxide", "gas-carbon-dioxide")
+
+--replace miner fluid
+if data.raw.resource["borax"] ~= nil then
+
+	if data.raw.fluid["gas-synthesis"] ~= nil then
+	
+		data.raw.resource["borax"].minable.required_fluid = "gas-synthesis"
+		
+	end
+	
+end
 
 --recipe overrides
 fun.Recipe
@@ -25,7 +37,6 @@ fun.Recipe
 		subgroup = "ore-sorting-t1"
 	}
 
-data.raw.resource["borax"].minable.required_fluid = "gas-synthesis"
 --[[
    --TIER 3
 fun.Patch
@@ -135,27 +146,12 @@ fun.Recipe
 		results = {{type = "item", name = "raw-borax", amount = 1}}
 		},
 ]]--
---[[
---tech overrides
-table.insert
-	(
-		data.raw["technology"]["slag-processing-1"].effects,
-		{type = "unlock-recipe", recipe = "slag-processing-nio"}
-	)
-table.insert
-   (
-		data.raw["technology"]["advanced-ore-refining-3"].effects,
-		{type = "unlock-recipe", recipe = "angelsore-crystal-mix-nio-processing"}
-   )
 
-table.insert
-	(
-      data.raw["technology"]["slag-processing-1"].effects,
-      {type = "unlock-recipe", recipe = "slag-processing-bor"}
-	)
-table.insert
-	(
-      data.raw["technology"]["advanced-ore-refining-3"].effects,
-      {type = "unlock-recipe", recipe = "angelsore-crystal-mix-bor-processing"}
-	)
-	]]--
+--tech overrides
+fun.tech_add_recipe("slag-processing-1", "slag-processing-nio")
+
+fun.tech_add_recipe("advanced-ore-refining-3", "angelsore-crystal-mix-nio-processing")
+
+fun.tech_add_recipe("slag-processing-1", "slag-processing-bor")
+	
+fun.tech_add_recipe("advanced-ore-refining-3", "angelsore-crystal-mix-bor-processing")

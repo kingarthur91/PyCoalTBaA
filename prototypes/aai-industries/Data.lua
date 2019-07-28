@@ -1,7 +1,7 @@
-require("prototypes/bobs-mods/overrides/overrides")
-require("prototypes/bobs-mods/items/items")
-require("prototypes/bobs-mods/fluids/fluids")
-require("prototypes/bobs-mods/recipes/recipes")
+require("prototypes/angels-mods/overrides/overrides")
+require("prototypes/angels-mods/items/items")
+require("prototypes/angels-mods/fluids/fluids")
+require("prototypes/angels-mods/recipes/recipes")
 
 --find and fix game crashing errors first if any
 

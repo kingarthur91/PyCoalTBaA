@@ -1,7 +1,8 @@
 
 	--redo circuit tech tree. early game basic circuits based on angels stuff and will slowly shift over to pyanodons pyhightech into the late game
 
---[[
+if mods["angelsindustries"] then
+
 data:extend(
 {
 	{
@@ -231,6 +232,7 @@ data:extend(
 
 }
 )
-]]--
 
-fun.tech_add_prerequisites("basic-electronics", "tech-intergrated-circuits")
+	table.insert(data.raw.technology["basic-electronics"].prerequisites, "tech-intergrated-circuits")
+
+end

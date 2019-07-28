@@ -37,15 +37,16 @@ require("prototypes/angels-mods/recipes/recipes")
 --tech additions
 
 	--add new recipes to existing tech
-	table.insert(data.raw.technology["ore-crushing"].effects,{type="unlock-recipe",recipe="tba-angelsore1-crushed-processing"})
-	table.insert(data.raw.technology["ore-floatation"].effects,{type="unlock-recipe",recipe="tba-angelsore1-chunk-processing"})
-	table.insert(data.raw.technology["ore-leaching"].effects,{type="unlock-recipe",recipe="tba-angelsore1-crystal-processing"})
-	table.insert(data.raw.technology["ore-refining"].effects,{type="unlock-recipe",recipe="tba-angelsore1-pure-processing"})
-	
-	table.insert(data.raw.technology["ore-crushing"].effects,{type="unlock-recipe",recipe="tba-angelsore3-crushed-processing"})
-	table.insert(data.raw.technology["ore-floatation"].effects,{type="unlock-recipe",recipe="tba-angelsore3-chunk-processing"})
-	table.insert(data.raw.technology["ore-leaching"].effects,{type="unlock-recipe",recipe="tba-angelsore3-crystal-processing"})
-	table.insert(data.raw.technology["ore-refining"].effects,{type="unlock-recipe",recipe="tba-angelsore3-pure-processing"})
+	fun.tech_add_recipe("ore-crushing", "tba-angelsore1-crushed-processing")
+	fun.tech_add_recipe("ore-floatation", "tba-angelsore1-chunk-processing")
+	fun.tech_add_recipe("ore-leaching", "tba-angelsore1-crystal-processing")
+	fun.tech_add_recipe("ore-refining", "tba-angelsore1-pure-processing")
+	fun.tech_add_recipe("ore-crushing", "tba-angelsore3-crushed-processing")
+	fun.tech_add_recipe("ore-floatation", "tba-angelsore3-chunk-processing")
+	fun.tech_add_recipe("ore-leaching", "tba-angelsore3-crystal-processing")
+	fun.tech_add_recipe("ore-refining", "tba-angelsore3-pure-processing")
+
+]]--
 --pyfe
 
 
