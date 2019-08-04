@@ -16,7 +16,7 @@ fun.ingredient_replace("ralesia-plantation", "electronic-circuit", "basic-circui
 fun.ingredient_replace("jaw-crusher", "electronic-circuit", "basic-circuit-board")
 fun.ingredient_replace("sand-extractor", "electronic-circuit", "basic-circuit-board")
 fun.ingredient_replace("botanical-nursery", "electronic-circuit", "basic-circuit-board")
-fun.ingredient_replace("science-pack-3", "copper-cable", "insulated-cable")
+fun.ingredient_replace("chemical-science-pack", "copper-cable", "insulated-cable")
 fun.ingredient_replace("circuit-board", "ferric-chloride-solution", "boric-acid")
 fun.ingredient_replace("superior-circuit-board", "gold-plate", "nexelit-plate")
 fun.ingredient_replace("superior-circuit-board", "ferric-chloride-solution", "boric-acid")
@@ -81,7 +81,7 @@ fun.ingredient_replace("glycerol-hydrogen", "water", "liquid-air")
 fun.ingredient_replace("zinc-chloride", "water", "hydrogen-chloride")
 fun.ingredient_replace("active-carbon", "water", "nitrogen")
 fun.ingredient_replace("lithium-peroxide", "water", "lithia-water", 300)
-fun.ingredient_replace("gasoline", "gasoline", "water", name = "hydrogen", 200)
+fun.ingredient_replace("gasoline", "gasoline", "water", "hydrogen", 200)
 fun.ingredient_replace("olefin", "water", "hydrogen", 600)
 fun.ingredient_replace("anthraquinone", "steam", "liquid-air")
 fun.ingredient_replace("niobium-oxide", "water", "nitrogen-dioxide")
@@ -100,59 +100,59 @@ fun.ingredient_replace("sulfur-crudeoil", "iron-ore", "salt")
 fun.ingredient_replace("nichrome", "water", "nitrogen")
 fun.ingredient_replace("aromatics-to-rubber", "plastic-bar", "rubber")
 fun.ingredient_replace("nas-battery", "copper-ore", "sodium-hydroxide")
-
-RECIPE("soda-ash"):replace_ingredient("ppd", "sodium-hydroxide")
---RECIPE("vpulp3"):replace_ingredient("petroleum-gas", "nitrogen-dioxide")
-FUN.ingredient_replace("vpulp3","ammonia","nitrogen-dioxide")
-FUN.ingredient_replace("vpulp-precip","ammonia","nitrogen-dioxide")
-
-RECIPE("agitator"):replace_ingredient("iron-plate", "glass"):replace_ingredient("electronic-circuit", "basic-circuit-board")
-RECIPE("thickener"):replace_ingredient("electronic-circuit", "basic-circuit-board"):replace_ingredient("pipe", "brass-alloy")
-RECIPE("hydrocyclone"):replace_ingredient("iron-gear-wheel", "titanium-bearing")
+fun.ingredient_replace("soda-ash", "ppd", "sodium-hydroxide")
+fun.ingredient_replace("vpulp3", "petroleum-gas", "nitrogen-dioxide")
+fun.ingredient_replace("vpulp3","ammonia","nitrogen-dioxide")
+fun.ingredient_replace("vpulp-precip","ammonia","nitrogen-dioxide")
+fun.ingredient_replace("agitator", "iron-plate", "glass")
+fun.ingredient_replace("agitator", "electronic-circuit", "basic-circuit-board")
+fun.ingredient_replace("thickener", "electronic-circuit", "basic-circuit-board")
+fun.ingredient_replace("thickener", "pipe", "brass-alloy")
+fun.ingredient_replace("hydrocyclone", "iron-gear-wheel", "titanium-bearing")
 
 --need to adjust replacer to take a table or a string
 		--(FIX THIS)--
 if not mods["angelspetrochem"] then
-
-RECIPE("mixer"):replace_ingredient("iron-gear-wheel", "titanium-bearing"):replace_ingredient("iron-plate", "titanium-plate")
-
+	fun.ingredient_replace("mixer", "iron-gear-wheel", "titanium-bearing")
+	fun.ingredient_replace("mixer", "iron-plate", "titanium-plate")
 else
-
-RECIPE("mixer"):replace_ingredient("iron-gear-wheel", "cobalt-steel-bearing"):replace_ingredient("iron-plate", "cobalt-steel-alloy")
-
+	fun.ingredient_replace("mixer", "iron-gear-wheel", "cobalt-steel-bearing")
+	fun.ingredient_replace("mixer", "iron-plate", "cobalt-steel-alloy")
 end
-
-RECIPE("diamond-mine"):replace_ingredient("iron-plate", "titanium-plate")
-RECIPE("regolite-mine"):replace_ingredient("iron-plate", "tungsten-plate")
-RECIPE("jig"):replace_ingredient("pipe", "titanium-pipe")
-
-RECIPE("centrifugal-pan"):replace_ingredient("pipe", "titanium-pipe")
-RECIPE("compressor"):replace_ingredient("iron-gear-wheel", "titanium-bearing")
-RECIPE("genlab"):replace_ingredient("iron-gear-wheel", "nitinol-bearing")
-
-RECIPE("gas-separator"):replace_ingredient("pipe", "stone-pipe")
-
---RECIPE("molybdenum-concentrate"):replace_ingredient("water", "nitrogen-dioxide")
-FUN.ingredient_replace("molybdenum-concentrate","nitrogen","nitrogen-dioxide")
-
-RECIPE("phytoplankton"):replace_ingredient("crushed-iron", "crushed-tin")
-fun.results_replacer("cobalt-solvent","ash",{name = "cobalt-ore", amount = 5})
-RECIPE("super-alloy"):replace_ingredient("steel-plate", "nickel-plate")
-RECIPE("cool-air"):replace_ingredient("pressured-air", "liquid-nitrogen")
-
+fun.ingredient_replace("diamond-mine", "iron-plate", "titanium-plate")
+fun.ingredient_replace("regolite-mine", "iron-plate", "tungsten-plate")
+fun.ingredient_replace("jig", "pipe", "titanium-pipe")
+fun.ingredient_replace("centrifugal-pan", "pipe", "titanium-pipe")
+fun.ingredient_replace("compressor", "iron-gear-wheel", "titanium-bearing")
+fun.ingredient_replace("genlab", "iron-gear-wheel", "nitinol-bearing")
+fun.ingredient_replace("gas-separator", "pipe", "stone-pipe")
+fun.ingredient_replace("molybdenum-concentrate", "water", "nitrogen-dioxide")
+fun.ingredient_replace("molybdenum-concentrate","nitrogen","nitrogen-dioxide")
+fun.ingredient_replace("phytoplankton", "crushed-iron", "crushed-tin")
+fun.ingredient_replace("super-alloy", "steel-plate", "nickel-plate")
+fun.ingredient_replace("cool-air", "pressured-air", "liquid-nitrogen")
 fun.ingredient_replace("kmauts-ration", "iron-plate", "tin-plate")
-RECIPE("nexelit-matrix"):replace_ingredient("wood", "resin")
-RECIPE("nbti-alloy"):replace_ingredient("steel-plate", "titanium-plate")
-RECIPE("sc-wire"):replace_ingredient("iron-plate", "tin-plate")
-RECIPE("coil-core"):replace_ingredient("copper-cable", "gilded-copper-cable")
-RECIPE("boron-carbide"):replace_ingredient("coke", "carbon")
-RECIPE("lead-container"):replace_ingredient("iron-plate", "lead-plate")
-RECIPE("science-coating"):replace_ingredient("steel-plate", "titanium-plate")
-RECIPE("agzn-alloy"):replace_ingredient("iron-plate", "silver-plate")
-RECIPE("agzn-alloy"):replace_ingredient("stone", "zinc-plate")
-RECIPE("silver-foam"):replace_ingredient("water", "hydrogen-chloride")
-
-
+fun.ingredient_replace("nexelit-matrix", "wood", "resin")
+fun.ingredient_replace("nbti-alloy", "steel-plate", "titanium-plate")
+fun.ingredient_replace("sc-wire", "iron-plate", "tin-plate")
+fun.ingredient_replace("coil-core", "copper-cable", "gilded-copper-cable")
+fun.ingredient_replace("boron-carbide", "coke", "carbon")
+fun.ingredient_replace("lead-container", "iron-plate", "lead-plate")
+fun.ingredient_replace("science-coating", "steel-plate", "titanium-plate")
+fun.ingredient_replace("agzn-alloy", "iron-plate", "silver-plate")
+fun.ingredient_replace("agzn-alloy", "stone", "zinc-plate")
+fun.ingredient_replace("silver-foam", "water", "hydrogen-chloride")
+fun.ingredient_replace("module-circuit-board", 'phenolic-board','phenolicboard')
+fun.ingredient_replace("sub-denier-microfiber","ammonia","nitrogen-dioxide")
+fun.ingredient_replace("phosphate-glass", 'glass-fiber', 'crushed-quartz')
+fun.ingredient_replace('small-lamp', 'basic-circuit-board', 'copper-plate')
+fun.ingredient_replace('construction-robot-ht', 'construction-robot', 'bob-construction-robot-4')
+fun.ingredient_replace('logistic-robot-ht', 'logistic-robot', 'bob-logistic-robot-4')
+fun.ingredient_replace('high-flux-core', 'liquid-pure-air', 'liquid-nitrogen')
+fun.ingredient_replace('diode-core', 'liquid-pure-air', 'liquid-nitrogen')
+fun.ingredient_replace('capacitor-termination', 'boric-acid', 'liquid-nitrogen')
+fun.ingredient_replace('carbon-aerogel', 'syngas', 'nitrogen')
+fun.ingredient_replace('superconductor', 'liquid-helium', 'liquid-nitrogen')
 
 --add ingredient
 fun.add_ingredient("advanced-circuit", {name = "optical-fiber", amount = 2})
@@ -166,26 +166,52 @@ fun.add_ingredient("ref-to-light-oil", {type = "fluid", name = "hydrogen", amoun
 fun.add_ingredient("active-carbon", {name = "sodium-hydroxide", amount = 7})
 fun.add_ingredient("jaw-crusher", {name = "rubber", amount = 10})
 
-RECIPE("molybdenum-oxide"):add_ingredient({type = "fluid", name = "oxygen", amount = 100})
-RECIPE("bio-reactor"):add_ingredient({type = "item", name = "glass", amount = 50})
-RECIPE("nmf"):add_ingredient({type = "item", name = "glass", amount = 50})
-RECIPE("genlab"):add_ingredient({type = "item", name = "glass", amount = 50})
-RECIPE("molybdenum-plate"):add_ingredient({type = "fluid", name = "hydrogen", amount = 100})
-RECIPE("helium"):add_ingredient({type = "fluid", name = "hydrogen", amount = 10})
-RECIPE("sc-unit"):add_ingredient({type = "fluid", name = "liquid-nitrogen", amount = 100})
-RECIPE("boron-mixture"):add_ingredient({type = "item", name = "aluminium-plate", amount = 5})
-RECIPE("boron"):add_ingredient({type = "fluid", name = "hydrogen-chloride", amount = 500})
-RECIPE("blanket"):add_ingredient({type = "item", name = "lead-plate", amount = 40})
-RECIPE("centrifugal-pan"):add_ingredient({type = "item", name = "tungsten-plate", amount = 20})
-RECIPE("compressor"):add_ingredient({type = "item", name = "tungsten-plate", amount = 20})
-RECIPE("fusion-reactor-mk01"):add_ingredient({type = "item", name = "glass", amount = 200})
-RECIPE("sodium-chlorate"):add_ingredient({type = "item", name = "salt", amount = 20})
-RECIPE("grease"):add_ingredient({type = "item", name = "lithium", amount = 15})
-RECIPE("nbti-alloy"):add_ingredient({type = "fluid", name = "nitrogen", amount = 150})
-RECIPE("ferrite"):add_ingredient({type = "item", name = "zinc-plate", amount = 10})
-RECIPE("sc-wire"):add_ingredient({type = "item", name = "glass", amount = 12})
-RECIPE("blanket"):add_ingredient({type = "item", name = "lithium", amount = 10})
-RECIPE("blanket"):add_ingredient({type = "item", name = "tungsten-plate", amount = 40})
+fun.add_ingredient("molybdenum-oxide", {type = "fluid", name = "oxygen", amount = 100})
+fun.add_ingredient("bio-reactor", {name = "glass", amount = 50})
+fun.add_ingredient("nmf", {name = "glass", amount = 50})
+fun.add_ingredient("genlab", {name = "glass", amount = 50})
+fun.add_ingredient("molybdenum-plate", {type = "fluid", name = "hydrogen", amount = 100})
+fun.add_ingredient("helium", {type = "fluid", name = "hydrogen", amount = 10})
+fun.add_ingredient("sc-unit", {type = "fluid", name = "liquid-nitrogen", amount = 100})
+fun.add_ingredient("boron-mixture", {name = "aluminium-plate", amount = 5})
+fun.add_ingredient("boron", {type = "fluid", name = "hydrogen-chloride", amount = 500})
+fun.add_ingredient("blanket", {name = "lead-plate", amount = 40})
+fun.add_ingredient("centrifugal-pan", {name = "tungsten-plate", amount = 20})
+fun.add_ingredient("compressor", {name = "tungsten-plate", amount = 20})
+fun.add_ingredient("fusion-reactor-mk01", {name = "glass", amount = 200})
+fun.add_ingredient("sodium-chlorate", {name = "salt", amount = 20})
+fun.add_ingredient("grease", {name = "lithium", amount = 15})
+fun.add_ingredient("nbti-alloy", {type = "fluid", name = "nitrogen", amount = 150})
+fun.add_ingredient("ferrite", {name = "zinc-plate", amount = 10})
+fun.add_ingredient("sc-wire", {name = "glass", amount = 12})
+fun.add_ingredient("blanket", {name = "lithium", amount = 10})
+fun.add_ingredient("blanket", {name = "tungsten-plate", amount = 40})
+fun.add_ingredient("silicon-wafer", {name = 'crushed-quartz', amount = 2})
+fun.add_ingredient("nano-wires", {name = 'crushed-gold', amount = 10})
+fun.add_ingredient("robot-brain-logistic", {name = "paramagnetic-material", amount = 1})
+fun.add_ingredient("robot-brain-logistic", {name = "inductor2", amount = 5})
+fun.add_ingredient("robot-brain-construction", {name = "paramagnetic-material", amount = 1})
+fun.add_ingredient("robot-brain-construction", {name = "diode", amount = 3})
+fun.add_ingredient("robot-brain-logistic-2", {name = "capacitor2", amount = 3})
+fun.add_ingredient("robot-brain-logistic-2", {name = "inductor2", amount = 5})
+fun.add_ingredient("robot-brain-logistic-2", {name = "diamagnetic-material", amount = 1})
+fun.add_ingredient("robot-brain-construction-2", {name = "capacitor2", amount = 5})
+fun.add_ingredient("robot-brain-construction-2", {name = "diode", amount = 3})
+fun.add_ingredient("robot-brain-construction-2", {name = "diamagnetic-material", amount = 1})
+fun.add_ingredient("robot-brain-logistic-3", {name = "capacitor3", amount = 3})
+fun.add_ingredient("robot-brain-logistic-3", {name = "diode3", amount = 5})
+fun.add_ingredient("robot-brain-logistic-3", {name = "processor", amount = 2})
+fun.add_ingredient("robot-brain-logistic-3", {name = "superconductor-servomechanims", amount = 1})
+fun.add_ingredient("robot-brain-construction-3", {name = "inductor3", amount = 5})
+fun.add_ingredient("robot-brain-construction-3", {name = "resistor3", amount = 5})
+fun.add_ingredient("robot-brain-construction-3", {name = "processor", amount = 1})
+fun.add_ingredient("robot-brain-construction-3", {name = "superconductor-servomechanims", amount = 1})
+fun.add_ingredient("robot-brain-logistic-4", {name = "supercapacitor", amount = 3})
+fun.add_ingredient("robot-brain-logistic-4", {name = "csle-diode", amount = 5})
+fun.add_ingredient("robot-brain-logistic-4", {name = "hyperelastic-material", amount = 1})
+fun.add_ingredient("robot-brain-construction-4", {name = "fault-current-inductor", amount = 3})
+fun.add_ingredient("robot-brain-construction-4", {name = "paradiamatic-resistor", amount = 5})
+fun.add_ingredient("robot-brain-construction-4", {name = "hyperelastic-material", amount = 1})
 
 --remove ingredient
 RECIPE("zinc-chloride"):rem_ing("copper-plate")
@@ -197,35 +223,29 @@ fun.results_replacer("glycerol-hydrogen", "petroleum-gas", {type = "fluid", name
 fun.results_replacer("refsyngas-from-meth","water",{type = "fluid", name = "hydrogen", amount = 30})
 fun.results_replacer("refsyngas-from-meth-canister","water",{type = "fluid", name = "hydrogen", amount = 30})
 fun.results_replacer("aromatics","water",{type = "fluid", name = "hydrogen", amount = 100})
-fun.results_replacer("cobalt-solvent","ash",{name = "cobalt-ore", amount = 5})
-fun.results_replacer("calcinate-separation","iron-ore",{name = "quartz", amount = 1, probability = 0.6})
-fun.results_replacer("calcinate-separation","copper-ore",{name = "lead-ore", amount = 1, probability = 0.3})
+fun.results_replacer("cobalt-solvent","ash", "cobalt-ore", 5)
+fun.results_replacer("calcinate-separation","iron-ore", "quartz", 1) --, probability = 0.6)
+fun.results_replacer("calcinate-separation","copper-ore", "lead-ore", 1) --, probability = 0.3)
 fun.results_replacer("molybdenum-oxide","sulfur",{type = "fluid", name = "sulfur-dioxide", amount = 50})
 fun.results_replacer("liquid-rich-gas-distilation","water",{type = "fluid", name = "liquid-nitrogen", amount = 10})
 
-
 --add result
-					--(CODE NOT DONE YET)--
+fun.add_result("ash-separation", {name = "cobalt-ore", amount = 3}) --, probability = 0.3})
+fun.add_result("zinc-chloride", {type = "fluid", name = "hydrogen", amount = 20})
+fun.add_result("calcinate-separation",{name = "zinc-ore", amount = 1}) --, probability = 0.3})
+fun.add_result("calcinate-separation",{name = "silver-ore", amount = 1}) --, probability = 0.3})
+fun.add_result("sodium-chlorate", {type = "fluid", name = "hydrogen", amount = 150})
+fun.add_result("cool-air", {type = "fluid", name = "nitrogen", amount = 200})
+fun.add_result("liquid-air-distilation", {type = "fluid", name = "nitrogen", amount = 2})
+fun.add_result("liquid-air-distilation", {type = "fluid", name = "oxygen", amount = 2})
+fun.add_result("d2o-distilation", {type = "fluid", name = "oxygen", amount = 5})
+fun.add_result("purier-helium", {type = "fluid", name = "liquid-nitrogen", amount = 1})
+fun.add_result("sodium-chlorate", {type = "fluid", name = "hydrogen", amount = 150})
 
-fun.add_result("ash-separation", {name = "cobalt-ore", amount = 3, probability = 0.3})
-fun.add_result("zinc-chloride", {name = "hydrogen", amount = 20})
-fun.add_result("calcinate-separation",{name = "zinc-ore", amount = 1, probability = 0.3})
-fun.add_result("calcinate-separation",{name = "silver-ore", amount = 1, probability = 0.3})
-
-
-add_result("sodium-chlorate", {type = "fluid", name = "hydrogen", amount = 150})
-
-add_result("cool-air", {type = "fluid", name = "nitrogen", amount = 200})
-
-add_result("liquid-air-distilation", {type = "fluid", name = "nitrogen", amount = 2})
-add_result("liquid-air-distilation", {type = "fluid", name = "oxygen", amount = 2})
-
-add_result("d2o-distilation", {type = "fluid", name = "oxygen", amount = 5})
-add_result("purier-helium", {type = "fluid", name = "liquid-nitrogen", amount = 1})
-add_result("sodium-chlorate", {type = "fluid", name = "hydrogen", amount = 150})
-
+log(serpent.block(data.raw["bob-resin-wood"]))
 
 --update result
+--[[
 fun.Patch
 	{
 		name = "bob-resin-wood",
@@ -234,3 +254,47 @@ fun.Patch
 				{name = "resin", amount = "+2"}
 			}
 	}
+]]--	
+
+--global replacement
+fun.global_item_replacer("basic-circuit-board","pcb1")
+fun.global_item_replacer("circuit-board","pcb2")
+fun.global_item_replacer("superior-circuit-board","pcb3")
+fun.global_item_replacer("electronic-circuit","cm-electronic-circuit")
+fun.global_item_replacer("advanced-circuit","cm-advanced-circuit")
+fun.global_item_replacer("processing-unit","cm-processing-unit")
+fun.global_item_replacer("advanced-processing-unit","intelligent-unit")
+
+--tech recipe add
+RECIPE("gilded-copper-cable"):add_unlock('nano-tech')
+
+--tech recipe removal
+
+RECIPE("electronic-circuit"):remove_unlock("electronics")
+RECIPE("basic-electronic-components"):remove_unlock("electronics")
+RECIPE("silicon-plate"):remove_unlock("basic-electronics")
+RECIPE("silicon-plate"):remove_unlock("silicon-processing")
+RECIPE("phenolic-board"):remove_unlock("advanced-electronics")
+RECIPE("electronic-components"):remove_unlock("advanced-electronics")
+RECIPE("intergrated-electronics"):remove_unlock("advanced-electronics-2")
+RECIPE("fibreglass-board"):remove_unlock("advanced-electronics-2")
+RECIPE("superior-circuit-board"):remove_unlock("advanced-electronics-2")
+RECIPE("circuit-board"):remove_unlock("advanced-electronics")
+RECIPE("advanced-circuit"):remove_unlock("advanced-electronics")
+RECIPE("advanced-logic-board"):remove_unlock("advanced-electronics-2")
+RECIPE("processing-electronics"):remove_unlock("advanced-electronics-3")
+RECIPE("gilded-copper-cable"):remove_unlock("advanced-electronics-3")
+RECIPE("advanced-processing-unit"):remove_unlock("advanced-electronics-3")
+RECIPE("multi-layer-circuit-board"):remove_unlock("advanced-electronics-3")
+RECIPE("module-processor-board-3"):remove_unlock("advanced-electronics-3")
+RECIPE("module-processor-board-2"):remove_unlock("advanced-electronics-2")
+RECIPE("module-processor-board"):remove_unlock("modules")
+RECIPE("silicon-nitride"):remove_unlock("ceramics")
+RECIPE("bob-silicon-plate"):remove_unlock("silicon-processing")
+RECIPE("silicon-plate2"):remove_unlock("silicon-processing")
+RECIPE("silicon-wafer"):remove_unlock("silicon-processing")
+
+--disable recipes
+RECIPE("wooden-board"):set_enabled(false)
+RECIPE("basic-circuit-board"):set_enabled(false)
+RECIPE("wood-board"):set_enabled(false)

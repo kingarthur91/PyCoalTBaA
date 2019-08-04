@@ -1,20 +1,7 @@
---remove angels sorting recipes
---[[
-for _, recipe in pairs(data.raw.recipe) do
 
-if recipe.category == "ore-sorting" then
-
-log(serpent.block(recipe.name))
-
-end
-
-end
-]]--
-fun.recipe_category_remove("ore-sorting")
-
--- add borax and niobium to angels ores
-
---borax added to shapirite and crotinium
-
-
---niobium added to stirite and jivolite.
+--check for bob logistics and update rare earth mine if its active
+	if mods["boblogistics"] then
+		if settings.startup["bobmods-logistics-inserteroverhaul"].value then
+		fun.ingredient_replace("rare-earth-mine","fast-inserter","long-handed-inserter")
+		end
+	end

@@ -46,7 +46,6 @@ require("prototypes/angels-mods/recipes/recipes")
 	fun.tech_add_recipe("ore-leaching", "tba-angelsore3-crystal-processing")
 	fun.tech_add_recipe("ore-refining", "tba-angelsore3-pure-processing")
 
-]]--
 --pyfe
 
 

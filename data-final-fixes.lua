@@ -83,3 +83,6 @@ local inglist = {}
 		end
 	end
 end
+
+log(serpent.block(data.raw.recipe["zinc-chloride"]))
+log(serpent.block(data.raw.fluid["gas-hydrogen"]))
