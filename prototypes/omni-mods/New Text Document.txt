@@ -1,0 +1,25 @@
+
+if mods["omnimatter_permutation"] then
+
+fun.recipe
+	{
+		type = "recipe",
+		name = "nitrobenzene",
+		category = "fbreactor",
+		energy_required = 4,
+		ingredients = 
+			{
+				{type = "fluid", name = "benzene", amount = 50},
+				{type = "fluid", name = "sulfuric-acid", amount = 100},
+				{type = "fluid", name = "ammonia", amount = 30}
+			},
+		results = 
+			{
+				{type = "fluid", name = "nitrobenzene", amount = 100}
+			}
+	}
+	
+end
+
+--fix tech replacement
+table.insert(data.raw["technology"] ["angels-sulfur-processing-1"].effects, { type = "unlock-recipe", recipe = "nitrobenzene" })

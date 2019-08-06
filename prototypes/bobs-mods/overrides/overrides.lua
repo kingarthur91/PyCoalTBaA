@@ -153,6 +153,7 @@ fun.ingredient_replace('diode-core', 'liquid-pure-air', 'liquid-nitrogen')
 fun.ingredient_replace('capacitor-termination', 'boric-acid', 'liquid-nitrogen')
 fun.ingredient_replace('carbon-aerogel', 'syngas', 'nitrogen')
 fun.ingredient_replace('superconductor', 'liquid-helium', 'liquid-nitrogen')
+fun.ingredient_replace("gun-turret","duralumin","aluminium-plate")
 
 --add ingredient
 fun.add_ingredient("advanced-circuit", {name = "optical-fiber", amount = 2})
@@ -216,6 +217,9 @@ fun.add_ingredient("robot-brain-construction-4", {name = "hyperelastic-material"
 --remove ingredient
 RECIPE("zinc-chloride"):rem_ing("copper-plate")
 RECIPE("sodium-chlorate"):remove_ingredient('sodium-chlorate', 'water-saline')
+RECIPE('electronic-circuit'):remove_ingredient('solder')
+RECIPE('advanced-circuit'):remove_ingredient('solder')
+RECIPE('processing-unit'):remove_ingredient('solder')
 		
 --replace result
 fun.results_replacer("aromatics-to-rubber", "crude-oil", "rubber", 1)
@@ -228,6 +232,12 @@ fun.results_replacer("calcinate-separation","iron-ore", "quartz", 1) --, probabi
 fun.results_replacer("calcinate-separation","copper-ore", "lead-ore", 1) --, probability = 0.3)
 fun.results_replacer("molybdenum-oxide","sulfur",{type = "fluid", name = "sulfur-dioxide", amount = 50})
 fun.results_replacer("liquid-rich-gas-distilation","water",{type = "fluid", name = "liquid-nitrogen", amount = 10})
+fun.results_replacer("tailings-tin-lead","tin-ore","ore-tin")
+fun.results_replacer("tailings-tin-lead","lead-ore","ore-lead")
+fun.results_replacer("tailings-nickel-zinc","nickel-ore","ore-nickel")
+fun.results_replacer("tailings-nickel-zinc","zinc-ore","ore-zinc")
+fun.results_replacer("tailings-bauxite-cobalt","bauxite-ore","ore-aluminium")
+fun.results_replacer("tailings-rutile-tungsten","rutile-ore","ore-titanium")	
 
 --add result
 fun.add_result("ash-separation", {name = "cobalt-ore", amount = 3}) --, probability = 0.3})
@@ -241,8 +251,6 @@ fun.add_result("liquid-air-distilation", {type = "fluid", name = "oxygen", amoun
 fun.add_result("d2o-distilation", {type = "fluid", name = "oxygen", amount = 5})
 fun.add_result("purier-helium", {type = "fluid", name = "liquid-nitrogen", amount = 1})
 fun.add_result("sodium-chlorate", {type = "fluid", name = "hydrogen", amount = 150})
-
-log(serpent.block(data.raw["bob-resin-wood"]))
 
 --update result
 --[[
@@ -264,37 +272,108 @@ fun.global_item_replacer("electronic-circuit","cm-electronic-circuit")
 fun.global_item_replacer("advanced-circuit","cm-advanced-circuit")
 fun.global_item_replacer("processing-unit","cm-processing-unit")
 fun.global_item_replacer("advanced-processing-unit","intelligent-unit")
+fun.global_item_replacer("bauxite-ore","ore-aluminium")
+fun.global_item_replacer("tin-ore","ore-tin")
+fun.global_item_replacer("lead-ore","ore-lead")
+fun.global_item_replacer("nickel-ore","ore-nickel")
+fun.global_item_replacer("zinc-ore","ore-zinc")
+fun.global_item_replacer("rutile-ore","ore-titanium")
+fun.global_item_replacer("tinned-copper-cable","tinned-cable")
 
 --tech recipe add
-RECIPE("gilded-copper-cable"):add_unlock('nano-tech')
+fun.tech_add_recipe("nano-tech","gilded-copper-cable")
 
 --tech recipe removal
 
-RECIPE("electronic-circuit"):remove_unlock("electronics")
-RECIPE("basic-electronic-components"):remove_unlock("electronics")
-RECIPE("silicon-plate"):remove_unlock("basic-electronics")
-RECIPE("silicon-plate"):remove_unlock("silicon-processing")
-RECIPE("phenolic-board"):remove_unlock("advanced-electronics")
-RECIPE("electronic-components"):remove_unlock("advanced-electronics")
-RECIPE("intergrated-electronics"):remove_unlock("advanced-electronics-2")
-RECIPE("fibreglass-board"):remove_unlock("advanced-electronics-2")
-RECIPE("superior-circuit-board"):remove_unlock("advanced-electronics-2")
-RECIPE("circuit-board"):remove_unlock("advanced-electronics")
-RECIPE("advanced-circuit"):remove_unlock("advanced-electronics")
-RECIPE("advanced-logic-board"):remove_unlock("advanced-electronics-2")
-RECIPE("processing-electronics"):remove_unlock("advanced-electronics-3")
-RECIPE("gilded-copper-cable"):remove_unlock("advanced-electronics-3")
-RECIPE("advanced-processing-unit"):remove_unlock("advanced-electronics-3")
-RECIPE("multi-layer-circuit-board"):remove_unlock("advanced-electronics-3")
-RECIPE("module-processor-board-3"):remove_unlock("advanced-electronics-3")
-RECIPE("module-processor-board-2"):remove_unlock("advanced-electronics-2")
-RECIPE("module-processor-board"):remove_unlock("modules")
-RECIPE("silicon-nitride"):remove_unlock("ceramics")
-RECIPE("bob-silicon-plate"):remove_unlock("silicon-processing")
-RECIPE("silicon-plate2"):remove_unlock("silicon-processing")
-RECIPE("silicon-wafer"):remove_unlock("silicon-processing")
+fun.tech_remove_recipe("electronic-circuit","electronics")
+fun.tech_remove_recipe("basic-electronic-components","electronics")
+fun.tech_remove_recipe("silicon-plate","basic-electronics")
+fun.tech_remove_recipe("silicon-plate","silicon-processing")
+fun.tech_remove_recipe("phenolic-board","advanced-electronics")
+fun.tech_remove_recipe("electronic-components","advanced-electronics")
+fun.tech_remove_recipe("intergrated-electronics","advanced-electronics-2")
+fun.tech_remove_recipe("fibreglass-board","advanced-electronics-2")
+fun.tech_remove_recipe("superior-circuit-board","advanced-electronics-2")
+fun.tech_remove_recipe("circuit-board","advanced-electronics")
+fun.tech_remove_recipe("advanced-circuit","advanced-electronics")
+fun.tech_remove_recipe("advanced-logic-board","advanced-electronics-2")
+fun.tech_remove_recipe("processing-electronics","advanced-electronics-3")
+fun.tech_remove_recipe("gilded-copper-cable","advanced-electronics-3")
+fun.tech_remove_recipe("advanced-processing-unit","advanced-electronics-3")
+fun.tech_remove_recipe("multi-layer-circuit-board","advanced-electronics-3")
+fun.tech_remove_recipe("module-processor-board-3","advanced-electronics-3")
+fun.tech_remove_recipe("module-processor-board-2","advanced-electronics-2")
+fun.tech_remove_recipe("module-processor-board","modules")
+fun.tech_remove_recipe("silicon-nitride","ceramics")
+fun.tech_remove_recipe("bob-silicon-plate","silicon-processing")
+fun.tech_remove_recipe("silicon-plate2","silicon-processing")
+fun.tech_remove_recipe("silicon-wafer","silicon-processing")
+fun.tech_remove_recipe("chemical-processing-2",'ferric-chloride-solution')
+
+--remove tech from tree
+fun.tech_remove("electrolysis-1",true)
+fun.tech_remove("electrolysis-2",true)
+fun.tech_remove("electrolysis-3",true)
+fun.tech_remove("electrolysis-4",true)
+fun.tech_remove("nickel-processing",true)
 
 --disable recipes
 RECIPE("wooden-board"):set_enabled(false)
 RECIPE("basic-circuit-board"):set_enabled(false)
 RECIPE("wood-board"):set_enabled(false)
+
+--disable bobs ore when pyro is active
+if mods["pyrawores"] then
+
+	if mods["bobores"] then
+
+		--log(serpent.block(data.raw["autoplace-control"]))
+			data.raw.resource["bauxite-ore"] = nil
+			data.raw["autoplace-control"]["bauxite-ore"] = nil
+
+			data.raw.resource["cobalt-ore"] = nil
+			data.raw["autoplace-control"]["cobalt-ore"] = nil
+
+			data.raw.resource["gem-ore"] = nil
+			data.raw["autoplace-control"]["gem-ore"] = nil
+
+			data.raw.resource["gold-ore"] = nil
+			data.raw["autoplace-control"]["gold-ore"] = nil
+
+			data.raw.resource["lead-ore"] = nil
+			data.raw["autoplace-control"]["lead-ore"] = nil
+
+			data.raw.resource["nickel-ore"] = nil
+			data.raw["autoplace-control"]["nickel-ore"] = nil
+
+			data.raw.resource["quartz"] = nil
+			data.raw["autoplace-control"]["quartz"] = nil
+
+			data.raw.resource["rutile-ore"] = nil
+			data.raw["autoplace-control"]["rutile-ore"] = nil
+
+			data.raw.resource["silver-ore"] = nil
+			data.raw["autoplace-control"]["silver-ore"] = nil
+
+			data.raw.resource["sulfur"] = nil
+			data.raw["autoplace-control"]["sulfur"] = nil
+
+			data.raw.resource["tin-ore"] = nil
+			data.raw["autoplace-control"]["tin-ore"] = nil
+
+			data.raw.resource["tungsten-ore"] = nil
+			data.raw["autoplace-control"]["tungsten-ore"] = nil
+
+			data.raw.resource["zinc-ore"] = nil
+			data.raw["autoplace-control"]["zinc-ore"] = nil
+
+			--data.raw.resource["lithia-water"] = nil
+			--data.raw["autoplace-control"]["lithia-water"] = nil
+
+			--data.raw.resource["ground-water"] = nil
+			--data.raw["autoplace-control"]["ground-water"] = nil
+			
+			data.raw["map-gen-presets"]["default"]["rail-world"]["basic_settings"] = nil
+			data.raw["map-gen-presets"]["default"]["rich-resources"]["basic_settings"] = nil
+			
+end

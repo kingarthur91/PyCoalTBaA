@@ -1048,7 +1048,18 @@ end
 --removes recipe from tech if tech exists and includes recipe in effects
 function overrides.tech_remove_recipe(tech, recipe)
 
-
+	if data.raw.technology[tech] ~= nil and data.raw.recipe[recipe] ~= nil then
+		local effects = data.raw.technology[tech].effects
+		local neweffects = {}
+			for _, e in pairs(effects) do
+				if e.recipe ~= recipe then
+					table.insert(neweffects, e)
+				end
+			end
+			if next(neweffects) ~= nil then
+				data.raw.technology[tech].effects = neweffects
+			end	
+	end
 
 end
 
@@ -1062,6 +1073,26 @@ function overrides.tech_add_prerequisites(tech, prereq)
 			
 		end
 		
+	end
+
+end
+
+function overrides.tech_remove(tech, prereq_patch)
+
+	if data.raw.technology[tech] ~= nil then
+		data.raw.technology[tech].enabled = false
+		data.raw.technology[tech].hidden = true
+		if prereq_patch ~= nil and prereq_patch == true then
+			for _, t in pairs(data.raw.technology) do
+				if t.prerequisites ~= nil then
+					for _, p in pairs(t.prerequisites) do
+						if p == tech then
+							table.remove(data.raw.technology[t].prerequisites, p)
+						end
+					end
+				end
+			end
+		end
 	end
 
 end
