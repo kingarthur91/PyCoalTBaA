@@ -71,7 +71,7 @@ for _,g in pairs(glassrecipes) do
 		
 		--replace type, name, amount
 		data.raw.recipe[g].results = {{type = "fluid", name = "molten-glass", amount = amount}}
-		data.raw.recipe[g].icon = "__PyCoalTBaA__/graphics/uberhaul/icons/moltenglass.png"
+		data.raw.recipe[g].icon = "__PyCoalTBaA__/graphics/icons/moltenglass.png"
 	end
 end
 --replace angels molten glass with my own

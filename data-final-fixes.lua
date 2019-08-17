@@ -2,9 +2,39 @@
 require("prototypes/angels-mods/Data-Final-Fixes")
 
 --Bob Mods
---require"prototypes/Bobs mods/"
+require("prototypes/bobs-mods/Data-Final-Fixes")
 
+require("prototypes/aai-industries/Data-Final-Fixes")
 
+--require("prototypes/bio-industries/Data-Final-Fixes")
+
+--require("prototypes/dl-stacking/Data-Final-Fixes")
+
+--require("prototypes/kaoextended/Data-Final-Fixes")
+
+--require("prototypes/madclowns-mods/Data-Final-Fixes")
+
+--require("prototypes/mining-space-industries/Data-Final-Fixes")
+
+require("prototypes/omni-mods/Data-Final-Fixes")
+
+--require("prototypes/space-exploration/Data-Final-Fixes")
+
+require("updates/acid-changes")
+
+require("updates/pyproductivityadjuster")
+
+if mods["Advanced-Solar"] then
+
+	data.raw.technology["electric-energy-accumulators-2"].prerequisites = {"electric-energy-accumulators"}
+	
+end
+
+if mods["BlackMarket"] then
+
+	data.raw.technology["black-market-energy"].prerequisites = { "black-market-item", "electric-energy-accumulators" }
+	
+end
 
 
 --recipe ingredients deduper
@@ -84,5 +114,4 @@ local inglist = {}
 	end
 end
 
-log(serpent.block(data.raw.recipe["zinc-chloride"]))
-log(serpent.block(data.raw.fluid["gas-hydrogen"]))
+log(serpent.block(data.raw.recipe["fawogae-substrate"]))

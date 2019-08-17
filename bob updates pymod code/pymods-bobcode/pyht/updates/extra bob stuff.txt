@@ -1,0 +1,16 @@
+Con bot :replace_ingredient('construction-robot', 'bob-construction-robot-4')
+
+log bot :replace_ingredient('logistic-robot', 'bob-logistic-robot-4')
+
+nano ass :replace_ingredient("iron-gear-wheel", "titanium-bearing")
+
+cadaveric-arum :add_ingredient({type = "item", name = "rubber", amount = 20})
+
+chlormethane :replace_ingredient("sulfuric-acid" , "hydrogen-chloride")
+
+RECIPE('mixer'):replace_ingredient('titanium-bearing', 'steel-bearing')
+
+RECIPE('liquid-nitrogen'):remove_unlock('helium-processing'):add_unlock('advanced-electronics')
+
+RECIPE("capacitor1"):add_ingredient({type = 'item', name = 'resin', amount = 2})
+RECIPE("resorcinol"):replace_ingredient('melamine-resin', 'resin')

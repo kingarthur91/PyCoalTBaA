@@ -66,18 +66,22 @@ fun.global_item_replacer("solid-sodium-sulfate","sodium-sulfate")
 fun.results_replacer("angelsore5-crushed-processing","ore-nickel","ore-aluminium")
 
 --Fluid Converter Recipes
---angelsmods.functions.make_converter("acidgas", "gas-acid")
---angelsmods.functions.make_converter("syngas", "gas-synthesis")
---angelsmods.functions.make_converter("methanol", "gas-methanol")
---angelsmods.functions.make_converter("carbon-dioxide", "gas-carbon-dioxide")
-angelsmods.functions.make_converter("gas-benzene", "benzene")
-angelsmods.functions.make_converter("gas-propene","propene")
-angelsmods.functions.make_converter("chloromethane","gas-chlor-methane")
-angelsmods.functions.make_converter("methane","gas-methane")
-angelsmods.functions.make_converter("ammonia","gas-ammonia")
-angelsmods.functions.make_converter("ech","gas-epichlorhydrin")
-angelsmods.functions.make_converter("black-liquor","liquid-black-liquor")
-angelsmods.functions.make_converter("acetic-acid","liquid-acetic-acid")
+if mods["angelspetrochem"] then
+
+	angelsmods.functions.make_converter("acidgas", "gas-acid")
+	angelsmods.functions.make_converter("syngas", "gas-synthesis")
+	angelsmods.functions.make_converter("methanol", "gas-methanol")
+	angelsmods.functions.make_converter("carbon-dioxide", "gas-carbon-dioxide")
+	angelsmods.functions.make_converter("gas-benzene", "benzene")
+	angelsmods.functions.make_converter("gas-propene","propene")
+	angelsmods.functions.make_converter("chloromethane","gas-chlor-methane")
+	angelsmods.functions.make_converter("methane","gas-methane")
+	angelsmods.functions.make_converter("ammonia","gas-ammonia")
+	angelsmods.functions.make_converter("ech","gas-epichlorhydrin")
+	angelsmods.functions.make_converter("black-liquor","liquid-black-liquor")
+	angelsmods.functions.make_converter("acetic-acid","liquid-acetic-acid")
+
+end
 
 --replace miner fluid
 if data.raw.resource["borax"] ~= nil then
@@ -100,13 +104,13 @@ fun.Recipe
 		subgroup = "ore-sorting-t1"
 	}
 
-fun.recipe
+fun.Recipe
 	{
 		name = "solid-alginic-acid",
 		category = "crafting"
 	}
 
-fun.recipe
+fun.Recipe
 	{
 		name = "wooden-board-paper",
 		category = "crafting",
@@ -118,101 +122,31 @@ fun.recipe
 		}
 	}
 	
-fun.recipe
-	{
-		name = "biter-small-butchering",
-		category = "crafting-with-fluid",
-		results =
-			{
-				{
-					{type = "fluid", name = "blood", amount = 20},
-				},
-				{
-					{type = "item", name = "bones", amount = 3}
-				}
-			}
-	}
+fun.Mod_Category("biter-small-butchering","crafting-with-fluid")
+fun.add_result("biter-small-butchering",{type="fluid",name="blood",amount=20})
+fun.add_result("biter-small-butchering",{name="bones",amount=3})
 
-fun.recipe		
-	{
-		name = "biter-medium-butchering",
-		category = "crafting-with-fluid",
-		results =
-			{
-				{
-					{type = "fluid", name = "blood", amount = 30},
-				},
-				{
-					{type = "item", name = "bones", amount = 3}
-				}
-			}
-	}
+fun.Mod_Category("biter-medium-butchering","crafting-with-fluid")
+fun.add_result("biter-medium-butchering",{type="fluid",name="blood",amount=30})
+fun.add_result("biter-medium-butchering",{name="bones",amount=3})
 
-fun.recipe		
-	{
-		name = "biter-big-butchering",
-		category = "crafting-with-fluid",
-		results =
-			{
-				{
-					{type = "fluid", name = "blood", amount = 60},
-				},
-				{
-					{type = "item", name = "bones", amount = 5}
-				}
-			}
-	}
+fun.Mod_Category("biter-big-butchering","crafting-with-fluid")
+fun.add_result("biter-big-butchering",{type="fluid",name="blood",amount=60})
+fun.add_result("biter-big-butchering",{name="bones",amount=5})
 
-fun.recipe		
-	{
-		name = "fish-butchery-1",
-		category = "crafting-with-fluid",
-		results =
-			{
-				{
-					{type = "fluid", name = "blood", amount = 15},
-				},
-				{
-					{type = "item", name = "bones", amount = 3}
-				}
-			},
-		main_product = "meat"
-	}
+fun.Mod_Category("fish-butchery-1","crafting-with-fluid")
+fun.add_result("fish-butchery-1",{type="fluid",name="blood",amount=15})
+fun.add_result("fish-butchery-1",{name="bones",amount=3})
 
-fun.recipe
-	{
-		name = "fish-butchery-2",
-		category = "crafting-with-fluid",
-		results =
-			{
-				{
-					{type = "fluid", name = "blood", amount = 25},
-				},
-				{
-					{type = "item", name = "bones", amount = 2}
-				}
-			},
-		main_product = "meat"
-	}
+fun.Mod_Category("fish-butchery-2","crafting-with-fluid")
+fun.add_result("fish-butchery-2",{type="fluid",name="blood",amount=25})
+fun.add_result("fish-butchery-2",{name="bones",amount=2})
 
-fun.recipe
-	{
-		name = "fish-butchery-3",
-		category = "crafting-with-fluid",
-		results =
-		
-			{
-				{
-					{type = "fluid", name = "blood", amount = 40},
-				},
-				{
-					{type = "item", name = "bones", amount = 5}
-				}
-			},
-		main_product = "meat"
-	}
+fun.Mod_Category("fish-butchery-3","crafting-with-fluid")
+fun.add_result("fish-butchery-3",{type="fluid",name="blood",amount=40})
+fun.add_result("fish-butchery-3",{name="bones",amount=5})
 
-fun.recipe
+fun.Recipe
 	{
 		type = "recipe",
 		name = "steak",
@@ -232,10 +166,11 @@ fun.recipe
 			}
 	}
 	
-fun.recipe
+fun.Recipe
 	{
 		name = "angels-glass-fiber-board", 
 		energy_required = 25,
+		category = "crafting-with-fluid",
 		ingredients = 
 			{
 				{
@@ -514,7 +449,7 @@ local OV = angelsmods.functions.OV
 			MEAT = "bio-raw-meat"
 			
 		end
-	
+		
 		OV.patch_recipes(
 	
 		{

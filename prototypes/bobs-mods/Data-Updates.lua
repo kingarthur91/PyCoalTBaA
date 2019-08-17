@@ -5,3 +5,5 @@
 		fun.ingredient_replace("rare-earth-mine","fast-inserter","long-handed-inserter")
 		end
 	end
+	
+	

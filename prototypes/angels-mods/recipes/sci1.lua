@@ -15,6 +15,7 @@ end
 	fun.Recipe
 		{
 		name = "fawogae-substrate",
+		enabled = true,
 		ingredients = 
 		{
 			{

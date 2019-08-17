@@ -309,7 +309,29 @@ local newingredients = false
 		
 	end
 
-log(serpent.block(data.raw.recipe[name]))
+--log(serpent.block(data.raw.recipe[name]))
+
+end
+
+--Change recipes crafting category aka: the machine it should be in
+function overrides.Mod_Category(name,Category)
+
+--log(serpent.block(recipe))
+--log(serpent.block(data.raw.recipe[name]))
+--local name = name
+local newcat = Category
+
+	if data.raw.recipe[name] ~= nil then
+	
+		if Category ~= nil and data.raw["recipe-category"][Category] ~= nil then
+		
+			data.raw.recipe[name].category = Category
+			
+		end
+		
+	end
+	
+	--log(serpent.block(data.raw.recipe[name]))
 
 end
 
@@ -390,15 +412,15 @@ local currentresults = data.raw.recipe[name].results
 		
 	end
 	
-	log(serpent.block(data.raw.recipe[name]))
+	--log(serpent.block(data.raw.recipe[name]))
 
 end
 
 --replace item/fluid in recipes ingredients
 --doesnt yet include a way to change ingredient amount will update when needed
 function overrides.ingredient_replace(recipe, old, new, new_amount)
-	if data.raw.item[old] ~= nil or data.raw.fluid[old] ~= nil then
-	if data.raw.item[new] ~= nil or data.raw.fluid[new] ~= nil then
+	if data.raw.item[old] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[old] ~= nil then
+	if data.raw.item[new] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[new] ~= nil then
 		--log(serpent.block(recipe))
 		if data.raw.recipe[recipe] ~= nil then
 			if type(recipe) == "string" then
@@ -532,8 +554,8 @@ end
 
 --replace item/fluid in recipes results
 function overrides.results_replacer(recipe, old, new, new_amount)
-	if data.raw.item[old] ~= nil or data.raw.fluid[old] ~= nil then
-	if data.raw.item[new] ~= nil or data.raw.fluid[new] ~= nil then
+	if data.raw.item[old] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[old] ~= nil then
+	if data.raw.item[new] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[new] ~= nil then
 		--log(recipe)
 		if type(recipe) == "string" then
 		local R = data.raw.recipe[recipe]
@@ -637,8 +659,8 @@ end
 --replace an item/fluid in every recipes ingredients/results
 --best used to merge items that are duplicated in mods that should be the same 
 function overrides.global_item_replacer(old, new, blackrecipe)
-	if data.raw.item[old] ~= nil or data.raw.fluid[old] ~= nil then
-	if data.raw.item[new] ~= nil or data.raw.fluid[old] ~= nil then
+	if data.raw.item[old] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[old] ~= nil then
+	if data.raw.item[new] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[new] ~= nil then
 		local recipes = table.deepcopy(data.raw.recipe)
 		if type(blackrecipe) ~= "table" and blackrecipe ~= nil then
 			blackrecipe = {blackrecipe}

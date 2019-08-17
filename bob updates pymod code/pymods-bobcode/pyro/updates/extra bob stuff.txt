@@ -1,0 +1,1 @@
+RECIPE("boron-carbide"):replace_ingredient("coke", "carbon")

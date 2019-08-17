@@ -7,7 +7,7 @@ if mods["angelsindustries"] then
 	require("__angelsindustries__/prototypes/recipes/components-electronics-recipes")
 
 end
---[[
+
 --remove handcrafted circuit 1
 -- add angels electronic cicuits to early game buildings
 --order of complexity is gray, red, green, orange, blue, yellow
@@ -355,7 +355,7 @@ if mods["pyhightech"] then
 )
 
 end
-]]--
+
 
 
 --[[

@@ -11,7 +11,11 @@ end
 end
 ]]--
 
-fun.recipe_category_remove("ore-sorting")
+if mods["angelsrefining"] then
+
+	fun.recipe_category_remove("ore-sorting")
+
+end
 
 -- add borax and niobium to angels ores
 

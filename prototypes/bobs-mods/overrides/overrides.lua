@@ -376,4 +376,6 @@ if mods["pyrawores"] then
 			data.raw["map-gen-presets"]["default"]["rail-world"]["basic_settings"] = nil
 			data.raw["map-gen-presets"]["default"]["rich-resources"]["basic_settings"] = nil
 			
+	end
+	
 end

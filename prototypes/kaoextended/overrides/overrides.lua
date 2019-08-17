@@ -12,7 +12,3 @@ if mods["KaoExtended"] then
 	
 	RECIPE("intelligent-unit"):add_ingredient({type = 'item', name = 'predictive-io', amount = 2})
 end
-
-end
-
-end

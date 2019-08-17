@@ -2,8 +2,8 @@
 --log("is this running")
 for name, recipe in pairs(data.raw.recipe) do
     --log("anything")
-    log(recipe.name)
-    log(serpent.block(recipe))
+    --log(recipe.name)
+	--log(serpent.block(recipe))
     if recipe.main_product == "angels-void" or recipe.main_product == "slag" then
         --log("hide " .. name)
         data.raw.recipe[name].hidden = true

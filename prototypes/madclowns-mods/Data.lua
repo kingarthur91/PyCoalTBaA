@@ -1,4 +1,5 @@
 
+
 if mods["Clowns-Processing"] then
 data:extend({
 {
@@ -23,6 +24,4 @@ table.insert(data.raw["technology"] ["basic-electronics"].effects, {type = "unlo
 OV.global_replace_item('phosphorus-ore','phosphate-rock')
 OV.global_replace_item('liquid-phosphoric-acid','phosphoric-acid')
 angelsmods.functions.make_converter("liquid-phosphoric-acid","phosphoric-acid")
-end
-
 end

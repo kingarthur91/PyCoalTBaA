@@ -1,7 +1,47 @@
 
 	--redo circuit tech tree. early game basic circuits based on angels stuff and will slowly shift over to pyanodons pyhightech into the late game
 
---[[
+data:extend(
+{
+	{
+	type = "technology",
+	name = "exobiology",
+	icon_size = 128,
+	icon = "__PyCoalTBaA__/graphics/icons/untextured128.png",
+	effects =
+		{
+			{
+			type = "unlock-recipe",
+			recipe = "lab-instrument"
+			},
+			{
+			type = "unlock-recipe",
+			recipe = "petri-dish"
+			},
+			{
+			type = "unlock-recipe",
+			recipe = "substrate-dish"
+			},
+			{
+			type = "unlock-recipe",
+			recipe = "seeded-dish"
+			}
+		},
+	unit =
+		{
+		count = 100,
+		ingredients =
+			{
+				{"automation-science-pack", 1}
+			},
+		time = 5
+		},
+	order = "a-a"
+	},
+}
+)
+
+
 data:extend(
 {
 	{
@@ -231,6 +271,23 @@ data:extend(
 
 }
 )
-]]--
+
 
 fun.tech_add_prerequisites("basic-electronics", "tech-intergrated-circuits")
+
+--double check this later
+if mods["angelspetrochem"] then
+
+data.raw["technology"]["angels-nitrogen-processing-1"].prerequisites = nil
+
+table.insert(data.raw["technology"]["coal-processing-1"].effects, { type = "unlock-recipe", recipe = "water-mineralized-2000" })
+
+end
+
+
+
+if mods["pyfusion"] and mods["angelssmelting"] then
+
+data.raw.technology["angels-tungsten-smelting"].unit.ingredients[3] = nil
+
+end

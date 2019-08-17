@@ -1,0 +1,3 @@
+py con bot 1 :add_ingredient({type = 'item', name = 'rubber', amount = 10})
+
+py log bot :add_ingredient({type = 'item', name = 'rubber', amount = 10}):replace_ingredient('iron-plate', 'brass-alloy'):replace_ingredient('iron-gear-wheel', 'steel-bearing')

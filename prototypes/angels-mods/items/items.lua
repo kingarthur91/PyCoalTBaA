@@ -67,7 +67,7 @@ data:extend(
 	{
     type = "item",
     name = "bio-sample",
-    icon = "__PyCoalTBaA__/graphics/uberhaul/icons/untextured.png",
+    icon = "__PyCoalTBaA__/graphics/icons/untextured.png",
     icon_size = 32,
     subgroup = "intermediate-product",
     order = "a",
@@ -76,7 +76,7 @@ data:extend(
 	{
     type = "item",
     name = "iron-magnet-1",
-    icon = "__PyCoalTBaA__/graphics/uberhaul/icons/untextured.png",
+    icon = "__PyCoalTBaA__/graphics/icons/untextured.png",
     icon_size = 32,
     subgroup = "intermediate-product",
     order = "a",
@@ -85,7 +85,7 @@ data:extend(
 	{
     type = "item",
     name = "copper-winding",
-    icon = "__PyCoalTBaA__/graphics/uberhaul/icons/untextured.png",
+    icon = "__PyCoalTBaA__/graphics/icons/untextured.png",
     icon_size = 32,
     subgroup = "intermediate-product",
     order = "a",
@@ -94,7 +94,7 @@ data:extend(
 	{
     type = "item",
     name = "empty-casing",
-    icon = "__PyCoalTBaA__/graphics/uberhaul/icons/untextured.png",
+    icon = "__PyCoalTBaA__/graphics/icons/untextured.png",
     icon_size = 32,
     subgroup = "intermediate-product",
     order = "a",
@@ -103,7 +103,7 @@ data:extend(
 	{
     type = "item",
     name = "complete-casing",
-    icon = "__PyCoalTBaA__/graphics/uberhaul/icons/untextured.png",
+    icon = "__PyCoalTBaA__/graphics/icons/untextured.png",
     icon_size = 32,
     subgroup = "intermediate-product",
     order = "a",
@@ -112,7 +112,7 @@ data:extend(
 	{
     type = "item",
     name = "assmbled-shaft",
-    icon = "__PyCoalTBaA__/graphics/uberhaul/icons/untextured.png",
+    icon = "__PyCoalTBaA__/graphics/icons/untextured.png",
     icon_size = 32,
     subgroup = "intermediate-product",
     order = "a",
@@ -121,7 +121,7 @@ data:extend(
 	{
     type = "item",
     name = "empty-caseing",
-    icon = "__PyCoalTBaA__/graphics/uberhaul/icons/untextured.png",
+    icon = "__PyCoalTBaA__/graphics/icons/untextured.png",
     icon_size = 32,
     subgroup = "intermediate-product",
     order = "a",
@@ -130,7 +130,7 @@ data:extend(
 	{
     type = "item",
     name = "assembled-shaft",
-    icon = "__PyCoalTBaA__/graphics/uberhaul/icons/untextured.png",
+    icon = "__PyCoalTBaA__/graphics/icons/untextured.png",
     icon_size = 32,
     subgroup = "intermediate-product",
     order = "a",

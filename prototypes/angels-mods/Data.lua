@@ -1,7 +1,15 @@
+
+if mods["angelsrefining"] then
+
 require("prototypes/angels-mods/overrides/overrides")
+require("prototypes/angels-mods/ores/overrides")
 require("prototypes/angels-mods/items/items")
 require("prototypes/angels-mods/fluids/fluids")
 require("prototypes/angels-mods/recipes/recipes")
+
+--modified assembly machines
+require("prototypes/angels-mods/buildings/assembly-machines")
+require("prototypes/angels-mods/buildings/building-updates")
 
 --find and fix game crashing errors first if any
 
@@ -30,6 +38,7 @@ require("prototypes/angels-mods/recipes/recipes")
 	fun.ingredient_replace("angelsore3-crystal","angels-ore3-chunk","tba-ore3-chunk-slag")
 	fun.ingredient_replace("angelsore3-pure","angels-ore3-crystal","tba-ore3-crystal-slag")
 	
+	--log(serpent.block(data.raw.recipe["fawogae-substrate"]))
 	--adjust science pack 1
 	--will need reviewed after pyaliens is complete as he has also changed the recipe in a similar way
 	require("prototypes/angels-mods/recipes/sci1")
@@ -72,3 +81,5 @@ require("prototypes/angels-mods/recipes/recipes")
 
 
 --pya
+
+end

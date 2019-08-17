@@ -1,3 +1,4 @@
+
 if mods["angelsrefining"] then
 	
 		if settings.startup["pymods-remove-regular-ores"].value then
