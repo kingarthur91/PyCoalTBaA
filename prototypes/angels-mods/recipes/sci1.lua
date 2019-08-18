@@ -1,7 +1,5 @@
 
---TODO: sci 1 
-	-- add recipes to get carbon dioxide + ash from burning wood, coal, coke
-	-- make a cheaper solid seperator that isnt locked behind tech
+--TODO: sci 1
 	-- move coarse faction to mineral water to game start
 	-- add recipe to coarse faction at game start
 	
@@ -11,6 +9,8 @@ if data.raw.recipe["ground-sample01"] ~= nil then
 	data.raw.recipe["ground-sample01"].enabled = true
 
 end
+
+--cheap solid seperator is in building file
 
 	fun.Recipe
 		{
@@ -26,6 +26,80 @@ end
 			}
 		}
 		}
+
+--recipes to get carbon dioxide + ash from burning wood, coal, coke
+fun.Recipe
+	{
+	name = "wood-burning",
+	energy_required = 1.5,
+	enabled = true,
+	ingredients =
+		{
+			{
+				{type = "item", name = "wood", amount = 10}
+			}
+		},
+	results =
+		{
+			{
+				{type = "fluid", name = "carbon-dioxide", amount = 50}
+			},
+			{
+				{type = "item", name = "ash", amount = 5}
+			}
+		},
+	category = "smelting",
+	main_product = "ash",
+	icon = ""
+	}
+
+fun.Recipe
+	{
+	name = "coal-burning",
+	energy_required = 1.5,
+	enabled = true,
+	ingredients =
+		{
+			{
+				{type = "item", name = "coal", amount = 5}
+			}
+		},
+	results =
+		{
+			{
+				{type = "fluid", name = "carbon-dioxide", amount = 75}
+			},
+			{
+				{type = "item", name = "ash", amount = 3}
+			}
+		},
+	category = "smelting",
+	main_product = "ash"
+	}
+	
+fun.Recipe
+	{
+	name = "wood-burning",
+	energy_required = 1.5,
+	enabled = true,
+	ingredients =
+		{
+			{
+				{type = "item", name = "coke", amount = 5}
+			}
+		},
+	results =
+		{
+			{
+				{type = "fluid", name = "carbon-dioxide", amount = 25}
+			},
+			{
+				{type = "item", name = "ash", amount = 8}
+			}
+		},
+	category = "smelting",
+	main_product = "ash"
+	}
 
 --add fawogae-substrate and ground sample together to make biosample
 fun.Recipe

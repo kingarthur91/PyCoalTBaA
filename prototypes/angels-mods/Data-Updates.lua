@@ -11,6 +11,8 @@ end
 end
 ]]--
 
+data.raw["assembling-machine"]["assembling-machine-1"].enabled = true
+
 if mods["angelsrefining"] then
 
 	fun.recipe_category_remove("ore-sorting")

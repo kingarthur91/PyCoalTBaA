@@ -57,6 +57,7 @@ data.raw["assembling-machine"]["assembling-machine-1"].energy_source =
 data.raw["assembling-machine"]["assembling-machine-1"].fluid_usage_per_tick = 1
 data.raw["assembling-machine"]["assembling-machine-1"].ingredient_count = 2
 data.raw["assembling-machine"]["assembling-machine-1"].enabled = true
+data.raw["assembling-machine"]["assembling-machine-1"].energy_usage = "300kW"
 
 
 data.raw.recipe["assembling-machine-1"].ingredients =
@@ -186,6 +187,8 @@ data.raw["assembling-machine"]["liquid-burner-assembling-machine-2"].energy_sour
         }
       }
 	}
+	
+data.raw["assembling-machine"]["liquid-burner-assembling-machine-2"].minable.result = "liquid-burner-assembling-machine-2"
 	--log(serpent.block(data.raw.recipe["assembling-machine-2"]))
 	--adding engines to the assembling machines
 	--electric motor

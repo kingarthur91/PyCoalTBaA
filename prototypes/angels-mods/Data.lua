@@ -10,6 +10,7 @@ require("prototypes/angels-mods/recipes/recipes")
 --modified assembly machines
 require("prototypes/angels-mods/buildings/assembly-machines")
 require("prototypes/angels-mods/buildings/building-updates")
+require("prototypes/angels-mods/buildings/solid-separator")
 
 --find and fix game crashing errors first if any
 
