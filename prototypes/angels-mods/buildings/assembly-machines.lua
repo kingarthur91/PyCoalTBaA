@@ -58,6 +58,7 @@ data.raw["assembling-machine"]["assembling-machine-1"].fluid_usage_per_tick = 1
 data.raw["assembling-machine"]["assembling-machine-1"].ingredient_count = 2
 data.raw["assembling-machine"]["assembling-machine-1"].enabled = true
 data.raw["assembling-machine"]["assembling-machine-1"].energy_usage = "300kW"
+table.insert(data.raw["assembling-machine"]["assembling-machine-1"].crafting_categories, "crafting-with-fluid")
 
 
 data.raw.recipe["assembling-machine-1"].ingredients =

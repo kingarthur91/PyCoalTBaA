@@ -17,6 +17,21 @@ function overrides.add_ingredient(recipe, ingredient)
 	end
 end
 
+--removes item from recipe
+function overrides.remove_ingredient(recipe, ingredient)
+
+	for i, ing in pairs(data.raw.recipe[recipe].ingredients) do
+	
+		if ing[1] == ingredient or ing.name == ingredient then
+		
+			table.remove(data.raw.recipe[recipe].ingredients, i)
+			
+		end
+		
+	end
+
+end
+
 --add item/fluid to recipe results
 function overrides.add_result(recipe, result)
 --check that recipe exists before doing anything else
@@ -31,6 +46,12 @@ function overrides.add_result(recipe, result)
 			end
 		end
 	end
+end
+
+--removes result
+function overrides.remove_result(recipe, result)
+
+
 end
 
 --recipe builder: can take a list of ingredients and a list results and attempt to build a recipe using the first avalible item/fluid
@@ -62,6 +83,7 @@ local name = recipe.name
 local ingredients
 local results = {}
 local icon
+local category
 
 
 local prep_ingredients = {}
@@ -74,6 +96,7 @@ local newingredients = false
 		ingredients = recipe.ingredients
 		results = recipe.results
 		icon = recipe.icon
+		category = recipe.category
 		
 		newingredients = true
 
@@ -126,6 +149,16 @@ local newingredients = false
 			else
 			
 				icon = data.raw.recipe[name].icon
+				
+			end
+			
+			if recipe.category ~= nil then
+				
+				category = recipe.category
+				
+			else
+				
+				category = data.raw.recipe[name].category
 				
 			end
 			
@@ -293,7 +326,7 @@ local newingredients = false
 			{
 			type="recipe",
 			name=name,
-			category = recipe.category or "crafting",
+			category = category or "crafting",
 			subgroup = recipe.subgroup or nil,
 			enabled = recipe.enabled or false,
 			allow_decomposition = recipe.allow_decomposition or false,
@@ -303,9 +336,14 @@ local newingredients = false
 			icon = icon,
 			icon_size = recipe.icon_size or 32,
 			order = recipe.order or nil,
+			main_product = recipe.main_product or nil
 			}
 		}
 		)
+		
+	elseif recipe.enabled == true then
+	
+		data.raw.recipe[name].enabled = true
 		
 	end
 

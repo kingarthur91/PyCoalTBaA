@@ -1,5 +1,10 @@
 
 --TODO: sci 1
+	--need alage farm moved to game start
+	--fawogae plantaion needs circuit 1 removed and recipe simplified
+	--rich clay needs enabled at game start
+	--quartz needs added to angels ores and bobmonium needs added to map when bobs mods is disabled
+
 	-- move coarse faction to mineral water to game start
 	-- add recipe to coarse faction at game start
 	
@@ -12,8 +17,44 @@ end
 
 --cheap solid seperator is in building file
 
-	fun.Recipe
+--unlock algae farm at start
+--data.raw.recipe["algae-farm"].enabled=true
+fun.Recipe
+	{
+	name = "algae-farm",
+	enabled = true,
+	ingredients =
 		{
+			{
+				{"iron-plate", 10}
+			},
+			{
+				{"iron-pipe", 5}
+			},
+			{
+				{"small-parts-01", 5}
+			},
+		}
+	}
+	
+fun.Recipe
+	{
+	name = "algae-green-simple",
+	enabled = true
+	}
+--remove circuits remove fawogae plantaion
+fun.remove_ingredient("fawogae-plantation", "electronic-circuit")
+
+--move rich-clay to game start
+fun.Recipe
+	{
+	name = "rich-clay",
+	enabled = true,
+	category = "crafting-with-fluid"
+	}
+
+fun.Recipe
+	{
 		name = "fawogae-substrate",
 		enabled = true,
 		ingredients = 
@@ -25,7 +66,7 @@ end
 				{type = "item", name = "algae-green", amount = 5}
 			}
 		}
-		}
+	}
 
 --recipes to get carbon dioxide + ash from burning wood, coal, coke
 fun.Recipe
@@ -50,7 +91,7 @@ fun.Recipe
 		},
 	category = "smelting",
 	main_product = "ash",
-	icon = ""
+	icon = "__pycoalprocessing__/graphics/icons/ash.png"
 	}
 
 fun.Recipe
@@ -74,7 +115,8 @@ fun.Recipe
 			}
 		},
 	category = "smelting",
-	main_product = "ash"
+	main_product = "ash",
+	icon = "__pycoalprocessing__/graphics/icons/ash.png"
 	}
 	
 fun.Recipe
@@ -98,7 +140,8 @@ fun.Recipe
 			}
 		},
 	category = "smelting",
-	main_product = "ash"
+	main_product = "ash",
+	icon = "__pycoalprocessing__/graphics/icons/ash.png"
 	}
 
 --add fawogae-substrate and ground sample together to make biosample
