@@ -1,3 +1,11 @@
+
+--require("prototypes/angels-mods/recipes/angelsore1")
+--require("prototypes/angels-mods/recipes/angelsore2")
+--require("prototypes/angels-mods/recipes/angelsore3")
+--require("prototypes/angels-mods/recipes/angelsore4")
+require("prototypes/angels-mods/recipes/angelsore5")
+--require("prototypes/angels-mods/recipes/angelsore6")
+
 --remove angels sorting recipes
 --[[
 for _, recipe in pairs(data.raw.recipe) do

@@ -13,7 +13,7 @@ for i=1,10,1 do
 			"crystal",
 			}
 		if data.raw.item["tba-ore"..i.."-"..refstage[r].."-slag"] ~= nil then
-			
+
 			fun.Recipe
 				{
 				name = "tba-ore"..i.."-"..refstage[r].."-slag-processing-dissolution",
@@ -38,7 +38,7 @@ for i=1,10,1 do
 				icon = "__angelsrefining__/graphics/icons/slag-slurry.png",
 				order = "i [slag-processing-dissolution]",
 				}
-		
+
 			--insert into slag processing tech
 			if data.raw.technology["slag-processing-"..r] ~= nil then
 				table.insert(data.raw.technology["slag-processing-"..r].effects,{type="unlock-recipe",recipe="tba-ore"..i.."-"..refstage[r].."-slag-processing-dissolution"})
@@ -60,7 +60,7 @@ local glassrecipes =
 	"glass-5",
 	"glass-6"
 	}
-	
+
 for _,g in pairs(glassrecipes) do
 	--check if it exists first
 	if data.raw.recipe[g] ~= nil then
@@ -68,7 +68,7 @@ for _,g in pairs(glassrecipes) do
 		local r = data.raw.recipe[g]
 		--get old amount to multiply it by 10 molten glass
 		local amount = r.results[1].amount * 10
-		
+
 		--replace type, name, amount
 		data.raw.recipe[g].results = {{type = "fluid", name = "molten-glass", amount = amount}}
 		data.raw.recipe[g].icon = "__PyCoalTBaA__/graphics/icons/moltenglass.png"
@@ -76,6 +76,27 @@ for _,g in pairs(glassrecipes) do
 end
 --replace angels molten glass with my own
 fun.global_item_replacer("liquid-molten-glass","molten-glass")
+
+--angel gear
+fun.Recipe
+{
+	name = "angels-gear",
+	energy_required = 0.5,
+	category = "crafting",
+	enabled = true,
+	ingredients =
+	{
+		{
+			{type = "item", name = "angels-rod-iron", amount = 1},
+		}
+	},
+	results = {
+		{
+			{type = "item", name = "angels-gear", amount = 2},
+		}
+	},
+	main_product = "angels-gear"
+}
 
 --basic magnet
 fun.Recipe
@@ -94,7 +115,7 @@ fun.Recipe
 			}
 		}
 	}
-	
+
 --copper-winding
 fun.Recipe
 	{
@@ -240,7 +261,7 @@ fun.Recipe
 	icon = "__pyrawores__/graphics/icons/glass.png",
 	}
 	--add few more glass recipes that give cheap panes and different types
-	
+
 	--slag to pyore recipes
 fun.Recipe
 	{
@@ -294,7 +315,7 @@ fun.Recipe
 		icon = "__PyCoalTBaA__/graphics/icons/angels-ore-mix-mol-sorting.png",
 		order = "c-i-g[angelsore-crystal-mix-mol-processing]",
      }
-	 
+
 fun.Recipe
 	{
 		  name = "slag-processing-bor",

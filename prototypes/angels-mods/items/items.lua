@@ -141,7 +141,7 @@ data:extend(
 )
 
 	if mods["angelsindustries"] then
-	
+
 	data:extend(
 	{
 		{
@@ -153,9 +153,18 @@ data:extend(
 		order = "a",
 		stack_size = 100,
 		},
+		{
+			type = "item",
+			name = "angels-gear",
+			icon = "__angelsindustries__/graphics/icons/gear.png",
+			icon_size = 32,
+			subgroup = "angels-mechanical-parts",
+			order = "a",
+			stack_size = 200,
+		  },
 	}
 	)
-	
+
 	end
 
 end

@@ -59,6 +59,7 @@ data:extend(
 	default_value = false,
 	order = "b",
 	},
+	--[[
 	{
 	type = "bool-setting",
 	name = "pymods-remove-regular-borax",
@@ -227,7 +228,7 @@ data:extend(
 	default_value = true,
 	order = "d",
 	},
-	
+	]]--
 }
 )
 

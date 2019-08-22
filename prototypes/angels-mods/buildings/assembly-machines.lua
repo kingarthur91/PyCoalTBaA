@@ -5,23 +5,21 @@
 --require angel industry files to use the stuff from it
 require("__angelsindustries__/prototypes/items/components-mechanical")
 require("__angelsindustries__/prototypes/items/components-electronics")
---[[
-data.raw["assembling-machine"]["assembling-machine-1"].fluid_box =
-    {
-      base_area = 1,
-      height = 2,
-      base_level = -1,
-      pipe_covers = pipecoverspictures(),
-      pipe_connections =
-      {
-        { type = "input", position = {2,0} }
-      },
-      production_type = "input",
-      filter = "steam",
-      minimum_temperature = 100.0
-    }
-]]--
-data.raw["assembling-machine"]["assembling-machine-1"].energy_source = 
+
+data.raw["assembling-machine"]["assembling-machine-1"].fluid_boxes =
+	{
+		{
+		production_type = "input",
+		pipe_picture = assembler3pipepictures(),
+		pipe_covers = pipecoverspictures(),
+		base_area = 10,
+		base_level = -1,
+		pipe_connections = {{ type="input", position = {-2, 0} }},
+		secondary_draw_orders = { north = -1 }
+		}
+	}
+
+data.raw["assembling-machine"]["assembling-machine-1"].energy_source =
 	{
 	type = "fluid",
 	emissions_per_second_per_watt = 1/1000,
@@ -53,14 +51,14 @@ data.raw["assembling-machine"]["assembling-machine-1"].energy_source =
           starting_frame_deviation = 60
         }
       }
-	}	
+	}
 data.raw["assembling-machine"]["assembling-machine-1"].fluid_usage_per_tick = 1
 data.raw["assembling-machine"]["assembling-machine-1"].ingredient_count = 2
-data.raw["assembling-machine"]["assembling-machine-1"].enabled = true
+data.raw.recipe["assembling-machine-1"].enabled = true
 data.raw["assembling-machine"]["assembling-machine-1"].energy_usage = "300kW"
 table.insert(data.raw["assembling-machine"]["assembling-machine-1"].crafting_categories, "crafting-with-fluid")
 
-
+log(serpent.block(data.raw["assembling-machine"]["assembling-machine-1"]))
 data.raw.recipe["assembling-machine-1"].ingredients =
 	{
 		{
@@ -155,7 +153,7 @@ ass2.name = "liquid-burner-assembling-machine-2"
 
 data.raw["assembling-machine"]["liquid-burner-assembling-machine-2"] = ass2
 
-data.raw["assembling-machine"]["liquid-burner-assembling-machine-2"].energy_source = 
+data.raw["assembling-machine"]["liquid-burner-assembling-machine-2"].energy_source =
 	{
 	type = "fluid",
 	emissions_per_second_per_watt = 1/1000,
@@ -188,7 +186,7 @@ data.raw["assembling-machine"]["liquid-burner-assembling-machine-2"].energy_sour
         }
       }
 	}
-	
+
 data.raw["assembling-machine"]["liquid-burner-assembling-machine-2"].minable.result = "liquid-burner-assembling-machine-2"
 	--log(serpent.block(data.raw.recipe["assembling-machine-2"]))
 	--adding engines to the assembling machines
