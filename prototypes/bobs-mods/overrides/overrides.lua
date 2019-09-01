@@ -222,16 +222,16 @@ RECIPE('advanced-circuit'):remove_ingredient('solder')
 RECIPE('processing-unit'):remove_ingredient('solder')
 		
 --replace result
-fun.results_replacer("aromatics-to-rubber", "crude-oil", "rubber", 1)
-fun.results_replacer("glycerol-hydrogen", "petroleum-gas", {type = "fluid", name = "hydrogen", amount = 300})
-fun.results_replacer("refsyngas-from-meth","water",{type = "fluid", name = "hydrogen", amount = 30})
-fun.results_replacer("refsyngas-from-meth-canister","water",{type = "fluid", name = "hydrogen", amount = 30})
-fun.results_replacer("aromatics","water",{type = "fluid", name = "hydrogen", amount = 100})
+fun.results_replacer("aromatics-to-rubber", "crude-oil", "rubber", 1, "item")
+fun.results_replacer("glycerol-hydrogen", "petroleum-gas","hydrogen",300)
+fun.results_replacer("refsyngas-from-meth","water","hydrogen", 30)
+fun.results_replacer("refsyngas-from-meth-canister","water","hydrogen",30)
+fun.results_replacer("aromatics","water","hydrogen", 100)
 fun.results_replacer("cobalt-solvent","ash", "cobalt-ore", 5)
 fun.results_replacer("calcinate-separation","iron-ore", "quartz", 1) --, probability = 0.6)
 fun.results_replacer("calcinate-separation","copper-ore", "lead-ore", 1) --, probability = 0.3)
-fun.results_replacer("molybdenum-oxide","sulfur",{type = "fluid", name = "sulfur-dioxide", amount = 50})
-fun.results_replacer("liquid-rich-gas-distilation","water",{type = "fluid", name = "liquid-nitrogen", amount = 10})
+fun.results_replacer("molybdenum-oxide","sulfur","sulfur-dioxide", 50, "fluid")
+fun.results_replacer("liquid-rich-gas-distilation","water","liquid-nitrogen",10)
 fun.results_replacer("tailings-tin-lead","tin-ore","ore-tin")
 fun.results_replacer("tailings-tin-lead","lead-ore","ore-lead")
 fun.results_replacer("tailings-nickel-zinc","nickel-ore","ore-nickel")
@@ -373,8 +373,8 @@ if mods["pyrawores"] then
 			--data.raw.resource["ground-water"] = nil
 			--data.raw["autoplace-control"]["ground-water"] = nil
 			
-			data.raw["map-gen-presets"]["default"]["rail-world"]["basic_settings"] = nil
-			data.raw["map-gen-presets"]["default"]["rich-resources"]["basic_settings"] = nil
+			--data.raw["map-gen-presets"]["default"]["rail-world"]["basic_settings"] = nil
+			--data.raw["map-gen-presets"]["default"]["rich-resources"]["basic_settings"] = nil
 			
 	end
 	

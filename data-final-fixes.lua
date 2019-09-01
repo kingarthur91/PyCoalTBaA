@@ -113,6 +113,3 @@ local inglist = {}
 		end
 	end
 end
-
---log(serpent.block(data.raw.recipe["fawogae-substrate"]))
---log(serpent.block(data.raw.technology["bio-processing-brown"]))

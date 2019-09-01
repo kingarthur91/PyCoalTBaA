@@ -1,4 +1,29 @@
 
+--[[
+
+overall oil plan. angels stuff favors the top half of oil production. light oils and natural gas and plastics. pyph favors the heavy oil and nonconvitional extration methods. most of pymods stuff will be used to process the heavy oil to lighter oil and upgrade the extra heavy oils into lighter crude to be used in angels processes. need to adjust resource spawns to reduce the amount of light oil spawns and have more oil sands and heavy deposits around
+
+converting oil sands needs to be refined to synthetic crude oil via coking(aka removing carbon as petro coke at 15% loss) or more complicated hydroconversion(aka adding hydrogen and cracking to lower hydrocarbons at no loss)
+
+after getting bitumen from ground needs deluted with natgas condensats/ naphtha for a heavy sour oil or upgraded to a lighter sweet crude
+
+reduce the viabilty of electrolis to hydrogen production
+	- increase electric needs.
+	
+add in a natural gas to steam and hydrogen recipe
+first stage
+CH4 + h20 -> CO + 3H2
+second stage
+CO + H20 -> CO2 + H2
+
+Convert most oil refinery buildings to burn fuels instead of using electricity. 
+
+crude oil should be about 20MJ/per unit vs coals 4MJ/ per unit
+
+coking - early game
+hydroconversion - later game more complex
+
+]]--
 --edit current recipes
 
 	--change angels recipes to use light crude

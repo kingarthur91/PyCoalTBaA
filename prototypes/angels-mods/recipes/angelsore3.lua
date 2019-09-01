@@ -3,6 +3,8 @@
 
 --all recipes will start with tba- to make them seperate from the other mods recipes
 --(ORE SORTING)--
+
+--[[
 	--Angels ore 3--
 	--Crushed--
 		--is copper only--
@@ -65,7 +67,6 @@ fun.Recipe
     icon = "__angelsrefining__/graphics/icons/angels-ore3-chunk-sorting.png",
     order = "a[angelsore3-chunk-processing]",
 	}
-	--[[
 	--Crystal--
 	{
     name = "tba-angelsore3-crystal-processing",

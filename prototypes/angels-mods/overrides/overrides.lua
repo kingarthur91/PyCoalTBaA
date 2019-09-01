@@ -97,13 +97,15 @@ if data.raw.resource["phosphate-rock"] ~= nil then
 end
 
 --recipe overrides
+--[[
 fun.Recipe
 	{
 		name = "angelsore6-crushed",
 		enabled = true,
-		subgroup = "ore-sorting-t1"
+		category = "ore-sorting-t1",
+		subgroup = "ore-processing-a"
 	}
-
+]]--
 fun.Recipe
 	{
 		name = "solid-alginic-acid",

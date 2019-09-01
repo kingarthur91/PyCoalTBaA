@@ -3,6 +3,8 @@
 
 --all recipes will start with tba- to make them seperate from the other mods recipes
 --(ORE SORTING)--
+
+--[[
 	--Angels ore 1--
 	--Crushed--
 fun.Recipe
@@ -120,3 +122,4 @@ fun.Recipe
     icon = "__angelsrefining__/graphics/icons/angels-ore4-pure-sorting.png",
     order = "a[angelsore4-pure-processing]",
 	}
+]]--

@@ -2,6 +2,8 @@
 
 --all recipes will start with tba- to make them seperate from the other mods recipes
 --(ORE SORTING)--
+
+--[[
 --Angels ore 5--
 --Crushing--
 fun.Recipe {
@@ -80,7 +82,7 @@ fun.Recipe {
     order = 'a-a [angelsore1-crushed-smelting]'
 }
  --
---[[
+
 fun.Recipe {
     name = 'tba-angelsore5-crushed-smelting',
     category = 'smelting',
@@ -103,7 +105,7 @@ fun.Recipe {
     icon = '__angelsrefining__/graphics/icons/iron-plate-crushed.png',
     order = 'a-a [angelsore1-crushed-smelting]'
 }
-]] --Crushed--
+ --Crushed--
 fun.Recipe {
     name = 'tba-angelsore5-crushed-processing',
     category = 'tba-ore-sorting',
@@ -207,3 +209,4 @@ fun.Recipe {
     icon = '__angelsrefining__/graphics/icons/angels-ore5-pure-sorting.png',
     order = 'a[angelsore5-pure-processing]'
 }
+]]--

@@ -100,8 +100,8 @@ add_result("refsyngas-from-meth-canister", {type = "fluid", name = "hydrogen", a
 
 RECIPE("olefin"):rem_ing("water"):add_ing({type = "fluid", name = "hydrogen", amount = 600})
 
-remove_result("aromatics", "water")
-add_result("aromatics", {type = "fluid", name = "hydrogen", amount = 100})
+--remove_result("aromatics", "water")
+--add_result("aromatics", {type = "fluid", name = "hydrogen", amount = 100})
 
 RECIPE("gasoline"):rem_ing("gasoline", "water"):add_ing({type = "fluid", name = "hydrogen", amount = 200})
 

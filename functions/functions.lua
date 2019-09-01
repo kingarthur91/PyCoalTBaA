@@ -82,7 +82,7 @@ Recipe{
     local newingredients = false
 
     --log(serpent.block(recipe.ingredients))
-    log(serpent.block(recipe.results))
+    --log(serpent.block(recipe.results))
     if data.raw.recipe[recipe.name] == nil then
         --if recipe doesnt exist create new one
         ingredients = recipe.ingredients
@@ -252,8 +252,8 @@ Recipe{
         end
     end
 
-log(serpent.block(prep_ingredients))
-log(serpent.block(prep_results))
+--log(serpent.block(prep_ingredients))
+--log(serpent.block(prep_results))
 
 	if next(prep_ingredients) and next(prep_results) then
 		--log("check check")
@@ -278,7 +278,7 @@ log(serpent.block(prep_results))
             }
         )
 	elseif recipe.enabled == true and (next(prep_ingredients) and next(prep_results)) then
-		log(serpent.block(name))
+		--log(serpent.block(name))
         data.raw.recipe[name].enabled = true
     end
 
@@ -310,8 +310,8 @@ function overrides.Patch(recipe)
     local newingredients = recipe.ingredients
     local newresults = recipe.results
 
-    local currentingredients = data.raw.recipe[name].ingredients
-    local currentresults = data.raw.recipe[name].results
+    local currentingredients = data.raw.recipe[name].ingredients or data.raw.recipe[name].normal.ingredients
+    local currentresults = data.raw.recipe[name].results or data.raw.recipe[name].normal.results
 
     if data.raw.recipe[name] ~= nil then
         if newingredients ~= nil then
@@ -320,13 +320,16 @@ function overrides.Patch(recipe)
                     if ing1.name == ing2.name then
                         if string.find(ing2.amount, '[%+]') ~= nil then
                             ing1.amount = ing1.amount + string.sub(string.find(ing2.amount, '%d'))
-
-                            data.raw.recipe[name].ingredients[i1].amount = ing1.amount
+							
                         elseif string.find(ing2.amount, '[%-]') then
                             ing1.amount = ing1.amount - string.sub(string.find(ing2.amount, '%d'))
-
-                            data.raw.recipe[name].ingredients[i1].amount = ing1.amount
                         end
+						
+						if data.raw.recipe[name].normal ~= nil then
+							data.raw.recipe[name].normal.ingredients[i1].amount = ing1.amount
+							else
+							data.raw.recipe[name].ingredients[i1].amount = ing1.amount
+						end
                     end
                 end
             end
@@ -338,13 +341,15 @@ function overrides.Patch(recipe)
                     if res1.name == res2.name then
                         if string.find(res2.amount, '[%+]') ~= nil then
                             res1.amount = res1.amount + string.sub(string.find(res2.amount, '%d'))
-
-                            data.raw.recipe[name].results[r1].amount = res1.amount
                         elseif string.find(res2.amount, '[%-]') then
                             res1.amount = res1.amount - string.sub(string.find(res2.amount, '%d'))
-
-                            data.raw.recipe[name].results[r1].amount = res1.amount
                         end
+						
+						if data.raw.recipe[name].normal ~= nil then
+							data.raw.recipe[name].normal.results[r1].amount = res1.amount
+						else
+							data.raw.recipe[name].results[r1].amount = res1.amount
+						end
                     end
                 end
             end
@@ -491,9 +496,9 @@ function overrides.ingredient_replace(recipe, old, new, new_amount)
 end
 
 --replace item/fluid in recipes results
-function overrides.results_replacer(recipe, old, new, new_amount)
+function overrides.results_replacer(recipe, old, new, new_amount, newtype)
     if data.raw.item[old] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[old] ~= nil then
-        if data.raw.item[new] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[new] ~= nil then
+        if data.raw.item[new] ~= nil or data.raw.fluid[new] ~= nil or data.raw.capsule[new] ~= nil then
             --log(recipe)
             if type(recipe) == 'string' then
                 local R = data.raw.recipe[recipe]
@@ -518,8 +523,8 @@ function overrides.results_replacer(recipe, old, new, new_amount)
                             if new_amount ~= nil then
                                 data.raw.recipe[recipe.name].results[r].amount = new_amount
                             end
-                            if data.raw.fluid[new] == nil and data.raw.recipe[recipe.name].results[r].type ~= 'item' then
-                                data.raw.recipe[recipe.name].results[r].type = 'item'
+							if newtype ~= nil then
+                                data.raw.recipe[recipe.name].results[r].type = newtype
                             end
                         end
                     end
@@ -1004,10 +1009,14 @@ function overrides.tech_remove(tech, prereq_patch)
         data.raw.technology[tech].hidden = true
         if prereq_patch ~= nil and prereq_patch == true then
             for _, t in pairs(data.raw.technology) do
+			--log(serpent.block(t))
                 if t.prerequisites ~= nil then
-                    for _, p in pairs(t.prerequisites) do
-                        if p == tech then
-                            table.remove(data.raw.technology[t].prerequisites, p)
+                    for p, prereq in pairs(t.prerequisites) do
+                        if prereq == tech then
+						--log(serpent.block(p))
+						--log(serpent.block(t))
+						--log(serpent.block(data.raw.technology[t].prerequisites))
+                            table.remove(data.raw.technology[t.name].prerequisites, p)
                         end
                     end
                 end

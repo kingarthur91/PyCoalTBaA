@@ -22,3 +22,15 @@ for name, recipe in pairs(data.raw.recipe) do
         data.raw.recipe[recipe.name].hidden = true
     end
 end
+
+--[[
+for _, r in pairs(data.raw.recipe) do
+
+	if r.category == "ore-sorting" then
+	
+		log(serpent.block(r))
+		
+	end
+	
+end
+]]--

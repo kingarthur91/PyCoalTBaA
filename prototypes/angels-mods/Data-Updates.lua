@@ -1,9 +1,9 @@
 
---require("prototypes/angels-mods/recipes/angelsore1")
+require("prototypes/angels-mods/recipes/angelsore1")
 --require("prototypes/angels-mods/recipes/angelsore2")
 --require("prototypes/angels-mods/recipes/angelsore3")
 --require("prototypes/angels-mods/recipes/angelsore4")
-require("prototypes/angels-mods/recipes/angelsore5")
+--require("prototypes/angels-mods/recipes/angelsore5")
 --require("prototypes/angels-mods/recipes/angelsore6")
 
 --remove angels sorting recipes
@@ -23,7 +23,7 @@ data.raw["assembling-machine"]["assembling-machine-1"].enabled = true
 
 if mods["angelsrefining"] then
 
-	fun.recipe_category_remove("ore-sorting")
+	--fun.recipe_category_remove("ore-sorting")
 
 end
 
