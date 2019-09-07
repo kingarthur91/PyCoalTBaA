@@ -1,6 +1,6 @@
 
 --new recipes go here
---[[
+
 --create all the slag processing recipes
 for i=1,10,1 do
 	for r=1,3 do
@@ -259,7 +259,7 @@ fun.Recipe
 	icon = "__pyrawores__/graphics/icons/glass.png",
 	}
 	--add few more glass recipes that give cheap panes and different types
-]]--
+
 	--slag to pyore recipes
 fun.Recipe
 	{

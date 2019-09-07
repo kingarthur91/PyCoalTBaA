@@ -1,5 +1,5 @@
 
---require("prototypes/angels-mods/recipes/angelsore1")
+require("prototypes/angels-mods/recipes/angelsore1")
 --require("prototypes/angels-mods/recipes/angelsore2")
 --require("prototypes/angels-mods/recipes/angelsore3")
 --require("prototypes/angels-mods/recipes/angelsore4")
