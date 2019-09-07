@@ -21,7 +21,7 @@ type = "recipe",
 }
 })
 table.insert(data.raw["technology"] ["basic-electronics"].effects, {type = "unlock-recipe", recipe = "phosphoric-acid-1"})
-OV.global_replace_item('phosphorus-ore','phosphate-rock')
-OV.global_replace_item('liquid-phosphoric-acid','phosphoric-acid')
+fun.global_item_replacer('phosphorus-ore','phosphate-rock')
+fun.global_item_replacer('liquid-phosphoric-acid','phosphoric-acid')
 angelsmods.functions.make_converter("liquid-phosphoric-acid","phosphoric-acid")
 end

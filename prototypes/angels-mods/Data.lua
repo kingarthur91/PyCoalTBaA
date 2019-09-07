@@ -6,13 +6,16 @@ require("prototypes/angels-mods/fluids/fluids")
 require("prototypes/angels-mods/recipes/recipes")
 
 --modified assembly machines
-require("prototypes/angels-mods/buildings/assembly-machines")
-require("prototypes/angels-mods/buildings/building-updates")
-require("prototypes/angels-mods/buildings/solid-separator")
+--require("prototypes/angels-mods/buildings/assembly-machines")
+--require("prototypes/angels-mods/buildings/building-updates")
+--require("prototypes/angels-mods/buildings/solid-separator")
 
 --overrides
 require("prototypes/angels-mods/overrides/overrides")
 require("prototypes/angels-mods/ores/overrides")
+require("prototypes/angels-mods/ores/Borax")
+require("prototypes/angels-mods/ores/Molybdenum")
+require("prototypes/angels-mods/ores/Niobium")
 
 --find and fix game crashing errors first if any
 
@@ -40,7 +43,7 @@ require("prototypes/angels-mods/ores/overrides")
 	--log(serpent.block(data.raw.recipe["fawogae-substrate"]))
 	--adjust science pack 1
 	--will need reviewed after pyaliens is complete as he has also changed the recipe in a similar way
-	require("prototypes/angels-mods/recipes/sci1")
+	--require("prototypes/angels-mods/recipes/sci1")
 
 --tech additions
 
@@ -63,7 +66,7 @@ require("prototypes/angels-mods/ores/overrides")
 		--check for bob electronics changes in bobs section
 
 	--new and modified recipes for circuits based on if angels industries is loaded or not
-	require("prototypes/angels-mods/recipes/circuits")
+	--require("prototypes/angels-mods/recipes/circuits")
 
 
 --pyin

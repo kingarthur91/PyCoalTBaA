@@ -310,8 +310,12 @@ function overrides.Patch(recipe)
     local newingredients = recipe.ingredients
     local newresults = recipe.results
 
-    local currentingredients = data.raw.recipe[name].ingredients or data.raw.recipe[name].normal.ingredients
-    local currentresults = data.raw.recipe[name].results or data.raw.recipe[name].normal.results
+    local currentingredients
+	local currentresults
+		if data.raw.recipe[name] ~= nil then
+			currentingredients = data.raw.recipe[name].ingredients or data.raw.recipe[name].normal.ingredients
+			currentresults = data.raw.recipe[name].results or data.raw.recipe[name].normal.results
+		end
 
     if data.raw.recipe[name] ~= nil then
         if newingredients ~= nil then
@@ -319,10 +323,9 @@ function overrides.Patch(recipe)
                 for i2, ing2 in pairs(newingredients) do
                     if ing1.name == ing2.name then
                         if string.find(ing2.amount, '[%+]') ~= nil then
-                            ing1.amount = ing1.amount + string.sub(string.find(ing2.amount, '%d'))
-							
+							ing1.amount = ing1.amount + string.sub(ing2.amount,string.find(ing2.amount, '%d'))
                         elseif string.find(ing2.amount, '[%-]') then
-                            ing1.amount = ing1.amount - string.sub(string.find(ing2.amount, '%d'))
+                            ing1.amount = ing1.amount - string.sub(ing2.amount,string.find(ing2.amount, '%d'))
                         end
 						
 						if data.raw.recipe[name].normal ~= nil then
@@ -340,9 +343,9 @@ function overrides.Patch(recipe)
                 for r2, res2 in pairs(newresults) do
                     if res1.name == res2.name then
                         if string.find(res2.amount, '[%+]') ~= nil then
-                            res1.amount = res1.amount + string.sub(string.find(res2.amount, '%d'))
+                            res1.amount = res1.amount + string.sub(res2.amount,string.find(res2.amount, '%d'))
                         elseif string.find(res2.amount, '[%-]') then
-                            res1.amount = res1.amount - string.sub(string.find(res2.amount, '%d'))
+                            res1.amount = res1.amount - string.sub(res2.amount,string.find(res2.amount, '%d'))
                         end
 						
 						if data.raw.recipe[name].normal ~= nil then
