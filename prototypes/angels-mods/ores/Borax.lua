@@ -1,16 +1,16 @@
 if mods["angelspetrochem"] then
 
 	if settings.startup["pymods-remove-regular-borax"].value then
-	
+
 	-- Overriedes: borax ore
-		if data.raw.item["borax"] and angelsmods.refining then
+		if data.raw.item["borax"] and angelsmods.refining and not mods["omnimatter"] then
 		   data.raw.resource["borax"]["autoplace"] = nil
 		   data.raw["autoplace-control"]["borax"] = nil
 		end
 	end
-	
+
 	if settings.startup["pymods-infinite-borax"].value then
-	
+
    -- Infinity ore patches
    if angelsmods.ores then -- TO DO: change to molybdenum ore settings
 
@@ -174,6 +174,6 @@ if mods["angelspetrochem"] then
       })
       end
    end
-end   
+end
 
 end

@@ -328,7 +328,7 @@ function overrides.Patch(recipe)
                         elseif string.find(ing2.amount, '[%-]') then
                             ing1.amount = ing1.amount - string.sub(ing2.amount,string.find(ing2.amount, '%d'))
                         end
-						
+
 						if data.raw.recipe[name].normal ~= nil then
 							data.raw.recipe[name].normal.ingredients[i1].amount = ing1.amount
 							else
@@ -348,7 +348,7 @@ function overrides.Patch(recipe)
                         elseif string.find(res2.amount, '[%-]') then
                             res1.amount = res1.amount - string.sub(res2.amount,string.find(res2.amount, '%d'))
                         end
-						
+
 						if data.raw.recipe[name].normal ~= nil then
 							data.raw.recipe[name].normal.results[r1].amount = res1.amount
 						else
@@ -367,7 +367,7 @@ end
 --doesnt yet include a way to change ingredient amount will update when needed
 function overrides.ingredient_replace(recipe, old, new, new_amount)
     if data.raw.item[old] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[old] ~= nil then
-        if data.raw.item[new] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[new] ~= nil then
+        if data.raw.item[new] ~= nil or data.raw.fluid[new] ~= nil or data.raw.capsule[new] ~= nil then
             --log(serpent.block(recipe))
             if data.raw.recipe[recipe] ~= nil then
                 if type(recipe) == 'string' then

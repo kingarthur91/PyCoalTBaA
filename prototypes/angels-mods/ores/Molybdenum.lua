@@ -1,17 +1,17 @@
 if mods["angelspetrochem"] then
-	   
+
 	if mods["pyfusionenergy"] then
-	
+
 	if settings.startup["pymods-remove-regular-moly"].value then
-		
+
 		-- Overriedes: molybdenum ore
-		if data.raw.item["molybdenum-ore"] and angelsmods.refining then
+		if data.raw.item["molybdenum-ore"] and angelsmods.refining and not mods["omnimatter"] then
 		   data.raw.resource["molybdenum-ore"]["autoplace"] = nil
 		   data.raw["autoplace-control"]["molybdenum-ore"] = nil
 		end
-		
+
    end
-	
+
 	if settings.startup["pymods-infinite-moly"].value then
 
    -- Infinity ore patches
@@ -175,7 +175,7 @@ if mods["angelspetrochem"] then
       })
       end
    end
-end   
+end
 
 
 end

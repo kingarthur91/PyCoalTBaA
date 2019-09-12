@@ -13,8 +13,10 @@ log("broke?")
 end
 
 end
+--[[
+if mods['omnimatter'] and not mods["omnimatter_compression"] then
 
-if mods["omnimatter_compression"] then
+log(serpent.block(data.raw.resource['raw-coal']))
 
 data.raw.resource["raw-coal"].minable.results = {{type = "item", name = "raw-coal", amount = 1}}
 
@@ -42,9 +44,8 @@ data.raw.resource["phosphate-rock-02"].minable.results = {{type = "item", name =
 data.raw.resource["ore-quartz"].minable.results = {{type = "item", name = "ore-quartz", amount = 1}}
 data.raw.resource["quartz-rock"].minable.results = {{type = "item", name = "ore-quartz", amount = 1}}
 
-
 end
-
+]]--
 if mods["omnimatter_permutation"] then
 
 fun.Recipe
@@ -53,7 +54,7 @@ fun.Recipe
 		name = "nitrobenzene",
 		category = "fbreactor",
 		energy_required = 4,
-		ingredients = 
+		ingredients =
 			{
 				{
 					{type = "fluid", name = "benzene", amount = 50}
@@ -61,23 +62,23 @@ fun.Recipe
 				{
 					{type = "fluid", name = "sulfuric-acid", amount = 100}
 				},
-				{	
+				{
 					{type = "fluid", name = "ammonia", amount = 30}
 				}
 			},
-		results = 
+		results =
 			{
 				{
 					{type = "fluid", name = "nitrobenzene", amount = 100}
 				}
 			}
 	}
-	
+
 end
 
 --fix tech replacement
 if mods["angelspetrochem"] then
 
 	table.insert(data.raw["technology"] ["angels-sulfur-processing-1"].effects, { type = "unlock-recipe", recipe = "nitrobenzene" })
-	
+
 end

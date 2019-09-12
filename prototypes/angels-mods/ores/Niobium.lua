@@ -3,11 +3,11 @@ if mods["angelspetrochem"] then
 	if settings.startup["pymods-remove-regular-niobium"].value then
 
 		-- Overriedes: niobium ore
-		if data.raw.item["niobium-ore"] and angelsmods.refining then
+		if data.raw.item["niobium-ore"] and angelsmods.refining and not mods["omnimatter"] then
 		   data.raw.resource["niobium"]["autoplace"] = nil
 		   data.raw["autoplace-control"]["niobium"] = nil
 	   end
-	   
+
 	end
 
 if settings.startup["pymods-infinite-niobium"].value then
@@ -175,6 +175,6 @@ if settings.startup["pymods-infinite-niobium"].value then
       })
       end
    end
-end   
+end
 
 end
