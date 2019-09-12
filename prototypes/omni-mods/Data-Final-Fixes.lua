@@ -26,8 +26,12 @@ if mods["omnimatter"] then
 		
 	end
 
-data.raw.recipe["omnirec-base-6-extraction-2"].icons[2].icon = "__PyCoalTBaA__/graphics/icons/num_6.png"
-	
+	if data.raw.recipe["omnirec-base-6-extraction-2"] ~= nil then
+
+		data.raw.recipe["omnirec-base-6-extraction-2"].icons[2].icon = "__PyCoalTBaA__/graphics/icons/num_6.png"
+		
+	end
+
 end
 
 if mods["omnimatter_wood"] then
@@ -54,3 +58,12 @@ for m, mod in pairs(data.raw.module) do
 end
 
 end
+--[[
+local oilboilercopy = table.deepcopy(data.raw['boiler']['oil-boiler-mk01'])
+
+log(serpent.block(data.raw['assembling-machine']['oil-boiler-mk01-converter']))
+data.raw['assembling-machine']['oil-boiler-mk01-converter'].energy_source.fluid_box.pipe_connections.position = {0,4}
+--data.raw['boiler']['oil-boiler-mk01'] = {}
+--data.raw['boiler']['oil-boiler-mk01'] = table.deepcopy(oilboilercopy)
+log(serpent.block(data.raw['boiler']['oil-boiler-mk01']))
+]]--

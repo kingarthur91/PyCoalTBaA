@@ -69,7 +69,8 @@ Recipe{
 		}
 
 
-]] function overrides.Recipe(recipe)
+]]--
+function overrides.Recipe(recipe)
     local name = recipe.name
     local ingredients
     local results = {}
@@ -146,7 +147,7 @@ Recipe{
         for _, restable in pairs(results) do
             for _, r in pairs(restable) do
                 local result = {}
-                --log(serpent.block(r))
+                log(serpent.block(r))
                 if r.type ~= 'fluid' then
                     --if its not set to fluid its an item. check the items list for the items existance and set the type to item
 

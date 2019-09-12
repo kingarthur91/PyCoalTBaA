@@ -122,8 +122,8 @@ if mods["pyrawores"] then
 	data.raw.resource["nickel-rock"]["autoplace"] = nil
 	data.raw["autoplace-control"]["nickel-rock"] = nil
 	
-	data.raw.resource["phosphate-rock-02"]["autoplace"] = nil
-	data.raw["autoplace-control"]["phosphate-rock-02"] = nil
+	--data.raw.resource["phosphate-rock-02"]["autoplace"] = nil
+	--data.raw["autoplace-control"]["phosphate-rock-02"] = nil
 	
 	data.raw.resource["ore-quartz"]["autoplace"] = nil
 	data.raw["autoplace-control"]["ore-quartz"] = nil

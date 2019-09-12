@@ -47,7 +47,7 @@ end
 
 if mods["omnimatter_permutation"] then
 
-fun.recipe
+fun.Recipe
 	{
 		type = "recipe",
 		name = "nitrobenzene",
@@ -55,13 +55,21 @@ fun.recipe
 		energy_required = 4,
 		ingredients = 
 			{
-				{type = "fluid", name = "benzene", amount = 50},
-				{type = "fluid", name = "sulfuric-acid", amount = 100},
-				{type = "fluid", name = "ammonia", amount = 30}
+				{
+					{type = "fluid", name = "benzene", amount = 50}
+				},
+				{
+					{type = "fluid", name = "sulfuric-acid", amount = 100}
+				},
+				{	
+					{type = "fluid", name = "ammonia", amount = 30}
+				}
 			},
 		results = 
 			{
-				{type = "fluid", name = "nitrobenzene", amount = 100}
+				{
+					{type = "fluid", name = "nitrobenzene", amount = 100}
+				}
 			}
 	}
 	
