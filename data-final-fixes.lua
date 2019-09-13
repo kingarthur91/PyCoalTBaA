@@ -20,6 +20,8 @@ require('prototypes/omni-mods/Data-Final-Fixes')
 
 --require("prototypes/space-exploration/Data-Final-Fixes")
 
+require("prototypes/industrialrevolution-WIP/Data-Final-Fixes")
+
 require('updates/acid-changes')
 
 require('updates/pyproductivityadjuster')
@@ -124,6 +126,8 @@ end
 
 --data.raw.recipe['pistol'].icon = '__base__/graphics/icons/pistol.png'
 
+--omni icon issue fixer
+if mods['omnilib'] then
 for _, recipe in pairs(data.raw.recipe) do
     log(serpent.block(recipe))
     if recipe.icon_size ~= nil and recipe.icon == nil then
@@ -205,6 +209,24 @@ for _, recipe in pairs(data.raw.recipe) do
         if recipe.name == 'ammo-initial' then
             data.raw.recipe['ammo-initial'].main_product = 'firearm-magazine'
         end
+		if recipe.name == 'copper-nickel-firearm-magazine' then
+			data.raw.recipe['copper-nickel-firearm-magazine'].main_product = 'firearm-magazine'
+        end
+		if recipe.name == 'nickel-piercing-rounds-magazine' then
+			data.raw.recipe['nickel-piercing-rounds-magazine'].main_product = 'firearm-magazine'
+        end
+		if recipe.name == 'flamethrower-ammo-fueled_fluid' then
+			data.raw.recipe['flamethrower-ammo-fueled_fluid'].main_product = "flamethrower-ammo"
+        end
+		if recipe.icon == nil then 
+			if recipe.results ~= nil then
+			recipe.main_product = recipe.results[1].name
+			elseif recipe.normal ~= nil then
+				recipe.main_product = recipe.normal.results[1].name
+			elseif recipe.expensive ~= nil then
+				recipe.main_product = recipe.expensive.results[1].name
+			end
+		end
     end
 end
 
@@ -241,3 +263,5 @@ for _, recipe in pairs(data.raw.recipe) do
 end
 
 log(serpent.block(data.raw.recipe['angels-ore2-crystal-salting']))
+
+end

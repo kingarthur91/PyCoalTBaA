@@ -29,3 +29,5 @@ require("prototypes/aai-industries/Data-Updates")
 require("prototypes/omni-mods/Data-Updates")
 
 --require("prototypes/space-exploration/Data-Updates")
+
+require("prototypes/industrialrevolution-WIP/Data-Updates")

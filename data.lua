@@ -24,6 +24,8 @@ require("prototypes/mining-space-industries/Data")
 require("prototypes/omni-mods/Data")
 
 require("prototypes/space-exploration/Data")
+
+require("prototypes/industrialrevolution-WIP/Data")
 --[[
 if mods['omnimatter_fluid'] then
 
