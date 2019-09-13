@@ -114,7 +114,7 @@ function overrides.Recipe(recipe)
                 --log(serpent.block(data.raw.recipe[name]))
                 --log(serpent.block(r))
                 table.insert(results, {{type = 'item', name = data.raw.recipe[name].result, amount = data.raw.recipe[name].result_count or 1}})
-            else
+            elseif data.raw.recipe[name].results ~= nil then
                 --log(serpent.block(data.raw.recipe[name]))
                 for _, r in pairs(data.raw.recipe[name].results) do
                     --log(serpent.block(r))
