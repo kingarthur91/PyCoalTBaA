@@ -222,9 +222,13 @@ for _, recipe in pairs(data.raw.recipe) do
 			if recipe.results ~= nil then
 			recipe.main_product = recipe.results[1].name
 			elseif recipe.normal ~= nil then
-				recipe.main_product = recipe.normal.results[1].name
+				if recipe.normal.results ~= nil then
+					recipe.main_product = recipe.normal.results[1].name
+				end
 			elseif recipe.expensive ~= nil then
-				recipe.main_product = recipe.expensive.results[1].name
+				if recipe.expensive.results ~= nil then
+					recipe.main_product = recipe.expensive.results[1].name
+				end
 			end
 		end
     end
