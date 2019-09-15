@@ -207,7 +207,7 @@ for _, recipe in pairs(data.raw.recipe) do
             data.raw.recipe[recipe.name].icon = data.raw.module[rn].icon
         end
         if recipe.name == 'ammo-initial' then
-            data.raw.recipe['ammo-initial'].main_product = 'firearm-magazine'
+            data.raw.recipe['ammo-initial'].main_product = data.raw.recipe['ammo-initial'].results[1].name
         end
 		if recipe.name == 'copper-nickel-firearm-magazine' then
 			data.raw.recipe['copper-nickel-firearm-magazine'].main_product = 'firearm-magazine'
