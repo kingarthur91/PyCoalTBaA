@@ -5,7 +5,7 @@ data:extend({
   {
     type = "tool",
     name = "science-pack-0",
-    icon = "__PyCoalTBaA__/prototypes/aaii/graphics/icons/science-pack-0.png",
+    icon = "__PyCoalTBaA__/graphics/icons/science-pack-0.png",
     icon_size = 32,
     flags = {},
     subgroup = "science-pack",
@@ -14,7 +14,7 @@ data:extend({
     durability = 1,
     durability_description_key = "description.science-pack-remaining-amount-key",
     durability_description_value = "description.science-pack-remaining-amount-value"
-  },    
+  },
   {
     type = "recipe",
     name = "science-pack-0",

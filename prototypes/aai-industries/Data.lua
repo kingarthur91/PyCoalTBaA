@@ -9,5 +9,5 @@ if mods["aai-industry"] then
 		fun.addscipack("science-pack-0")
 
 		fun.global_item_replacer("iron-gear-wheel","small-parts-01",{"iron-gear-wheel","small-parts-01"})
-	
+
 	end
