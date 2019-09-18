@@ -4,8 +4,8 @@ if mods["angelspetrochem"] then
 
 	-- Overriedes: borax ore
 		if data.raw.item["borax"] and angelsmods.refining and not mods["omnimatter"] then
-		   data.raw.resource["borax"]["autoplace"] = nil
-		   data.raw["autoplace-control"]["borax"] = nil
+		   --data.raw.resource["borax"]["autoplace"] = nil
+		   --data.raw["autoplace-control"]["borax"] = nil
 		end
 	end
 

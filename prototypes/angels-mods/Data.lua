@@ -25,21 +25,21 @@ require("prototypes/angels-mods/ores/Niobium")
 
 --[[
 	if data.raw["assembling-machine"]["ore-sorting-facility"] ~= nil then
-	
+
 		table.insert(data.raw["assembling-machine"]["ore-sorting-facility"].crafting_categories, "tba-ore-sorting")
 		table.insert(data.raw["assembling-machine"]["ore-sorting-facility-2"].crafting_categories, "tba-ore-sorting")
 		table.insert(data.raw["assembling-machine"]["ore-sorting-facility-3"].crafting_categories, "tba-ore-sorting")
 		table.insert(data.raw["assembling-machine"]["ore-sorting-facility-4"].crafting_categories, "tba-ore-sorting")
-		
+
 	end
 ]]--
 
 --recipe replacement
 	--recipe ingredient replace
 	--ore1	--fun.ingredient_replace("angelsore1-chunk","angels-ore1-crushed","tba-ore1-crushed-slag")	--fun.ingredient_replace("angelsore1-crystal","angels-ore1-chunk","tba-ore1-chunk-slag")	--fun.ingredient_replace("angelsore1-pure","angels-ore1-crystal","tba-ore1-crystal-slag")
-	
+
 	--ore3	--fun.ingredient_replace("angelsore3-chunk","angels-ore3-crushed","tba-ore3-crushed-slag")	--fun.ingredient_replace("angelsore3-crystal","angels-ore3-chunk","tba-ore3-chunk-slag")	--fun.ingredient_replace("angelsore3-pure","angels-ore3-crystal","tba-ore3-crystal-slag")
-	
+
 	--log(serpent.block(data.raw.recipe["fawogae-substrate"]))
 	--adjust science pack 1
 	--will need reviewed after pyaliens is complete as he has also changed the recipe in a similar way
@@ -62,7 +62,7 @@ require("prototypes/angels-mods/ores/Niobium")
 
 --pyht
 	--angel mods should be using vanilla circuits if bobs mods are not loaded so no need to fix errors here
-	
+
 		--check for bob electronics changes in bobs section
 
 	--new and modified recipes for circuits based on if angels industries is loaded or not

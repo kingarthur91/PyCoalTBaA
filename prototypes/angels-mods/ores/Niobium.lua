@@ -4,8 +4,8 @@ if mods["angelspetrochem"] then
 
 		-- Overriedes: niobium ore
 		if data.raw.item["niobium-ore"] and angelsmods.refining and not mods["omnimatter"] then
-		   data.raw.resource["niobium"]["autoplace"] = nil
-		   data.raw["autoplace-control"]["niobium"] = nil
+		   --data.raw.resource["niobium"]["autoplace"] = nil
+		   --data.raw["autoplace-control"]["niobium"] = nil
 	   end
 
 	end

@@ -6,8 +6,8 @@ if mods["angelspetrochem"] then
 
 		-- Overriedes: molybdenum ore
 		if data.raw.item["molybdenum-ore"] and angelsmods.refining and not mods["omnimatter"] then
-		   data.raw.resource["molybdenum-ore"]["autoplace"] = nil
-		   data.raw["autoplace-control"]["molybdenum-ore"] = nil
+		   --data.raw.resource["molybdenum-ore"]["autoplace"] = nil
+		   --data.raw["autoplace-control"]["molybdenum-ore"] = nil
 		end
 
    end

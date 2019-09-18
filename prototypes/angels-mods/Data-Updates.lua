@@ -1,4 +1,6 @@
 
+require("prototypes/angels-mods/overrides/overrides-updates")
+
 --require("prototypes/angels-mods/recipes/angelsore1")
 --require("prototypes/angels-mods/recipes/angelsore2")
 --require("prototypes/angels-mods/recipes/angelsore3")

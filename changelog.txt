@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.1
+  Changes:
+	- Fixed load issues with py+aai industry
+	- fixed issue with bobs circuits not being properly overriden with pyhightech circuits
+---------------------------------------------------------------------------------------------------
 Version: 0.9.0
   Changes:
     - Removed all older code to rebuild pycoaltbaa from scratch

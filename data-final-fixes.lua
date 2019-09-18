@@ -201,9 +201,9 @@ for _, recipe in pairs(data.raw.recipe) do
             end
         end
         if string.find(recipe.name, '-combine') ~= nil then
-            log(recipe.name)
+            --log(recipe.name)
             local rn = string.gsub(recipe.name, '-combine', '')
-            log(rn)
+            --log(rn)
             data.raw.recipe[recipe.name].icon = data.raw.module[rn].icon
         end
         if recipe.name == 'ammo-initial' then
@@ -218,7 +218,7 @@ for _, recipe in pairs(data.raw.recipe) do
 		if recipe.name == 'flamethrower-ammo-fueled_fluid' then
 			data.raw.recipe['flamethrower-ammo-fueled_fluid'].main_product = "flamethrower-ammo"
         end
-		if recipe.icon == nil then 
+		if recipe.icon == nil then
 			if recipe.results ~= nil then
 			recipe.main_product = recipe.results[1].name
 			elseif recipe.normal ~= nil then
@@ -235,8 +235,8 @@ for _, recipe in pairs(data.raw.recipe) do
 end
 
 --data.raw.recipe["automation-science-pack"].icon = "__pycoalprocessing__/graphics/icons/science-pack-1.png"
-log(serpent.block(data.raw.tool['military-science-pack']))
-log(serpent.block(data.raw.recipe['pistol']))
+--log(serpent.block(data.raw.tool['military-science-pack']))
+--log(serpent.block(data.raw.recipe['pistol']))
 
 for _, recipe in pairs(data.raw.recipe) do
     if recipe.results ~= nil then
@@ -266,6 +266,6 @@ for _, recipe in pairs(data.raw.recipe) do
     end
 end
 
-log(serpent.block(data.raw.recipe['angels-ore2-crystal-salting']))
+--log(serpent.block(data.raw.recipe['angels-ore2-crystal-salting']))
 
 end

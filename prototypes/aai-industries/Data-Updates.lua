@@ -9,8 +9,6 @@ data.raw.technology["oil-processing"].prerequisites =
   "iron-mk02"
 }
 
-end
-
 table.insert(data.raw["lab"]["lab"].inputs, "science-pack-0")
 table.insert(data.raw["lab"]["burner-lab"].inputs, "science-pack-0")
 
@@ -21,3 +19,5 @@ table.insert(data.raw["lab"]["burner-lab"].inputs, "science-pack-0")
 fun.removescipack({"basic-automation","electricity","basic-fluid-handling","steam-power","basic-logistics","electric-mining"},"automation-science-pack")
 
 fun.ingredient_replace(data.raw.recipe["big-electric-pole"],"niobium-plate","chromium")
+
+end
