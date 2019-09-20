@@ -79,6 +79,10 @@ end
 --fix tech replacement
 if mods["angelspetrochem"] then
 
+	if data.raw.recipe['nitrobenzene'] ~= nil then
+
 	table.insert(data.raw["technology"] ["angels-sulfur-processing-1"].effects, { type = "unlock-recipe", recipe = "nitrobenzene" })
+
+	end
 
 end
