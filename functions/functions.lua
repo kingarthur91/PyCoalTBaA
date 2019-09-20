@@ -8,6 +8,7 @@ function overrides.add_ingredient(recipe, ingredient)
         --check if ingredient is item or fluid and that it exists
         if data.raw.item[ingredient.name] ~= nil or data.raw.fluid[ingredient.name] ~= nil then
             --check if type is set to fluid
+if data.raw.recipe[recipe].ingredients ~= nil then
             if ingredient.type == 'fluid' then
                 table.insert(data.raw.recipe[recipe].ingredients, {type = 'fluid', name = ingredient.name, amount = ingredient.amount})
             else
@@ -15,6 +16,7 @@ log(serpent.block(recipe))
 log(serpent.block(data.raw.recipe[recipe]))
                 table.insert(data.raw.recipe[recipe].ingredients, {type = 'item', name = ingredient.name, amount = ingredient.amount})
             end
+end
         end
     end
 end
