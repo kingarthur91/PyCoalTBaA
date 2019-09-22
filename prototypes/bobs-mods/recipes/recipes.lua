@@ -1179,7 +1179,7 @@ RECIPE {
 }:add_unlock("vanadium-processing")
 
 end
-
+--[[
 if mods["pyhightech"] then
 
 RECIPE {
@@ -1197,7 +1197,7 @@ RECIPE {
         {type = 'item', name = 'pcb1', amount = 3}
     }
 }
---[[
+
 RECIPE {
     type = 'recipe',
     name = 'electronic-circuit-initial',
@@ -1213,7 +1213,7 @@ RECIPE {
         {type = 'item', name = 'cm-electronic-circuit', amount = 3}
     }
 }
-]]--
+
 
 RECIPE {
     type = 'recipe',
@@ -1328,8 +1328,9 @@ RECIPE {
 			end
 			
 		end
+		
 end
-
+]]--
 if mods["boblibrary"] then
 
 --pycoal bob recipes

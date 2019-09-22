@@ -1,6 +1,6 @@
 
 if mods["pyhightech"] then
-
+--[[
 ITEM {
     type = "item",
     name = "cm-electronic-circuit",
@@ -41,7 +41,7 @@ ITEM {
     order = "f",
     stack_size = 100
 }
-
+]]--
 end
 
 if mods["bobores"] and not mods["pyrawores"] then
