@@ -1179,6 +1179,26 @@ RECIPE {
 }:add_unlock("vanadium-processing")
 
 end
+
+if mods["pyhightech"] then
+
+RECIPE {
+    type = 'recipe',
+    name = 'electronic-circuit-initial',
+    category = 'handcrafting',
+    enabled = true,
+    energy_required = 2,
+    ingredients = {
+        {type = 'item', name = 'copper-plate', amount = 10},
+        {type = 'item', name = 'copper-cable', amount = 10},
+        {type = 'item', name = 'wood', amount = 2}
+    },
+    results = {
+        {type = 'item', name = 'pcb1', amount = 1}
+    }
+}
+
+end
 --[[
 if mods["pyhightech"] then
 
