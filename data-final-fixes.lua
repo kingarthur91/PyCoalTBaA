@@ -34,6 +34,28 @@ if mods['BlackMarket'] then
     data.raw.technology['black-market-energy'].prerequisites = {'black-market-item', 'electric-energy-accumulators'}
 end
 
+--attempt to fix bob steel tech issue
+
+for t, tech in pairs(data.raw.technology) do
+
+	if tech.prerequisites ~= nil then
+
+		for p, preq in pairs(tech.prerequisites) do
+		
+			if data.raw.technology[preq].hidden == true then
+			
+				table.remove(tech.prerequisites, p)
+				
+			end
+			
+		end
+		
+	end
+	
+end
+
+--log(serpent.block(data.raw.recipe['advanced-circuit']))
+
 --recipe ingredients deduper
 
 for i, ings in pairs(data.raw.recipe) do

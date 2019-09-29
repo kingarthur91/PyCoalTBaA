@@ -1,6 +1,6 @@
 
 
-if mods["Clowns-Processing"] then
+if mods["Clowns-Processing"] and mods['pyhightech'] then
 data:extend({
 {
 type = "recipe",

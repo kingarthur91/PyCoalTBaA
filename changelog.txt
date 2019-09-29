@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.2
+  Changes:
+	- removed invar from advanced foundry
+	- added check to remove hidden techs from prerequisites to fix techs not being researchable
+	- added check for pyhightech to recipe for madclowns to make phosphoric acid
+---------------------------------------------------------------------------------------------------
 Version: 0.9.1
   Changes:
 	- Fixed load issues with py+aai industry
