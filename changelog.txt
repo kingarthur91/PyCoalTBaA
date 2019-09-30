@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.3
+  Changes:
+	- made adjustments to remove pyro ore spawns when omni is loaded
+---------------------------------------------------------------------------------------------------
 Version: 0.9.2
   Changes:
 	- removed invar from advanced foundry
