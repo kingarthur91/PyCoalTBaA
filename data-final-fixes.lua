@@ -44,9 +44,13 @@ for t, tech in pairs(data.raw.technology) do
 
 		for p, preq in pairs(tech.prerequisites) do
 		
-			if data.raw.technology[preq].hidden == true then
-			
-				table.remove(tech.prerequisites, p)
+			if data.raw.technology[preq].hidden ~= nil then
+		
+				if data.raw.technology[preq].hidden == true then
+				
+					table.remove(tech.prerequisites, p)
+					
+				end
 				
 			end
 			
