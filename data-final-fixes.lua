@@ -260,12 +260,14 @@ for _, recipe in pairs(data.raw.recipe) do
 end
 
 
---[[
+
+--removes missing items from recipe results that dont exist
 for _, recipe in pairs(data.raw.recipe) do
     if recipe.results ~= nil then
         for r, result in pairs(recipe.results) do
 			if result.name ~= nil then
-				if data.raw.item[result.name] == nil and data.raw.fluid[result.name] == nil and data.raw['selection-tool'][result.name] == nil and data.raw.tool[result.name] == nil then
+				if data.raw.item[result.name] == nil and data.raw.fluid[result.name] == nil and data.raw['selection-tool'][result.name] == nil and data.raw.tool[result.name] == nil and data.raw.ammo[result.name] == nil then
+					log(serpent.block(recipe))
 					data.raw.recipe[recipe.name].results[r] = nil
 				end
 			end
@@ -275,7 +277,7 @@ for _, recipe in pairs(data.raw.recipe) do
         if recipe.normal.results ~= nil then
             for r, result in pairs(recipe.normal.results) do
 				if result.name ~= nil then
-					if data.raw.item[result.name] == nil and data.raw.fluid[result.name] == nil and data.raw['selection-tool'][result.name] == nil and data.raw.tool[result.name] == nil then
+					if data.raw.item[result.name] == nil and data.raw.fluid[result.name] == nil and data.raw['selection-tool'][result.name] == nil and data.raw.tool[result.name] == nil and data.raw.ammo[recipe.name] == nil then
 						data.raw.recipe[recipe.name].normal.results[r] = nil
 					end
 				end
@@ -286,7 +288,7 @@ for _, recipe in pairs(data.raw.recipe) do
         if recipe.expensive.results ~= nil then
             for r, result in pairs(recipe.expensive.results) do
 				if result.name ~= nil then
-					if data.raw.item[result.name] == nil and data.raw.fluid[result.name] == nil and data.raw['selection-tool'][result.name] == nil and data.raw.tool[result.name] == nil then
+					if data.raw.item[result.name] == nil and data.raw.fluid[result.name] == nil and data.raw['selection-tool'][result.name] == nil and data.raw.tool[result.name] == nil and data.raw.ammo[recipe.name] == nil then
 						data.raw.recipe[recipe.name].expensive.results[r] = nil
 					end
 				end
@@ -294,8 +296,14 @@ for _, recipe in pairs(data.raw.recipe) do
         end
     end
 end
-]]--
+
 --table.insert(data.raw.recipe['zone-planner'].results, {type="item", name="zone-planner", amount=1})
 --table.insert(data.raw.recipe["iron-oxide"].results, {type="item", name="iron-plate", amount=10})
+
+if data.raw.recipe["botanical-nursery"] ~= nil then
+
+data.raw.recipe['botanical-nursery'].enabled = true
+
+end
 
 end

@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.5
+  Changes:
+	- Fixed errors cuased by me fixing errors with omni
+---------------------------------------------------------------------------------------------------
 Version: 0.9.4
   Changes:
 	- Fixed errors with omni, py and aai zones
