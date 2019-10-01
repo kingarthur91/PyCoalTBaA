@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.4
+  Changes:
+	- Fixed errors with omni, py and aai zones
+---------------------------------------------------------------------------------------------------
 Version: 0.9.3
   Changes:
 	- made adjustments to remove pyro ore spawns when omni is loaded

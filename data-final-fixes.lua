@@ -26,6 +26,8 @@ require('updates/acid-changes')
 
 require('updates/pyproductivityadjuster')
 
+
+
 if mods['Advanced-Solar'] then
     data.raw.technology['electric-energy-accumulators-2'].prerequisites = {'electric-energy-accumulators'}
 end
@@ -146,12 +148,12 @@ for i, ings in pairs(data.raw.recipe) do
     end
 end
 
---data.raw.recipe['pistol'].icon = '__base__/graphics/icons/pistol.png'
+
 
 --omni icon issue fixer
 if mods['omnilib'] then
 for _, recipe in pairs(data.raw.recipe) do
-    log(serpent.block(recipe))
+    --log(serpent.block(recipe))
     if recipe.icon_size ~= nil and recipe.icon == nil then
         if data.raw.item[recipe.name] ~= nil then
             data.raw.recipe[recipe.name].icon = data.raw.item[recipe.name].icon
@@ -254,40 +256,46 @@ for _, recipe in pairs(data.raw.recipe) do
 			end
 		end
     end
+	--log(serpent.block(recipe))
 end
 
---data.raw.recipe["automation-science-pack"].icon = "__pycoalprocessing__/graphics/icons/science-pack-1.png"
---log(serpent.block(data.raw.tool['military-science-pack']))
---log(serpent.block(data.raw.recipe['pistol']))
 
+--[[
 for _, recipe in pairs(data.raw.recipe) do
     if recipe.results ~= nil then
         for r, result in pairs(recipe.results) do
-            if data.raw.item[result.name] == nil and data.raw.fluid[result.name] == nil then
-                data.raw.recipe[recipe.name].results[r] = nil
-            end
+			if result.name ~= nil then
+				if data.raw.item[result.name] == nil and data.raw.fluid[result.name] == nil and data.raw['selection-tool'][result.name] == nil and data.raw.tool[result.name] == nil then
+					data.raw.recipe[recipe.name].results[r] = nil
+				end
+			end
         end
     end
     if recipe.normal ~= nil then
         if recipe.normal.results ~= nil then
             for r, result in pairs(recipe.normal.results) do
-                if data.raw.item[result.name] == nil and data.raw.fluid[result.name] == nil then
-                    data.raw.recipe[recipe.name].normal.results[r] = nil
-                end
+				if result.name ~= nil then
+					if data.raw.item[result.name] == nil and data.raw.fluid[result.name] == nil and data.raw['selection-tool'][result.name] == nil and data.raw.tool[result.name] == nil then
+						data.raw.recipe[recipe.name].normal.results[r] = nil
+					end
+				end
             end
         end
     end
     if recipe.expensive ~= nil then
         if recipe.expensive.results ~= nil then
             for r, result in pairs(recipe.expensive.results) do
-                if data.raw.item[result.name] == nil and data.raw.fluid[result.name] == nil then
-                    data.raw.recipe[recipe.name].expensive.results[r] = nil
-                end
+				if result.name ~= nil then
+					if data.raw.item[result.name] == nil and data.raw.fluid[result.name] == nil and data.raw['selection-tool'][result.name] == nil and data.raw.tool[result.name] == nil then
+						data.raw.recipe[recipe.name].expensive.results[r] = nil
+					end
+				end
             end
         end
     end
 end
-
---log(serpent.block(data.raw.recipe['angels-ore2-crystal-salting']))
+]]--
+--table.insert(data.raw.recipe['zone-planner'].results, {type="item", name="zone-planner", amount=1})
+--table.insert(data.raw.recipe["iron-oxide"].results, {type="item", name="iron-plate", amount=10})
 
 end
