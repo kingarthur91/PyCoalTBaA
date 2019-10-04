@@ -10,8 +10,8 @@ if mods["boblibrary"] then
 
 	--need to check fiberglass is properly updated
 	fun.Recipe
-		{ 
-			name = "fibreglass-board", 
+		{
+			name = "fibreglass-board",
 			ingredients =
 			{
 				{
@@ -20,7 +20,7 @@ if mods["boblibrary"] then
 				{
 					{ name = "glass", amount = 2}
 				}
-			}	
+			}
 		}
 
 
@@ -39,5 +39,5 @@ if mods["boblibrary"] then
 	--pyal
 
 	--pya
-	
+
 end

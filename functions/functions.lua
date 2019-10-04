@@ -611,7 +611,7 @@ end
 --best used to merge items that are duplicated in mods that should be the same
 function overrides.global_item_replacer(old, new, blackrecipe)
     if data.raw.item[old] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[old] ~= nil then
-        if data.raw.item[new] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[new] ~= nil then
+        if data.raw.item[new] ~= nil or data.raw.fluid[new] ~= nil or data.raw.capsule[new] ~= nil then
             local recipes = table.deepcopy(data.raw.recipe)
             if type(blackrecipe) ~= 'table' and blackrecipe ~= nil then
                 blackrecipe = {blackrecipe}
