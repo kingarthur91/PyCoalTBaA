@@ -51,13 +51,22 @@ if mods["pyrawores"] then
 	omni.add_resource("ore-chromium",2,"__PyCoalTBaA__/graphics/technology/extraction-ore-chromium.png","PyCoalTBaA")
 	omni.add_resource("ore-aluminium",1,"__PyCoalTBaA__/graphics/technology/extraction-ore-aluminium.png","PyCoalTBaA")
 	omni.add_resource("ore-zinc",3,"__PyCoalTBaA__/graphics/technology/extraction-ore-zinc.png","PyCoalTBaA")
-	omni.add_resource("ore-titanium",3,"__PyCoalTBaA__/graphics/technology/extraction-ore-titanium.png","PyCoalTBaA")
 	omni.add_resource("ore-tin",1,"__PyCoalTBaA__/graphics/technology/extraction-ore-tin.png","PyCoalTBaA")
 	omni.add_resource("raw-coal",1,"__PyCoalTBaA__/graphics/technology/extraction-ore-coal.png","PyCoalTBaA")
 	omni.add_resource("ore-quartz",1,"__PyCoalTBaA__/graphics/technology/extraction-ore-quartz.png","PyCoalTBaA")
 	omni.add_resource("ore-nickel",2,"__PyCoalTBaA__/graphics/technology/extraction-ore-nickel.png","PyCoalTBaA")
 	omni.add_resource("ore-lead",1,"__PyCoalTBaA__/graphics/technology/extraction-ore-lead.png","PyCoalTBaA")
 	omni.add_resource("salt",2,"__PyCoalTBaA__/graphics/technology/extraction-salt.png","PyCoalTBaA")
+	
+	if mods['boblibaray'] then
+	
+		omni.add_resource("ore-titanium",1,"__PyCoalTBaA__/graphics/technology/extraction-ore-titanium.png","PyCoalTBaA")
+	
+	else
+	
+		omni.add_resource("ore-titanium",3,"__PyCoalTBaA__/graphics/technology/extraction-ore-titanium.png","PyCoalTBaA")
+	
+	end
 
 	data.raw.resource["raw-coal"]["autoplace"] = nil
 	data.raw["autoplace-control"]["raw-coal"] = nil
@@ -171,6 +180,24 @@ if mods["pyrawores"] then
     icon_size = 32,
     subgroup = "omni-basic",
     --order = "tailings-a"
+	},
+	{
+	type = "recipe",
+    name = "starter-titanium-omni",
+    category = "omnite-extraction-burner",
+    enabled = true,
+    energy_required = 5,
+    ingredients = {
+        {type = "item", name = "omnite", amount = 6}
+    },
+    results = {
+        {type="item", name="ore-titanium", amount=1},
+		{type="item", name="stone-crushed", amount=3}
+    },
+    icon = "__pyrawores__/graphics/icons/ore-titanium.png",
+    icon_size = 32,
+    subgroup = "omni-basic",
+    --order = "tailings-a"
 	}
 }
 )
@@ -203,4 +230,10 @@ data.raw["autoplace-control"]["oil-mk04"] = nil
 
 end
 
+RECIPE('py-sodium-hydroxide'):add_unlock("coal-processing-1")
+
+RECIPE('salt-ex'):add_unlock("coal-processing-1")
+
 end
+
+

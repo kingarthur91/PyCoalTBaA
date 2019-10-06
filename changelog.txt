@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.7
+  Changes:
+	- Fixed issues with abpz that you needed titanium and sodium hydoxide to make sci 2 mats and need sci 2 to unlock their recipes
+---------------------------------------------------------------------------------------------------
 Version: 0.9.6
   Changes:
 	- Fixed that momotweaks was adding basic circuit boards to several recipes after they had been replaced with pyht pcb1

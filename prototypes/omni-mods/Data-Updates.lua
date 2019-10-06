@@ -13,6 +13,11 @@ log("broke?")
 end
 
 end
+
+--move sodium hydroxide to coal processing 1
+--crude titanium omnishit
+
+
 --[[
 if mods['omnimatter'] and not mods["omnimatter_compression"] then
 
