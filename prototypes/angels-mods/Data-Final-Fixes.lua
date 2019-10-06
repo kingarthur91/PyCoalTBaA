@@ -1,3 +1,6 @@
+
+require("prototypes/angels-mods/overrides/overrides-final")
+
 --remove broken recipes from the fuelrod multiplyier
 --log("is this running")
 for name, recipe in pairs(data.raw.recipe) do

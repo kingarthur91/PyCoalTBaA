@@ -1,7 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.6
+  Changes:
+	- Fixed that momotweaks was adding basic circuit boards to several recipes after they had been replaced with pyht pcb1
+---------------------------------------------------------------------------------------------------
 Version: 0.9.5
   Changes:
 	- Fixed errors cuased by me fixing errors with omni
+	- fixed error missing tech prerequisite with aai industry when pyro isnt enabled
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.4
   Changes:

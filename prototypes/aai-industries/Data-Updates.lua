@@ -6,8 +6,15 @@ data.raw.technology["oil-processing"].prerequisites =
   "automation",
   "fluid-handling",
   "electronics",
-  "iron-mk02"
+  --"iron-mk02"
 }
+
+if mods['pyrawores'] then
+
+table.insert(data.raw.technology['oil-processing'].prerequisites, 'iron-mk02')
+
+end
+
 
 table.insert(data.raw["lab"]["lab"].inputs, "science-pack-0")
 table.insert(data.raw["lab"]["burner-lab"].inputs, "science-pack-0")

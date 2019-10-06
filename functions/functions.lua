@@ -12,8 +12,8 @@ if data.raw.recipe[recipe].ingredients ~= nil then
             if ingredient.type == 'fluid' then
                 table.insert(data.raw.recipe[recipe].ingredients, {type = 'fluid', name = ingredient.name, amount = ingredient.amount})
             else
-log(serpent.block(recipe))
-log(serpent.block(data.raw.recipe[recipe]))
+--log(serpent.block(recipe))
+--log(serpent.block(data.raw.recipe[recipe]))
                 table.insert(data.raw.recipe[recipe].ingredients, {type = 'item', name = ingredient.name, amount = ingredient.amount})
             end
 end

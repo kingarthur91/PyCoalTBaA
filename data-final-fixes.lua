@@ -44,7 +44,7 @@ for t, tech in pairs(data.raw.technology) do
 
 		for p, preq in pairs(tech.prerequisites) do
 		
-			if data.raw.technology[preq].hidden ~= nil then
+			if data.raw.technology[preq] ~= nil and data.raw.technology[preq].hidden ~= nil then
 		
 				if data.raw.technology[preq].hidden == true then
 				
