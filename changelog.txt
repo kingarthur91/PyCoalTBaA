@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.8
+  Changes:
+	- added setting to disable the extra tiers of bob power stuff
+	- fixed error when missing pyfusion and loading angel mods
+---------------------------------------------------------------------------------------------------
 Version: 0.9.7
   Changes:
 	- Fixed issues with abpz that you needed titanium and sodium hydoxide to make sci 2 mats and need sci 2 to unlock their recipes

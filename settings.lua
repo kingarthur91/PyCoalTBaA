@@ -234,6 +234,23 @@ data:extend(
 
 end
 
+if mods['bobpower'] then
+
+	data:extend(
+		{
+			{
+		type = "bool-setting",
+		name = "disable-bobpower",
+		setting_type = "startup",
+		default_value = false,
+		order = "z",
+		}
+	}
+)
+
+end
+
+
 --if mods["angelsbioprocessing"] and mods["pycoalprocessing"] and mods["pyfusionenergy"] and mods["pyhightech"] and mods["pyindustry"] and mods["pyrawores"] then
 --[[
 data:extend(

@@ -381,3 +381,39 @@ if mods['pyrawores'] then
     --data.raw["map-gen-presets"]["default"]["rich-resources"]["basic_settings"] = nil
     end
 end
+
+if settings.startup['disable-bobpower'].value then
+
+    data.raw.technology['bob-boiler-2'].hidden = true
+    data.raw.technology['bob-boiler-3'].hidden = true
+    data.raw.technology['bob-boiler-4'].hidden = true
+    data.raw.technology['bob-boiler-5'].hidden = true
+
+    data.raw.technology['fluid-generator-1'].hidden = true
+    data.raw.technology['fluid-generator-2'].hidden = true
+    data.raw.technology['fluid-generator-3'].hidden = true
+    --data.raw.technology['fluid-generator-1'].hidden = true
+
+    data.raw.technology['bob-heat-exchanger-1'].hidden = true
+    data.raw.technology['bob-heat-exchanger-2'].hidden = true
+    data.raw.technology['bob-heat-exchanger-3'].hidden = true
+
+    --data.raw.technology['bob-nuclear-power-1'].hidden = true
+    data.raw.technology['bob-nuclear-power-2'].hidden = true
+    data.raw.technology['bob-nuclear-power-3'].hidden = true
+
+    data.raw.technology['bob-oil-boiler-1'].hidden = true
+    data.raw.technology['bob-oil-boiler-2'].hidden = true
+    data.raw.technology['bob-oil-boiler-3'].hidden = true
+    data.raw.technology['bob-oil-boiler-4'].hidden = true
+
+    --data.raw.technology['bob-steam-engine-1'].hidden = true
+    data.raw.technology['bob-steam-engine-2'].hidden = true
+    data.raw.technology['bob-steam-engine-3'].hidden = true
+    data.raw.technology['bob-steam-engine-4'].hidden = true
+    data.raw.technology['bob-steam-engine-5'].hidden = true
+
+    data.raw.technology['bob-steam-turbine-2'].hidden = true
+    data.raw.technology['bob-steam-turbine-3'].hidden = true
+
+end
