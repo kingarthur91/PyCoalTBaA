@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.9
+  Changes:
+	- fix an issue where pyro wasnt correctly overriding bob ores
+---------------------------------------------------------------------------------------------------
 Version: 0.9.8
   Changes:
 	- added setting to disable the extra tiers of bob power stuff
