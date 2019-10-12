@@ -311,3 +311,20 @@ data.raw.recipe['botanical-nursery'].enabled = true
 end
 
 end
+
+log(serpent.block(data.raw.recipe['gun-nano-emitter']))
+
+if data.raw.recipe['gun-nano-emitter'] ~= nil and data.raw.recipe['gun-nano-emitter'].normal ~= nil and data.raw.recipe['gun-nano-emitter'].normal.results ~= nil then
+
+	data.raw.recipe['gun-nano-emitter'].normal.results = {{type = 'item', name = 'gun-nano-emitter', amount =1}}
+	
+end
+
+if data.raw.recipe['gun-nano-emitter'] ~= nil and data.raw.recipe['gun-nano-emitter'].expensive ~= nil and data.raw.recipe['gun-nano-emitter'].expensive.results ~= nil then
+
+	data.raw.recipe['gun-nano-emitter'].expensive.results = {{type = 'item', name = 'gun-nano-emitter', amount =1}}
+	
+end
+
+
+log(serpent.block(data.raw.recipe['gun-nano-emitter']))
