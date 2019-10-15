@@ -326,5 +326,18 @@ if data.raw.recipe['gun-nano-emitter'] ~= nil and data.raw.recipe['gun-nano-emit
 	
 end
 
+if data.raw.recipe['rail'] ~= nil and data.raw.recipe['rail'].normal ~= nil and data.raw.recipe['rail'].normal.results ~= nil then
+
+	data.raw.recipe['rail'].normal.results = {{type = 'item', name = 'rail', amount =1}}
+	
+end
+
+if data.raw.recipe['rail'] ~= nil and data.raw.recipe['rail'].expensive ~= nil and data.raw.recipe['rail'].expensive.results ~= nil then
+
+	data.raw.recipe['rail'].expensive.results = {{type = 'item', name = 'rail', amount =1}}
+	
+end
+
+log(serpent.block(data.raw.recipe['rail']))
 
 log(serpent.block(data.raw.recipe['gun-nano-emitter']))
