@@ -73,9 +73,21 @@ fun.ingredient_replace('lead-oxide', 'lead-ore', 'crushed-lead')
 fun.ingredient_replace('tpa', 'copper-ore', 'cobalt-ore')
 fun.ingredient_replace('tailings-classification', 'copper-ore', 'lead-ore')
 fun.ingredient_replace('tailings-classification', 'iron-ore', 'tin-ore')
-fun.ingredient_replace('methanol-reactor', 'chemical-plant', 'electrolyser')
 fun.ingredient_replace('tailings-pond', 'pump', 'water-pump')
-fun.ingredient_replace('olefin-plant', 'chemical-plant', 'electrolyser')
+
+if mods['pyrawores'] then
+
+	fun.ingredient_replace('olefin-plant', 'chemical-plant', 'electrolyzer-mk01')
+	fun.ingredient_replace('methanol-reactor', 'chemical-plant', 'electrolyzer-mk01')
+
+elseif data.raw.recipe['electrolyser'] ~= nil then
+
+	
+	fun.ingredient_replace('methanol-reactor', 'chemical-plant', 'electrolyser')
+	fun.ingredient_replace('olefin-plant', 'chemical-plant', 'electrolyser')
+
+end
+
 fun.ingredient_replace('glycerol-hydrogen', 'water', 'liquid-air')
 fun.ingredient_replace('zinc-chloride', 'water', 'hydrogen-chloride')
 fun.ingredient_replace('active-carbon', 'water', 'nitrogen')
