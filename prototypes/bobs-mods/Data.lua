@@ -1,7 +1,7 @@
 
 if mods["boblibrary"] then
 
-	require("prototypes/bobs-mods/overrides/overrides")
+	--require("prototypes/bobs-mods/overrides/overrides")
 	require("prototypes/bobs-mods/items/items")
 	require("prototypes/bobs-mods/fluids/fluids")
 	require("prototypes/bobs-mods/recipes/recipes")

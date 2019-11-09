@@ -312,7 +312,7 @@ end
 
 end
 
-log(serpent.block(data.raw.recipe['gun-nano-emitter']))
+--log(serpent.block(data.raw.recipe['gun-nano-emitter']))
 
 if data.raw.recipe['gun-nano-emitter'] ~= nil and data.raw.recipe['gun-nano-emitter'].normal ~= nil and data.raw.recipe['gun-nano-emitter'].normal.results ~= nil then
 
@@ -338,6 +338,11 @@ if data.raw.recipe['rail'] ~= nil and data.raw.recipe['rail'].expensive ~= nil a
 	
 end
 
-log(serpent.block(data.raw.recipe['rail']))
+--log(serpent.block(data.raw.recipe['rail']))
 
-log(serpent.block(data.raw.recipe['gun-nano-emitter']))
+--log(serpent.block(data.raw.item['solid-sand']))
+
+fun.global_item_replacer("sand", "solid-sand")
+fun.results_replacer('soil-washing','sand','solid-sand')
+
+--log(serpent.block(data.raw.recipe['soil-washing']))

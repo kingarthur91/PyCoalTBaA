@@ -149,6 +149,7 @@ function overrides.Recipe(recipe)
     if results ~= nil then
         --check results to make sure they exist
         for _, restable in pairs(results) do
+			--log(serpent.block(restable))
             for _, r in pairs(restable) do
                 local result = {}
                 --log(serpent.block(r))

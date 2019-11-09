@@ -10,3 +10,6 @@ fun.global_item_replacer("intergrated-electronics","microchip")
 fun.global_item_replacer('module-processor-board','pcb2')
 fun.global_item_replacer('module-processor-board-2','pcb3')
 fun.global_item_replacer('module-processor-board-3','pcb4')
+
+
+fun.global_item_replacer("sand", "solid-sand")

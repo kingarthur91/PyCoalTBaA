@@ -5,6 +5,12 @@
 		fun.ingredient_replace("rare-earth-mine","fast-inserter","long-handed-inserter")
 		end
 	end
+	
+if mods["boblibrary"] then
+
+	require("prototypes/bobs-mods/overrides/overrides")
+	
+end
 
 	--data-updates overrides
 --global replacement
