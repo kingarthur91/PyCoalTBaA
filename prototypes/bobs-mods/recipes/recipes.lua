@@ -923,7 +923,7 @@ RECIPE {
     },
 }:add_unlock("advanced-electronics")
 
-if mods["pyfusion"] then
+if mods["pyfusionenergy"] then
 
 RECIPE {
     type = "recipe",
