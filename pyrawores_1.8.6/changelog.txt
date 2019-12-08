@@ -1,0 +1,511 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.8.6
+
+  Changes:
+    - fixed an oppsie. shouldnt error on resource depletion now
+---------------------------------------------------------------------------------------------------
+Version: 1.8.5
+
+  Changes:
+    - Ore processing redone for pyal. currently disabled by default til pyal release
+---------------------------------------------------------------------------------------------------
+Version: 1.8.4
+
+  Changes:
+    - Nexelit technology remade.
+---------------------------------------------------------------------------------------------------
+Version: 1.8.3
+
+  Changes:
+    - Adaptations for pyHT
+---------------------------------------------------------------------------------------------------
+Version: 1.8.2
+
+  Changes:
+    - Mega mines now extract ores more fast.
+---------------------------------------------------------------------------------------------------
+Version: 1.8.1
+
+  Changes:
+    - Rebalanced modules per machine tier.
+---------------------------------------------------------------------------------------------------
+Version: 1.8.0
+
+  Changes:
+    - More balances in sand use.
+---------------------------------------------------------------------------------------------------
+Version: 1.7.9
+
+  Changes:
+    - Fixed nitrogen loop
+---------------------------------------------------------------------------------------------------
+Version: 1.7.8
+
+  Changes:
+    - Fixed locale
+---------------------------------------------------------------------------------------------------
+Version: 1.7.7
+
+  Changes:
+    - Hydrogen Chloride recipe no have a probability to return the lamp.
+---------------------------------------------------------------------------------------------------
+Version: 1.7.5
+
+  Changes:
+    - Chromium can be made at small quantities from sand now.
+---------------------------------------------------------------------------------------------------
+Version: 1.7.4
+
+  Changes:
+    - Fixed lead.
+---------------------------------------------------------------------------------------------------
+Version: 1.7.3
+
+  Changes:
+    - Fixed lead.
+---------------------------------------------------------------------------------------------------
+Version: 1.7.2
+
+  Changes:
+    - Fixed lead.
+---------------------------------------------------------------------------------------------------
+Version: 1.7.1
+
+  Changes:
+    - version
+---------------------------------------------------------------------------------------------------
+Version: 1.7.0
+
+  Changes:
+    - Realocated nexelit requierements tech tree.
+---------------------------------------------------------------------------------------------------
+Version: 1.6.9
+
+  Changes:
+    - Adaptations
+---------------------------------------------------------------------------------------------------
+Version: 1.6.8
+
+  Changes:
+    - Fixed tech tree.
+---------------------------------------------------------------------------------------------------
+Version: 1.6.7
+
+  Changes:
+    - Added commands to allow unlock MK levels on pyFE, if detected.
+---------------------------------------------------------------------------------------------------
+Version: 1.6.6
+
+  Changes:
+    - Rebalanced Molybdenum requierements for super steel.
+---------------------------------------------------------------------------------------------------
+Version: 1.6.5
+
+  Changes:
+    - Cosmetic changes.
+---------------------------------------------------------------------------------------------------
+Version: 1.6.4
+
+  Changes:
+    - Cosmetic changes.
+    - Rebalanced sinter units.
+---------------------------------------------------------------------------------------------------
+Version: 1.6.3
+
+  Changes:
+    - Removed hability to add modules in buildings recipes.
+---------------------------------------------------------------------------------------------------
+Version: 1.6.2
+
+  Changes:
+    - Balances for ground-borer recipes.
+---------------------------------------------------------------------------------------------------
+Version: 1.6.1
+
+  Changes:
+    - Balances for glass and aluminium
+---------------------------------------------------------------------------------------------------
+Version: 1.6.0
+
+  Changes:
+    - Update for DRP building now unlocked on mining machines MK03.
+---------------------------------------------------------------------------------------------------
+Version: 1.5.9
+
+  Changes:
+    - Some pa recipes balances.
+---------------------------------------------------------------------------------------------------
+Version: 1.5.8
+
+  Changes:
+    - Stainles steel now requiered for chemical science pack and control units.
+---------------------------------------------------------------------------------------------------
+Version: 1.5.7
+
+  Changes:
+    - Rebalanced some advanced versions of buildings.
+    - Fixed phosphine gas recipe.
+---------------------------------------------------------------------------------------------------
+Version: 1.5.6
+
+  Changes:
+    - Lots of balances
+---------------------------------------------------------------------------------------------------
+Version: 1.5.5
+
+  Changes:
+    - migration issues.
+---------------------------------------------------------------------------------------------------
+Version: 1.5.4
+
+  Changes:
+    - Improved mega mines speeds.
+    - Unlocked acidgas earlier.
+---------------------------------------------------------------------------------------------------
+Version: 1.5.3
+
+  Changes:
+    - End of iron fun time.
+    - Reduced MIBC consuption in tin concentrate.
+    - Rebalanced upper iron processing steps.
+    - Improved petroleum sulfonates output.
+---------------------------------------------------------------------------------------------------
+Version: 1.5.2
+
+  Changes:
+    - Fixed migration stuff.
+    - Fixed duplicates.
+---------------------------------------------------------------------------------------------------
+Version: 1.5.1
+
+  Changes:
+    - Added recipe for iron-pulp-01 in green-tech
+---------------------------------------------------------------------------------------------------
+Version: 1.5.0
+
+  Changes:
+    - Added recipes for NbTi alloy and Nbfe alloys from molten metals.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.9
+
+  Changes:
+    - Fixed Jig being unlocked at green science to allow Titanium recipe.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.8
+
+  Changes:
+    - Increased HCl production.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.7
+
+  Changes:
+    - Pressured air reduced in silver-lead 01.
+    - Increased nitrogen from cold-air.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.6
+
+  Balances:
+    - Balacing copper sintered-to-molten.
+    - Reduced crafting time in Cu solution.
+    - Added Coarse coal to coal recipe.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.5
+
+  Balances:
+    - Balacing copper chain.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.4
+
+  Balances:
+    - Fixed firearm magazine recipe.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.3
+
+  Balances:
+    - Fixed the last update.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.2
+
+  Balances:
+    - mega mines now unlocked with science 3.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.1
+
+  Balances:
+    - Added new graphics for ores OOPS.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.0
+
+  Balances:
+    - Added new graphics for ores.
+    - reduced HCl from boron.
+---------------------------------------------------------------------------------------------------
+Version: 1.3.9
+
+  Bug fixes:
+    - Fixed Nexelit chain.
+---------------------------------------------------------------------------------------------------
+Version: 1.3.8
+
+  Balances:
+    - Balanced Nexelit chain.
+    - Improved mega-drill head value.
+    - Reduced requierements for mega mines, they now requieres production science, blue, green and red only.
+---------------------------------------------------------------------------------------------------
+Version: 1.3.7
+
+  Balances:
+    - Excavation 1 tech now requiered for mining machines 2.
+---------------------------------------------------------------------------------------------------
+Version: 1.3.6
+
+  Balances:
+    - balanced nexelit for pyPH.
+---------------------------------------------------------------------------------------------------
+Version: 1.3.5
+
+  Balances:
+    - Graphics compression.
+---------------------------------------------------------------------------------------------------
+Version: 1.3.4
+
+  Balances:
+    - Moved all mega mines to MK04.
+---------------------------------------------------------------------------------------------------
+Version: 1.3.3
+
+  Balances:
+    - Balanced all initial plates to match the hot-air in pyPH, without change the basic from his mod.
+---------------------------------------------------------------------------------------------------
+Version: 1.3.2
+
+  Balances:
+    - Bot fix.
+    - Fixed deadlock when playing without pyHT.
+    - Fixed vanilla fuel balance.
+---------------------------------------------------------------------------------------------------
+Version: 1.3.1
+
+  Balances:
+    - Several small balances.
+    - Balanced fuels.
+    - Added fecr molten recipe.
+    - Aramid now need TPA instead of PPD.
+    - Stainless Steel now needs fecr alloy instead of chromium.
+---------------------------------------------------------------------------------------------------
+Version: 1.3.0
+
+  Bug fixes:
+    - Compatibility with the recent update.
+  Balances:
+    - Modified stacks.
+    - Balanced fuels.
+---------------------------------------------------------------------------------------------------
+Version: 1.2.9
+
+  Bug fixes:
+    - Compatibility with other mods
+  Balances:
+    - map grid fix.
+---------------------------------------------------------------------------------------------------
+Version: 1.2.8
+
+  Bug fixes:
+    - Fixed coal-to-coke tech.
+  Balances:
+    - Reduced all building crafting time.
+---------------------------------------------------------------------------------------------------
+Version: 1.2.7
+
+  Bug fixes:
+    - Fixed polution.
+  Balances:
+    - Moved coal-to-coke recipe to coke processing mk01.
+---------------------------------------------------------------------------------------------------
+Version: 1.2.6
+
+  Bug fixes:
+    - Fixed vacuum.
+---------------------------------------------------------------------------------------------------
+Version: 1.2.5
+
+  Bug fixes:
+    - Fixed nichrome.
+---------------------------------------------------------------------------------------------------
+Version: 1.2.5
+
+  Balances:
+    - Added nichrome.
+---------------------------------------------------------------------------------------------------
+Version: 1.2.3
+
+  Balances:
+    - Mega drill head balance.
+---------------------------------------------------------------------------------------------------
+Version: 1.2.2
+
+  Balances:
+    - Few balances in Nickel, Tin, Aluminium and Gladd chains.
+---------------------------------------------------------------------------------------------------
+Version: 1.2.1
+
+  Bugfixes:
+    - Fixed jig recipes.
+  Balances:
+    - Several balances in ore chains.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.20
+
+  Balances:
+    - removed infinite salt.
+    - reworked pollution.
+    - fixed robots.
+    - lots of balances.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.19
+
+  Balances:
+    - removed infinite salt.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.18
+
+  Balances:
+    - Several recipes now support modules.
+    - Phytoplankton fixed.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.17
+
+  Balances:
+    - Lots of balances.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.15
+
+  Balances:
+    - Small changes, not relevant.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.14
+
+  Balances:
+    - Fixed Speed for mines.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.12
+
+  Bugfixes:
+    - Alpha version for 0.17
+---------------------------------------------------------------------------------------------------
+Version: 1.1.11
+
+  Balances:
+    - Small fixes
+---------------------------------------------------------------------------------------------------
+Version: 1.1.10
+
+  Balances:
+    - Wagons now use titanium.
+    - Balanced zinc-iron consuption.
+    - Balanced copper chains.
+    - Fixed uranium chain.
+    - Recalculated oxygen consuption.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.9
+
+  Balances:
+    - Balanced iron and copper initial recipes.
+    - Turrets now can be used normally.
+    - Added alternative recipe for Na2SO4.
+    - Several tech-tree changes.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.8
+
+  Balances:
+    - Balanced storage tanks recipes.
+    - Balanced ground borer recipes
+---------------------------------------------------------------------------------------------------
+Version: 1.1.7
+
+  Balances:
+    - Balanved iron oxide on iron chain
+    - Balanced ground borer recipes
+---------------------------------------------------------------------------------------------------
+Version: 1.1.6
+
+  Balances:
+    - Improved Nitrogen
+    - Reduced Aramid Consuption
+    - Reorganized jig Building
+---------------------------------------------------------------------------------------------------
+Version: 1.1.5
+
+  Bugfixes:
+    - Fixed Tin Steam consuption.
+    - Fixed duplicate unlock of pressured air.
+  Features:
+    - Burner to be unlocked earlier.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.3
+
+  Bugfixes:
+    - Fixed Deadlock in Carbon Aerogel when playing with pyHT.
+    - Fixed engine technology and reorganized some.
+    - Fixed small research on iron.
+    - Crusher tech now relays on Al chain.
+    - Pressured air now unlocks on Coal Processing 1
+  Features:
+    - Changed fluid to extract tin to steam.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+
+  Bugfixes:
+    - Fixed Deadlock in Carbon Aerogel when playing with pyHT.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+
+  Features:
+    - Balanced Chromium, Iron, Copper, Quartz, Titanium, Nickel and Tin chain.
+    - Reduced Nitrogen Consuption in some recipes.
+    - Made titanium more relevant.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.9
+
+  Features:
+    - Balanced Aluminium chain
+---------------------------------------------------------------------------------------------------
+Version: 1.0.8
+
+  Bugfixes:
+    - Fixed Deadlock in the centrifuge.
+    - Fixed Sintered Silver unlockable.
+  Features:
+    - Added collagen to glycerol recipe for pyHT
+    - Reduced the amount of lead to make ammo.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.7
+
+  Features:
+    - Rebalanced the whole zinc chain
+    - Rebalanced the whole nexelit chain
+    - Small adjustments into coal chain
+    - Some little balances in the sand and biofilm requierements
+---------------------------------------------------------------------------------------------------
+Version: 1.0.6
+
+  Bugfixes:
+    - Deadlock in the Centrifugal pan research.
+    - Fixed graphic bug in the JIG recipes.
+  Features:
+    - Improved the Hydrogen/Oxygen Ratio in the Electrolyzers
+    - Mining machines mk03 now requieres only red, green and blue science packs.
+    - Pynobots MK02 now unlocked in Coal Processing 03
+    - Added new pyHT cyanic acid recipe
+---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+
+  Bugfixes:
+    - Deadlock Fixes
+---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+
+  Bugfixes:
+    - Fixes
+  Features:
+    - Added the changelog
