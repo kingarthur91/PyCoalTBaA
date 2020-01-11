@@ -92,6 +92,24 @@ if data.raw.resource['phosphate-rock'] ~= nil then
         data.raw.resource['phosphate-rock'].minable.required_fluid = 'gas-synthesis'
     end
 end
+
+if data.raw.resource['ore-chromium'] ~= nil then
+    if data.raw.fluid['gas-synthesis'] ~= nil then
+        data.raw.resource['ore-chromium'].minable.required_fluid = 'gas-synthesis'
+    end
+end
+
+if data.raw.resource['ore-zinc'] ~= nil then
+    if data.raw.fluid['gas-synthesis'] ~= nil then
+        data.raw.resource['ore-zinc'].minable.required_fluid = 'gas-synthesis'
+    end
+end
+
+if data.raw.resource['ore-nickel'] ~= nil then
+    if data.raw.fluid['gas-synthesis'] ~= nil then
+        data.raw.resource['ore-nickel'].minable.required_fluid = 'gas-synthesis'
+    end
+end
 --
 
 --recipe overrides
