@@ -3,17 +3,17 @@
 ITEM {
     type = 'item',
     name = 'ore-quartz',
-    icon = '__pyrawores__/graphics/icons/mip/ore-quartz.png',
+    icon = '__pyrawores__/graphics/icons/ore-quartz.png',
     icon_size = 64,
     icon_mipmaps = 7,
     pictures = {
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-1.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-2.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-3.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-4.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-5.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-6.png', scale = 0.25, mipmap_count = 1}
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-1.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-2.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-3.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-4.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-5.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-6.png', scale = 0.25, mipmap_count = 1}
     },
     flags = {},
     subgroup = "py-rawores-ores",
@@ -35,17 +35,17 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-quartz-medium',
-        icon = '__pyrawores__/graphics/icons/mip/ore-quartz.png',
+        icon = '__pyrawores__/graphics/icons/ore-quartz.png',
         icon_size = 64,
         icon_mipmaps = 7,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-3.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-4.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-5.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-6.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-3.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-4.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-5.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-6.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -56,17 +56,17 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-quartz-low',
-        icon = '__pyrawores__/graphics/icons/mip/ore-quartz.png',
+        icon = '__pyrawores__/graphics/icons/ore-quartz.png',
         icon_size = 64,
         icon_mipmaps = 7,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-3.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-4.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-5.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-6.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-3.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-4.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-5.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-6.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -77,17 +77,17 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-quartz-trace',
-        icon = '__pyrawores__/graphics/icons/mip/ore-quartz.png',
+        icon = '__pyrawores__/graphics/icons/ore-quartz.png',
         icon_size = 64,
         icon_mipmaps = 7,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-3.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-4.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-5.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-quartz-6.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-3.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-4.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-5.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-quartz-6.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -156,14 +156,14 @@ ITEM {
 ITEM {
     type = 'item',
     name = 'ore-aluminium',
-    icon = '__pyrawores__/graphics/icons/mip/ore-aluminium.png',
+    icon = '__pyrawores__/graphics/icons/ore-aluminium.png',
     icon_size = 64,
     icon_mipmaps = 4,
     pictures = {
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-aluminium.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-aluminium-1.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-aluminium-2.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-aluminium-3.png', scale = 0.25, mipmap_count = 1}
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-aluminium.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-aluminium-1.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-aluminium-2.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-aluminium-3.png', scale = 0.25, mipmap_count = 1}
     },
     flags = {},
     subgroup = "py-rawores-ores",
@@ -185,14 +185,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-aluminium-medium',
-        icon = '__pyrawores__/graphics/icons/mip/ore-aluminium-1.png',
+        icon = '__pyrawores__/graphics/icons/ore-aluminium-1.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-aluminium.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-aluminium-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-aluminium-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-aluminium-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-aluminium.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-aluminium-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-aluminium-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-aluminium-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-aluminium',
@@ -203,14 +203,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-aluminium-low',
-        icon = '__pyrawores__/graphics/icons/mip/ore-aluminium-2.png',
+        icon = '__pyrawores__/graphics/icons/ore-aluminium-2.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-aluminium.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-aluminium-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-aluminium-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-aluminium-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-aluminium.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-aluminium-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-aluminium-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-aluminium-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-aluminium',
@@ -221,14 +221,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-aluminium-trace',
-        icon = '__pyrawores__/graphics/icons/mip/ore-aluminium-3.png',
+        icon = '__pyrawores__/graphics/icons/ore-aluminium-3.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-aluminium.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-aluminium-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-aluminium-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-aluminium-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-aluminium.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-aluminium-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-aluminium-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-aluminium-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-aluminium',
@@ -330,14 +330,14 @@ ITEM {
 ITEM {
     type = 'item',
     name = 'ore-titanium',
-    icon = '__pyrawores__/graphics/icons/mip/ore-titanium.png',
+    icon = '__pyrawores__/graphics/icons/ore-titanium.png',
     icon_size = 64,
     icon_mipmaps = 4,
     pictures = {
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-titanium.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-titanium-1.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-titanium-2.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-titanium-3.png', scale = 0.25, mipmap_count = 1}
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-titanium.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-titanium-1.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-titanium-2.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-titanium-3.png', scale = 0.25, mipmap_count = 1}
     },
     flags = {},
     subgroup = "py-rawores-ores",
@@ -359,14 +359,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-titanium-medium',
-        icon = '__pyrawores__/graphics/icons/mip/ore-titanium.png',
+        icon = '__pyrawores__/graphics/icons/ore-titanium.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-titanium.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-titanium-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-titanium-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-titanium-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-titanium.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-titanium-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-titanium-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-titanium-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -377,14 +377,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-titanium-low',
-        icon = '__pyrawores__/graphics/icons/mip/ore-titanium.png',
+        icon = '__pyrawores__/graphics/icons/ore-titanium.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-titanium.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-titanium-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-titanium-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-titanium-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-titanium.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-titanium-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-titanium-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-titanium-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -395,14 +395,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-titanium-trace',
-        icon = '__pyrawores__/graphics/icons/mip/ore-titanium.png',
+        icon = '__pyrawores__/graphics/icons/ore-titanium.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-titanium.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-titanium-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-titanium-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-titanium-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-titanium.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-titanium-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-titanium-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-titanium-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -570,14 +570,14 @@ ITEM {
 ITEM {
     type = 'item',
     name = 'ore-chromium',
-    icon = '__pyrawores__/graphics/icons/mip/ore-chromium.png',
+    icon = '__pyrawores__/graphics/icons/ore-chromium.png',
     icon_size = 64,
     icon_mipmaps = 4,
     pictures = {
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-chromium.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-chromium-1.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-chromium-2.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-chromium-3.png', scale = 0.25, mipmap_count = 1}
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-chromium.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-chromium-1.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-chromium-2.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-chromium-3.png', scale = 0.25, mipmap_count = 1}
     },
     flags = {},
     subgroup = 'py-rawores-ores',
@@ -588,14 +588,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-chromium-medium',
-        icon = '__pyrawores__/graphics/icons/mip/ore-chromium-1.png',
+        icon = '__pyrawores__/graphics/icons/ore-chromium-1.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-chromium.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-chromium-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-chromium-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-chromium-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-chromium.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-chromium-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-chromium-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-chromium-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -606,14 +606,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-chromium-low',
-        icon = '__pyrawores__/graphics/icons/mip/ore-chromium-2.png',
+        icon = '__pyrawores__/graphics/icons/ore-chromium-2.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-chromium.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-chromium-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-chromium-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-chromium-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-chromium.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-chromium-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-chromium-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-chromium-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -624,14 +624,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-chromium-trace',
-        icon = '__pyrawores__/graphics/icons/mip/ore-chromium-3.png',
+        icon = '__pyrawores__/graphics/icons/ore-chromium-3.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-chromium.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-chromium-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-chromium-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-chromium-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-chromium.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-chromium-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-chromium-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-chromium-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -813,14 +813,14 @@ ITEM {
 ITEM {
     type = 'item',
     name = 'ore-copper',
-    icon = '__base__/graphics/icons/mip/copper-ore.png',
+    icon = '__base__/graphics/icons/copper-ore.png',
     icon_size = 64,
     icon_mipmaps = 4,
     pictures = {
-        {size = 64, filename = '__base__/graphics/icons/mip/copper-ore.png', scale = 0.25, mipmap_count = 4},
-        {size = 64, filename = '__base__/graphics/icons/mip/copper-ore-1.png', scale = 0.25, mipmap_count = 4},
-        {size = 64, filename = '__base__/graphics/icons/mip/copper-ore-2.png', scale = 0.25, mipmap_count = 4},
-        {size = 64, filename = '__base__/graphics/icons/mip/copper-ore-3.png', scale = 0.25, mipmap_count = 4}
+        {size = 64, filename = '__base__/graphics/icons/copper-ore.png', scale = 0.25, mipmap_count = 4},
+        {size = 64, filename = '__base__/graphics/icons/copper-ore-1.png', scale = 0.25, mipmap_count = 4},
+        {size = 64, filename = '__base__/graphics/icons/copper-ore-2.png', scale = 0.25, mipmap_count = 4},
+        {size = 64, filename = '__base__/graphics/icons/copper-ore-3.png', scale = 0.25, mipmap_count = 4}
     },
     subgroup = 'raw-resource',
     order = 'f[copper-ore]-a',
@@ -831,14 +831,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-copper-medium',
-        icon = '__base__/graphics/icons/mip/copper-ore-1.png',
+        icon = '__base__/graphics/icons/copper-ore-1.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__base__/graphics/icons/mip/copper-ore.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/copper-ore-1.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/copper-ore-2.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/copper-ore-3.png', scale = 0.25, mipmap_count = 4}
+            {size = 64, filename = '__base__/graphics/icons/copper-ore.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/copper-ore-1.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/copper-ore-2.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/copper-ore-3.png', scale = 0.25, mipmap_count = 4}
         },
         subgroup = 'raw-resource',
         order = 'f[copper-ore]-b',
@@ -848,14 +848,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-copper-low',
-        icon = '__base__/graphics/icons/mip/copper-ore-2.png',
+        icon = '__base__/graphics/icons/copper-ore-2.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__base__/graphics/icons/mip/copper-ore.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/copper-ore-1.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/copper-ore-2.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/copper-ore-3.png', scale = 0.25, mipmap_count = 4}
+            {size = 64, filename = '__base__/graphics/icons/copper-ore.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/copper-ore-1.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/copper-ore-2.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/copper-ore-3.png', scale = 0.25, mipmap_count = 4}
         },
         subgroup = 'raw-resource',
         order = 'f[copper-ore]-c',
@@ -865,14 +865,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-copper-trace',
-        icon = '__base__/graphics/icons/mip/copper-ore-3.png',
+        icon = '__base__/graphics/icons/copper-ore-3.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__base__/graphics/icons/mip/copper-ore.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/copper-ore-1.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/copper-ore-2.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/copper-ore-3.png', scale = 0.25, mipmap_count = 4}
+            {size = 64, filename = '__base__/graphics/icons/copper-ore.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/copper-ore-1.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/copper-ore-2.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/copper-ore-3.png', scale = 0.25, mipmap_count = 4}
         },
         subgroup = 'raw-resource',
         order = 'f[copper-ore]-d',
@@ -1005,14 +1005,14 @@ ITEM {
 ITEM {
     type = 'item',
     name = 'ore-iron',
-    icon = '__base__/graphics/icons/mip/iron-ore.png',
+    icon = '__base__/graphics/icons/iron-ore.png',
     icon_size = 64,
     icon_mipmaps = 4,
     pictures = {
-        {size = 64, filename = '__base__/graphics/icons/mip/iron-ore.png', scale = 0.25, mipmap_count = 4},
-        {size = 64, filename = '__base__/graphics/icons/mip/iron-ore-1.png', scale = 0.25, mipmap_count = 4},
-        {size = 64, filename = '__base__/graphics/icons/mip/iron-ore-2.png', scale = 0.25, mipmap_count = 4},
-        {size = 64, filename = '__base__/graphics/icons/mip/iron-ore-3.png', scale = 0.25, mipmap_count = 4}
+        {size = 64, filename = '__base__/graphics/icons/iron-ore.png', scale = 0.25, mipmap_count = 4},
+        {size = 64, filename = '__base__/graphics/icons/iron-ore-1.png', scale = 0.25, mipmap_count = 4},
+        {size = 64, filename = '__base__/graphics/icons/iron-ore-2.png', scale = 0.25, mipmap_count = 4},
+        {size = 64, filename = '__base__/graphics/icons/iron-ore-3.png', scale = 0.25, mipmap_count = 4}
     },
     subgroup = 'raw-resource',
     order = 'e[iron-ore]-a',
@@ -1022,14 +1022,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-iron-medium',
-        icon = '__base__/graphics/icons/mip/iron-ore-1.png',
+        icon = '__base__/graphics/icons/iron-ore-1.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__base__/graphics/icons/mip/iron-ore.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/iron-ore-1.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/iron-ore-2.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/iron-ore-3.png', scale = 0.25, mipmap_count = 4}
+            {size = 64, filename = '__base__/graphics/icons/iron-ore.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/iron-ore-1.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/iron-ore-2.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/iron-ore-3.png', scale = 0.25, mipmap_count = 4}
         },
         subgroup = 'raw-resource',
         order = 'e[iron-ore]-b',
@@ -1039,14 +1039,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-iron-low',
-        icon = '__base__/graphics/icons/mip/iron-ore-2.png',
+        icon = '__base__/graphics/icons/iron-ore-2.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__base__/graphics/icons/mip/iron-ore.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/iron-ore-1.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/iron-ore-2.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/iron-ore-3.png', scale = 0.25, mipmap_count = 4}
+            {size = 64, filename = '__base__/graphics/icons/iron-ore.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/iron-ore-1.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/iron-ore-2.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/iron-ore-3.png', scale = 0.25, mipmap_count = 4}
         },
         subgroup = 'raw-resource',
         order = 'e[iron-ore]-c',
@@ -1056,14 +1056,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-iron-trace',
-        icon = '__base__/graphics/icons/mip/iron-ore-3.png',
+        icon = '__base__/graphics/icons/iron-ore-3.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__base__/graphics/icons/mip/iron-ore.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/iron-ore-1.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/iron-ore-2.png', scale = 0.25, mipmap_count = 4},
-            {size = 64, filename = '__base__/graphics/icons/mip/iron-ore-3.png', scale = 0.25, mipmap_count = 4}
+            {size = 64, filename = '__base__/graphics/icons/iron-ore.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/iron-ore-1.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/iron-ore-2.png', scale = 0.25, mipmap_count = 4},
+            {size = 64, filename = '__base__/graphics/icons/iron-ore-3.png', scale = 0.25, mipmap_count = 4}
         },
         subgroup = 'raw-resource',
         order = 'e[iron-ore]-d',
@@ -1249,14 +1249,14 @@ ITEM {
 ITEM {
     type = 'item',
     name = 'ore-lead',
-    icon = '__pyrawores__/graphics/icons/mip/ore-lead.png',
+    icon = '__pyrawores__/graphics/icons/ore-lead.png',
     icon_size = 64,
     icon_mipmaps = 4,
     pictures = {
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-lead.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-lead-1.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-lead-2.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-lead-3.png', scale = 0.25, mipmap_count = 1}
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-lead.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-lead-1.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-lead-2.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-lead-3.png', scale = 0.25, mipmap_count = 1}
     },
     flags = {},
     subgroup = "py-rawores-ores",
@@ -1278,14 +1278,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-lead-medium',
-        icon = '__pyrawores__/graphics/icons/mip/ore-lead-1.png',
+        icon = '__pyrawores__/graphics/icons/ore-lead-1.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-lead.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-lead-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-lead-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-lead-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-lead.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-lead-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-lead-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-lead-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -1296,14 +1296,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-lead-low',
-        icon = '__pyrawores__/graphics/icons/mip/ore-lead-2.png',
+        icon = '__pyrawores__/graphics/icons/ore-lead-2.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-lead.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-lead-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-lead-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-lead-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-lead.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-lead-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-lead-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-lead-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -1314,14 +1314,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-lead-trace',
-        icon = '__pyrawores__/graphics/icons/mip/ore-lead-3.png',
+        icon = '__pyrawores__/graphics/icons/ore-lead-3.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-lead.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-lead-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-lead-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-lead-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-lead.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-lead-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-lead-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-lead-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -1526,14 +1526,14 @@ if settings.startup['processing-mod'].value then
 ITEM {
     type = 'item',
     name = 'ore-nexelit',
-    icon = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore.png',
+    icon = '__pycoalprocessing__/graphics/icons/nexelit-ore.png',
     icon_size = 64,
     icon_mipmaps = 4,
     pictures = {
-        {size = 64, filename = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore-1.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore-2.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore-3.png', scale = 0.25, mipmap_count = 1}
+        {size = 64, filename = '__pycoalprocessing__/graphics/icons/nexelit-ore.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pycoalprocessing__/graphics/icons/nexelit-ore-1.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pycoalprocessing__/graphics/icons/nexelit-ore-2.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pycoalprocessing__/graphics/icons/nexelit-ore-3.png', scale = 0.25, mipmap_count = 1}
     },
     flags = {},
     subgroup = 'py-items',
@@ -1544,14 +1544,14 @@ ITEM {
     ITEM {
         type = 'item',
         name = 'ore-nexelit-medium',
-        icon = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore-1.png',
+        icon = '__pycoalprocessing__/graphics/icons/nexelit-ore-1.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pycoalprocessing__/graphics/icons/nexelit-ore.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pycoalprocessing__/graphics/icons/nexelit-ore-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pycoalprocessing__/graphics/icons/nexelit-ore-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pycoalprocessing__/graphics/icons/nexelit-ore-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-items',
@@ -1562,14 +1562,14 @@ ITEM {
     ITEM {
         type = 'item',
         name = 'ore-nexelit-low',
-        icon = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore-2.png',
+        icon = '__pycoalprocessing__/graphics/icons/nexelit-ore-2.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pycoalprocessing__/graphics/icons/nexelit-ore.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pycoalprocessing__/graphics/icons/nexelit-ore-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pycoalprocessing__/graphics/icons/nexelit-ore-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pycoalprocessing__/graphics/icons/nexelit-ore-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-items',
@@ -1580,14 +1580,14 @@ ITEM {
     ITEM {
         type = 'item',
         name = 'ore-nexelit-trace',
-        icon = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore-3.png',
+        icon = '__pycoalprocessing__/graphics/icons/nexelit-ore-3.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pycoalprocessing__/graphics/icons/mip/nexelit-ore-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pycoalprocessing__/graphics/icons/nexelit-ore.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pycoalprocessing__/graphics/icons/nexelit-ore-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pycoalprocessing__/graphics/icons/nexelit-ore-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pycoalprocessing__/graphics/icons/nexelit-ore-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-items',
@@ -1700,14 +1700,14 @@ ITEM {
 ITEM {
     type = 'item',
     name = 'ore-nickel',
-    icon = '__pyrawores__/graphics/icons/mip/ore-nickel.png',
+    icon = '__pyrawores__/graphics/icons/ore-nickel.png',
     icon_size = 64,
     icon_mipmaps = 4,
     pictures = {
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-nickel.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-nickel-1.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-nickel-2.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-nickel-3.png', scale = 0.25, mipmap_count = 1}
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-nickel.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-nickel-1.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-nickel-2.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-nickel-3.png', scale = 0.25, mipmap_count = 1}
     },
     flags = {},
     subgroup = "py-rawores-ores",
@@ -1729,14 +1729,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-nickel-medium',
-        icon = '__pyrawores__/graphics/icons/mip/ore-nickel-1.png',
+        icon = '__pyrawores__/graphics/icons/ore-nickel-1.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-nickel.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-nickel-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-nickel-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-nickel-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-nickel.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-nickel-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-nickel-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-nickel-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -1747,14 +1747,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-nickel-low',
-        icon = '__pyrawores__/graphics/icons/mip/ore-nickel-2.png',
+        icon = '__pyrawores__/graphics/icons/ore-nickel-2.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-nickel.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-nickel-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-nickel-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-nickel-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-nickel.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-nickel-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-nickel-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-nickel-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -1765,14 +1765,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-nickel-trace',
-        icon = '__pyrawores__/graphics/icons/mip/ore-nickel-3.png',
+        icon = '__pyrawores__/graphics/icons/ore-nickel-3.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-nickel.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-nickel-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-nickel-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-nickel-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-nickel.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-nickel-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-nickel-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-nickel-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -1885,14 +1885,14 @@ ITEM {
 ITEM {
     type = 'item',
     name = 'ore-tin',
-    icon = '__pyrawores__/graphics/icons/mip/ore-tin.png',
+    icon = '__pyrawores__/graphics/icons/ore-tin.png',
     icon_size = 64,
     icon_mipmaps = 4,
     pictures = {
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-tin.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-tin-1.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-tin-2.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-tin-3.png', scale = 0.25, mipmap_count = 1}
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-tin.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-tin-1.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-tin-2.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-tin-3.png', scale = 0.25, mipmap_count = 1}
     },
     flags = {},
     subgroup = "py-rawores-ores",
@@ -1914,14 +1914,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-tin-medium',
-        icon = '__pyrawores__/graphics/icons/mip/ore-tin-1.png',
+        icon = '__pyrawores__/graphics/icons/ore-tin-1.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-tin.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-tin-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-tin-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-tin-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-tin.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-tin-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-tin-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-tin-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -1932,14 +1932,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-tin-low',
-        icon = '__pyrawores__/graphics/icons/mip/ore-tin-2.png',
+        icon = '__pyrawores__/graphics/icons/ore-tin-2.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-tin.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-tin-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-tin-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-tin-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-tin.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-tin-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-tin-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-tin-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -1950,14 +1950,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-tin-trace',
-        icon = '__pyrawores__/graphics/icons/mip/ore-tin-3.png',
+        icon = '__pyrawores__/graphics/icons/ore-tin-3.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-tin.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-tin-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-tin-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-tin-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-tin.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-tin-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-tin-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-tin-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -2331,14 +2331,14 @@ ITEM {
 ITEM {
     type = 'item',
     name = 'ore-zinc',
-    icon = '__pyrawores__/graphics/icons/mip/ore-zinc.png',
+    icon = '__pyrawores__/graphics/icons/ore-zinc.png',
     icon_size = 64,
     icon_mipmaps = 4,
     pictures = {
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-zinc.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-zinc-1.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-zinc-2.png', scale = 0.25, mipmap_count = 1},
-        {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-zinc-3.png', scale = 0.25, mipmap_count = 1}
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-zinc.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-zinc-1.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-zinc-2.png', scale = 0.25, mipmap_count = 1},
+        {size = 64, filename = '__pyrawores__/graphics/icons/ore-zinc-3.png', scale = 0.25, mipmap_count = 1}
     },
     flags = {},
     subgroup = "py-rawores-ores",
@@ -2360,14 +2360,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-zinc-medium',
-        icon = '__pyrawores__/graphics/icons/mip/ore-zinc-1.png',
+        icon = '__pyrawores__/graphics/icons/ore-zinc-1.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-zinc.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-zinc-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-zinc-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-zinc-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-zinc.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-zinc-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-zinc-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-zinc-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -2378,14 +2378,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-zinc-low',
-        icon = '__pyrawores__/graphics/icons/mip/ore-zinc-2.png',
+        icon = '__pyrawores__/graphics/icons/ore-zinc-2.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-zinc.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-zinc-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-zinc-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-zinc-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-zinc.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-zinc-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-zinc-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-zinc-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
@@ -2396,14 +2396,14 @@ if settings.startup['processing-mod'].value then
     ITEM {
         type = 'item',
         name = 'ore-zinc-trace',
-        icon = '__pyrawores__/graphics/icons/mip/ore-zinc-3.png',
+        icon = '__pyrawores__/graphics/icons/ore-zinc-3.png',
         icon_size = 64,
         icon_mipmaps = 4,
         pictures = {
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-zinc.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-zinc-1.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-zinc-2.png', scale = 0.25, mipmap_count = 1},
-            {size = 64, filename = '__pyrawores__/graphics/icons/mip/ore-zinc-3.png', scale = 0.25, mipmap_count = 1}
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-zinc.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-zinc-1.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-zinc-2.png', scale = 0.25, mipmap_count = 1},
+            {size = 64, filename = '__pyrawores__/graphics/icons/ore-zinc-3.png', scale = 0.25, mipmap_count = 1}
         },
         flags = {},
         subgroup = 'py-rawores-ores',
