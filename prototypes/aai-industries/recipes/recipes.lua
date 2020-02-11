@@ -55,7 +55,7 @@ data:extend({
         {type = "item", name = "coal", amount = 5}
     },
     main_product = "coal-gas",
-    icon = "__pycoalprocessing__/graphics/icons/coalgas-from-wood.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/coalgas-from-wood.png",
     icon_size = 32,
     subgroup = "py-syngas",
     order = "f"

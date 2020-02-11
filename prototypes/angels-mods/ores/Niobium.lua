@@ -33,7 +33,7 @@ if settings.startup["pymods-infinite-niobium"].value then
          type = "resource",
          name = "infinite-niobium",
 		 category = "niobium",
-         icon = "__pycoalprocessing__/graphics/icons/niobium-ore.png",
+         icon = "__pycoalprocessinggraphics__/graphics/icons/niobium-ore.png",
 		 icon_size = 32,
          flags = {"placeable-neutral"},
          order="a-b-e",
@@ -96,14 +96,14 @@ if settings.startup["pymods-infinite-niobium"].value then
          {
             sheet =
            {
-            filename = "__pycoalprocessing__/graphics/ores/niobium.png",
+            filename = "__pycoalprocessinggraphics__/graphics/ores/niobium.png",
                 priority = "extra-high",
                 width = 64,
                 height = 64,
                 frame_count = 8,
                 variation_count = 8,
                 hr_version = {
-                    filename = "__pycoalprocessing__/graphics/ores/hr-niobium.png",
+                    filename = "__pycoalprocessinggraphics__/graphics/ores/hr-niobium.png",
                     priority = "extra-high",
                     width = 128,
                     height = 128,
@@ -123,7 +123,7 @@ if settings.startup["pymods-infinite-niobium"].value then
          type = "resource",
          name = "infinite-niobium",
 		 category = "niobium",
-         icon = "__pycoalprocessing__/graphics/icons/niobium-ore.png",
+         icon = "__pycoalprocessinggraphics__/graphics/icons/niobium-ore.png",
 		 icon_size = 32,
          flags = {"placeable-neutral"},
          order="a-b-e",
@@ -153,14 +153,14 @@ if settings.startup["pymods-infinite-niobium"].value then
          {
             sheet =
            {
-            filename = "__pycoalprocessing__/graphics/ores/niobium.png",
+            filename = "__pycoalprocessinggraphics__/graphics/ores/niobium.png",
                 priority = "extra-high",
                 width = 64,
                 height = 64,
                 frame_count = 8,
                 variation_count = 8,
                 hr_version = {
-                    filename = "__pycoalprocessing__/graphics/ores/hr-niobium.png",
+                    filename = "__pycoalprocessinggraphics__/graphics/ores/hr-niobium.png",
                     priority = "extra-high",
                     width = 128,
                     height = 128,

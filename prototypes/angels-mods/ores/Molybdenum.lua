@@ -34,7 +34,7 @@ if mods["angelspetrochem"] then
          {
          type = "resource",
          name = "infinite-molybdenum-ore",
-         icon = "__pyfusionenergy__/graphics/icons/ores/molybdenum.png",
+         icon = "__pyfusionenergygraphics__/graphics/icons/ores/molybdenum.png",
 		 icon_size = 32,
          flags = {"placeable-neutral"},
          order="a-b-e",
@@ -97,14 +97,14 @@ if mods["angelspetrochem"] then
          {
             sheet =
            {
-            filename = "__pyfusionenergy__/graphics/entity/ores/molybdenum-ore.png",
+            filename = "__pyfusionenergygraphics__/graphics/entity/ores/molybdenum-ore.png",
                 priority = "extra-high",
                 width = 64,
                 height = 64,
                 frame_count = 8,
                 variation_count = 8,
                 hr_version = {
-                    filename = "__pyfusionenergy__/graphics/entity/ores/hr-molybdenum-ore.png",
+                    filename = "__pyfusionenergygraphics__/graphics/entity/ores/hr-molybdenum-ore.png",
                     priority = "extra-high",
                     width = 128,
                     height = 128,
@@ -123,7 +123,7 @@ if mods["angelspetrochem"] then
          {
          type = "resource",
          name = "infinite-molybdenum-ore",
-         icon = "__pyfusionenergy__/graphics/icons/ores/molybdenum.png",
+         icon = "__pyfusionenergygraphics__/graphics/icons/ores/molybdenum.png",
 		 icon_size = 32,
          flags = {"placeable-neutral"},
          order="a-b-e",
@@ -153,14 +153,14 @@ if mods["angelspetrochem"] then
          {
             sheet =
            {
-            filename = "__pyfusionenergy__/graphics/entity/ores/molybdenum-ore.png",
+            filename = "__pyfusionenergygraphics__/graphics/entity/ores/molybdenum-ore.png",
                 priority = "extra-high",
                 width = 64,
                 height = 64,
                 frame_count = 8,
                 variation_count = 8,
                 hr_version = {
-                    filename = "__pyfusionenergy__/graphics/entity/ores/hr-molybdenum-ore.png",
+                    filename = "__pyfusionenergygraphics__/graphics/entity/ores/hr-molybdenum-ore.png",
                     priority = "extra-high",
                     width = 128,
                     height = 128,

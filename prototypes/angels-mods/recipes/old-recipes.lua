@@ -25,12 +25,12 @@ data:extend(
 		order = "a[water-water-mineralized]",
 	}
 }
-)	
+)
 	end
-	
+
 if mods["boblibrary"] and not mods["pyrawores"] then
 data:extend(
-{	
+{
 	{
     type = "recipe",
     name = "glass-sand4",
@@ -56,14 +56,14 @@ data:extend(
 }
 )
 	end
-	
-   
+
+
 if mods["angelssmelting"] then
 
 	local CrushedOres = {'iron','copper'}
-	
+
 	if mods["bobores"] and not mods["pyrawores"] then
-	
+
 		table.insert(CrushedOres,'bauxite')
 		table.insert(CrushedOres,'gold')
 		table.insert(CrushedOres,'lead')
@@ -76,27 +76,27 @@ if mods["angelssmelting"] then
 		table.insert(CrushedOres,'zinc')
 
 	end
-	
+
 	for i, Ore in ipairs(CrushedOres) do
-	
+
 	local ore
-	
+
 		if Ore == "bauxite" then
-		
+
 			ore = Ore
 			Ore = "aluminium"
-		
+
 		elseif Ore == "rutile" then
-		
+
 			ore = Ore
 			Ore = "titanium"
-		
-		else 
-		
+
+		else
+
 			ore = Ore
-			
+
 		end
-	
+
 	data:extend(
 		{
 			{
@@ -111,7 +111,7 @@ if mods["angelssmelting"] then
 				{
 				  {type="item", name="crushed-" .. tostring(ore), amount=6}
 				},
-				icon = "__pycoalprocessing__/graphics/icons/crush-" .. tostring(ore) .. ".png",
+				icon = "__pycoalprocessinggraphics__/graphics/icons/crush-" .. tostring(ore) .. ".png",
 				icon_size = 32,
 				order = "ab",
 			},
@@ -127,17 +127,17 @@ if mods["angelssmelting"] then
 				{
 				  {type="item", name="pellet-" .. tostring(Ore), amount=4}
 				},
-				icon = "__pycoalprocessing__/graphics/icons/crush-" .. tostring(ore) .. ".png",
+				icon = "__pycoalprocessinggraphics__/graphics/icons/crush-" .. tostring(ore) .. ".png",
 				icon_size = 32,
 				order = "ac",
 			}
 		}
 	)
-	
+
 	end
 
 end
-   
+
 
 data:extend(
     {
@@ -158,7 +158,7 @@ data:extend(
 	icon_size = 32,
 	order = "a[angelsore1-crushed-hand]",
     },
-	
+
 	{
     type = "recipe",
     name = "angelsore6-crushed-hand",
@@ -191,7 +191,7 @@ data:extend(
         {type = "fluid", name = "water-mineralized", amount = 250}
     },
     main_product = "water-mineralized",
-    icon = "__pycoalprocessing__/graphics/icons/coarse-washer.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/coarse-washer.png",
     icon_size = 32,
     subgroup = "py-washer",
     order = "b"

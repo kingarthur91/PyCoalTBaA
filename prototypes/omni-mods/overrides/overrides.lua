@@ -57,15 +57,15 @@ if mods["pyrawores"] then
 	omni.add_resource("ore-nickel",2,"__PyCoalTBaA__/graphics/technology/extraction-ore-nickel.png","PyCoalTBaA")
 	omni.add_resource("ore-lead",1,"__PyCoalTBaA__/graphics/technology/extraction-ore-lead.png","PyCoalTBaA")
 	omni.add_resource("salt",2,"__PyCoalTBaA__/graphics/technology/extraction-salt.png","PyCoalTBaA")
-	
+
 	if mods['boblibaray'] then
-	
+
 		omni.add_resource("ore-titanium",1,"__PyCoalTBaA__/graphics/technology/extraction-ore-titanium.png","PyCoalTBaA")
-	
+
 	else
-	
+
 		omni.add_resource("ore-titanium",3,"__PyCoalTBaA__/graphics/technology/extraction-ore-titanium.png","PyCoalTBaA")
-	
+
 	end
 
 	data.raw.resource["raw-coal"]["autoplace"] = nil
@@ -158,7 +158,7 @@ if mods["pyrawores"] then
         {type="item", name="ore-quartz", amount=1},
 		{type="item", name="stone-crushed", amount=4}
     },
-    icon = "__pyrawores__/graphics/icons/ore-quartz.png",
+    icon = "__pyraworesgraphics__/graphics/icons/ore-quartz.png",
     icon_size = 32,
     subgroup = "omni-basic",
     --order = "tailings-a"
@@ -176,7 +176,7 @@ if mods["pyrawores"] then
         {type="item", name="ore-tin", amount=1},
 		{type="item", name="stone-crushed", amount=4}
     },
-    icon = "__pyrawores__/graphics/icons/ore-tin.png",
+    icon = "__pyraworesgraphics__/graphics/icons/ore-tin.png",
     icon_size = 32,
     subgroup = "omni-basic",
     --order = "tailings-a"
@@ -194,7 +194,7 @@ if mods["pyrawores"] then
         {type="item", name="ore-titanium", amount=1},
 		{type="item", name="stone-crushed", amount=3}
     },
-    icon = "__pyrawores__/graphics/icons/ore-titanium.png",
+    icon = "__pyraworesgraphics__/graphics/icons/ore-titanium.png",
     icon_size = 32,
     subgroup = "omni-basic",
     --order = "tailings-a"

@@ -2,34 +2,34 @@
 if mods["omnimatter"] then
 -- need to find recipe with num 6 graphic and replace it
 	for r, rec in pairs(data.raw.recipe) do
-	
+
 		if rec.icons ~= nil then
-		
+
 			for i, icon in pairs(rec.icons) do
 				--log(serpent.block(icon))
 				if type(icon) == "string" then
-				
+
 					if string.find(icon, "num_6.png") then
-					
+
 						--log(serpent.block(rec))
 						icon = "__PyCoalTBaA__/graphics/icons/num_6.png"
-						
+
 					end
 					--log(serpent.block(rec))
 				else
-				
+
 					--log(serpent.block(rec))
-				
+
 				end
 			end
 		end
-		
+
 	end
 
 	if data.raw.recipe["omnirec-base-6-extraction-2"] ~= nil then
 
 		data.raw.recipe["omnirec-base-6-extraction-2"].icons[2].icon = "__PyCoalTBaA__/graphics/icons/num_6.png"
-		
+
 	end
 
 end
@@ -45,7 +45,7 @@ local limit = {}
 				end
 			end
 		end
-	
+
 --log(serpent.block(limit))
 data.raw.module["productivity-module"].limitation = limit
 data.raw.module["productivity-module-2"].limitation = limit

@@ -16,7 +16,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "stone", amount = 1}
         },
         main_product = "crushed-bauxite",
-        icon = "__pycoalprocessing__/graphics/icons/crush-bauxite.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/crush-bauxite.png",
         icon_size = 32,
         subgroup = "py-crusher",
         order = "f"
@@ -36,7 +36,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "stone", amount = 1}
         },
         main_product = "crushed-gold",
-        icon = "__pycoalprocessing__/graphics/icons/crush-gold.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/crush-gold.png",
         icon_size = 32,
         subgroup = "py-crusher",
         order = "g"
@@ -56,7 +56,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "stone", amount = 1}
         },
         main_product = "crushed-lead",
-        icon = "__pycoalprocessing__/graphics/icons/crush-lead.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/crush-lead.png",
         icon_size = 32,
         subgroup = "py-crusher",
         order = "h"
@@ -76,7 +76,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "stone", amount = 1}
         },
         main_product = "crushed-quartz",
-        icon = "__pycoalprocessing__/graphics/icons/crush-quartz.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/crush-quartz.png",
         icon_size = 32,
         subgroup = "py-crusher",
         order = "i"
@@ -96,7 +96,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "stone", amount = 1}
         },
         main_product = "crushed-nickel",
-        icon = "__pycoalprocessing__/graphics/icons/crush-nickel.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/crush-nickel.png",
         icon_size = 32,
         subgroup = "py-crusher",
         order = "j"
@@ -116,7 +116,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "stone", amount = 1}
         },
         main_product = "crushed-rutile",
-        icon = "__pycoalprocessing__/graphics/icons/crush-rutile.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/crush-rutile.png",
         icon_size = 32,
         subgroup = "py-crusher",
         order = "k"
@@ -136,7 +136,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "stone", amount = 1}
         },
         main_product = "crushed-silver",
-        icon = "__pycoalprocessing__/graphics/icons/crush-silver.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/crush-silver.png",
         icon_size = 32,
         subgroup = "py-crusher",
         order = "l"
@@ -156,7 +156,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "stone", amount = 1}
         },
         main_product = "crushed-tin",
-        icon = "__pycoalprocessing__/graphics/icons/crush-tin.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/crush-tin.png",
         icon_size = 32,
         subgroup = "py-crusher",
         order = "m"
@@ -176,7 +176,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "stone", amount = 1}
         },
         main_product = "crushed-tungsten",
-        icon = "__pycoalprocessing__/graphics/icons/crush-tungsten.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/crush-tungsten.png",
         icon_size = 32,
         subgroup = "py-crusher",
         order = "n"
@@ -196,7 +196,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "stone", amount = 1}
         },
         main_product = "crushed-zinc",
-        icon = "__pycoalprocessing__/graphics/icons/crush-zinc.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/crush-zinc.png",
         icon_size = 32,
         subgroup = "py-crusher",
         order = "o"
@@ -219,7 +219,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "bauxite-ore", amount = 20}
         },
         main_product = "bauxite-ore",
-        icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-bauxite.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/drilling/drilling-bauxite.png",
         icon_size = 32,
         subgroup = "py-drilling",
         order = "d"
@@ -240,7 +240,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "cobalt-ore", amount = 20}
         },
         main_product = "cobalt-ore",
-        icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-cobalt.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/drilling/drilling-cobalt.png",
         icon_size = 32,
         subgroup = "py-drilling",
         order = "e"
@@ -261,7 +261,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "gold-ore", amount = 20}
         },
         main_product = "gold-ore",
-        icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-gold.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/drilling/drilling-gold.png",
         icon_size = 32,
         subgroup = "py-drilling",
         order = "f"
@@ -282,7 +282,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "lead-ore", amount = 20}
         },
         main_product = "lead-ore",
-        icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-lead.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/drilling/drilling-lead.png",
         icon_size = 32,
         subgroup = "py-drilling",
         order = "g"
@@ -303,7 +303,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "nickel-ore", amount = 20}
         },
         main_product = "nickel-ore",
-        icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-nickel.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/drilling/drilling-nickel.png",
         icon_size = 32,
         subgroup = "py-drilling",
         order = "h"
@@ -324,7 +324,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "quartz", amount = 20}
         },
         main_product = "quartz",
-        icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-quartz.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/drilling/drilling-quartz.png",
         icon_size = 32,
         subgroup = "py-drilling",
         order = "i"
@@ -345,7 +345,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "rutile-ore", amount = 20}
         },
         main_product = "rutile-ore",
-        icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-rutile.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/drilling/drilling-rutile.png",
         icon_size = 32,
         subgroup = "py-drilling",
         order = "j"
@@ -366,7 +366,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "silver-ore", amount = 20}
         },
         main_product = "silver-ore",
-        icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-silver.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/drilling/drilling-silver.png",
         icon_size = 32,
         subgroup = "py-drilling",
         order = "k"
@@ -387,7 +387,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "tin-ore", amount = 20}
         },
         main_product = "tin-ore",
-        icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-tin.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/drilling/drilling-tin.png",
         icon_size = 32,
         subgroup = "py-drilling",
         order = "l"
@@ -408,7 +408,7 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "tungsten-ore", amount = 20}
         },
         main_product = "tungsten-ore",
-        icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-tungsten.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/drilling/drilling-tungsten.png",
         icon_size = 32,
         subgroup = "py-drilling",
         order = "m"
@@ -429,12 +429,12 @@ if mods["bobores"] and not mods["pyrawores"] then
             {type = "item", name = "zinc-ore", amount = 20}
         },
         main_product = "zinc-ore",
-        icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-zinc.png",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/drilling/drilling-zinc.png",
         icon_size = 32,
         subgroup = "py-drilling",
         order = "n"
     }:add_unlock("excavation-2")
-	
+
 if data.raw.item["carbon"] ~= nil then
 
 	--uses bob_carbon
@@ -458,7 +458,7 @@ RECIPE {
 }:add_unlock("coal-processing-1")
 
 end
- 
+
 --alternative silicon plate
 RECIPE {
     type = "recipe",
@@ -494,7 +494,7 @@ RECIPE {
     main_product = "salt",
     subgroup = "py-items",
     order = "salt",
-    icon = "__pycoalprocessing__/graphics/icons/salt.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/salt.png",
     icon_size = 32
 }:add_unlock("coal-processing-2")
 
@@ -514,7 +514,7 @@ RECIPE {
     main_product = "water-saline",
     subgroup = "py-items",
     order = "saline",
-    icon = "__pycoalprocessing__/graphics/icons/water-saline.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/water-saline.png",
     icon_size = 32
 }:add_unlock("coal-processing-2")
 
@@ -532,7 +532,7 @@ RECIPE {
         {type = "item", name = "void", amount = 1, probability = 0}
     },
     subgroup = "void",
-    icon = "__pycoalprocessing__/graphics/icons/flue-gas.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/flue-gas.png",
     icon_size = 32,
     order = "flue-gas"
 }:add_unlock("void-fluid")
@@ -750,7 +750,7 @@ RECIPE {
         {type = "fluid", name = "lubricant", amount = 100}
     },
     main_product = "lubricant",
-    icon = "__pycoalprocessing__/graphics/icons/lube-glycerol.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/lube-glycerol.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "a [coal-gas]"
@@ -771,7 +771,7 @@ RECIPE {
         {type = "item", name = "resin", amount = 20}
     },
     main_product = "resin",
-    icon = "__pycoalprocessing__/graphics/icons/resin-glycerol.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/resin-glycerol.png",
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "k"
@@ -792,7 +792,7 @@ RECIPE {
         {type = "fluid", name = "carbon-dioxide", amount = 50}
     },
     main_product = "hydrogen",
-    icon = "__pycoalprocessing__/graphics/icons/syngas-distilation.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/syngas-distilation.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "a [coal-gas]"
@@ -837,7 +837,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 520},
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-hydrogen.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-hydrogen.png",
     icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
@@ -940,7 +940,7 @@ RECIPE {
         {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
     },
     main_product = "cobalt-plate",
-    icon = "__pyhightech__/graphics/icons/pa/pa-cobalt.png",
+    icon = "__pyhightechgraphics__/graphics/icons/pa/pa-cobalt.png",
 	icon_size = 32,
     subgroup = "py-hightech-recipes",
     order = "f"
@@ -962,7 +962,7 @@ RECIPE {
         {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
     },
     main_product = "oxygen",
-    icon = "__pyhightech__/graphics/icons/pa/pa-oxygen.png",
+    icon = "__pyhightechgraphics__/graphics/icons/pa/pa-oxygen.png",
 	icon_size = 32,
     subgroup = "py-hightech-recipes",
     order = "f"
@@ -983,7 +983,7 @@ RECIPE {
         {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
     },
     main_product = "helium",
-    icon = "__pyhightech__/graphics/icons/pa/pa-helium.png",
+    icon = "__pyhightechgraphics__/graphics/icons/pa/pa-helium.png",
 	icon_size = 32,
     subgroup = "py-hightech-recipes",
     order = "f"
@@ -1004,7 +1004,7 @@ RECIPE {
         {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
     },
     main_product = "hydrogen",
-    icon = "__pyhightech__/graphics/icons/pa/pa-hydrogen.png",
+    icon = "__pyhightechgraphics__/graphics/icons/pa/pa-hydrogen.png",
 	icon_size = 32,
     subgroup = "py-hightech-recipes",
     order = "f"
@@ -1025,7 +1025,7 @@ RECIPE {
         {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
     },
     main_product = "boron",
-    icon = "__pyhightech__/graphics/icons/pa/pa-boron.png",
+    icon = "__pyhightechgraphics__/graphics/icons/pa/pa-boron.png",
 	icon_size = 32,
     subgroup = "py-hightech-recipes",
     order = "f"
@@ -1046,7 +1046,7 @@ RECIPE {
         {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
     },
     main_product = "coal",
-    icon = "__pyhightech__/graphics/icons/pa/pa-coal.png",
+    icon = "__pyhightechgraphics__/graphics/icons/pa/pa-coal.png",
 	icon_size = 32,
     subgroup = "py-hightech-recipes",
     order = "f"
@@ -1067,7 +1067,7 @@ RECIPE {
         {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
     },
     main_product = "aluminium-plate",
-    icon = "__pyhightech__/graphics/icons/pa/pa-aluminium.png",
+    icon = "__pyhightechgraphics__/graphics/icons/pa/pa-aluminium.png",
 	icon_size = 32,
     subgroup = "py-hightech-recipes",
     order = "f"
@@ -1088,7 +1088,7 @@ RECIPE {
         {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
     },
     main_product = "nickel-plate",
-    icon = "__pyhightech__/graphics/icons/pa/pa-nickel.png",
+    icon = "__pyhightechgraphics__/graphics/icons/pa/pa-nickel.png",
 	icon_size = 32,
     subgroup = "py-hightech-recipes",
     order = "f"
@@ -1109,7 +1109,7 @@ RECIPE {
         {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
     },
     main_product = "zinc-plate",
-    icon = "__pyhightech__/graphics/icons/pa/pa-zinc.png",
+    icon = "__pyhightechgraphics__/graphics/icons/pa/pa-zinc.png",
 	icon_size = 32,
     subgroup = "py-hightech-recipes",
     order = "f"
@@ -1130,7 +1130,7 @@ RECIPE {
         {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
     },
     main_product = "silver-plate",
-    icon = "__pyhightech__/graphics/icons/pa/pa-silver.png",
+    icon = "__pyhightechgraphics__/graphics/icons/pa/pa-silver.png",
 	icon_size = 32,
     subgroup = "py-hightech-recipes",
     order = "f"
@@ -1151,7 +1151,7 @@ RECIPE {
         {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
     },
     main_product = "gold-plate",
-    icon = "__pyhightech__/graphics/icons/pa/pa-gold.png",
+    icon = "__pyhightechgraphics__/graphics/icons/pa/pa-gold.png",
 	icon_size = 32,
     subgroup = "py-hightech-recipes",
     order = "f"
@@ -1172,7 +1172,7 @@ RECIPE {
         {type = "item", name = "crystallographic-substrate", amount = 1, probability = 0.3},
     },
     main_product = "vanadium-oxide",
-    icon = "__pyhightech__/graphics/icons/pa/pa-vanadium.png",
+    icon = "__pyhightechgraphics__/graphics/icons/pa/pa-vanadium.png",
 	icon_size = 32,
     subgroup = "py-hightech-recipes",
     order = "f"
@@ -1320,35 +1320,35 @@ RECIPE {
 		data.raw.recipe["valve"].enabled = false
 
 	end
-	
+
 	data.raw.recipe["electronic-circuit"].enabled = false
-		
+
 		for t, tech in pairs(data.raw.technology["basic-electronics"].effects) do
-			
+
 			if tech.recipe == "electronic-circuit" then
-			
+
 				table.remove(data.raw.technology["basic-electronics"].effects,t)
 
 			end
-			
+
 			if tech.recipe == "advanced-circuit" then
-			
+
 				table.remove(data.raw.technology["basic-electronics"].effects,t)
-				
+
 			end
-			
+
 		end
-		
+
 		for t, tech in pairs(data.raw.technology["advanced-electronics"].effects) do
-			
+
 			if tech.recipe == "processing-unit" then
-			
+
 				table.remove(data.raw.technology["advanced-electronics"].effects,t)
 
 			end
-			
+
 		end
-		
+
 end
 ]]--
 if mods["boblibrary"] then
@@ -1370,7 +1370,7 @@ RECIPE {
         {type = "fluid", name = "methanol", amount = 40}
     },
     subgroup = "py-methanol",
-    icon = "__pycoalprocessing__/graphics/icons/methanol.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/methanol.png",
     icon_size = 32,
     order = "b"
 }:add_unlock("methanol-processing-2")
@@ -1391,7 +1391,7 @@ RECIPE {
         {type = "fluid", name = "tar", amount = 30},
         {type = "item", name = "ash", amount = 1}
     },
-    icon = "__pycoalprocessing__/graphics/icons/syngas.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/syngas.png",
     icon_size = 32,
     subgroup = "py-syngas",
     order = "a-b-[syn-gas]"
@@ -1417,7 +1417,7 @@ RECIPE {
         {type = "fluid", name = "steam", amount = 100}
     },
     main_product = "liquid-nitrogen",
-    icon = "__pyfusionenergy__/graphics/icons/compress-nitrogen.png",
+    icon = "__pyfusionenergygraphics__/graphics/icons/compress-nitrogen.png",
 	icon_size = 32,
     subgroup = "py-fusion-gases",
     order = "a"

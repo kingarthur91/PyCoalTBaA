@@ -17,7 +17,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "early-solid-separator",
-    icon = "__pycoalprocessing__/graphics/icons/solid-separator.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/solid-separator.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk01",
@@ -29,7 +29,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "early-solid-separator",
-    icon = "__pycoalprocessing__/graphics/icons/solid-separator.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/solid-separator.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "early-solid-separator"},
@@ -45,7 +45,7 @@ ENTITY {
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"solid-separator"},
     crafting_speed = 0.25,
-    energy_source = 
+    energy_source =
 	{
 		type = "fluid",
 		emissions_per_second_per_watt = 1/1000,
@@ -81,7 +81,7 @@ ENTITY {
     energy_usage = "400kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/solid-separator/solid-separator.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/solid-separator/solid-separator.png",
         width = 249,
         height = 298,
         frame_count = 20,

@@ -7,7 +7,7 @@
 
 	-- move coarse faction to mineral water to game start
 	-- add recipe to coarse faction at game start
-	
+
 --enable ground sample and add it to sci 1
 if data.raw.recipe["ground-sample01"] ~= nil then
 
@@ -36,7 +36,7 @@ fun.Recipe
 			},
 		}
 	}
-	
+
 fun.Recipe
 	{
 	name = "algae-green-simple",
@@ -57,7 +57,7 @@ fun.Recipe
 	{
 		name = "fawogae-substrate",
 		enabled = true,
-		ingredients = 
+		ingredients =
 		{
 			{
 				{type = "item", name = "fawogae", amount = 5}
@@ -91,7 +91,7 @@ fun.Recipe
 		},
 	category = "smelting",
 	main_product = "ash",
-	icon = "__pycoalprocessing__/graphics/icons/ash.png"
+	icon = "__pycoalprocessinggraphics__/graphics/icons/ash.png"
 	}
 
 fun.Recipe
@@ -116,9 +116,9 @@ fun.Recipe
 		},
 	category = "smelting",
 	main_product = "ash",
-	icon = "__pycoalprocessing__/graphics/icons/ash.png"
+	icon = "__pycoalprocessinggraphics__/graphics/icons/ash.png"
 	}
-	
+
 fun.Recipe
 	{
 	name = "wood-burning",
@@ -141,7 +141,7 @@ fun.Recipe
 		},
 	category = "smelting",
 	main_product = "ash",
-	icon = "__pycoalprocessing__/graphics/icons/ash.png"
+	icon = "__pycoalprocessinggraphics__/graphics/icons/ash.png"
 	}
 
 --add fawogae-substrate and ground sample together to make biosample
@@ -166,7 +166,7 @@ fun.Recipe
 			}
 		}
 	}
-	
+
 --add that to the sci 1 recipe with flasks
 fun.ingredient_replace("automation-science-pack","fawogae-substrate","bio-sample")
 

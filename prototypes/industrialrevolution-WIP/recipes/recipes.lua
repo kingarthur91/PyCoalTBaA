@@ -236,7 +236,7 @@ fun.Recipe
 				{type = "item", name = "flask", amount = 1}
 			}
 		},
-	icon = "__pycoalprocessing__/graphics/icons/mip/glassware-01.png",
+	icon = "__pycoalprocessinggraphics__/graphics/icons/mip/glassware-01.png",
 	}
 	--molten glass to glass sheet
 fun.Recipe
@@ -256,7 +256,7 @@ fun.Recipe
 				{type = "item", name = "glass", amount = 1}
 			}
 		},
-	icon = "__pyrawores__/graphics/icons/glass.png",
+	icon = "__pyraworesgraphics__/graphics/icons/glass.png",
 	}
 	--add few more glass recipes that give cheap panes and different types
 ]]--
