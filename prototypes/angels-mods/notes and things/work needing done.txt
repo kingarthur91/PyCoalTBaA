@@ -1,7 +1,0 @@
---((things still to do))--
-find/ make icons for the new items for the electric motor
-
-compare complexity of my electric motor recipe to angels ice engine. maybe adgust his engine to be a bit more equal
-
---glass things
-need to add fluid output to smelter or use a different furnace at start

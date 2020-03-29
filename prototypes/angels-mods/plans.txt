@@ -1,0 +1,8 @@
+-----tier 0 - pre science-----
+
+start with stone furnace to make basic plates and player handcrafts basic bits to assemble crude parts needed to make proper equipment.
+	need crude handcraft recipes that use extra materials and give scraps back with product
+
+remove the ability to craft most recipes
+	only leave final assembly of buildings and basic recipes
+
