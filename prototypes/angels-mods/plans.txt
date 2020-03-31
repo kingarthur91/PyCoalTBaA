@@ -6,3 +6,13 @@ start with stone furnace to make basic plates and player handcrafts basic bits t
 remove the ability to craft most recipes
 	only leave final assembly of buildings and basic recipes
 
+
+----tier 1 -----
+
+add science pack that doesnt need any circuits using flask, 2 basic metals, Okarinome, and cellulose
+	
+	cellulose is the step after cellulose fibers
+
+move water treatment, brown algae and paper to tier 1 pack
+
+need to look into paper making - sodium hydroxide and the like
