@@ -1,4 +1,56 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.10
+  Changes:
+	- first update to .18
+---------------------------------------------------------------------------------------------------
+Version: 0.9.9
+  Changes:
+	- fix an issue where pyro wasnt correctly overriding bob ores
+---------------------------------------------------------------------------------------------------
+Version: 0.9.8
+  Changes:
+	- added setting to disable the extra tiers of bob power stuff
+	- fixed error when missing pyfusion and loading angel mods
+---------------------------------------------------------------------------------------------------
+Version: 0.9.7
+  Changes:
+	- Fixed issues with abpz that you needed titanium and sodium hydoxide to make sci 2 mats and need sci 2 to unlock their recipes
+---------------------------------------------------------------------------------------------------
+Version: 0.9.6
+  Changes:
+	- Fixed that momotweaks was adding basic circuit boards to several recipes after they had been replaced with pyht pcb1
+---------------------------------------------------------------------------------------------------
+Version: 0.9.5
+  Changes:
+	- Fixed errors cuased by me fixing errors with omni
+	- fixed error missing tech prerequisite with aai industry when pyro isnt enabled
+---------------------------------------------------------------------------------------------------
+Version: 0.9.4
+  Changes:
+	- Fixed errors with omni, py and aai zones
+---------------------------------------------------------------------------------------------------
+Version: 0.9.3
+  Changes:
+	- made adjustments to remove pyro ore spawns when omni is loaded
+---------------------------------------------------------------------------------------------------
+Version: 0.9.2
+  Changes:
+	- removed invar from advanced foundry
+	- added check to remove hidden techs from prerequisites to fix techs not being researchable
+	- added check for pyhightech to recipe for madclowns to make phosphoric acid
+---------------------------------------------------------------------------------------------------
+Version: 0.9.1
+  Changes:
+	- Fixed load issues with py+aai industry
+	- fixed issue with bobs circuits not being properly overriden with pyhightech circuits
+---------------------------------------------------------------------------------------------------
+Version: 0.9.0
+  Changes:
+    - Removed all older code to rebuild pycoaltbaa from scratch
+	- Reorganized folders to be based on the external mod that is being made compatible with pymods
+	- bumped version number to 0.9.0 as after a few rounds of bug testing will be moving to 1.0.0
+	- removed copy of stdlib from folder
+---------------------------------------------------------------------------------------------------
 Version: 0.0.54
   Changes:
 	- fixed issue with titanium deadlock with angels mods
@@ -65,7 +117,7 @@ Version: 0.0.40
 Version: 0.0.39
   Changes:
 	- merged several sodium products from pyrawores and angels mods
-	- fixed issue with compressor needing t3 items to make t3 sci pack	
+	- fixed issue with compressor needing t3 items to make t3 sci pack
 	- removed duplicate items from several recipes
 	- fixed issues with omni mods not loading with pymods
 ---------------------------------------------------------------------------------------------------
@@ -88,7 +140,7 @@ Version: 0.0.36
 	- replaced duralimiun with aluminium plate in gun turrent
 	- fixed error with vacum tube description and name
 	- made adjustment to aaii-sp0 to fix that storage tank 0 attempted to use angels storage tank subgroup when angels wasnt installed
-	- removed science pack 1 from electric miner 1 tech as its needed for tin with pyro 
+	- removed science pack 1 from electric miner 1 tech as its needed for tin with pyro
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.35
   Changes:

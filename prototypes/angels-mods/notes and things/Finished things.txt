@@ -1,0 +1,9 @@
+--((stuff that is done))--
+added electric motor recipe/item
+added recipes/items needed to make the electric motor
+
+--glass stuff
+molten glass fluid
+replaced quartz recipes glass with molten glass
+add recipe to make flask from quartz for game start
+added recipes to make glass and flasks from molten glass

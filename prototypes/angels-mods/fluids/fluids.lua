@@ -1,0 +1,43 @@
+data:extend(
+{
+	{
+	type = "fluid",
+	name = "molten-glass",
+	icon = "__PyCoalTBaA__/graphics/icons/moltenglass.png",
+	icon_size = 32,
+	default_temperature = 750,
+    heat_capacity = "0KJ",
+    base_color = {r = 255/255, g = 130/255, b = 0/255},
+    flow_color = {r = 255/255, g = 130/255, b = 25/255},
+    max_temperature = 1000,
+	pressure_to_speed_ratio = 0.4,
+    flow_to_energy_ratio = 0.59,
+	},
+	{
+	type = "fluid",
+	name = "light-crude-oil",
+	icon = "__base__/graphics/icons/fluid/heavy-oil.png",
+	icon_size = 32,
+	default_temperature = 25,
+    heat_capacity = "0.1KJ",
+    base_color = {r=0, g=0, b=0},
+    flow_color = {r=0.5, g=0.5, b=0.5},
+    max_temperature = 100,
+	pressure_to_speed_ratio = 0.4,
+    flow_to_energy_ratio = 0.59,
+	},
+	{
+	type = "fluid",
+	name = "heavy-crude-oil",
+	icon = "__base__/graphics/icons/fluid/crude-oil.png",
+	icon_size = 32,
+	default_temperature = 25,
+    heat_capacity = "0.1KJ",
+    base_color = {r=0, g=0, b=0},
+    flow_color = {r=0.5, g=0.5, b=0.5},
+    max_temperature = 100,
+	pressure_to_speed_ratio = 0.4,
+    flow_to_energy_ratio = 0.59,
+	},
+}
+)

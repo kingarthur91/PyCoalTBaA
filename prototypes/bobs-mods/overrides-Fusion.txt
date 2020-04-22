@@ -1,0 +1,7 @@
+
+RECIPE("molybdenum-plate"):change_category("electrolysis")
+
+RECIPE("sodium-chlorate"):change_category('electrolysis')
+
+--another change category
+data.raw.recipe[rec.name].category = "electrolyzer"

@@ -1,397 +1,338 @@
-	require("functions/functions")
 
-	require("updates.aai-updates")
+--Angels Mods
+require('prototypes/angels-mods/Data-Final-Fixes')
 
-	require("prototypes.overrides-Fusion")
+--Bob Mods
+require('prototypes/bobs-mods/Data-Final-Fixes')
 
-	require("prototypes.Ores.Molybdenum")
+require('prototypes/aai-industries/Data-Final-Fixes')
 
-	require("prototypes.overrides-Hightech")
+--require("prototypes/bio-industries/Data-Final-Fixes")
 
-	require("prototypes.Ores.Borax")
+--require("prototypes/dl-stacking/Data-Final-Fixes")
 
-	require("prototypes.Ores.Niobium")
-   
-	require("prototypes.PyAngelStacking")
-   
-	require("prototypes.overrides-bioindustries")
-	
-	require("prototypes.overrides-pyscience")
-	
-	require("prototypes.overrides-Rawores")
+--require("prototypes/kaoextended/Data-Final-Fixes")
 
-		if mods["bobplates"] then
-			if mods["pyfusionenergy"] then
-				log(serpent.block(data.raw.recipe["heavy-water"]))
-				data.raw.recipe["heavy-water"].icon_size=32
-				data.raw.recipe["heavy-water"].icon = "__pyfusionenergy__/graphics/icons/heavy-water.png"
-				data.raw.recipe["heavy-water"].main_product="heavy-water"
-			end
-		end
+--require("prototypes/madclowns-mods/Data-Final-Fixes")
 
-   if mods["angelspetrochem"] then
-	
-	   angelsmods.functions.OV.execute()
-   
-   --log(serpent.block(data.raw.recipe))
-   
-	-- hide recipes with "angels-void" or "slag" as main product
-	for name, recipe in pairs(data.raw.recipe) do
-		if recipe.main_product == "angels-void" or recipe.main_product == "slag" then
-			log("hide " .. name)
-			data.raw.recipe[name].hidden = true
-		end
-		
-		if recipe.results ~= nil then
-			
-			--log(serpent.block(recipe))
-			
-			if recipe.results[1] ~= nil then
-			
-				if recipe.results[1].name == "slag" and recipe.results[2] == nil then
-				
-				data.raw.recipe[name].hidden = true
-				
+--require("prototypes/mining-space-industries/Data-Final-Fixes")
+
+require('prototypes/omni-mods/Data-Final-Fixes')
+
+--require("prototypes/space-exploration/Data-Final-Fixes")
+
+require("prototypes/industrialrevolution-WIP/Data-Final-Fixes")
+
+require('updates/acid-changes')
+
+require('updates/pyproductivityadjuster')
+
+if mods['Advanced-Solar'] then
+    data.raw.technology['electric-energy-accumulators-2'].prerequisites = {'electric-energy-accumulators'}
+end
+
+if mods['BlackMarket'] then
+    data.raw.technology['black-market-energy'].prerequisites = {'black-market-item', 'electric-energy-accumulators'}
+end
+
+--attempt to fix bob steel tech issue
+for t, tech in pairs(data.raw.technology) do
+	if tech.prerequisites ~= nil then
+		for p, preq in pairs(tech.prerequisites) do
+			if data.raw.technology[preq] ~= nil and data.raw.technology[preq].hidden ~= nil then
+				if data.raw.technology[preq].hidden == true then
+					table.remove(tech.prerequisites, p)
 				end
-				
-				if recipe.results[1].name == "angels-void" and recipe.results[2] == nil then
-				
-				data.raw.recipe[name].hidden = true
-				
-				end
-			
 			end
-			
 		end
 	end
-	
-end
---[[
-if mods["bobrevamp"] then
-
-	if not data.raw.item["enriched-fuel"] then
-	
-		for t, tech in pairs(data.raw.technology["hydrazine"].effects) do
-		
-			if tech.recipe == "enriched-fuel-from-hydrazine" then
-			
-				table.remove(data.raw.technology["hydrazine"].effects, t)
-				log(serpent.block(data.raw.technology["hydrazine"]))
-				
-			end
-			
-		end
-		
-	end
-	
-end
-]]--
-if settings.startup["py-prod-adjust"].value == true then
-
-recipe_output_mod()
-
 end
 
---productivity recipe checker
---try copying limitation list and resetting it to updated list afterwards
---[[
-log("assembly machine recipes")
-log(serpent.block(data.raw.recipe["assembling-machine-1"]))
-log(serpent.block(data.raw.recipe["assembling-machine-2"]))
-log(serpent.block(data.raw.recipe["assembling-machine-3"]))
-
-local recipecount = 0
-
-for _,r in pairs(data.raw.recipe) do
-
-	recipecount = recipecount + 1
-	
-end
-
-log(recipecount)
-]]--
---[[
-local fcount = 0
-
-for _, f in pairs(data.raw.fluid) do
-
-	log(f.name)
-	--log(f.fuel_value)
-	fcount=fcount+1
-end
-
-log(fcount)
-]]--
---[[
-for _, i in pairs(data.raw["item-group"]) do
-
-	data.raw["item-group"]["py-rawores"] = nil
-	for _, g in pairs(data.raw["item-subgroup"]) do
-		if g.group == "py-rawores" then
-			g.group = "test-group"
-		end
-	end
-	
-	log(i.name)
-	
-end
-]]--
+--log(serpent.block(data.raw.recipe['advanced-circuit']))
 
 --recipe ingredients deduper
 
 for i, ings in pairs(data.raw.recipe) do
---log(serpent.block(ings))
-local inglist = {}
+    --log(serpent.block(ings))
+    local inglist = {}
+    if ings.ingredients ~= nil then
+        --log('hit')
+        for a, ing in pairs(ings.ingredients) do
+            --log('hit')
+            if ing.name ~= nil then
+                --log('hit')
+                if data.raw.item[ing.name] or data.raw.fluid[ing.name] or data.raw.module[ing.name] then
+                    --log('hit')
+                    --log(serpent.block(inglist))
+                    if not inglist[ing.name] then
+                        --log('hit')
+                        --log(serpent.block(ing))
+                        --log(ing.name)
+                        inglist[ing.name] = true
+                    else
+                        --log('hit')
+                        data.raw.recipe[ings.name].ingredients[a] = nil
+                    end
+                else
+                    --log('hit')
+                    data.raw.recipe[ings.name].ingredients[a] = nil
+                end
+            elseif type(ing[1]) == 'string' then
+                --log(serpent.block(ing))
+                if not inglist[ing[1]] then
+                    inglist[ing[1]] = true
+                else
+                    data.raw.recipe[ings.name].ingredients[a] = nil
+                end
+            end
+        end
+    end
+    --log('hit')
+    if ings.normal ~= nil then
+        --log('hit')
+        --log(serpent.block(ings))
+        for a, ing in pairs(ings.normal.ingredients) do
+            --log('hit')
+            if ing.name ~= nil then
+                --log('hit')
+                if data.raw.item[ing.name] or data.raw.fluid[ing.name] then
+                    --log('hit')
+                    if not inglist[ing.name] then
+                        --log('hit')
+                        --log(serpent.block(ing))
+                        --log(ing.name)
+                        inglist[ing.name] = true
+                    else
+                        --log('hit')
+                        data.raw.recipe[ings.name].normal.ingredients[a] = nil
+                    end
+                else
+                    --log('hit')
+                    data.raw.recipe[ings.name].normal.ingredients[a] = nil
+                end
+            elseif type(ing[1]) == 'string' then
+                --log('hit')
+                --log(serpent.block(ing))
+                if not inglist[ing[1]] then
+                    --log('hit')
+                    inglist[ing[1]] = true
+                else
+                    --log('hit')
+                    data.raw.recipe[ings.name].normal.ingredients[a] = nil
+                end
+            end
+        end
+    end
+    --reset inglist for expensive ingredients
+    inglist = {}
 
-	if ings.ingredients ~= nil then
-	
-		for a,ing in pairs(ings.ingredients) do
-		
-			if ing.name ~= nil then
-				
-				if not inglist[ing.name] then
-					--log(serpent.block(ing))
-					--log(ing.name)
-					inglist[ing.name] = true
-				
-				else
-				
-					data.raw.recipe[ings.name].ingredients[a] = nil
-					
+    if ings.expensive ~= nil then
+        --log(serpent.block(ings))
+        --log(serpent.block(ings.expensive))
+        if ings.expensive ~= false then
+            if ings.expensive.ingredients ~= nil then
+                for a, ing in pairs(ings.expensive.ingredients) do
+                    if ing.name ~= nil then
+                        if data.raw.item[ing.name] or data.raw.fluid[ing.name] then
+                            if not inglist[ing.name] then
+                                --log(serpent.block(ing))
+                                --log(ing.name)
+                                inglist[ing.name] = true
+                            else
+                                data.raw.recipe[ings.name].expensive.ingredients[a] = nil
+                            end
+                        else
+                            data.raw.recipe[ings.name].expensive.ingredients[a] = nil
+                        end
+                    elseif type(ing[1]) == 'string' then
+                        --log(serpent.block(ing))
+                        if not inglist[ing[1]] then
+                            inglist[ing[1]] = true
+                        else
+                            data.raw.recipe[ings.name].expensive.ingredients[a] = nil
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
+--omni icon issue fixer
+if mods['omnilib'] then
+for _, recipe in pairs(data.raw.recipe) do
+    --log(serpent.block(recipe))
+    if recipe.icon_size ~= nil and recipe.icon == nil then
+        if data.raw.item[recipe.name] ~= nil then
+            data.raw.recipe[recipe.name].icon = data.raw.item[recipe.name].icon
+        end
+        if data.raw.gun[recipe.name] ~= nil then
+            data.raw.recipe[recipe.name].icon = data.raw.gun[recipe.name].icon
+        end
+        if data.raw.ammo[recipe.name] ~= nil then
+            if data.raw.ammo[recipe.name].icon ~= nil then
+                data.raw.recipe[recipe.name].icon = data.raw.ammo[recipe.name].icon
+            else
+                data.raw.recipe[recipe.name].icons = data.raw.ammo[recipe.name].icons
+            end
+        end
+        if data.raw.armor[recipe.name] ~= nil then
+            if data.raw.armor[recipe.name].icon ~= nil then
+                data.raw.recipe[recipe.name].icon = data.raw.armor[recipe.name].icon
+            else
+                data.raw.recipe[recipe.name].icons = data.raw.armor[recipe.name].icons
+            end
+        end
+        if data.raw['repair-tool'][recipe.name] ~= nil then
+            if data.raw['repair-tool'][recipe.name].icon ~= nil then
+                data.raw.recipe[recipe.name].icon = data.raw['repair-tool'][recipe.name].icon
+            else
+                data.raw.recipe[recipe.name].icons = data.raw['repair-tool'][recipe.name].icons
+            end
+        end
+        if data.raw.car[recipe.name] ~= nil then
+            if data.raw.car[recipe.name].icon ~= nil then
+                data.raw.recipe[recipe.name].icon = data.raw.car[recipe.name].icon
+            else
+                data.raw.recipe[recipe.name].icons = data.raw.car[recipe.name].icons
+            end
+        end
+        if data.raw.capsule[recipe.name] ~= nil then
+            if data.raw.capsule[recipe.name].icon ~= nil then
+                data.raw.recipe[recipe.name].icon = data.raw.capsule[recipe.name].icon
+            else
+                data.raw.recipe[recipe.name].icons = data.raw.capsule[recipe.name].icons
+            end
+        end
+        if data.raw.module[recipe.name] ~= nil then
+            if data.raw.module[recipe.name].icon ~= nil then
+                data.raw.recipe[recipe.name].icon = data.raw.module[recipe.name].icon
+            else
+                data.raw.recipe[recipe.name].icons = data.raw.module[recipe.name].icons
+            end
+        end
+        if data.raw['rail-planner'][recipe.name] ~= nil then
+            if data.raw['rail-planner'][recipe.name].icon ~= nil then
+                data.raw.recipe[recipe.name].icon = data.raw['rail-planner'][recipe.name].icon
+            else
+                data.raw.recipe[recipe.name].icons = data.raw['rail-planner'][recipe.name].icons
+            end
+        end
+        if data.raw['item-with-entity-data'][recipe.name] ~= nil then
+            if data.raw['item-with-entity-data'][recipe.name].icon ~= nil then
+                data.raw.recipe[recipe.name].icon = data.raw['item-with-entity-data'][recipe.name].icon
+            else
+                data.raw.recipe[recipe.name].icons = data.raw['item-with-entity-data'][recipe.name].icons
+            end
+        end
+        if data.raw.tool[recipe.name] ~= nil then
+            if data.raw.tool[recipe.name].icon ~= nil then
+                data.raw.recipe[recipe.name].icon = data.raw.tool[recipe.name].icon
+            else
+                data.raw.recipe[recipe.name].icon = data.raw.tool[recipe.name].icons[1].icon
+            end
+        end
+        if string.find(recipe.name, '-combine') ~= nil then
+            --log(recipe.name)
+            local rn = string.gsub(recipe.name, '-combine', '')
+            --log(rn)
+            data.raw.recipe[recipe.name].icon = data.raw.module[rn].icon
+        end
+        if recipe.name == 'ammo-initial' then
+            data.raw.recipe['ammo-initial'].main_product = data.raw.recipe['ammo-initial'].results[1].name
+        end
+		if recipe.name == 'copper-nickel-firearm-magazine' then
+			data.raw.recipe['copper-nickel-firearm-magazine'].main_product = 'firearm-magazine'
+        end
+		if recipe.name == 'nickel-piercing-rounds-magazine' then
+			data.raw.recipe['nickel-piercing-rounds-magazine'].main_product = 'firearm-magazine'
+        end
+		if recipe.name == 'flamethrower-ammo-fueled_fluid' then
+			data.raw.recipe['flamethrower-ammo-fueled_fluid'].main_product = "flamethrower-ammo"
+        end
+		if recipe.icon == nil then
+			if recipe.results ~= nil then
+			recipe.main_product = recipe.results[1].name
+			elseif recipe.normal ~= nil then
+				if recipe.normal.results ~= nil then
+					recipe.main_product = recipe.normal.results[1].name
 				end
-			
-			elseif type(ing[1]) == "string" then
-			
-				--log(serpent.block(ing))
-				if not inglist[ing[1]] then
-				
-					inglist[ing[1]] = true
-					
-				else
-				
-					data.raw.recipe[ings.name].ingredients[a] = nil
-					
+			elseif recipe.expensive ~= nil then
+				if recipe.expensive.results ~= nil then
+					recipe.main_product = recipe.expensive.results[1].name
 				end
-				
 			end
-			
 		end
-		
-	end
-	
-	if ings.normal ~= nil then
-	
-		for a,ing in pairs(ings.normal.ingredients) do
-		
-			if ing.name ~= nil then
-				
-				if not inglist[ing.name] then
-					--log(serpent.block(ing))
-					--log(ing.name)
-					inglist[ing.name] = true
-				
-				else
-				
-					data.raw.recipe[ings.name].normal.ingredients[a] = nil
-					
+    end
+	--log(serpent.block(recipe))
+end
+
+--removes missing items from recipe results that dont exist
+for _, recipe in pairs(data.raw.recipe) do
+    if recipe.results ~= nil then
+        for r, result in pairs(recipe.results) do
+			if result.name ~= nil then
+				if data.raw.item[result.name] == nil and data.raw.fluid[result.name] == nil and data.raw['selection-tool'][result.name] == nil and data.raw.tool[result.name] == nil and data.raw.ammo[result.name] == nil then
+					log(serpent.block(recipe))
+					data.raw.recipe[recipe.name].results[r] = nil
 				end
-			
-			elseif type(ing[1]) == "string" then
-			
-				--log(serpent.block(ing))
-				if not inglist[ing[1]] then
-				
-					inglist[ing[1]] = true
-					
-				else
-				
-					data.raw.recipe[ings.name].normal.ingredients[a] = nil
-					
-				end
-				
 			end
-			
-		end
-		
-	end
-	
-	--reset inglist for expensive ingredients
-	inglist = {}
-	
-	if ings.expensive ~= nil then
-		--log(serpent.block(ings))
-		--log(serpent.block(ings.expensive))
-		if ings.expensive ~= false then
-			if ings.expensive.ingredients ~= nil then
-				
-				for a,ing in pairs(ings.expensive.ingredients) do
-				
-					if ing.name ~= nil then
-						
-						if not inglist[ing.name] then
-							--log(serpent.block(ing))
-							--log(ing.name)
-							inglist[ing.name] = true
-						
-						else
-						
-							data.raw.recipe[ings.name].expensive.ingredients[a] = nil
-							
-						end
-					
-					elseif type(ing[1]) == "string" then
-					
-						--log(serpent.block(ing))
-						if not inglist[ing[1]] then
-						
-							inglist[ing[1]] = true
-							
-						else
-						
-							data.raw.recipe[ings.name].expensive.ingredients[a] = nil
-							
-						end
-						
+        end
+    end
+    if recipe.normal ~= nil then
+        if recipe.normal.results ~= nil then
+            for r, result in pairs(recipe.normal.results) do
+				if result.name ~= nil then
+					if data.raw.item[result.name] == nil and data.raw.fluid[result.name] == nil and data.raw['selection-tool'][result.name] == nil and data.raw.tool[result.name] == nil and data.raw.ammo[recipe.name] == nil then
+						data.raw.recipe[recipe.name].normal.results[r] = nil
 					end
-					
 				end
-				
-			end
-			
-		end
-	end
-	
-end
-
-if mods["Advanced-Solar"] then
-
-	data.raw.technology["electric-energy-accumulators-2"].prerequisites = {"electric-energy-accumulators"}
-	
-end
-
-if mods["BlackMarket"] then
-
-	data.raw.technology["black-market-energy"].prerequisites = { "black-market-item", "electric-energy-accumulators" }
-	
-end
-
-if mods["omnimatter"] then
--- need to find recipe with num 6 graphic and replace it
-	for r, rec in pairs(data.raw.recipe) do
-	
-		if rec.icons ~= nil then
-		
-			for i, icon in pairs(rec.icons) do
-				--log(serpent.block(icon))
-				if type(icon) == "string" then
-				
-					if string.find(icon, "num_6.png") then
-					
-						--log(serpent.block(rec))
-						icon = "__PyCoalTBaA__/graphics/icons/num_6.png"
-						
+            end
+        end
+    end
+    if recipe.expensive ~= nil then
+        if recipe.expensive.results ~= nil then
+            for r, result in pairs(recipe.expensive.results) do
+				if result.name ~= nil then
+					if data.raw.item[result.name] == nil and data.raw.fluid[result.name] == nil and data.raw['selection-tool'][result.name] == nil and data.raw.tool[result.name] == nil and data.raw.ammo[recipe.name] == nil then
+						data.raw.recipe[recipe.name].expensive.results[r] = nil
 					end
-					--log(serpent.block(rec))
-				else
-				
-					--log(serpent.block(rec))
-				
 				end
-			end
-		end
-		
-	end
-
-data.raw.recipe["omnirec-base-6-extraction-2"].icons[2].icon = "__PyCoalTBaA__/graphics/icons/num_6.png"
-	
+            end
+        end
+    end
 end
 
-
-
-if mods["omnimatter_wood"] then
-
-local limit = {}
-
-		if data.raw.module["productivity-module"].limitation ~= nil then
-			for l, lim in pairs(data.raw.module["productivity-module"].limitation) do
-				if lim ~= "log1" and lim ~= "log2" and lim ~= "log3" and lim ~= "log4" and lim ~= "log5" and lim ~= "log6" and lim ~= "log-organics" and lim ~= "log-wood" and lim ~= "botanical-nursery" then
-					table.insert(limit, lim)
-				end
-			end
-		end
-	
---log(serpent.block(limit))
-data.raw.module["productivity-module"].limitation = limit
-data.raw.module["productivity-module-2"].limitation = limit
-data.raw.module["productivity-module-3"].limitation = limit
-
-for m, mod in pairs(data.raw.module) do
-	if mod.name:find("productivity%-module") and mod.limitation then
-		mod.limitation = limit
-	end
+--table.insert(data.raw.recipe['zone-planner'].results, {type="item", name="zone-planner", amount=1})
+--table.insert(data.raw.recipe["iron-oxide"].results, {type="item", name="iron-plate", amount=10})
+    if data.raw.recipe["botanical-nursery"] ~= nil then
+        data.raw.recipe['botanical-nursery'].enabled = true
+    end
 end
 
+--log(serpent.block(data.raw.recipe['gun-nano-emitter']))
+
+if data.raw.recipe['gun-nano-emitter'] ~= nil and data.raw.recipe['gun-nano-emitter'].normal ~= nil and data.raw.recipe['gun-nano-emitter'].normal.results ~= nil then
+	data.raw.recipe['gun-nano-emitter'].normal.results = {{type = 'item', name = 'gun-nano-emitter', amount =1}}
 end
 
-for _, i in pairs(data.raw.item) do
-
-	if i.icon == "__pycoalprocessing__/graphics/icons/sand.png" then
-	
-		log(serpent.block(i.name))
-		log(serpent.block(i))
-		
-	end
-	
-	if i.name == "sand" then
-	
-		log(serpent.block(i.name))
-		log(serpent.block(i))
-		
-	end
-	
-	if i.icon_size == 64 then
-	
-		log(serpent.block(i.name))
-		log(serpent.block(i))
-		
-	end
-	
+if data.raw.recipe['gun-nano-emitter'] ~= nil and data.raw.recipe['gun-nano-emitter'].expensive ~= nil and data.raw.recipe['gun-nano-emitter'].expensive.results ~= nil then
+	data.raw.recipe['gun-nano-emitter'].expensive.results = {{type = 'item', name = 'gun-nano-emitter', amount =1}}
 end
 
-for _, i in pairs(data.raw.recipe) do
-
-	if i.icon_size == 64 then
-	
-		log(serpent.block(i.name))
-		log(serpent.block(i))
-		
-	end
-	
-	if i.icon == "__pycoalprocessing__/graphics/icons/sand.png" then
-	
-		log(serpent.block(i.name))
-		log(serpent.block(i))
-		
-	end
-	
+if data.raw.recipe['rail'] ~= nil and data.raw.recipe['rail'].normal ~= nil and data.raw.recipe['rail'].normal.results ~= nil then
+	data.raw.recipe['rail'].normal.results = {{type = 'item', name = 'rail', amount =1}}
 end
---[[
-data.raw.item["deadlock-crate-sand"].icon_size = 32
-data.raw.item["deadlock-crate-sand"].icons[2].icon_size = 32
-data.raw.item["deadlock-crate-sand"].icons[3].icon_size = 32
 
---data.raw.item["deadlock-crate-sand"].icon_size = 32
---data.raw.recipe["deadlock-crate-sand"].icons[2].icon_size = 32
---data.raw.recipe["deadlock-crate-sand"].icons[3].icon_size = 32
+if data.raw.recipe['rail'] ~= nil and data.raw.recipe['rail'].expensive ~= nil and data.raw.recipe['rail'].expensive.results ~= nil then
+	data.raw.recipe['rail'].expensive.results = {{type = 'item', name = 'rail', amount =1}}
+end
 
---data.raw.recipe["deadlock-packrecipe-sand"].icon_size = 32
-data.raw.recipe["deadlock-packrecipe-sand"].icons[2].icon_size = 32
-data.raw.recipe["deadlock-packrecipe-sand"].icons[3].icon_size = 32
+--log(serpent.block(data.raw.recipe['rail']))
 
---data.raw.recipe["deadlock-unpackrecipe-sand"].icon_size = 32
-data.raw.recipe["deadlock-unpackrecipe-sand"].icons[2].icon_size = 32
-data.raw.recipe["deadlock-unpackrecipe-sand"].icons[3].icon_size = 32
+--log(serpent.block(data.raw.item['solid-sand']))
 
-log(serpent.block(data.raw.item["deadlock-crate-sand"]))
-log(serpent.block(data.raw.recipe["deadlock-unpackrecipe-sand"]))
-]]--
+fun.global_item_replacer("sand", "solid-sand")
+fun.results_replacer('soil-washing','sand','solid-sand')
+
+--log(serpent.block(data.raw.recipe['soil-washing']))

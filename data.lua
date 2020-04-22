@@ -1,90 +1,47 @@
-require("stdlib/data/data").create_data_globals()
-local FUN = require("functions/functions")
+fun = require("functions/functions")
 
-	--aaii stuff
-	require("prototypes.aaii.prototypes.coal-gas-from-fawogae")
-	require("prototypes.aaii.prototypes.science-pack-0")
-	--require("prototypes.aaii.prototypes.storage-tank-0")
-	--require("prototypes.aaii.prototypes.storage-tank-0-updates")
-	
-	
-	require("prototypes.items")
-	--require("prototypes.item")
-	-- require("prototypes.entity")
-	require("prototypes.technology")
-	
-	require("prototypes.data-overrides-Fusion")
+require("prototypes/recipe-category")
 
-	require("updates.acid-changes")
+--Angels Mods
+require("prototypes/angels-mods/Data")
 
-	require("updates.pyproductivityadjuster")
-	--[[
-	require("uberhaul.buildings.assembly-machines")
-	require("uberhaul.items.items")
-	require("uberhaul.item-groups")
-	require("uberhaul.items.fluids")
-	require("uberhaul.recipes.recipe")
-	require("uberhaul.recipes.recipe-updates")
-	require("uberhaul.technology.technology")
-	require("uberhaul.technology.technology-updates")
-	require("uberhaul.buildings.building-updates")
-	
-	]]--
-	
-	if mods["aai-industry"] then
+--all changes to bobs mods should only happen if they havnt already been edited by angels mods or angel compatibility changes
+--Bob Mods
+require("prototypes/bobs-mods/Data")
 
-		FUN.findtechswithpack("automation-science-pack")
-		FUN.addscipack("science-pack-0")
+require("prototypes/aai-industries/Data")
 
-		FUN.global_item_replacer("iron-gear-wheel","small-parts-01",{"iron-gear-wheel","small-parts-01"})
-	
+require("prototypes/bio-industries/Data")
+
+require("prototypes/dl-stacking/Data")
+
+require("prototypes/kaoextended/Data")
+
+require("prototypes/madclowns-mods/Data")
+
+require("prototypes/mining-space-industries/Data")
+
+require("prototypes/omni-mods/Data")
+
+require("prototypes/space-exploration/Data")
+
+require("prototypes/industrialrevolution-WIP/Data")
+--[[
+if mods['omnimatter_fluid'] then
+
+data.raw.recipe['oil-boiler-1'] = nil
+data.raw.item['oil-boiler-1'] = nil
+data.raw.boiler['oil-boiler-1'] = nil
+
+	for r, rec in pairs(data.raw.technology['oil-machines-mk01'].effects) do
+
+		if rec.recipe == 'oil-machines-mk01' then
+
+			table.remove(data.raw.technology['oil-boiler-1'].effects, r)
+
+		end
+
 	end
 
-	if mods["Mining-Space-Industries"] then
-
-local pu = table.deepcopy(data.raw.recipe["processing-unit"])
-
-table.insert(data.raw.recipe["processing-unit"],normal)
-
-table.insert(data.raw.recipe["processing-unit"],expensive)
-
-data.raw.recipe["processing-unit"].normal =
-	{
-	ingredients = pu.ingredients,
-	enabled = false,
-	energy_required = pu.energy_required,
-	results = pu.results,
-	}
-
-data.raw.recipe["processing-unit"].expensive =
-	{
-	ingredients = pu.ingredients,
-	enabled = false,
-	energy_required = pu.energy_required,
-	results = pu.results,
-	}
-
-local ac = table.deepcopy(data.raw.recipe["advanced-circuit"])
-
-table.insert(data.raw.recipe["advanced-circuit"],normal)
-
-table.insert(data.raw.recipe["advanced-circuit"],expensive)
-
-data.raw.recipe["advanced-circuit"].normal =
-	{
-	ingredients = ac.ingredients,
-	enabled = false,
-	energy_required = ac.energy_required,
-	results = ac.results,
-	}
-
-data.raw.recipe["advanced-circuit"].expensive =
-	{
-	ingredients = ac.ingredients,
-	enabled = false,
-	energy_required = ac.energy_required,
-	results = ac.results,
-	}
-
-
 end
+]]--
