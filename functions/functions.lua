@@ -8,15 +8,15 @@ function overrides.add_ingredient(recipe, ingredient)
         --check if ingredient is item or fluid and that it exists
         if data.raw.item[ingredient.name] ~= nil or data.raw.fluid[ingredient.name] ~= nil then
             --check if type is set to fluid
-if data.raw.recipe[recipe].ingredients ~= nil then
-            if ingredient.type == 'fluid' then
-                table.insert(data.raw.recipe[recipe].ingredients, {type = 'fluid', name = ingredient.name, amount = ingredient.amount})
-            else
---log(serpent.block(recipe))
---log(serpent.block(data.raw.recipe[recipe]))
-                table.insert(data.raw.recipe[recipe].ingredients, {type = 'item', name = ingredient.name, amount = ingredient.amount})
+            if data.raw.recipe[recipe].ingredients ~= nil then
+                if ingredient.type == 'fluid' then
+                    table.insert(data.raw.recipe[recipe].ingredients, {type = 'fluid', name = ingredient.name, amount = ingredient.amount})
+                else
+                --log(serpent.block(recipe))
+                --log(serpent.block(data.raw.recipe[recipe]))
+                    table.insert(data.raw.recipe[recipe].ingredients, {type = 'item', name = ingredient.name, amount = ingredient.amount})
+                end
             end
-end
         end
     end
 end
@@ -974,6 +974,27 @@ for _, r in pairs(data.raw.recipe) do
 end
 ]]
  --
+end
+
+function overrides.enable_recipe(recipe)
+    if data.raw.recipe[recipe] ~= nil and data.raw.recipe[recipe].normal == nil and data.raw.recipe[recipe].expensive == nil then
+        data.raw.recipe[recipe].enabled = true
+    end
+    if data.raw.recipe[recipe].normal ~= nil then
+        data.raw.recipe[recipe].normal.enabled = true
+    end
+    if data.raw.recipe[recipe].expensive ~= nil then
+        data.raw.recipe[recipe].expensive.enabled = true
+    end
+    for t, tech in piars(data.raw.technology) do
+        if tech.effects~= nil then
+            for e,effect in pairs(tech.effects) do
+                if effect.type == 'unlock-recipe' and effect.recipe == recipe then
+                    overrides.tech_remove_recipe(tech.name,recipe)
+                end
+            end
+        end
+    end
 end
 
 function overrides.Tech_create(tech)

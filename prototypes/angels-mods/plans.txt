@@ -6,7 +6,6 @@ start with stone furnace to make basic plates and player handcrafts basic bits t
 remove the ability to craft most recipes
 	only leave final assembly of buildings and basic recipes
 
-
 ----tier 1 -----
 
 add science pack that doesnt need any circuits using flask, 2 basic metals, Okarinome, and cellulose
@@ -16,3 +15,9 @@ add science pack that doesnt need any circuits using flask, 2 basic metals, Okar
 move water treatment, brown algae and paper to tier 1 pack
 
 need to look into paper making - sodium hydroxide and the like
+
+flask needs glass -- to get glass at start use crushed stone to make sand
+
+replace crushed stone in angels ore crushing recipes with stone
+
+stone -> crushed stone -> gravel -> sand -> pure sand

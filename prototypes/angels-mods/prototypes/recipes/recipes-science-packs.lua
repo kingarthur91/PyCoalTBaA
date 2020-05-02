@@ -4,11 +4,11 @@ RECIPE {
     type = "recipe",
     name = "exploration-science-pack",
     enabled = true,
-    energy_required = 8,
+    energy_required = 10,
     ingredients = {
         {type = "item", name = "flask", amount = 4},
-		{type = "item", name = "iron", amount = 4},
-		{type = "item", name = "copper", amount = 4},
+		{type = "item", name = "tin-plate", amount = 4},
+		{type = "item", name = "lead-plate", amount = 4},
 		{type = "item", name = "temperate-3", amount = 4},
 		--maybe use cellulose fiber?
 		{type = "item", name = "cellulose", amount = 4}
