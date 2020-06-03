@@ -7,3 +7,6 @@ require('prototypes/angels-mods/prototypes/buildings/stone-furnace')
 --recipes
 require('prototypes/angels-mods/prototypes/recipes/recipes')
 require('prototypes/angels-mods/prototypes/recipes/recipes-science-packs')
+
+--fluids
+require('prototypes/angels-mods/prototypes/fluids/duplicate-fluids.lua')
