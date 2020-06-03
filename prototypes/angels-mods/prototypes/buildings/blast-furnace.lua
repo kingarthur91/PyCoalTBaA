@@ -1,5 +1,6 @@
 
-data.raw.recipe['blast-furnace'].normal.ingredients =
+data.raw.recipe['blast-furnace'].normal = {
+	ingredients =
 	{
 		{
 		type = 'item',
@@ -22,6 +23,7 @@ data.raw.recipe['blast-furnace'].normal.ingredients =
 		amount = 4
 		},
     }
+}
 	
 data.raw.recipe['blast-furnace'].expensive = nil
 
