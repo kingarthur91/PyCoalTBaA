@@ -986,7 +986,7 @@ function overrides.enable_recipe(recipe)
     if data.raw.recipe[recipe].expensive ~= nil then
         data.raw.recipe[recipe].expensive.enabled = true
     end
-    for t, tech in piars(data.raw.technology) do
+    for t, tech in pairs(data.raw.technology) do
         if tech.effects~= nil then
             for e,effect in pairs(tech.effects) do
                 if effect.type == 'unlock-recipe' and effect.recipe == recipe then
