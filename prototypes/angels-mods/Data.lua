@@ -10,3 +10,6 @@ require('prototypes/angels-mods/prototypes/recipes/recipes-science-packs')
 
 --fluids
 require('prototypes/angels-mods/prototypes/fluids/duplicate-fluids.lua')
+
+-- trees
+require('prototypes/angels-mods/prototypes/trees/trees.lua')

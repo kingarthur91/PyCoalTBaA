@@ -1109,5 +1109,22 @@ function overrides.removescipack(techs,scipack)
 	end
 end
 
+function overrides.fixtree(name)
+	local tree = data.raw.tree[name]
+	if tree.minable ~= nil and tree.minable.results ~= nil then
+		for k, v in pairs(tree.minable.results) do
+			if v.amount == nil then
+				v.amount = 0
+			end
+			if v.amount_min == nil then
+				v.amount_min = v.amount
+			end
+			if v.amount_max == nil then
+				v.amount_max = v.amount
+			end
+		end
+	end
+end
+
 
 return overrides
