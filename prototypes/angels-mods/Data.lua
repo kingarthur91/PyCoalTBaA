@@ -1,4 +1,3 @@
-
 --Buildings
 require('prototypes/angels-mods/prototypes/buildings/blast-furnace')
 require('prototypes/angels-mods/prototypes/buildings/casting-machine')
