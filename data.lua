@@ -1,5 +1,9 @@
 fun = require("functions/functions")
 
+--multi-mod
+--aka stuff many mods need
+require('prototypes/multi-mod/Data')
 
 
---require('prototypes/functions/sinners-prod')
+--omni mods
+require("prototypes/omni-mods/Data")
