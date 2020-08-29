@@ -48,10 +48,10 @@ ENTITY {
     allowed_effects = {"consumption","speed","pollution"},
     crafting_categories = {"research"},
     crafting_speed = 0.5,
-    energy_source = 
+    energy_source =
 	    {
       type = "burner",
-      fuel_category = "omnite",
+      fuel_category = "chemical",
       effectivity = 1,
       fuel_inventory_size = 1,
       emissions_per_minute = 0.06,
