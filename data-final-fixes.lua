@@ -1,4 +1,6 @@
-
+if mods["angelsbioprocessing"] then
+data.raw["recipe"]["petri-dish"].enabled=true
+end
 
 --recipe ingredients deduper
 
