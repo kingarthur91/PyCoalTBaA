@@ -30,7 +30,7 @@
 	"?pyindustry >= 1.0.10",
 	"?pypetroleumhandling >= 1.0.0",
 	"?pyrawores >= 1.0.3",
-	"?pyalienlife >= 1.4.4",
+	"(?)pyalienlife >= 1.4.4",
 	"?SpaceMod >= 0.3.4"
 	]
 }

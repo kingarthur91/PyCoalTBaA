@@ -1,4 +1,6 @@
-
+if mods["angelsbioprocessing"] then
+data.raw["recipe"]["petri-dish"].enabled=true
+end
 
 --bobs mods
 require("prototypes/bobs-mods/Data-Final-Fixes")
