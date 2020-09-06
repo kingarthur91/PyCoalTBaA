@@ -1,5 +1,8 @@
 
 
+--bobs mods
+require("prototypes/bobs-mods/Data-Final-Fixes")
+
 --recipe ingredients deduper
 
 for i, ings in pairs(data.raw.recipe) do
