@@ -15,5 +15,9 @@ data:extend
 	{
 		type = "recipe-category",
 		name = "burner-wpu",
+	},
+		{
+		type = "recipe-category",
+		name = "hpf-basic",
 	}
 }

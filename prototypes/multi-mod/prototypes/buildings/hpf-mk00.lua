@@ -54,7 +54,7 @@ ENTITY {
         module_slots = 1
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    crafting_categories = {"hpf"},
+    crafting_categories = {"hpf-basic"},
     crafting_speed = 0.5,
     energy_source =
 	{
