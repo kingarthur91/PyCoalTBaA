@@ -5,6 +5,9 @@ end
 --bobs mods
 require("prototypes/bobs-mods/Data-Final-Fixes")
 
+--omni mods
+require("prototypes/omni-mods/Data-Final-Fixes")
+
 --recipe ingredients deduper
 
 for i, ings in pairs(data.raw.recipe) do
