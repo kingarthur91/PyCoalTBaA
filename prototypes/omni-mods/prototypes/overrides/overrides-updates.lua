@@ -4,6 +4,18 @@ if mods["omnimatter_energy"] then
     data.raw.recipe[rec].enabled=false
     fun.tech_add_recipe("machines-mk01",rec)
   end
+	lab_ignore_pack={}
+    for i, labs in pairs(data.raw["lab"]) do
+		local found = false
+		for i,v in ipairs(labs.inputs) do
+			if v == "omni-science-pack" then
+				found = true
+			end
+		end
+		if not lab_ignore_pack[labs.name] and not found then
+				table.insert(labs.inputs, "omni-science-pack")
+		end
+    end
 fun.tech_add_prerequisites("machines-mk01","energy-1")
 fun.tech_add_prerequisites("machines-mk01","anbaric-mining")
 fun.tech_add_prerequisites("machines-mk01","anbaric-inserter")
@@ -12,4 +24,5 @@ end
 
 fun.ingredient_replace("omnitractor-1", "pcb1", "electronic-circuit")
 omni.lib.replace_science_pack("omnitech-steam-power", "logistic-science-pack", "omni-science-pack") 
-omni.lib.replace_science_pack("omnitech-omnium-power-1", "logistic-science-pack", "omni-science-pack") 
+omni.lib.replace_science_pack("omnitech-omnium-power-1", "logistic-science-pack", "omni-science-pack")
+omni.lib.replace_science_pack("automation", "logistic-science-pack", "omni-science-pack")  
