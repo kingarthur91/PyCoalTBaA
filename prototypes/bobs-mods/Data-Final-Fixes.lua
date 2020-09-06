@@ -13,7 +13,7 @@ if mods['pyhightech'] then
 	fun.ingredient_replace("ammo-nano-termites", "pcb1", "electronic-circuit")
 	fun.ingredient_replace("gun-nano-emitter", "pcb1", "electronic-circuit")
 	
-	fun.add_ingredient("ammon-nano-constructors", "repair-pack")
+	fun.add_ingredient("ammo-nano-constructors", "repair-pack")
 	
 	fun.tech_remove_recipe("electronics", "electronic-circuit")
 	fun.tech_remove_recipe("electronics", "basic-electronic-components")

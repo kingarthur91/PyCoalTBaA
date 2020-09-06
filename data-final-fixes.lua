@@ -19,12 +19,11 @@ for i, ings in pairs(data.raw.recipe) do
                         --log(ing.name)
                         inglist[ing.name] = true
                     else
+						if string.sub(ings.name,1,string.len("fish-"))~="fish-" and ings.name~="science-pack-gold" and ings.name~="military-science-pack" and ings.name~="seaweed" and ings.name~="moss" then
                         data.raw.recipe[ings.name].ingredients[a] = nil
                     end
-                else
-                    data.raw.recipe[ings.name].ingredients[a] = nil
-                end
-            elseif type(ing[1]) == 'string' then
+				end
+				elseif type(ing[1]) == 'string' then
                 --log(serpent.block(ing))
                 if not inglist[ing[1]] then
                     inglist[ing[1]] = true
@@ -80,17 +79,18 @@ for i, ings in pairs(data.raw.recipe) do
                             end
                         else
                             data.raw.recipe[ings.name].expensive.ingredients[a] = nil
-                        end
-                    elseif type(ing[1]) == 'string' then
-                        --log(serpent.block(ing))
-                        if not inglist[ing[1]] then
-                            inglist[ing[1]] = true
-                        else
-                            data.raw.recipe[ings.name].expensive.ingredients[a] = nil
-                        end
-                    end
-                end
-            end
-        end
-    end
+						end
+						elseif type(ing[1]) == 'string' then
+							--log(serpent.block(ing))
+							if not inglist[ing[1]] then
+								inglist[ing[1]] = true
+							else
+								data.raw.recipe[ings.name].expensive.ingredients[a] = nil
+							end
+						end
+					end
+				end
+			end
+		end
+	end
 end
