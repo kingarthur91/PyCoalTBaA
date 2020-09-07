@@ -29,3 +29,28 @@ omni.lib.replace_science_pack("automation", "logistic-science-pack", "omni-scien
 omni.lib.remove_prerequisite("omnitech-steam-power", "logistic-science-pack")
 omni.lib.remove_prerequisite("omnitech-omnium-power-1", "coal-processing-2")
 omni.lib.remove_prerequisite("omnitech-omnium-power-1", "bioprocessing")
+
+if mods["pypetroleumhandling"] then
+
+data.raw.resource["oil-sand"]["autoplace"] = nil
+data.raw["autoplace-control"]["oil-sand"] = nil
+
+data.raw.resource["tar-patch"]["autoplace"] = nil
+data.raw["autoplace-control"]["tar-patch"] = nil
+
+data.raw.resource["sulfur-patch"]["autoplace"] = nil
+data.raw["autoplace-control"]["sulfur-patch"] = nil
+
+data.raw.resource["oil-mk01"]["autoplace"] = nil
+data.raw["autoplace-control"]["oil-mk01"] = nil
+
+data.raw.resource["oil-mk02"]["autoplace"] = nil
+data.raw["autoplace-control"]["oil-mk02"] = nil
+
+data.raw.resource["oil-mk03"]["autoplace"] = nil
+data.raw["autoplace-control"]["oil-mk03"] = nil
+
+data.raw.resource["oil-mk04"]["autoplace"] = nil
+data.raw["autoplace-control"]["oil-mk04"] = nil
+
+end
