@@ -1,0 +1,1 @@
+fun.global_item_replacer('ore-titanium', 'rutile-ore')
