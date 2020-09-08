@@ -31,6 +31,7 @@ if mods['pyhightech'] then
 	fun.ingredient_replace("algae-farm", "pcb1", "electronic-circuit")
 	fun.ingredient_replace("hydro-plant", "pcb1", "electronic-circuit")
 	fun.ingredient_replace("chipshooter-mk01", "pcb1", "electronic-circuit")
+	fun.ingredient_replace("crop-farm", "pcb1", "electronic-circuit")
 	
 	fun.add_ingredient("ammo-nano-constructors", "repair-pack")
 	

@@ -23,6 +23,7 @@ fun.ingredient_replace("ball-mill-mk01", "assembling-machine-1", "burner-assembl
 end
 
 fun.ingredient_replace("omnitractor-1", "pcb1", "electronic-circuit")
+omni.lib.remove_science_pack("electronics", "logistic-science-pack")
 omni.lib.replace_science_pack("omnitech-steam-power", "logistic-science-pack", "omni-science-pack") 
 omni.lib.replace_science_pack("omnitech-omnium-power-1", "logistic-science-pack", "omni-science-pack")
 omni.lib.replace_science_pack("automation", "logistic-science-pack", "omni-science-pack")  
