@@ -31,7 +31,7 @@
 	"?pypetroleumhandling >= 1.9.0",
 	"?pyrawores >= 2.1.6",
 	"?pyalienlife >= 1.9.0",
-	"?SpaceMod >= 1.0.0"
+	"?SpaceMod >= 1.0.0",
 	"!Clowns-Science >= 1.0.26"
 	]
 }
