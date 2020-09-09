@@ -63,7 +63,7 @@ ENTITY {
         module_slots = 1
     },
     allowed_effects = {"consumption", "speed"},
-    crafting_categories = {"pulp"},
+    crafting_categories = {"pulp-basic"},
     crafting_speed = 1,
     energy_source =
     {

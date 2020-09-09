@@ -12,7 +12,7 @@ RECIPE {
     results = {
         {type = 'item', name = 'latex', amount = 1}
     },
-}:change_category('pulp')
+}
 
 RECIPE {
     type = "recipe",
