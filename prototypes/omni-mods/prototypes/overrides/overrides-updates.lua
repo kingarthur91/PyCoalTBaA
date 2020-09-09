@@ -20,16 +20,20 @@ fun.tech_add_prerequisites("machines-mk01","energy-1")
 fun.tech_add_prerequisites("machines-mk01","anbaric-mining")
 fun.tech_add_prerequisites("machines-mk01","anbaric-inserter")
 fun.ingredient_replace("ball-mill-mk01", "assembling-machine-1", "burner-assembling-machine")
-end
-
-fun.ingredient_replace("omnitractor-1", "pcb1", "electronic-circuit")
-omni.lib.remove_science_pack("electronics", "logistic-science-pack")
 omni.lib.replace_science_pack("omnitech-steam-power", "logistic-science-pack", "omni-science-pack") 
 omni.lib.replace_science_pack("omnitech-omnium-power-1", "logistic-science-pack", "omni-science-pack")
 omni.lib.replace_science_pack("automation", "logistic-science-pack", "omni-science-pack")  
 omni.lib.remove_prerequisite("omnitech-steam-power", "logistic-science-pack")
 omni.lib.remove_prerequisite("omnitech-omnium-power-1", "coal-processing-2")
 omni.lib.remove_prerequisite("omnitech-omnium-power-1", "bioprocessing")
+data.raw.technology["electronics"].unit.ingredients={ {
+    "automation-science-pack",
+    1
+  }}
+end
+
+fun.ingredient_replace("omnitractor-1", "pcb1", "electronic-circuit")
+
 
 if mods["pypetroleumhandling"] then
 

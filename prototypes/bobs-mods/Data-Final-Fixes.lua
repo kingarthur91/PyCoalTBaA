@@ -32,7 +32,7 @@ if mods['pyhightech'] then
 	fun.ingredient_replace("hydro-plant", "pcb1", "electronic-circuit")
 	fun.ingredient_replace("chipshooter-mk01", "pcb1", "electronic-circuit")
 	fun.ingredient_replace("crop-farm", "pcb1", "electronic-circuit")
-	
+
 	fun.add_ingredient("ammo-nano-constructors", "repair-pack")
 	
 	fun.tech_remove_recipe("electronics", "electronic-circuit")
@@ -59,5 +59,4 @@ if mods['pyhightech'] then
 	fun.tech_remove_recipe("silicon-processing", "silicon-plate2")
 	fun.tech_remove_recipe("silicon-processing", "silicon-wafer")
 	fun.tech_remove_recipe("chemical-processing-2", "ferric-chloride-solution")
-
 end
