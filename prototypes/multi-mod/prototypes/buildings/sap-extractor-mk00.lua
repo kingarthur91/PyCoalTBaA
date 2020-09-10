@@ -19,7 +19,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "sap-extractor-mk00",
-    icon = "__pyalienlifegraphics__/graphics/icons/sap-extractor-mk01.png",
+    icon = "__PyCoalTBaA__/graphics/icons/sap-extractor-mk00.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-alienlife-buildings-mk00",
@@ -31,7 +31,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "sap-extractor-mk00",
-    icon = "__pyalienlifegraphics__/graphics/icons/sap-extractor-mk01.png",
+    icon = "__PyCoalTBaA__/graphics/icons/sap-extractor-mk00.png",
 	icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 0.5, result = "sap-extractor-mk00"},

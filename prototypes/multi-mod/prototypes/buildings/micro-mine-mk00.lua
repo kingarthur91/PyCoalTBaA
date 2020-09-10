@@ -19,7 +19,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "micro-mine-mk00",
-    icon = "__pyalienlifegraphics__/graphics/icons/micro-mine-mk01.png",
+    icon = "__PyCoalTBaA__/graphics/icons/micro-mine-mk00.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-alienlife-buildings-mk00",
@@ -31,7 +31,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "micro-mine-mk00",
-    icon = "__pyalienlifegraphics__/graphics/icons/micro-mine-mk01.png",
+    icon = "__PyCoalTBaA__/graphics/icons/micro-mine-mk00.png",
 	icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 0.5, result = "micro-mine-mk00"},

@@ -27,7 +27,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "hpf-mk00",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/hpf.png",
+    icon = "__PyCoalTBaA__/graphics/icons/hpf.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-cp-buildings-mk00",
@@ -39,7 +39,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "hpf-mk00",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/hpf.png",
+    icon = "__PyCoalTBaA__/graphics/icons/hpf.png",
     icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 0.5, result = "hpf-mk00"},

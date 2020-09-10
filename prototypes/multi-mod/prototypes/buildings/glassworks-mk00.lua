@@ -18,7 +18,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "glassworks-mk00",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/glassworks-mk01.png",
+    icon = "__PyCoalTBaA__/graphics/icons/glassworks-mk00.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-cp-buildings-mk00",
@@ -30,7 +30,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "glassworks-mk00",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/glassworks-mk01.png",
+    icon = "__PyCoalTBaA__/graphics/icons/glassworks-mk00.png",
 	icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 0.5, result = "glassworks-mk00"},

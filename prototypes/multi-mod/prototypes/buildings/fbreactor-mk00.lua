@@ -17,7 +17,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "fbreactor-mk00",
-    icon = "__pyhightechgraphics__/graphics/icons/fbreactor-mk01.png",
+    icon = "__PyCoalTBaA__/graphics/icons/fbreactor-mk00.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-hightech-buildings-mk00",
@@ -29,7 +29,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "fbreactor-mk00",
-    icon = "__pyhightechgraphics__/graphics/icons/fbreactor-mk01.png",
+    icon = "__PyCoalTBaA__/graphics/icons/fbreactor-mk00.png",
 	icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "fbreactor-mk00"},

@@ -19,7 +19,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "moss-farm-mk00",
-    icon = "__pyalienlifegraphics__/graphics/icons/moss-farm-mk01.png",
+    icon = "__PyCoalTBaA__/graphics/icons/moss-farm-mk00.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-alienlife-buildings-mk00",
@@ -31,7 +31,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "moss-farm-mk00",
-    icon = "__pyalienlifegraphics__/graphics/icons/moss-farm-mk01.png",
+    icon = "__PyCoalTBaA__/graphics/icons/moss-farm-mk00.png",
 	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 0.5, result = "moss-farm-mk00"},

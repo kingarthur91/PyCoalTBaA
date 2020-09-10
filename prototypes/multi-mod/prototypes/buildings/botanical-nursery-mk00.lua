@@ -45,7 +45,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "botanical-nursery-mk00",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/botanical-nursery.png",
+    icon = "__PyCoalTBaA__/graphics/icons/botanical-nursery.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-alienlife-buildings-mk00",
@@ -57,7 +57,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "botanical-nursery-mk00",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/botanical-nursery.png",
+    icon = "__PyCoalTBaA__/graphics/icons/botanical-nursery.png",
     icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "botanical-nursery-mk00"},

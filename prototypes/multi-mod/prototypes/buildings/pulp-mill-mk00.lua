@@ -36,7 +36,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "pulp-mill-mk00",
-    icon = "__pyhightechgraphics__/graphics/icons/pulp-mill-mk01.png",
+    icon = "__PyCoalTBaA__/graphics/icons/pulp-mill-mk00.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-hightech-buildings-mk00",
@@ -48,7 +48,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "pulp-mill-mk00",
-    icon = "__pyhightechgraphics__/graphics/icons/pulp-mill-mk01.png",
+    icon = "__PyCoalTBaA__/graphics/icons/pulp-mill-mk00.png",
 	icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "pulp-mill-mk00"},
