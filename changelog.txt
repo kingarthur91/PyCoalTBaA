@@ -1,191 +1,196 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+  Changes:
+    - Update to factorio version 1.0.
+    - Reset and restart from the ground up due to major changes in just about every mod pycoaltbaa was setup to deal with.
+---------------------------------------------------------------------------------------------------
 Version: 0.9.10
   Changes:
-	- first update to .18
+    - first update to .18
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.9
   Changes:
-	- fix an issue where pyro wasnt correctly overriding bob ores
+    - fix an issue where pyro wasnt correctly overriding bob ores
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.8
   Changes:
-	- added setting to disable the extra tiers of bob power stuff
-	- fixed error when missing pyfusion and loading angel mods
+    - added setting to disable the extra tiers of bob power stuff
+    - fixed error when missing pyfusion and loading angel mods
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.7
   Changes:
-	- Fixed issues with abpz that you needed titanium and sodium hydoxide to make sci 2 mats and need sci 2 to unlock their recipes
+    - Fixed issues with abpz that you needed titanium and sodium hydoxide to make sci 2 mats and need sci 2 to unlock their recipes
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.6
   Changes:
-	- Fixed that momotweaks was adding basic circuit boards to several recipes after they had been replaced with pyht pcb1
+    - Fixed that momotweaks was adding basic circuit boards to several recipes after they had been replaced with pyht pcb1
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.5
   Changes:
-	- Fixed errors cuased by me fixing errors with omni
-	- fixed error missing tech prerequisite with aai industry when pyro isnt enabled
+    - Fixed errors cuased by me fixing errors with omni
+    - fixed error missing tech prerequisite with aai industry when pyro isnt enabled
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.4
   Changes:
-	- Fixed errors with omni, py and aai zones
+    - Fixed errors with omni, py and aai zones
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.3
   Changes:
-	- made adjustments to remove pyro ore spawns when omni is loaded
+    - made adjustments to remove pyro ore spawns when omni is loaded
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.2
   Changes:
-	- removed invar from advanced foundry
-	- added check to remove hidden techs from prerequisites to fix techs not being researchable
-	- added check for pyhightech to recipe for madclowns to make phosphoric acid
+    - removed invar from advanced foundry
+    - added check to remove hidden techs from prerequisites to fix techs not being researchable
+    - added check for pyhightech to recipe for madclowns to make phosphoric acid
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.1
   Changes:
-	- Fixed load issues with py+aai industry
-	- fixed issue with bobs circuits not being properly overriden with pyhightech circuits
+    - Fixed load issues with py+aai industry
+    - fixed issue with bobs circuits not being properly overriden with pyhightech circuits
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.0
   Changes:
     - Removed all older code to rebuild pycoaltbaa from scratch
-	- Reorganized folders to be based on the external mod that is being made compatible with pymods
-	- bumped version number to 0.9.0 as after a few rounds of bug testing will be moving to 1.0.0
-	- removed copy of stdlib from folder
+    - Reorganized folders to be based on the external mod that is being made compatible with pymods
+    - bumped version number to 0.9.0 as after a few rounds of bug testing will be moving to 1.0.0
+    - removed copy of stdlib from folder
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.54
   Changes:
-	- fixed issue with titanium deadlock with angels mods
-	- added pyrawores into angels ores
-	- added settings to enable spwaning infinite version of py ores
-	- added settings to enable spwaning of reqular py ores
+    - fixed issue with titanium deadlock with angels mods
+    - added pyrawores into angels ores
+    - added settings to enable spwaning infinite version of py ores
+    - added settings to enable spwaning of reqular py ores
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.52
   Changes:
-	- added science pack 0 for aai industries
-	- changed several early techs to only use the sci pack 0
-	- added sp0 to all other techs that have sci pack 1 included
-	- fixed deadlock with abpy and bobs belt overhaul due to crystal mine needing trasport belt that requires science that requires glass that requires crystal mine
+    - added science pack 0 for aai industries
+    - changed several early techs to only use the sci pack 0
+    - added sp0 to all other techs that have sci pack 1 included
+    - fixed deadlock with abpy and bobs belt overhaul due to crystal mine needing trasport belt that requires science that requires glass that requires crystal mine
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.50
   Changes:
-	- fixed errors with replacing items when using py, angels and amator phasma mods
-	- fixed errors with trying to replace items with angel smelting not loaded
+    - fixed errors with replacing items when using py, angels and amator phasma mods
+    - fixed errors with trying to replace items with angel smelting not loaded
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.49
   Changes:
-	- fixed errors from angels mods renamed slag processing subgroup from slag-processing to slag-processing-1
+    - fixed errors from angels mods renamed slag processing subgroup from slag-processing to slag-processing-1
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.48
   Changes:
-	- fixed errors with bob mods and angels mods from pyph
+    - fixed errors with bob mods and angels mods from pyph
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.47
   Changes:
-	- fix error from trying to replace items with items that dont exist without specific mod loaded
+    - fix error from trying to replace items with items that dont exist without specific mod loaded
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.46
   Changes:
-	- fixed duplicated ingrediants in recipes. should no long have any duplicated ingredients from anything listed as a dependency for pycoaltbaa.
+    - fixed duplicated ingrediants in recipes. should no long have any duplicated ingredients from anything listed as a dependency for pycoaltbaa.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.45
   Changes:
-	- bug fixes
+    - bug fixes
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.44
   Changes:
-	- Removed duplicate pyht circuits
-	- fixed deadlock start with aai industry
-	- removed steel bearings from crystal miner if pyro is active
-	- corrected raw wood name in recipe for madclowns + py
-	- removed duplicate glass from nursery when pyro is activate
+    - Removed duplicate pyht circuits
+    - fixed deadlock start with aai industry
+    - removed steel bearings from crystal miner if pyro is active
+    - corrected raw wood name in recipe for madclowns + py
+    - removed duplicate glass from nursery when pyro is activate
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.43
   Changes:
-	- corrected bio industries dependency number
-	- fixed? error with offshore pump when bob electronics and pyht loaded
+    - corrected bio industries dependency number
+    - fixed? error with offshore pump when bob electronics and pyht loaded
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.41
   Changes:
-	- added check for pyfusion with bobs mods active
-	- added check for bio-processing refer being enabled
-	- fixed errror for py+angel balance uberhaul
+    - added check for pyfusion with bobs mods active
+    - added check for bio-processing refer being enabled
+    - fixed errror for py+angel balance uberhaul
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.40
   Changes:
-	- added all pyro ores to omnimatter
-	- fixed issues with recycled factory and madclowns mods with pycoaltbaa
+    - added all pyro ores to omnimatter
+    - fixed issues with recycled factory and madclowns mods with pycoaltbaa
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.39
   Changes:
-	- merged several sodium products from pyrawores and angels mods
-	- fixed issue with compressor needing t3 items to make t3 sci pack
-	- removed duplicate items from several recipes
-	- fixed issues with omni mods not loading with pymods
+    - merged several sodium products from pyrawores and angels mods
+    - fixed issue with compressor needing t3 items to make t3 sci pack
+    - removed duplicate items from several recipes
+    - fixed issues with omni mods not loading with pymods
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.38
   Changes:
-	- added checks for pyro in override code for bob mod changes
-	- added item migration file to convert any bob ores to pyro ores
-	- merged molten metals and gases of pyro and angel mods
+    - added checks for pyro in override code for bob mod changes
+    - added item migration file to convert any bob ores to pyro ores
+    - merged molten metals and gases of pyro and angel mods
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.37
   Changes:
-	- removed a number of duplicaled items from recipes
-	- fixed a missing check for angels bioprocessing
-	- fixed that some recipes hadnt been transfered to a different building with the removeal of bobs electrolysers
-	- replaced nickel with aluminum ore in angels crushed rubyte sorting
+    - removed a number of duplicaled items from recipes
+    - fixed a missing check for angels bioprocessing
+    - fixed that some recipes hadnt been transfered to a different building with the removeal of bobs electrolysers
+    - replaced nickel with aluminum ore in angels crushed rubyte sorting
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.36
   Changes:
-	- removed invar from advanced foundry
-	- replaced duralimiun with aluminium plate in gun turrent
-	- fixed error with vacum tube description and name
-	- made adjustment to aaii-sp0 to fix that storage tank 0 attempted to use angels storage tank subgroup when angels wasnt installed
-	- removed science pack 1 from electric miner 1 tech as its needed for tin with pyro
+    - removed invar from advanced foundry
+    - replaced duralimiun with aluminium plate in gun turrent
+    - fixed error with vacum tube description and name
+    - made adjustment to aaii-sp0 to fix that storage tank 0 attempted to use angels storage tank subgroup when angels wasnt installed
+    - removed science pack 1 from electric miner 1 tech as its needed for tin with pyro
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.35
   Changes:
-   - fixed mutiple duplicated items in recipes
-   - activated rawores overrides and removed bobs ores from spawning
-   - fixed several issues related to mods refernceing old names in pymods
-   - fixed locale for circuits now display item names
+    - fixed mutiple duplicated items in recipes
+    - activated rawores overrides and removed bobs ores from spawning
+    - fixed several issues related to mods refernceing old names in pymods
+    - fixed locale for circuits now display item names
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.34
   Changes:
-	- started on function for global item recipe script
-	- copied recipes for circuits 1 -3 in pyht to stop bobs electronics from overriding them
-	- fixed spacex error
-	- fixed error with ingredient count on chipshooter
-	- fixed error cuased by missing crushed ore with pyro and angels active
+    - started on function for global item recipe script
+    - copied recipes for circuits 1 -3 in pyht to stop bobs electronics from overriding them
+    - fixed spacex error
+    - fixed error with ingredient count on chipshooter
+    - fixed error cuased by missing crushed ore with pyro and angels active
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.33
   Changes:
-	- add code for bob compatibilty with pymods
-	- organized bob changes so that should be able to load each module of bobs independently
+    - add code for bob compatibilty with pymods
+    - organized bob changes so that should be able to load each module of bobs independently
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.32
   Changes:
-	- made changes for bobextended to work with pyht.
-	- removed optional dependency for omnipermute. it works for me so hopefully it doesnt cuase any errors
+    - made changes for bobextended to work with pyht.
+    - removed optional dependency for omnipermute. it works for me so hopefully it doesnt cuase any errors
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.31
   Changes:
-	- made some tweaks to spacex.lua to correct an error with omnipermute
+    - made some tweaks to spacex.lua to correct an error with omnipermute
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.30
   Changes:
-	- Modified py difficultly adjuster script to account for mods having multiple results in normal and expensive recipes
-	- fixed error in same script due to local for loop varible used outside of loop
+    - Modified py difficultly adjuster script to account for mods having multiple results in normal and expensive recipes
+    - fixed error in same script due to local for loop varible used outside of loop
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.29
   Changes:
-	- Added a check to the py difficultly adjuster to avoid erroring out on recipes that dont have results to adjust
-	- Changed the py difficultly adjuster script into a function that should be open for other mods to call to if they want
+    - Added a check to the py difficultly adjuster to avoid erroring out on recipes that dont have results to adjust
+    - Changed the py difficultly adjuster script into a function that should be open for other mods to call to if they want
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.28
   Changes:
     - made adjustments to the paper to fiberboard recipes to be able to craft pcb1 with assember 2s
-	- adjusted processed to crushed to pellet ore chains to the chain more balanced againt regular crushed ores
-	- finally fixed the pymods difficultly adjusted and removed the need for spacex to activate it. you can now use the productivity adjustment setting in mod setting menu
+    - adjusted processed to crushed to pellet ore chains to the chain more balanced againt regular crushed ores
+    - finally fixed the pymods difficultly adjusted and removed the need for spacex to activate it. you can now use the productivity adjustment setting in mod setting menu
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.27
   Changes:

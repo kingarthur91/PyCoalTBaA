@@ -506,6 +506,7 @@ end
 
 --replace item/fluid in recipes results
 function overrides.results_replacer(recipe, old, new, new_amount, newtype)
+    --log('hit')
     if data.raw.item[old] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[old] ~= nil then
         if data.raw.item[new] ~= nil or data.raw.fluid[new] ~= nil or data.raw.capsule[new] ~= nil then
             --log(recipe)
@@ -515,6 +516,7 @@ function overrides.results_replacer(recipe, old, new, new_amount, newtype)
             end
             --log(serpent.block(R))
             if recipe ~= nil then
+                --log('hit')
                 --log(recipe.name)
                 --log(serpent.block(recipe))
                 if recipe.result then
@@ -526,13 +528,18 @@ function overrides.results_replacer(recipe, old, new, new_amount, newtype)
                     end
                 end
                 if recipe.results then
+                    --log('hit')
                     for r, result in pairs(recipe.results) do
+                        --log('hit')
                         if result.name == old then
+                            --log('hit')
                             data.raw.recipe[recipe.name].results[r].name = new
                             if new_amount ~= nil then
+                                --log('hit')
                                 data.raw.recipe[recipe.name].results[r].amount = new_amount
                             end
-							if newtype ~= nil then
+                            if newtype ~= nil then
+                                --log('hit')
                                 data.raw.recipe[recipe.name].results[r].type = newtype
                             end
                         end
@@ -611,8 +618,13 @@ end
 --replace an item/fluid in every recipes ingredients/results
 --best used to merge items that are duplicated in mods that should be the same
 function overrides.global_item_replacer(old, new, blackrecipe)
+    log(old)
+    log(new)
+    log(serpent.block(blackrecipe))
     if data.raw.item[old] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[old] ~= nil then
+        --log('hit')
         if data.raw.item[new] ~= nil or data.raw.fluid[new] ~= nil or data.raw.capsule[new] ~= nil then
+            --log('hit')
             local recipes = table.deepcopy(data.raw.recipe)
             if type(blackrecipe) ~= 'table' and blackrecipe ~= nil then
                 blackrecipe = {blackrecipe}
@@ -625,10 +637,12 @@ function overrides.global_item_replacer(old, new, blackrecipe)
             end
             --log(serpent.block(brecipeset))
             for recipe in pairs(recipes) do
+                --log('hit')
                 --for b, brecipe in pairs(blackrecipe) do
                 if not brecipeset[recipe] then
-                    --log(serpent.block(recipe))
-                    --log(serpent.block(recipe.name))
+                    --log('hit')
+                    log(serpent.block(recipe))
+                    log(serpent.block(recipe.name))
                     --log(serpent.block(brecipeset))
                     overrides.ingredient_replace(recipe, old, new)
                     overrides.results_replacer(recipe, old, new)
