@@ -3,6 +3,8 @@ Version: 1.0.0
   Changes:
     - Update to factorio version 1.0.
     - Reset and restart from the ground up due to major changes in just about every mod pycoaltbaa was setup to deal with.
+    - add item/fluid merging code for angels stuff to merge with pyanodon for angelpy.
+    - started merging bob stuff with pyanodon stuff for pybob.
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.10
   Changes:
