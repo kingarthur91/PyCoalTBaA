@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2020-12-15
+  Changes:
+    - Updated to factorio 1.1
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 2020-12-15
+  Changes:
+    - Replaced transport belt in crystal miner with basic transport belt when bob logistic is active.
+    - Fixed that the soil extractor limestone recipe wasnt getting set to output angels limestone.
+    - Fixed that recipe deduper was not checking if item was a module and removing it.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
   Changes:
     - Update to factorio version 1.0.

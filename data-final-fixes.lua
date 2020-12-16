@@ -8,7 +8,7 @@ for i, ings in pairs(data.raw.recipe) do
     if ings.ingredients ~= nil then
         for a, ing in pairs(ings.ingredients) do
             if ing.name ~= nil then
-                if data.raw.item[ing.name] or data.raw.fluid[ing.name] then
+                if data.raw.item[ing.name] or data.raw.fluid[ing.name] or data.raw.module[ing.name] or data.raw.tool[ing.name] or data.raw.ammo[ing.name] then
                     if not inglist[ing.name] then
                         --log(serpent.block(ing))
                         --log(ing.name)
@@ -34,7 +34,7 @@ for i, ings in pairs(data.raw.recipe) do
         --log(serpent.block(ings))
         for a, ing in pairs(ings.normal.ingredients) do
             if ing.name ~= nil then
-                if data.raw.item[ing.name] or data.raw.fluid[ing.name] then
+                if data.raw.item[ing.name] or data.raw.fluid[ing.name] or data.raw.module[ing.name] or data.raw.tool[ing.name] or data.raw.ammo[ing.name] then
                     if not inglist[ing.name] then
                         --log(serpent.block(ing))
                         --log(ing.name)
@@ -65,7 +65,7 @@ for i, ings in pairs(data.raw.recipe) do
             if ings.expensive.ingredients ~= nil then
                 for a, ing in pairs(ings.expensive.ingredients) do
                     if ing.name ~= nil then
-                        if data.raw.item[ing.name] or data.raw.fluid[ing.name] then
+                        if data.raw.item[ing.name] or data.raw.fluid[ing.name] or data.raw.module[ing.name] or data.raw.tool[ing.name] or data.raw.ammo[ing.name] then
                             if not inglist[ing.name] then
                                 --log(serpent.block(ing))
                                 --log(ing.name)

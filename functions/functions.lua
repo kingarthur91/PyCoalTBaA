@@ -507,6 +507,7 @@ end
 --replace item/fluid in recipes results
 function overrides.results_replacer(recipe, old, new, new_amount, newtype)
     --log('hit')
+    --log(recipe)
     if data.raw.item[old] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[old] ~= nil then
         if data.raw.item[new] ~= nil or data.raw.fluid[new] ~= nil or data.raw.capsule[new] ~= nil then
             --log(recipe)
@@ -531,6 +532,10 @@ function overrides.results_replacer(recipe, old, new, new_amount, newtype)
                     --log('hit')
                     for r, result in pairs(recipe.results) do
                         --log('hit')
+                        --log(serpent.block(recipe))
+                        --log(serpent.block(result))
+                        --log(old)
+                        --log(new)
                         if result.name == old then
                             --log('hit')
                             data.raw.recipe[recipe.name].results[r].name = new
@@ -618,9 +623,9 @@ end
 --replace an item/fluid in every recipes ingredients/results
 --best used to merge items that are duplicated in mods that should be the same
 function overrides.global_item_replacer(old, new, blackrecipe)
-    log(old)
-    log(new)
-    log(serpent.block(blackrecipe))
+    --log(old)
+    --log(new)
+    --log(serpent.block(blackrecipe))
     if data.raw.item[old] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[old] ~= nil then
         --log('hit')
         if data.raw.item[new] ~= nil or data.raw.fluid[new] ~= nil or data.raw.capsule[new] ~= nil then
@@ -641,8 +646,8 @@ function overrides.global_item_replacer(old, new, blackrecipe)
                 --for b, brecipe in pairs(blackrecipe) do
                 if not brecipeset[recipe] then
                     --log('hit')
-                    log(serpent.block(recipe))
-                    log(serpent.block(recipe.name))
+                    --log(serpent.block(recipe))
+                    --log(serpent.block(recipe.name))
                     --log(serpent.block(brecipeset))
                     overrides.ingredient_replace(recipe, old, new)
                     overrides.results_replacer(recipe, old, new)
