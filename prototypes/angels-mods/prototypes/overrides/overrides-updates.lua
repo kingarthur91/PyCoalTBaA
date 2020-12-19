@@ -1,7 +1,7 @@
 -- DATA UPDATES STAGE OVERRIDES
 if mods['angelsrefining'] then
     fun.global_item_replacer('coke', 'solid-coke')
-    fun.global_item_replacer('basic-circuit-board', 'pcb1')
+    --fun.global_item_replacer('basic-circuit-board', 'pcb1')
     fun.global_item_replacer('limestone', 'solid-limestone')
     fun.global_item_replacer('acidgas', 'gas-acid')
     fun.global_item_replacer('salt', 'solid-salt')

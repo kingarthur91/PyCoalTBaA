@@ -1,20 +1,25 @@
 {
 	"name": "PyCoalTBaA",
-	"version": "1.1.0",
-	"factorio_version": "1.1",
+	"version": "1.0.2",
+	"factorio_version": "1.0",
 	"title": "PyCoal Touched By an Angel",
 	"author": "KingArthur",
 	"contact": "PM on the Factorio Forums",
 	"homepage": "https://forums.factorio.com/viewtopic.php?f=219&t=59268",
 	"description": "Seven Mods for the Arch666Angel under the sky, Seventeen for the Bobingabout in their halls of stone, Six for Pyanodon doomed to die, One for the Dark Lord on his dark throne, In the Land of Mordor where the Shadows lie, One Mod to rule them all, one Mod to find them, One Mod to bring them all and in the darkness bind them",
 	"dependencies": [
-	"base >= 0.13.0",
-	"pycoalprocessing >= 0.3.7",
-	"?pyfusionenergy >= 0.1.3",
-	"?pyhightech >= 1.0.0",
-	"?pyindustry >= 1.0.10",
-	"?pypetroleumhandling >= 1.0.0",
-	"?pyrawores >= 1.0.3",
-	"?pyalienlife >= 1.4.4"
+	"base",
+	"pycoalprocessing",
+	"?pyfusionenergy",
+	"?pyhightech",
+	"?pyindustry",
+	"?pypetroleumhandling",
+	"?pyrawores",
+	"?pyalienlife",
+	"?angelsbioprocessing",
+	"?angelsindustries",
+	"?angelspetrochem",
+	"?angelsrefining",
+	"?angelssmelting"
 	]
 }
