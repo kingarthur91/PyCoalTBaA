@@ -1,4 +1,6 @@
 
+--angel mods
+require('prototypes/angels-mods/Data-Final-Fixes')
 
 --recipe ingredients deduper
 

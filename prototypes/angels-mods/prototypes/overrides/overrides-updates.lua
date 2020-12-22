@@ -112,4 +112,8 @@ if mods['angelsrefining'] then
         -- add category to py mk04
         table.insert(data.raw['assembling-machine']['flotation-cell-mk04'].crafting_categories, 'ore-sorting-t2')
     end
+
+    if mods['angelssmelting'] then
+        fun.global_item_replacer('silicon','angels-mono-silicon')
+    end
 end
