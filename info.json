@@ -9,12 +9,14 @@
 	"description": "Seven Mods for the Arch666Angel under the sky, Seventeen for the Bobingabout in their halls of stone, Six for Pyanodon doomed to die, One for the Dark Lord on his dark throne, In the Land of Mordor where the Shadows lie, One Mod to rule them all, one Mod to find them, One Mod to bring them all and in the darkness bind them",
 	"dependencies": [
 	"base >= 0.13.0",
-	"pycoalprocessing >= 0.3.7",
-	"?pyfusionenergy >= 0.1.3",
-	"?pyhightech >= 1.0.0",
-	"?pyindustry >= 1.0.10",
-	"?pypetroleumhandling >= 1.0.0",
-	"?pyrawores >= 1.0.3",
-	"?pyalienlife >= 1.4.4"
+	"pycoalprocessing >= 2.1.0",
+	"bobsmodules4py >= 1.1.4",
+	"?pyfusionenergy >= 2.0.5",
+	"?pyhightech >= 2.0.8",
+	"?pyindustry >= 2.0.7",
+	"?pypetroleumhandling >= 2.1.7",
+	"?pyrawores >= 2.4.8",
+	"?pyalienlife >= 2.1.1",
+	"?pyalternativeenergy >= 1.2.0"
 	]
 }
