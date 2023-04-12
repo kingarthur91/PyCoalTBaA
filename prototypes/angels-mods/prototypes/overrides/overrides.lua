@@ -77,6 +77,10 @@ if mods['angelsrefining'] then
         angelsmods.functions.make_converter('acetic-acid', 'liquid-acetic-acid')
     end
 
+    if mods['pyhightech'] then
+        TECHNOLOGY("ore-crushing"):add_prereq("vacuum-tube-electronics")
+    end
+
     -- replace miner fluid
     if data.raw.resource['borax'] ~= nil then
         if data.raw.fluid['gas-synthesis'] ~= nil then
@@ -89,5 +93,4 @@ if mods['angelsrefining'] then
             data.raw.resource['phosphate-rock'].minable.required_fluid = 'gas-synthesis'
         end
     end
-
 end

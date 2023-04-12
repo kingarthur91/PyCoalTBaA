@@ -96,24 +96,47 @@ if mods['angelsrefining'] then
     if mods['pyrawores'] then
         -- mk01
         fun.global_item_replacer('ore-floatation-cell', 'flotation-cell-mk01')
-        table.insert(data.raw['assembling-machine']['flotation-cell-mk01'].crafting_categories, 'ore-sorting-t2')
+        table.insert(data.raw['assembling-machine']['flotation-cell-mk01'].crafting_categories, 'ore-sorting-2')
         data.raw.recipe['ore-floatation-cell'] = nil
         fun.remove_recipe_unlock('ore-floatation-cell')
         -- mk02
         fun.global_item_replacer('ore-floatation-cell-2', 'flotation-cell-mk02')
-        table.insert(data.raw['assembling-machine']['flotation-cell-mk02'].crafting_categories, 'ore-sorting-t2')
+        table.insert(data.raw['assembling-machine']['flotation-cell-mk02'].crafting_categories, 'ore-sorting-2')
         data.raw.recipe['ore-floatation-cell-2'] = nil
         fun.remove_recipe_unlock('ore-floatation-cell-2')
         -- mk03
         fun.global_item_replacer('ore-floatation-cell-3', 'flotation-cell-mk03')
-        table.insert(data.raw['assembling-machine']['flotation-cell-mk03'].crafting_categories, 'ore-sorting-t2')
+        table.insert(data.raw['assembling-machine']['flotation-cell-mk03'].crafting_categories, 'ore-sorting-2')
         data.raw.recipe['ore-floatation-cell-3'] = nil
         fun.remove_recipe_unlock('ore-floatation-cell-3')
         -- add category to py mk04
-        table.insert(data.raw['assembling-machine']['flotation-cell-mk04'].crafting_categories, 'ore-sorting-t2')
+        table.insert(data.raw['assembling-machine']['flotation-cell-mk04'].crafting_categories, 'ore-sorting-2')
     end
 
     if mods['angelssmelting'] then
         fun.global_item_replacer('silicon','angels-mono-silicon')
     end
+
+    -- change barreling machine
+    if mods['pyindustry'] then
+        fun.global_item_replacer('barreling-pump', 'barrel-machine')
+        data.raw.recipe['barreling-pump'] = nil
+        fun.remove_recipe_unlock('barreling-pump')
+    end
 end
+if mods['angelsaddons-storage'] then
+    fun.tech_add_recipe('py-storage-tanks', 'angels-storage-tank-3')
+    fun.tech_remove_recipe('fluid-handling', 'angels-storage-tank-3')
+    TECHNOLOGY('logistic-silos'):remove_pack("py-science-pack-2"):remove_pack("chemical-science-pack")
+    TECHNOLOGY('angels-logistic-warehouses'):remove_pack("py-science-pack-2"):remove_pack("chemical-science-pack")
+    if mods['bobtech'] then
+        TECHNOLOGY('logistic-silos'):remove_pack("advanced-logistic-science-pack")
+        TECHNOLOGY('angels-logistic-warehouses'):remove_pack("advanced-logistic-science-pack")
+    end  
+    if mods['pyrawores'] then
+        RECIPE('angels-storage-tank-3'):add_ingredient({type = "item", name = "pipe", amount = 15})
+        RECIPE('angels-storage-tank-3'):add_ingredient({type = "item", name = "duralumin", amount = 10})
+        RECIPE('angels-storage-tank-3'):add_ingredient({type = "item", name = "lead-plate", amount = 10})
+    end
+end
+

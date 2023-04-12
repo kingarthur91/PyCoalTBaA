@@ -8,7 +8,9 @@ if mods['boblogistics'] and settings.startup['bobmods-logistics-inserteroverhaul
     fun.ingredient_replace('rare-earth-mine','fast-inserter','red-inserter')
 end
 
-if mods['bobpower'] and ['pyalienlife'] then
-   fun.ingredient_replace('collector','steam-engine','bob-burner-generator')
+if mods['bobpower'] and mods['pyalienlife'] then
+    fun.ingredient_replace('collector','steam-engine','bob-burner-generator')
 end
-
+if mods['boblogistics'] and mods['pyindustry'] then
+    fun.tech_remove_recipe('fluid-handling', 'bob-storage-tank-all-corners')
+end
