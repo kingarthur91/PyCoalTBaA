@@ -1,0 +1,64 @@
+--------------------------------------------------
+add_ingredient(recipe, ingredient)
+--add item/fluid to recipe ingredients
+--ingredient contains name, amount, and type if its a fluid
+--------------------------------------------------
+remove_ingredient(recipe, ingredient)
+--removes item from recipe
+--------------------------------------------------
+add_result(recipe, result)
+--add item/fluid to recipe results
+--------------------------------------------------
+overrides.Recipe(recipe)
+--------------------------------------------------
+overrides.Mod_Category(name, Category)
+--Change recipes crafting category aka: the machine it should be in
+--------------------------------------------------
+overrides.Patch(recipe)
+--add or subtract from a recipe ingredients or results
+--is used to edit already existing recipe
+--------------------------------------------------
+overrides.ingredient_replace(recipe, old, new, new_amount)
+--replace item/fluid in recipes ingredients
+--doesnt yet include a way to change ingredient amount will update when needed
+--------------------------------------------------
+overrides.results_replacer(recipe, old, new, new_amount, newtype)
+--replace item/fluid in recipes results
+--------------------------------------------------
+overrides.global_item_replacer(old, new, blackrecipe)
+--replace an item/fluid in every recipes ingredients/results
+--best used to merge items that are duplicated in mods that should be the same
+--------------------------------------------------
+overrides.recipe_category_remove(category, blacklist)
+--used to remove a whole category of recipes
+--use case wipe all recipes from a building
+--------------------------------------------------
+overrides.remove_recipe_unlock(recipe_list)
+--removes recipes from tech
+--main use is removing recipes hidden by recipe_category_remove function
+--------------------------------------------------
+overrides.HAB(blist)
+--blacklist for hot air recipes script to avoid
+--------------------------------------------------
+overrides.hotairrecipes()
+--add 50 hot-air ingredient, output +2
+--------------------------------------------------
+overrides.enable_recipe(recipe)
+--------------------------------------------------
+overrides.tech_add_recipe(tech, recipe)
+--adds recipe to tech for unlock if tech and recipe exists
+--------------------------------------------------
+overrides.tech_remove_recipe(tech, recipe)
+--removes recipe from tech if tech exists and includes recipe in effects
+--------------------------------------------------
+overrides.tech_add_prerequisites(tech, prereq)
+--------------------------------------------------
+overrides.tech_remove(tech, prereq_patch)
+--------------------------------------------------
+overrides.findtechswithpack(scipack)
+--------------------------------------------------
+overrides.addscipack(scipack)
+--fix that this is adding sci pack 0 to techs that dont have sp1 in them
+--------------------------------------------------
+function overrides.removescipack(techs,scipack)
+--------------------------------------------------
