@@ -24,7 +24,7 @@ if mods['angelsrefining'] then
     fun.global_item_replacer('ammonia', 'gas-ammonia')
     fun.global_item_replacer('ech', 'gas-epichlorhydrin')
     fun.global_item_replacer('ethylene', 'gas-ethylene')
-    fun.global_item_replacer('glass-fiber', 'angels-coil-glass-fiber')
+    fun.global_item_replacer('glass-fiber', 'angels-coil-glass-fiber')--
     fun.global_item_replacer('wooden-board', 'fiberboard')
     fun.global_item_replacer('advanced-processing-unit', 'intelligent-unit')
     fun.global_item_replacer('multi-layer-circuit-board', 'pcb4')
@@ -61,6 +61,9 @@ if mods['angelsrefining'] then
     fun.global_item_replacer('solid-sodium-sulfate', 'sodium-sulfate')
     -- fun.global_item_replacer('petri-dish', 'empty-petri-dish')
 
+    fun.global_prereq_replacer('electronics', 'vacuum-tube-electronics')
+    fun.global_prereq_replacer('water-washing-1', 'soil-washing')
+
     -- Fluid Converter Recipes
     if mods['angelspetrochem'] then
         angelsmods.functions.make_converter('acidgas', 'gas-acid')
@@ -75,11 +78,27 @@ if mods['angelsrefining'] then
         angelsmods.functions.make_converter('ech', 'gas-epichlorhydrin')
         angelsmods.functions.make_converter('black-liquor', 'liquid-black-liquor')
         angelsmods.functions.make_converter('acetic-acid', 'liquid-acetic-acid')
+        if mods['angelssmelting'] then
+            if mods['pypetroleumhandling'] then
+                local drr = data.raw.recipe
+                local recipes =
+                    {
+                        drr['angels-solder'],
+                        drr['angels-plate-steel'],
+                        drr['angels-plate-copper'],
+                        drr['angels-plate-iron'],
+                        drr['angels-plate-lead'],
+                        drr['angels-plate-manganese'],
+                        drr['angels-plate-tin'],
+                    }
+                fun.remove_recipe_difficulties(recipes)
+            end
+        end
     end
 
-    if mods['pyhightech'] then
+    --[[if mods['pyhightech'] then
         TECHNOLOGY("ore-crushing"):add_prereq("vacuum-tube-electronics")
-    end
+    ]]--end
 
     -- replace miner fluid
     if data.raw.resource['borax'] ~= nil then

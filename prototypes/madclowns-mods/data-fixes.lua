@@ -1,0 +1,1 @@
+require('prototypes/madclowns-mods/prototypes/overrides/overrides-updates')

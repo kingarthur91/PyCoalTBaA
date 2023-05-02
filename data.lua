@@ -12,3 +12,6 @@ require('prototypes/bobs-mods/Data')
 
 --omni mods
 --require("prototypes/omni-mods/Data")
+
+--madclown mods
+require('prototypes/madclowns-mods/data')

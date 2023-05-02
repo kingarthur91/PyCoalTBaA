@@ -63,6 +63,9 @@ if mods['angelsrefining'] then
     fun.global_item_replacer('solid-sodium-sulfate', 'sodium-sulfate')
     -- fun.global_item_replacer('petri-dish', 'empty-petri-dish')
 
+    fun.global_prereq_replacer('electronics', 'vacuum-tube-electronics')
+    fun.global_prereq_replacer('washing-1', 'soil-washing')
+
     -- Fluid Converter Recipes
     if mods['angelspetrochem'] then
         angelsmods.functions.make_converter('acidgas', 'gas-acid')
@@ -92,25 +95,72 @@ if mods['angelsrefining'] then
         end
     end
 
-    -- merge angels flotation cell into pys cell
+    --merge angel's washers to py's
+    fun.global_item_replacer('washing-plant', 'washer')
+    table.insert(data.raw['assembling-machine']['washer'].crafting_categories, 'filtering')
+    data.raw.recipe['washing-plant'] = nil
+    fun.remove_recipe_unlock('washing-plant')
+    --merge angels filters to py
+    fun.global_item_replacer('filtration-unit', 'carbon-filter')
+    table.insert(data.raw['assembling-machine']['carbon-filter'].crafting_categories, 'filtering')
+    data.raw.recipe['filtration-unit'] = nil
+    fun.remove_recipe_unlock('filtration-unit')
     if mods['pyrawores'] then
+        --mk02
+        fun.global_item_replacer('filtration-unit-2', 'carbon-filter-mk02')
+        table.insert(data.raw['assembling-machine']['carbon-filter-mk02'].crafting_categories, 'filtering')
+        data.raw.recipe['filtration-unit-2'] = nil
+        fun.remove_recipe_unlock('filtration-unit-2')
+        --mk03
+        fun.global_item_replacer('filtration-unit-3', 'carbon-filter-3')
+        table.insert(data.raw['assembling-machine']['carbon-filter-mk03'].crafting_categories, 'filtering')
+        data.raw.recipe['filtration-unit-3'] = nil
+        fun.remove_recipe_unlock('filtration-unit-3')
+        --mk04
+        table.insert(data.raw['assembling-machine']['carbon-filter-mk04'].crafting_categories, 'filtering')
+        fun.global_item_replacer('washing-plant', 'washer')
+        --merge angel's washers to py's
+        --mk02
+        fun.global_item_replacer('washing-plant-2', 'washer-mk02')
+        table.insert(data.raw['assembling-machine']['washer-mk02'].crafting_categories, 'filtering')
+        data.raw.recipe['washing-plant-2'] = nil
+        fun.remove_recipe_unlock('washing-plant-2')
+    -- merge angels flotation cell into pys cell
         -- mk01
         fun.global_item_replacer('ore-floatation-cell', 'flotation-cell-mk01')
-        table.insert(data.raw['assembling-machine']['flotation-cell-mk01'].crafting_categories, 'ore-sorting-2')
+        table.insert(data.raw['assembling-machine']['flotation-cell-mk01'].crafting_categories, 'ore-refining-t2')
         data.raw.recipe['ore-floatation-cell'] = nil
         fun.remove_recipe_unlock('ore-floatation-cell')
         -- mk02
         fun.global_item_replacer('ore-floatation-cell-2', 'flotation-cell-mk02')
-        table.insert(data.raw['assembling-machine']['flotation-cell-mk02'].crafting_categories, 'ore-sorting-2')
+        table.insert(data.raw['assembling-machine']['flotation-cell-mk02'].crafting_categories, 'ore-refining-t2')
         data.raw.recipe['ore-floatation-cell-2'] = nil
         fun.remove_recipe_unlock('ore-floatation-cell-2')
         -- mk03
         fun.global_item_replacer('ore-floatation-cell-3', 'flotation-cell-mk03')
-        table.insert(data.raw['assembling-machine']['flotation-cell-mk03'].crafting_categories, 'ore-sorting-2')
+        table.insert(data.raw['assembling-machine']['flotation-cell-mk03'].crafting_categories, 'ore-refining-t2')
         data.raw.recipe['ore-floatation-cell-3'] = nil
         fun.remove_recipe_unlock('ore-floatation-cell-3')
         -- add category to py mk04
-        table.insert(data.raw['assembling-machine']['flotation-cell-mk04'].crafting_categories, 'ore-sorting-2')
+        table.insert(data.raw['assembling-machine']['flotation-cell-mk04'].crafting_categories, 'ore-refining-t2')
+    -- merge angels leaching stations into pys stati9ons
+        -- mk01
+        fun.global_item_replacer('ore-leaching-plant', 'leaching-station-mk01')
+        table.insert(data.raw['assembling-machine']['leaching-station-mk01'].crafting_categories, 'ore-refining-t3')
+        data.raw.recipe['ore-leaching-plant'] = nil
+        fun.remove_recipe_unlock('ore-leaching-plant')
+        -- mk02
+        fun.global_item_replacer('ore-leaching-plant-2', 'leaching-station-mk02')
+        table.insert(data.raw['assembling-machine']['leaching-station-mk02'].crafting_categories, 'ore-refining-t3')
+        data.raw.recipe['ore-leaching-plant-2'] = nil
+        fun.remove_recipe_unlock('ore-leaching-plant-2')
+        -- mk03
+        fun.global_item_replacer('ore-leaching-plant-3', 'leaching-station-mk03')
+        table.insert(data.raw['assembling-machine']['leaching-station-mk03'].crafting_categories, 'ore-refining-t3')
+        data.raw.recipe['ore-leaching-plant-3'] = nil
+        fun.remove_recipe_unlock('ore-leaching-plant-3')
+        -- add category to py mk04
+        table.insert(data.raw['assembling-machine']['leaching-station-mk04'].crafting_categories, 'ore-refining-t3')
     end
 
     if mods['angelssmelting'] then
@@ -124,6 +174,7 @@ if mods['angelsrefining'] then
         fun.remove_recipe_unlock('barreling-pump')
     end
 end
+
 if mods['angelsaddons-storage'] then
     fun.tech_add_recipe('py-storage-tanks', 'angels-storage-tank-3')
     fun.tech_remove_recipe('fluid-handling', 'angels-storage-tank-3')
@@ -138,5 +189,5 @@ if mods['angelsaddons-storage'] then
         RECIPE('angels-storage-tank-3'):add_ingredient({type = "item", name = "duralumin", amount = 10})
         RECIPE('angels-storage-tank-3'):add_ingredient({type = "item", name = "lead-plate", amount = 10})
     end
-end
 
+end

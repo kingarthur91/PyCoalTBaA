@@ -1,9 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version 1.2.0
-Date: 2023-4-11
+Date: 2023-5-2
   Changes:
     - Made Bob'sMoules4Py a required dependency
     - Fixed softlock with Bob's power and Py where Py harvesters used steam engines
+    - Fixed multiple crashes with Angel mods
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.1
 Date: 2020-12-19
