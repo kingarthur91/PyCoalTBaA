@@ -2,6 +2,9 @@
 --angel mods
 require('prototypes/angels-mods/Data-Final-Fixes')
 
+--madclown mods
+require('prototypes/madclowns-mods/data-fixes')
+
 --recipe ingredients deduper
 
 for i, ings in pairs(data.raw.recipe) do

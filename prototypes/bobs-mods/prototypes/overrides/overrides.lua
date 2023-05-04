@@ -14,6 +14,14 @@ if mods['boblogistics'] then
       fun.global_item_replacer('bob-topup-valve', 'py-underflow-valve')
          data.raw.recipe['bob-topup-valve'] = nil
          fun.remove_recipe_unlock('bob-topup-valve')
+      --robots
+      fun.global_item_replacer('construction-robot', 'py-construction-robot-01')
+        data.raw.recipe['construction-robot'] = nil
+        fun.remove_recipe_unlock('construction-robot')
+   end
+   if mods['pyalienlife'] then
+        TECHNOLOGY("bob-drills-1"):add_pack("py-science-pack-1"):add_prereq("electric-mining-drill"):remove_prereq("vacuum-tube-electronics")
+        TECHNOLOGY("bob-area-drills-1"):add_pack("py-science-pack-1"):add_prereq("electric-mining-drill"):remove_prereq("vacuum-tube-electronics")
    end
    if mods['pyrawores'] then
       fun.ingredient_replace('bob-storage-tank-all-corners','iron-plate','lead-plate')
@@ -21,11 +29,17 @@ if mods['boblogistics'] then
    end
 end
 
-if mods['bobgreenhouse'] and mods['pyalienlife'] then
-   TECHNOLOGY("bob-greenhouse"):add_prereq("glass")
+if mods['bobgreenhouse'] then
+   if mods['pyalienlife'] then
+      TECHNOLOGY("bob-greenhouse"):add_prereq("glass")
+      data.raw.item["wood-pellets"].fuel_category = "biomass"
+      data.raw.item["seedling"].fuel_category = "biomass"
+   end
 end
 
 if mods['bobmining'] then
+   fun.replace(data.raw.technology["bob-drills-1"].prerequisites, 'electronics', 'vacuum-tube-electronics')
+   fun.replace(data.raw.technology["bob-area-drills-1"].prerequisites, 'electronics', 'vacuum-tube-electronics')
    TECHNOLOGY("steel-axe-3"):add_prereq("logistic-science-pack")
    TECHNOLOGY("steel-axe-4"):add_prereq("chemical-science-pack")
    TECHNOLOGY("steel-axe-5"):add_prereq("production-science-pack")
