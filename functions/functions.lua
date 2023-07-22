@@ -1,5 +1,9 @@
 local overrides = {}
 
+local noise = require("noise")
+local tne = noise.to_noise_expression
+local resource_autoplace = require("resource-autoplace")
+
 --add item/fluid to recipe ingredients
 -- ingredient contains name, amount, and type if its a fluid
 function overrides.add_ingredient(recipe, ingredient)
@@ -637,41 +641,35 @@ end
 --replace an item/fluid in every recipes ingredients/results
 --best used to merge items that are duplicated in mods that should be the same
 function overrides.global_item_replacer(old, new, blackrecipe)
-    --log(old)
-    --log(new)
-    --log(serpent.block(blackrecipe))
-    if data.raw.item[old] ~= nil or data.raw.fluid[old] ~= nil or data.raw.capsule[old] ~= nil then
-        --log('hit')
-        if data.raw.item[new] ~= nil or data.raw.fluid[new] ~= nil or data.raw.capsule[new] ~= nil then
-            --log('hit')
-            local recipes = table.deepcopy(data.raw.recipe)
-            if type(blackrecipe) ~= 'table' and blackrecipe ~= nil then
-                blackrecipe = {blackrecipe}
-            end
-            local brecipeset = {}
-            if blackrecipe ~= nil then
-                for _, brecipe in pairs(blackrecipe) do
-                    brecipeset[brecipe] = true
+    for prototype in pairs(defines.prototypes.item) do
+        if data.raw.fluid[old] ~= nil or data.raw[prototype][old] ~= nil then
+            if data.raw.fluid[new] ~= nil or data.raw[prototype][new] ~= nil then
+                local recipes = table.deepcopy(data.raw.recipe)
+                if type(blackrecipe) ~= 'table' and blackrecipe ~= nil then
+                    blackrecipe = {blackrecipe}
                 end
-            end
-            --log(serpent.block(brecipeset))
-            for recipe in pairs(recipes) do
-                --log('hit')
-                --for b, brecipe in pairs(blackrecipe) do
-                if not brecipeset[recipe] then
-                    --log('hit')
-                    --log(serpent.block(recipe))
-                    --log(serpent.block(recipe.name))
-                    --log(serpent.block(brecipeset))
-                    overrides.ingredient_replace(recipe, old, new)
-                    overrides.results_replacer(recipe, old, new)
+                local brecipeset = {}
+                if blackrecipe ~= nil then
+                    for _, brecipe in pairs(blackrecipe) do
+                        brecipeset[brecipe] = true
+                    end
                 end
-                --end
+                --log(serpent.block(brecipeset))
+                for recipe in pairs(recipes) do
+                    --for b, brecipe in pairs(blackrecipe) do
+                    if not brecipeset[recipe] then
+                        --log(serpent.block(recipe))
+                        --log(serpent.block(recipe.name))
+                        --log(serpent.block(brecipeset))
+                        overrides.ingredient_replace(recipe, old, new)
+                        overrides.results_replacer(recipe, old, new)
+                    end
+                    --end
+                end
             end
         end
     end
 end
-
 --used to remove a whole category of recipes
 --use case wipe all recipes from a building
 function overrides.recipe_category_remove(category, blacklist)
@@ -1061,7 +1059,13 @@ end
 function overrides.tech_add_prerequisites(tech, prereq)
     if data.raw.technology[tech] ~= nil then
         if data.raw.technology[prereq] ~= nil then
-            table.insert(data.raw.technology[tech].prerequisites, prereq)
+            if type(techs) ~= "table" then
+                table.insert(data.raw.technology[tech].prerequisites, prereq)
+            else
+                for _, v in pairs(tech) do
+                    table.insert(data.raw.technology[tech].prerequisites, v)
+                end
+            end
         end
     end
 end
@@ -1127,20 +1131,29 @@ local scilist = {}
     techlist = {}
 end
 
+--[[
+--use Angel's function, OV.remove_science_pack
 function overrides.removescipack(techs,scipack)
     if type(techs) ~= "table" and techs ~= nil then
         techs = {techs}
     end
     for t,tech in pairs(techs) do
         if data.raw.technology[tech] ~= nil then
-            for p, pack in pairs(data.raw.technology[tech].unit.ingredients) do
-                if pack[1] == scipack then
-                    table.remove(data.raw.technology[tech].unit.ingredients,p)
+            for s, shortpack in pairs(data.raw.technology[tech].unit.ingredients) do
+                if shortpack[1] == scipack then
+                    data.raw.technology[tech].unit.ingredients[s] = nil
+                else
+                    for longpack in pairs(shortpack) do
+                        if longpack[2] == scipack then
+                            data.raw.technology[tech].unit.ingredients[s] = nil
+                        end 
+                    end
                 end
             end
         end
     end
 end
+]]--
 
 function overrides.remove(tbl, old)
     for k, v in pairs(tbl) do
