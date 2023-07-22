@@ -1,4 +1,9 @@
+
 fun = require("functions/functions")
+--log(serpent.block(fun))
+
+
+require('prototypes/recipe-category')
 
 --multi-mod
 --aka stuff many mods need

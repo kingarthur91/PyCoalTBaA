@@ -5,19 +5,11 @@ if mods['boblogistics'] then
    if mods['pyindustry'] then
       fun.tech_add_recipe('py-storage-tanks', 'bob-storage-tank-all-corners')
       --change valves
-      fun.global_item_replacer('bob-valve', 'py-check-valve')
-        data.raw.recipe['bob-valve'] = nil
-        fun.remove_recipe_unlock('bob-valve')
-      fun.global_item_replacer('bob-overflow-valve', 'py-overflow-valve')
-         data.raw.recipe['bob-overflow-valve'] = nil
-         fun.remove_recipe_unlock('bob-overflow-valve')
-      fun.global_item_replacer('bob-topup-valve', 'py-underflow-valve')
-         data.raw.recipe['bob-topup-valve'] = nil
-         fun.remove_recipe_unlock('bob-topup-valve')
+      fun.remove_recipe_unlock('bob-valve')
+      fun.remove_recipe_unlock('bob-overflow-valve')
+      fun.remove_recipe_unlock('bob-topup-valve')
       --robots
-      fun.global_item_replacer('construction-robot', 'py-construction-robot-01')
-        data.raw.recipe['construction-robot'] = nil
-        fun.remove_recipe_unlock('construction-robot')
+      fun.remove_recipe_unlock('construction-robot')
    end
    if mods['pyalienlife'] then
         TECHNOLOGY("bob-drills-1"):add_pack("py-science-pack-1"):add_prereq("electric-mining-drill"):remove_prereq("vacuum-tube-electronics")

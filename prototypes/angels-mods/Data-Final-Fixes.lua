@@ -1,4 +1,11 @@
 require('prototypes/angels-mods/prototypes/overrides/overrides-fixes')
+
+if mods['angelsrefining'] and mods['angelsinfiniteores'] then
+    data.raw.resource['infinite-raw-coal'].minable['required_fluid'] = 'water'
+end
+
+
+
 --[[
 local recipe_count = 0
 local fluid_count = 0

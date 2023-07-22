@@ -4,6 +4,7 @@ data:extend(
 
 --RECIPE CATEGORIES
   --REFINING
+  --[[
   {
     type = "recipe-category",
     name = "ore-processing",
@@ -12,8 +13,15 @@ data:extend(
     type = "recipe-category",
     name = "tba-ore-sorting",
   },
-  --[[
+  ]]--
 --SUBGROUPS
+  {
+      type = "item-subgroup",
+      name = "py-hightech-tier-0",
+      group = "py-hightech",
+      order = "fz"
+  },
+  --[[
   {
     type = "item-subgroup",
     name = "fluids-refining",
