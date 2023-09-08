@@ -1058,11 +1058,7 @@ function overrides.tech_add_prerequisites(tech, prereq)
                     table.insert(data.raw.technology[tech].prerequisites, v)
                 end
             end
-        else
-            log(serpent.block(prereq))
         end
-    else
-        log(serpent.block(tech))
     end
 end
 
@@ -1127,7 +1123,6 @@ local scilist = {}
 	techlist = {}
 end
 
-
 --use Angel's function, OV.remove_science_pack
 function overrides.removescipack(techs,scipack)
 	if type(techs) ~= "table" and techs ~= nil then
@@ -1148,10 +1143,11 @@ function overrides.removescipack(techs,scipack)
                         end 
                     ]]--end
                 end
-			end
-        end
+			  end
+     end
 	end
 end
+]]--
 
 function overrides.remove(tbl, old)
     for k, v in pairs(tbl) do

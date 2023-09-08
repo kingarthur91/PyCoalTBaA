@@ -44,6 +44,7 @@ RECIPE {
     results = {
         {type = 'item', name = 'alien-artifact', amount = 100},
     },
+
 }:add_unlock('alien-research')
 
 --Perfect
