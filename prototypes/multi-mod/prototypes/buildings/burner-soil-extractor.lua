@@ -21,7 +21,7 @@ ITEM {
     icon = "__PyCoalTBaA__/graphics/icons/soil-extractormk00.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-extraction",
+    subgroup = "py-cp-buildings-mk00",
     order = "g",
     place_result = "burner-soil-extractor",
     stack_size = 10

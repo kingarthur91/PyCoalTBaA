@@ -60,5 +60,5 @@ overrides.findtechswithpack(scipack)
 overrides.addscipack(scipack)
 --fix that this is adding sci pack 0 to techs that dont have sp1 in them
 --------------------------------------------------
-function overrides.removescipack(techs,scipack)
+overrides.removescipack(techs,scipack)
 --------------------------------------------------
