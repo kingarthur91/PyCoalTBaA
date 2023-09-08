@@ -1,7 +1,3 @@
------Incompatibilities-----
-Make everything load toghether
-Make it so that it is playable, and not like steam power is locked behind auto science but you need steam enggines for collectors
-
 -----tier 0 - pre science-----
 
 start with stone furnace to make basic plates and player handcrafts basic bits to assemble crude parts needed to make proper equipment.

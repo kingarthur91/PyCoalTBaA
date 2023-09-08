@@ -21,6 +21,12 @@ data:extend(
       group = "py-hightech",
       order = "fz"
   },
+  {
+      type = "item-subgroup",
+      name = "py-cp-buildings-mk00",
+      group = "coal-processing",
+      order = "a"
+  },
   --[[
   {
     type = "item-subgroup",
