@@ -6,7 +6,7 @@ if mods['bobelectronics'] then
         data.raw.recipe['bob-rubber'].enabled = false
         data.raw.recipe['bob-rubber'].hidden = true
 
-        if settings.startup["angels-enable-components"].value then
+        if not settings.startup["angels-enable-components"].value then
             data.raw.recipe['wooden-board'].enabled = false
             data.raw.recipe['basic-circuit-board'].enabled = false
             data.raw.recipe['wooden-board'].energy_required = 10
