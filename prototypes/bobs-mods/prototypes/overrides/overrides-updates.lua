@@ -5,23 +5,24 @@ if mods['bobelectronics'] then
         data.raw.recipe['silicon-wafer'].enabled = false
         data.raw.recipe['bob-rubber'].enabled = false
         data.raw.recipe['bob-rubber'].hidden = true
-
-        if not settings.startup["angels-enable-components"].value then
-            data.raw.recipe['wooden-board'].enabled = false
-            data.raw.recipe['basic-circuit-board'].enabled = false
-            data.raw.recipe['wooden-board'].energy_required = 10
-            fun.Mod_Category('wooden-board', 'pulp')
-            fun.tech_add_recipe('coal-processing-1', 'pulp-mill-mk01')
-            fun.tech_add_recipe('coal-processing-1', 'wooden-board')
-            RECIPE('offshore-pump'):remove_ingredient('basic-circuit-board')
-            RECIPE('lab'):replace_ingredient('basic-circuit-board', 'inductor1')
-            RECIPE('assembling-machine-1'):replace_ingredient('basic-circuit-board', 'primitive-circuit-board')
-            RECIPE('algae-farm'):replace_ingredient('basic-circuit-board', 'primitive-circuit-board')
-            RECIPE('algae-farm-2'):replace_ingredient('basic-circuit-board', 'electronic-circuit')
-            TECHNOLOGY('automation'):add_prereq('coal-processing-1')
-            if settings.startup["bobmods-logistics-beltoverhaul"].value == true then
-                TECHNOLOGY('logistics-0'):add_prereq('coal-processing-1')
-            end
+        if mods['angelsindustries'] then
+            if not settings.startup["angels-enable-components"].value then
+                data.raw.recipe['wooden-board'].enabled = false
+                data.raw.recipe['basic-circuit-board'].enabled = false
+                data.raw.recipe['wooden-board'].energy_required = 10
+                fun.Mod_Category('wooden-board', 'pulp')
+                fun.tech_add_recipe('coal-processing-1', 'pulp-mill-mk01')
+                fun.tech_add_recipe('coal-processing-1', 'wooden-board')
+                RECIPE('offshore-pump'):remove_ingredient('basic-circuit-board')
+                RECIPE('lab'):replace_ingredient('basic-circuit-board', 'inductor1')
+                RECIPE('assembling-machine-1'):replace_ingredient('basic-circuit-board', 'primitive-circuit-board')
+                RECIPE('algae-farm'):replace_ingredient('basic-circuit-board', 'primitive-circuit-board')
+                RECIPE('algae-farm-2'):replace_ingredient('basic-circuit-board', 'electronic-circuit')
+                TECHNOLOGY('automation'):add_prereq('coal-processing-1')
+                if settings.startup["bobmods-logistics-beltoverhaul"].value == true then
+                    TECHNOLOGY('logistics-0'):add_prereq('coal-processing-1')
+                end
+        end
             
             if mods['boblogistics'] then
                 RECIPE('splitter'):remove_ingredient('basic-circuit-board')
