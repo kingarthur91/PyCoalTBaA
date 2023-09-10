@@ -1147,7 +1147,6 @@ function overrides.removescipack(techs,scipack)
      end
 	end
 end
-]]--
 
 function overrides.remove(tbl, old)
     for k, v in pairs(tbl) do
