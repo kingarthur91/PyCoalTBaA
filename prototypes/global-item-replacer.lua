@@ -12,7 +12,7 @@ local old_to_new = {}
 --replace an item/fluid in every recipes ingredients/results
 --best used to merge items that are duplicated in mods that should be the same
 local function global_item_replacer(old, new, blacklisted_recipe)
-    if not find_type(old) and not find_type(new) then
+    if not find_type(old) or not find_type(new) then
         log('WARNING: global_item_replacer failed for ' .. old .. ' -> ' .. new)
         return
     end
