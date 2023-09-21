@@ -39,6 +39,33 @@ if mods['angelsbioprocessing'] then
     if mods['pyalternativeenergy'] then
         TECHNOLOGY('silicon-mk01'):add_prereq('bio-processing-crystal-splinter-1')
     end
+    if mods['pyalternativeenergy'] then
+        fun.tech_add_prerequisites('silicon-mk01', 'angels-silicon-smelting-1')
+    end
+end
+
+if mods['angelspetrochem'] then
+    if mods['pyhightech'] then
+        TECHNOLOGY('angels-nitrogen-processing-1'):remove_prereq('basic-chemistry')
+        TECHNOLOGY('vacuum-tube-electronics'):add_prereq('angels-nitrogen-processing-1')
+        TECHNOLOGY('mining-with-fluid'):remove_prereq('steel-processing')
+    end
+end
+
+if mods['angelspetrochem'] then
+    if mods['pyhightech'] then
+        TECHNOLOGY('angels-nitrogen-processing-1'):remove_prereq('basic-chemistry')
+        TECHNOLOGY('vacuum-tube-electronics'):add_prereq('angels-nitrogen-processing-1')
+    end
+end
+
+if mods['angelsindustries'] then
+    TECHNOLOGY('advanced-material-processing'):add_prereq('angels-components-construction-2'):remove_prereq('py-science-pack-mk01')
+    TECHNOLOGY('angels-components-mechanical-2'):remove_pack('logistic-science-pack'):remove_prereq('logistic-science-pack')
+    TECHNOLOGY('electric-mining-drill'):add_prereq('angels-components-mechanical-2'):remove_prereq('py-science-pack-mk01')
+    TECHNOLOGY('fluid-processing-machines-1'):add_prereq('angels-components-construction-2'):remove_prereq('py-science-pack-mk01')
+    TECHNOLOGY('crusher-2'):add_prereq('angels-components-construction-2'):remove_prereq('py-science-pack-mk01')
+    TECHNOLOGY('py-burner'):add_prereq('angels-components-construction-2'):remove_prereq('py-science-pack-mk01')
 end
 
 if mods['angelsaddons-storage'] then

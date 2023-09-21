@@ -10,7 +10,7 @@ if mods['bobassembly'] then
 end
 if mods['bobplates'] then
     data.raw.recipe['nitrogen'].hidden = false
-    
+
     data.raw['assembling-machine']['assembling-machine-3'].module_specification.module_slots = 0
     if mods['pyrawores'] then
         data.raw.technology['electrolysis-1'] = nil

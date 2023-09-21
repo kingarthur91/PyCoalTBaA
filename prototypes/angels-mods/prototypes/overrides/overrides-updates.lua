@@ -220,12 +220,10 @@ if mods['angelssmelting'] then
 end
 
 if mods['angelsindustries'] then
-
 end
 
 if mods['angelsbioprocessing'] then
     TECHNOLOGY('bio-processing-green'):add_prereq('vacuum-tube-electronics')
-
     if mods['pyalienlife'] then
         data.raw.recipe['algae-green-simple'] = nil
 

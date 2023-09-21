@@ -6,8 +6,6 @@ log(serpent.block(settings.startup))
 log(serpent.block(mods))
 end
 
-
-
 fun = require("functions/functions")
 --log(serpent.block(fun))
 

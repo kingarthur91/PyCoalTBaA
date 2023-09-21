@@ -1,7 +1,7 @@
 require('prototypes/angels-mods/prototypes/overrides/overrides-fixes')
 
-if mods['angelsrefining'] then
-    if angelsmods.industries.components then
+if mods['angelsindustries'] then
+	if settings.startup["angels-enable-components"].value then
         require('prototypes/angels-mods/prototypes/overrides/ai/overrides-fixes')
     else
         require('prototypes/angels-mods/prototypes/overrides/no-ai/overrides-fixes')
