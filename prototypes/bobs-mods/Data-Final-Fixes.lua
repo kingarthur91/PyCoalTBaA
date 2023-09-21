@@ -6,4 +6,3 @@ if mods['angelsrefining'] then
 else
 	require('prototypes/bobs-mods/prototypes/overrides/no-angels/overrides-fixes')
 end
-

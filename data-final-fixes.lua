@@ -1,3 +1,4 @@
+local fun = fun
 
 --angel mods
 require('prototypes/angels-mods/Data-Final-Fixes')
@@ -11,10 +12,22 @@ require('prototypes/madclowns-mods/data-fixes')
 --biomass recipes
 --require('biomass-recipes')
 
-require 'prototypes.global-item-replacer'
+require('functions/global-item-replacer')
 
-fun.global_prereq_replacer('electronics', 'vacuum-tube-electronics')
-fun.global_prereq_replacer('washing-1', 'soil-washing')
+if debugmode.techcheck then
+    --This code is by fgardt
+    for _, tech in pairs(data.raw.technology) do
+        if not tech.prerequisites then goto continue end
+        for _, prereq in pairs(tech.prerequisites) do
+            if not data.raw.technology[prereq] then
+                log(tech.name .. " is missing prereq: " .. prereq)
+                log(serpent.block(tech))
+            goto continue
+            end
+        end
+        ::continue::
+    end
+end
 
 --recipe ingredients deduper
 

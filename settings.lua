@@ -6,3 +6,19 @@ data:extend({
     default_value = true,
   },
  })
+data:extend({
+  {
+    type = "bool-setting",
+    name = "debug-logging",
+    setting_type = "startup",
+    default_value = true,
+  },
+ })
+data:extend({
+  {
+    type = "bool-setting",
+    name = "debug-techcheck",
+    setting_type = "startup",
+    default_value = true,
+  },
+ })

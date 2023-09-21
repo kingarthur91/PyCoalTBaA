@@ -1,3 +1,10 @@
+debugmode = debugmode or {}
+debugmode.techcheck = settings.startup["debug-techcheck"].value
+debugmode.logging = settings.startup["debug-logging"].value
+if debugmode.logging then 
+log(serpent.block(settings.startup))
+log(serpent.block(mods))
+end
 
 fun = require("functions/functions")
 --log(serpent.block(fun))

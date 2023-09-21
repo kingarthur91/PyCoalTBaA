@@ -101,9 +101,30 @@ if mods['angelsrefining'] then
             fun.tech_add_prerequisites('solder-mk01', 'ore-crushing')
         end
     end
+    if mods['pyhardmode'] then
+        data.raw.recipe['stone-crushed'].normal.enabled = false
+        data.raw.recipe['stone-crushed'].normal.hidden = true
+        data.raw.recipe['stone-crushed'].expensive.enabled = false
+        data.raw.recipe['stone-crushed'].expensive.hidden = true
+
+        RECIPE('hpf-stone-from-crush'):add_ingredient({type = "fluid", name = "carbolic-oil", amount = 10})
+
+        data.raw.resource['angels-ore3'].minable.fluid_amount = 200
+        data.raw.resource['angels-ore3'].minable.required_fluid = 'water'
+    end
+    if mods['pyblock'] then
+        RECIPE('fawogae-to-iron'):set_fields{ results = {{type = "item", name = "angels-ore1", amount = 5}} }
+    end
 end
 
 if mods['angelspetrochem'] then
+    if mods['pyindustry'] then
+        for name, recipe in pairs(data.raw.recipe) do
+            if recipe.category == 'angels-chemical-void' then
+                recipe.category = 'py-venting'
+            end
+        end
+    end
     if mods['pyrawores'] then
         data.raw.recipe['air-separation'] = nil
         fun.remove_recipe_unlock('air-separation')
@@ -117,9 +138,45 @@ if mods['angelspetrochem'] then
             TECHNOLOGY('vacuum-tube-electronics'):add_prereq('angels-nitrogen-processing-1')
         end
     end
+    if mods['pyhardmode'] then
+        --This code is by NotNotMelon
+        for _, void_machine in pairs{'clarifier', 'angels-flare-stack'} do
+            data.raw['assembling-machine'][void_machine] = data.raw.furnace[void_machine]
+            data.raw['assembling-machine'][void_machine].type = 'assembling-machine'
+            data.raw['assembling-machine'][void_machine].crafting_speed = 1
+            data.raw['assembling-machine'][void_machine].energy_source = {
+                type = 'electric',
+                usage_priority = 'secondary-input',
+                emissions_per_minute = 0,
+            }
+            data.raw['assembling-machine'][void_machine].energy_usage = '100kW'
+            data.raw.furnace[void_machine] = nil
+        end
+
+        for name, recipe in pairs(data.raw.recipe) do
+            if recipe.category == 'angels-water-void' then
+                if recipe ~= data.raw.recipe['angels-water-void-water-saline'] then
+                    if recipe ~= data.raw.recipe['angels-water-void-water-purified'] then
+                        data.raw.recipe[name] = nil
+                    end
+                end
+            end
+        end
+        fun.tech_remove_recipe('water-treatment', 'clarifier')
+    
+        RECIPE('clarifier'):add_unlock('water-treatment-2')
+
+        RECIPE('angels-water-void-water-saline'):add_ingredient('filtration-media'):add_unlock('water-treatment-2')
+        RECIPE('angels-water-void-water-purified'):add_ingredient('filtration-media'):add_unlock('water-treatment-2')
+
+        TECHNOLOGY('water-treatment-2'):add_prereq('filtration')
+
+        data.raw['assembling-machine']['clarifier'].crafting_speed = 5
+    end
 end
 
 if mods['angelssmelting'] then
+    TECHNOLOGY('angels-metallurgy-2'):add_prereq('logistic-science-pack')
     if mods['pyfusionenergy'] then
         RECIPE('angels-mono-silicon-1'):set_fields{ category = "hpf" }
         RECIPE('angels-mono-silicon-2'):set_fields{ category = "hpf" }
@@ -136,6 +193,22 @@ if mods['angelssmelting'] then
 
         data.raw.recipe['solder-0'] = nil
     end
+    if mods['pyalienlife'] then
+        TECHNOLOGY('angels-metallurgy-1'):add_prereq('hot-air-mk01')
+
+        TECHNOLOGY('angels-metallurgy-1'):add_pack('py-science-pack-1'):add_prereq('py-science-pack-mk01')
+        TECHNOLOGY('angels-copper-smelting-1'):add_pack('py-science-pack-1')
+        TECHNOLOGY('angels-iron-smelting-1'):add_pack('py-science-pack-1')
+        TECHNOLOGY('angels-lead-smelting-1'):add_pack('py-science-pack-1')
+        TECHNOLOGY('angels-tin-smelting-1'):add_pack('py-science-pack-1')
+        TECHNOLOGY('angels-solder-smelting-1'):add_pack('py-science-pack-1')
+        TECHNOLOGY('angels-steel-smelting-1'):add_pack('py-science-pack-1')
+        TECHNOLOGY('angels-manganese-smelting-1'):add_pack('py-science-pack-1')
+
+        TECHNOLOGY('angels-stone-smelting-1'):add_pack('py-science-pack-1')
+        TECHNOLOGY('powder-metallurgy-1'):add_pack('py-science-pack-1')
+        TECHNOLOGY('angels-sulfur-processing-1'):add_pack('py-science-pack-1')
+    end
     if mods['pyalternativeenergy'] then
         fun.tech_remove_recipe('silicon-mk01', 'silicon')
 
@@ -147,31 +220,17 @@ if mods['angelssmelting'] then
 end
 
 if mods['angelsindustries'] then
-    if mods['pyalienlife'] then
-        TECHNOLOGY('angels-metallurgy-1'):add_pack('py-science-pack-1'):add_prereq('py-science-pack-mk01')
-        TECHNOLOGY('angels-copper-smelting-1'):add_pack('py-science-pack-1')
-        TECHNOLOGY('angels-iron-smelting-1'):add_pack('py-science-pack-1')
-        TECHNOLOGY('angels-lead-smelting-1'):add_pack('py-science-pack-1')
-        TECHNOLOGY('angels-tin-smelting-1'):add_pack('py-science-pack-1')
-        TECHNOLOGY('angels-solder-smelting-1'):add_pack('py-science-pack-1')
-        TECHNOLOGY('angels-steel-smelting-1'):add_pack('py-science-pack-1')
-        TECHNOLOGY('angels-manganese-smelting-1'):add_pack('py-science-pack-1')
-
-        TECHNOLOGY('angels-components-construction-2'):add_pack('py-science-pack-1')
-        TECHNOLOGY('angels-sulfur-processing-1'):add_pack('py-science-pack-1')
-        TECHNOLOGY('angels-components-batteries-1'):add_pack('py-science-pack-1')
-        TECHNOLOGY('powder-metallurgy-1'):add_pack('py-science-pack-1')
-        TECHNOLOGY('angels-stone-smelting-1'):add_pack('py-science-pack-1')
-    end
-
-    RECIPE('py-burner'):remove_ingredient('construction-frame-4')
 end
 
 if mods['angelsbioprocessing'] then
     TECHNOLOGY('bio-processing-green'):add_prereq('vacuum-tube-electronics')
     if mods['pyalienlife'] then
         data.raw.recipe['algae-green-simple'] = nil
+
         fun.remove_recipe_unlock('algae-green-simple')
+    end
+    if mods['pyalternativeenergy'] then
+        RECIPE('eg-si'):add_ingredient({type = "item", name = "crystal-grindstone", amount = 1})
     end
 end
 

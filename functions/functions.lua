@@ -1,4 +1,9 @@
 local overrides = {}
+local dr = data.raw
+local dri = dr.item
+local drf = dr.fluid
+local drr = dr.recipe
+local drt = dr.technology
 
 local noise = require("noise")
 local tne = noise.to_noise_expression
@@ -8,17 +13,17 @@ local resource_autoplace = require("resource-autoplace")
 -- ingredient contains name, amount, and type if its a fluid
 function overrides.add_ingredient(recipe, ingredient)
     --check that recipe exists before doing anything else
-    if data.raw.recipe[recipe] ~= nil then
+    if drr[recipe] ~= nil then
         --check if ingredient is item or fluid and that it exists
-        if data.raw.item[ingredient.name] ~= nil or data.raw.fluid[ingredient.name] ~= nil then
+        if dri[ingredient.name] ~= nil or drf[ingredient.name] ~= nil then
             --check if type is set to fluid
-            if data.raw.recipe[recipe].ingredients ~= nil then
+            if drr[recipe].ingredients ~= nil then
                 if ingredient.type == 'fluid' then
-                    table.insert(data.raw.recipe[recipe].ingredients, {type = 'fluid', name = ingredient.name, amount = ingredient.amount})
+                    table.insert(drr[recipe].ingredients, {type = 'fluid', name = ingredient.name, amount = ingredient.amount})
                 else
                 --log(serpent.block(recipe))
-                --log(serpent.block(data.raw.recipe[recipe]))
-                    table.insert(data.raw.recipe[recipe].ingredients, {type = 'item', name = ingredient.name, amount = ingredient.amount})
+                --log(serpent.blockdrr[recipe]))
+                    table.insert(drr[recipe].ingredients, {type = 'item', name = ingredient.name, amount = ingredient.amount})
                 end
             end
         end
@@ -27,9 +32,9 @@ end
 
 --removes item from recipe
 function overrides.remove_ingredient(recipe, ingredient)
-    for i, ing in pairs(data.raw.recipe[recipe].ingredients) do
+    for i, ing in pairs(drr[recipe].ingredients) do
         if ing[1] == ingredient or ing.name == ingredient then
-            table.remove(data.raw.recipe[recipe].ingredients, i)
+            table.remove(drr[recipe].ingredients, i)
         end
     end
 end
@@ -37,14 +42,14 @@ end
 --add item/fluid to recipe results
 function overrides.add_result(recipe, result)
     --check that recipe exists before doing anything else
-    if data.raw.recipe[recipe] ~= nil then
+    if drr[recipe] ~= nil then
         --check if result is item or fluid and that it exists
-        if data.raw.item[result.name] ~= nil or data.raw.fluid[result.name] ~= nil then
+        if dri[result.name] ~= nil or drf[result.name] ~= nil then
             --check if type is set to fluid
             if result.type == 'fluid' then
-                table.insert(data.raw.recipe[recipe].results, {type = 'fluid', name = result.name, amount = result.amount})
+                table.insert(drr[recipe].results, {type = 'fluid', name = result.name, amount = result.amount})
             else
-                table.insert(data.raw.recipe[recipe].results, {type = 'item', name = result.name, amount = result.amount})
+                table.insert(drr[recipe].results, {type = 'item', name = result.name, amount = result.amount})
             end
         end
     end
@@ -92,7 +97,7 @@ function overrides.Recipe(recipe)
 
     --log(serpent.block(recipe.ingredients))
     --log(serpent.block(recipe.results))
-    if data.raw.recipe[recipe.name] == nil then
+    if drr[recipe.name] == nil then
         --if recipe doesnt exist create new one
         ingredients = recipe.ingredients
         results = recipe.results
@@ -100,7 +105,7 @@ function overrides.Recipe(recipe)
         category = recipe.category
 
         newingredients = true
-    elseif data.raw.recipe[recipe.name] ~= nil then
+    elseif drr[recipe.name] ~= nil then
         --if recipe exists load missing info from current recipe and add new info from function
 
         if recipe.ingredients ~= nil then
@@ -110,21 +115,21 @@ function overrides.Recipe(recipe)
             --log(serpent.block(i))
             --log("final ingredients")
             --log(serpent.block(ingredients))
-            ingredients = data.raw.recipe[name].ingredients
+            ingredients = drr[name].ingredients
         end
 
         if recipe.results ~= nil then
             results = recipe.results
         else
             --log(serpent.block(recipe.name))
-            --log(serpent.block(data.raw.recipe[name]))
-            if data.raw.recipe[name].result ~= nil then
-                --log(serpent.block(data.raw.recipe[name]))
+            --log(serpent.block(drr[name]))
+            if drr[name].result ~= nil then
+                --log(serpent.block(drr[name]))
                 --log(serpent.block(r))
-                table.insert(results, {{type = 'item', name = data.raw.recipe[name].result, amount = data.raw.recipe[name].result_count or 1}})
-            elseif data.raw.recipe[name].results ~= nil then
-                --log(serpent.block(data.raw.recipe[name]))
-                for _, r in pairs(data.raw.recipe[name].results) do
+                table.insert(results, {{type = 'item', name = drr[name].result, amount = drr[name].result_count or 1}})
+            elseif drr[name].results ~= nil then
+                --log(serpent.block(drr[name]))
+                for _, r in pairs(drr[name].results) do
                     --log(serpent.block(r))
                     table.insert(results, {r})
                 end
@@ -134,18 +139,18 @@ function overrides.Recipe(recipe)
         if recipe.icon ~= nil then
             icon = recipe.icon
         else
-            icon = data.raw.recipe[name].icon
+            icon = drr[name].icon
         end
 
         if recipe.category ~= nil then
             category = recipe.category
         else
-            category = data.raw.recipe[name].category
+            category = drr[name].category
         end
 
     --log(serpent.block(results))
     end
-    --log(serpent.block(data.raw.recipe[name]))
+    --log(serpent.block(drr[name]))
     --log(serpent.block(name))
     --log(serpent.block(ingredients))
     --log(serpent.block(results))
@@ -160,7 +165,7 @@ function overrides.Recipe(recipe)
                 if r.type ~= 'fluid' then
                     --if its not set to fluid its an item. check the items list for the items existance and set the type to item
 
-                    if data.raw.item[r.name] ~= nil then
+                    if dri[r.name] ~= nil then
                         result.type = 'item'
 
                         --insert the name and amount if the item is found
@@ -185,7 +190,7 @@ function overrides.Recipe(recipe)
                 elseif r.type == 'fluid' then
                     --its a fluid check if it exists and set the type to fluid
 
-                    if data.raw.fluid[r.name] ~= nil then
+                    if drf[r.name] ~= nil then
                         result.type = 'fluid'
 
                         --insert the name and amount if the item is found
@@ -216,7 +221,7 @@ function overrides.Recipe(recipe)
                     if ing.type ~= 'fluid' then
                         --if its not set to fluid its an item. check the items list for the items existance and set the type to item
 
-                        if data.raw.item[ing.name] ~= nil then
+                        if dri[ing.name] ~= nil then
                             ingredient.type = 'item'
 
                             --insert the name and amount if the item is found
@@ -242,7 +247,7 @@ function overrides.Recipe(recipe)
                     elseif ing.type == 'fluid' then
                         --its a fluid check if it exists and set the type to fluid
 
-                        if data.raw.fluid[ing.name] ~= nil then
+                        if drf[ing.name] ~= nil then
                             ingredient.type = 'fluid'
 
                             --insert the name and amount if the item is found
@@ -289,45 +294,45 @@ function overrides.Recipe(recipe)
         )
 	elseif recipe.enabled == true and (next(prep_ingredients) and next(prep_results)) then
 		--log(serpent.block(name))
-        data.raw.recipe[name].enabled = true
+        drr[name].enabled = true
     end
 
-    --log(serpent.block(data.raw.recipe[name]))
+    --log(serpent.block(drr[name]))
 end
 
 --Change recipes crafting category aka: the machine it should be in
 function overrides.Mod_Category(name, Category)
     --log(serpent.block(recipe))
-    --log(serpent.block(data.raw.recipe[name]))
+    --log(serpent.block(drr[name]))
     --local name = name
     local newcat = Category
 
-    if data.raw.recipe[name] ~= nil then
-        if Category ~= nil and data.raw['recipe-category'][Category] ~= nil then
-            data.raw.recipe[name].category = Category
+    if drr[name] ~= nil then
+        if Category ~= nil and dr['recipe-category'][Category] ~= nil then
+            drr[name].category = Category
         end
     end
 
-    --log(serpent.block(data.raw.recipe[name]))
+    --log(serpent.block(drr[name]))
 end
 
 --add or subtract from a recipe ingredients or results
 --is used to edit already existing recipe
 function overrides.Patch(recipe)
     --log(serpent.block(recipe))
-    --log(serpent.block(data.raw.recipe[name]))
+    --log(serpent.block(drr[name]))
     local name = recipe.name
     local newingredients = recipe.ingredients
     local newresults = recipe.results
 
     local currentingredients
 	local currentresults
-		if data.raw.recipe[name] ~= nil then
-			currentingredients = data.raw.recipe[name].ingredients or data.raw.recipe[name].normal.ingredients
-			currentresults = data.raw.recipe[name].results or data.raw.recipe[name].normal.results
+		if drr[name] ~= nil then
+			currentingredients = drr[name].ingredients or drr[name].normal.ingredients
+			currentresults = drr[name].results or drr[name].normal.results
 		end
 
-    if data.raw.recipe[name] ~= nil then
+    if drr[name] ~= nil then
         if newingredients ~= nil then
             for i1, ing1 in pairs(currentingredients) do
                 for i2, ing2 in pairs(newingredients) do
@@ -338,10 +343,10 @@ function overrides.Patch(recipe)
                             ing1.amount = ing1.amount - string.sub(ing2.amount,string.find(ing2.amount, '%d'))
                         end
 
-						if data.raw.recipe[name].normal ~= nil then
-							data.raw.recipe[name].normal.ingredients[i1].amount = ing1.amount
+						if drr[name].normal ~= nil then
+							drr[name].normal.ingredients[i1].amount = ing1.amount
 							else
-							data.raw.recipe[name].ingredients[i1].amount = ing1.amount
+							drr[name].ingredients[i1].amount = ing1.amount
 						end
                     end
                 end
@@ -358,10 +363,10 @@ function overrides.Patch(recipe)
                             res1.amount = res1.amount - string.sub(res2.amount,string.find(res2.amount, '%d'))
                         end
 
-						if data.raw.recipe[name].normal ~= nil then
-							data.raw.recipe[name].normal.results[r1].amount = res1.amount
+						if drr[name].normal ~= nil then
+							drr[name].normal.results[r1].amount = res1.amount
 						else
-							data.raw.recipe[name].results[r1].amount = res1.amount
+							drr[name].results[r1].amount = res1.amount
 						end
                     end
                 end
@@ -369,16 +374,16 @@ function overrides.Patch(recipe)
         end
     end
 
-    --log(serpent.block(data.raw.recipe[name]))
+    --log(serpent.block(drr[name]))
 end
 
 --replace item/fluid in recipes ingredients
 --doesnt yet include a way to change ingredient amount will update when needed
 function overrides.ingredient_replace(recipe, old, new, new_amount)
             --log(serpent.block(recipe))
-            if data.raw.recipe[recipe] ~= nil then
+            if drr[recipe] ~= nil then
                 if type(recipe) == 'string' then
-                    local R = data.raw.recipe[recipe]
+                    local R = drr[recipe]
                     recipe = R
                 end
                 local F
@@ -395,7 +400,7 @@ function overrides.ingredient_replace(recipe, old, new, new_amount)
                                 --log(recipe.name)
                                 --log(serpent.block(ing))
                                 local T = 'item'
-                                if data.raw.fluid[new] ~= nil then
+                                if drf[new] ~= nil then
                                     T = 'fluid'
                                     if ing.fluidbox_index ~= nil then
                                         F = table.deepcopy(ing.fluidbox_index)
@@ -403,8 +408,8 @@ function overrides.ingredient_replace(recipe, old, new, new_amount)
                                     end
                                 end
                                 local A = new_amount or table.deepcopy(ing.amount)
-                                data.raw.recipe[recipe.name].ingredients[i] = {type = T, name = new, amount = A, fluidbox_index = F}
-                                --log(serpent.block(data.raw.recipe[recipe.name]))
+                                drr[recipe.name].ingredients[i] = {type = T, name = new, amount = A, fluidbox_index = F}
+                                --log(serpent.block(drr[recipe.name]))
                             --log(recipe.name)
                             --log(serpent.block(recipe.ingredients))
                             --log("hit count")
@@ -421,9 +426,9 @@ function overrides.ingredient_replace(recipe, old, new, new_amount)
                                 local A = new_amount or table.deepcopy(ing[2])
                                 --log(new)
                                 --log(A)
-                                data.raw.recipe[recipe.name].ingredients[i] = {new, A}
+                                drr[recipe.name].ingredients[i] = {new, A}
                             --log(recipe.name)
-                            --log(serpent.block(data.raw.recipe[recipe.name].ingredients))
+                            --log(serpent.block(drr[recipe.name].ingredients))
                             --log("hit count")
                             end
                         end
@@ -455,7 +460,7 @@ function overrides.ingredient_replace(recipe, old, new, new_amount)
                                     --log(recipe.name)
                                     --log(serpent.block(ing))
                                     local T = 'item'
-                                    if data.raw.fluid[new] ~= nil then
+                                    if drf[new] ~= nil then
                                         T = 'fluid'
                                         if ing.fluidbox_index ~= nil then
                                             F = table.deepcopy(ing.fluidbox_index)
@@ -463,18 +468,18 @@ function overrides.ingredient_replace(recipe, old, new, new_amount)
                                         end
                                     end
                                     local A = new_amount or table.deepcopy(ing.amount)
-                                    data.raw.recipe[recipe.name].normal.ingredients[i] = {type = T, name = new, amount = A, fluidbox_index = F}
+                                    drr[recipe.name].normal.ingredients[i] = {type = T, name = new, amount = A, fluidbox_index = F}
                                 --log(recipe.name)
                                 --log(serpent.block(recipe.ingredients))
                                 --log("hit count")
-                                --log(serpent.block(data.raw.recipe[recipe.name]))
+                                --log(serpent.block(drr[recipe.name]))
                                 end
                             else
                                 --end
                                 --for j,v in pairs(ing) do
                                 if ing[1] == old then
                                     local A = new_amount or table.deepcopy(ing[2])
-                                    data.raw.recipe[recipe.name].normal.ingredients[i] = {new, A}
+                                    drr[recipe.name].normal.ingredients[i] = {new, A}
                                 end
                             end
                         end
@@ -488,7 +493,7 @@ function overrides.ingredient_replace(recipe, old, new, new_amount)
                                     --log(recipe.name)
                                     --log(serpent.block(ing))
                                     local T = 'item'
-                                    if data.raw.fluid[new] ~= nil then
+                                    if drf[new] ~= nil then
                                         T = 'fluid'
                                         if ing.fluidbox_index ~= nil then
                                             F = table.deepcopy(ing.fluidbox_index)
@@ -496,7 +501,7 @@ function overrides.ingredient_replace(recipe, old, new, new_amount)
                                         end
                                     end
                                     local A = new_amount or table.deepcopy(ing.amount)
-                                    data.raw.recipe[recipe.name].expensive.ingredients[i] = {type = T, name = new, amount = A, fluidbox_index = F}
+                                    drr[recipe.name].expensive.ingredients[i] = {type = T, name = new, amount = A, fluidbox_index = F}
                                 --log(recipe.name)
                                 --log(serpent.block(recipe.ingredients))
                                 --log("hit count")
@@ -509,7 +514,7 @@ function overrides.ingredient_replace(recipe, old, new, new_amount)
                                 --log(serpent.block(ing))
                                 if ing[1] == old then
                                     local A = new_amount or table.deepcopy(ing[2])
-                                    data.raw.recipe[recipe.name].expensive.ingredients[i] = {new, A}
+                                    drr[recipe.name].expensive.ingredients[i] = {new, A}
                                 end
                             end
                         end
@@ -524,7 +529,7 @@ function overrides.results_replacer(recipe, old, new, new_amount, newtype)
     --log(recipe)
             --log(recipe)
             if type(recipe) == 'string' then
-                local R = data.raw.recipe[recipe]
+                local R = drr[recipe]
                 recipe = R
             end
             --log(serpent.block(R))
@@ -534,9 +539,9 @@ function overrides.results_replacer(recipe, old, new, new_amount, newtype)
                 --log(serpent.block(recipe))
                 if recipe.result then
                     if recipe.result == old then
-                        data.raw.recipe[recipe.name].result = new
+                        drr[recipe.name].result = new
                         if recipe.result_count ~= nil and new_amount ~= nil then
-                            data.raw.recipe[recipe.name].result_count = new_amount
+                            drr[recipe.name].result_count = new_amount
                         end
                     end
                 end
@@ -550,14 +555,14 @@ function overrides.results_replacer(recipe, old, new, new_amount, newtype)
                         --log(new)
                         if result.name == old then
                             --log('hit')
-                            data.raw.recipe[recipe.name].results[r].name = new
+                            drr[recipe.name].results[r].name = new
                             if new_amount ~= nil then
                                 --log('hit')
-                                data.raw.recipe[recipe.name].results[r].amount = new_amount
+                                drr[recipe.name].results[r].amount = new_amount
                             end
                             if newtype ~= nil then
                                 --log('hit')
-                                data.raw.recipe[recipe.name].results[r].type = newtype
+                                drr[recipe.name].results[r].type = newtype
                             end
                         end
                     end
@@ -566,63 +571,63 @@ function overrides.results_replacer(recipe, old, new, new_amount, newtype)
                     --log("should replace main_product")
                     if recipe.main_product == old then
                         --log("getting here for iron plate 1?")
-                        data.raw.recipe[recipe.name].main_product = new
+                        drr[recipe.name].main_product = new
                     end
                 end
                 if recipe.normal or recipe.expensive then
                     if recipe.normal then
                         if recipe.normal.result then
                             if recipe.normal.result == old then
-                                data.raw.recipe[recipe.name].normal.result = new
+                                drr[recipe.name].normal.result = new
                                 if recipe.result_count ~= nil and new_amount ~= nil then
-                                    data.raw.recipe[recipe.name].normal.result_count = new_amount
+                                    drr[recipe.name].normal.result_count = new_amount
                                 end
                             end
                         end
                         if recipe.normal.results then
                             for r, result in pairs(recipe.normal.results) do
                                 if result.name == old then
-                                    data.raw.recipe[recipe.name].normal.results[r].name = new
+                                    drr[recipe.name].normal.results[r].name = new
                                     if new_amount ~= nil then
-                                        data.raw.recipe[recipe.name].normal.results[r].amount = new_amount
+                                        drr[recipe.name].normal.results[r].amount = new_amount
                                     end
-                                    if data.raw.fluid[new] == nil and data.raw.recipe[recipe.name].normal.results[r].type ~= 'item' then
-                                        data.raw.recipe[recipe.name].normal.results[r].type = 'item'
+                                    if drf[new] == nil and drr[recipe.name].normal.results[r].type ~= 'item' then
+                                        drr[recipe.name].normal.results[r].type = 'item'
                                     end
                                 end
                             end
                         end
                         if recipe.normal.main_product then
                             if recipe.normal.main_product == old then
-                                data.raw.recipe[recipe.name].normal.main_product = new
+                                drr[recipe.name].normal.main_product = new
                             end
                         end
                     end
                     if recipe.expensive then
                         if recipe.expensive.result then
                             if recipe.expensive.result == old then
-                                data.raw.recipe[recipe.name].expensive.result = new
+                                drr[recipe.name].expensive.result = new
                                 if recipe.result_count ~= nil and new_amount ~= nil then
-                                    data.raw.recipe[recipe.name].result_count = new_amount
+                                    drr[recipe.name].result_count = new_amount
                                 end
                             end
                         end
                         if recipe.expensive.results then
                             for r, result in pairs(recipe.expensive.results) do
                                 if result.name == old then
-                                    data.raw.recipe[recipe.name].expensive.results[r].name = new
+                                    drr[recipe.name].expensive.results[r].name = new
                                     if new_amount ~= nil then
-                                        data.raw.recipe[recipe.name].expensive.results[r].amount = new_amount
+                                        drr[recipe.name].expensive.results[r].amount = new_amount
                                     end
-                                    if data.raw.fluid[new] == nil and data.raw.recipe[recipe.name].expensive.results[r].type ~= 'item' then
-                                        data.raw.recipe[recipe.name].expensive.results[r].type = 'item'
+                                    if drf[new] == nil and drr[recipe.name].expensive.results[r].type ~= 'item' then
+                                        drr[recipe.name].expensive.results[r].type = 'item'
                                     end
                                 end
                             end
                         end
                         if recipe.expensive.main_product then
                             if recipe.expensive.main_product == old then
-                                data.raw.recipe[recipe.name].expensive.main_product = new
+                                drr[recipe.name].expensive.main_product = new
                             end
                         end
                     end
@@ -630,6 +635,40 @@ function overrides.results_replacer(recipe, old, new, new_amount, newtype)
     end
 end
 
+--replace an item/fluid in every recipes ingredients/results
+--best used to merge items that are duplicated in mods that should be the same
+--[[
+function overrides.global_item_replacer(old, new, blackrecipe)
+    for prototype in pairs(defines.prototypes.item) do
+        if drf[old] ~= nil or dr[prototype][old] ~= nil then
+            if drf[new] ~= nil or dr[prototype][new] ~= nil then
+                local recipes = table.deepcopy(drr)
+                if type(blackrecipe) ~= 'table' and blackrecipe ~= nil then
+                    blackrecipe = {blackrecipe}
+                end
+                local brecipeset = {}
+                if blackrecipe ~= nil then
+                    for _, brecipe in pairs(blackrecipe) do
+                        brecipeset[brecipe] = true
+                    end
+                end
+                --log(serpent.block(brecipeset))
+                for recipe in pairs(recipes) do
+                    --for b, brecipe in pairs(blackrecipe) do
+                    if not brecipeset[recipe] then
+                        --log(serpent.block(recipe))
+                        --log(serpent.block(recipe.name))
+                        --log(serpent.block(brecipeset))
+                        overrides.ingredient_replace(recipe, old, new)
+                        overrides.results_replacer(recipe, old, new)
+                    end
+                    --end
+                end
+            end
+        end
+    end
+end
+]]--
 --used to remove a whole category of recipes
 --use case wipe all recipes from a building
 function overrides.recipe_category_remove(category, blacklist)
@@ -637,11 +676,11 @@ function overrides.recipe_category_remove(category, blacklist)
 
     local hiddenrecipes = {}
 
-    for r, recipe in pairs(data.raw.recipe) do
+    for r, recipe in pairs(drr) do
         if recipe.category == category then
             --log(recipe.category)
             --log(category)
-            data.raw.recipe[recipe.name].hidden = true
+            drr[recipe.name].hidden = true
 
             table.insert(hiddenrecipes, recipe.name)
         end
@@ -667,7 +706,7 @@ function overrides.remove_recipe_unlock(recipe_list)
 
     --log(serpent.block(recipelist))
 
-    for t, tech in pairs(data.raw.technology) do
+    for t, tech in pairs(drt) do
         if tech.effects ~= nil then
             for u, unlock in pairs(tech.effects) do
                 --log(serpent.block(unlock))
@@ -675,30 +714,30 @@ function overrides.remove_recipe_unlock(recipe_list)
                 --log(serpent.block(tech))
 
                 if recipelist[unlock.recipe] ~= nil then
-                    --log(serpent.block(data.raw.technology[tech.name].effects[u]))
-                    data.raw.technology[tech.name].effects[u] = nil
+                    --log(serpent.block(drt[tech.name].effects[u]))
+                    drt[tech.name].effects[u] = nil
 
-                --log(serpent.block(data.raw.technology[tech.name].effects[u]))
-                --log(serpent.block(data.raw.technology[tech.name].effects))
+                --log(serpent.block(drt[tech.name].effects[u]))
+                --log(serpent.block(drt[tech.name].effects))
                 end
             end
         end
-        --log(serpent.block(data.raw.technology[tech.name]))
+        --log(serpent.block(drt[tech.name]))
         --clean up tech effects table to not be full of nil values to avoid errors
 
         local cleanedtable = {}
 
-        if data.raw.technology[tech.name].effects ~= nil then
-            for _, rec in pairs(data.raw.technology[tech.name].effects) do
+        if drt[tech.name].effects ~= nil then
+            for _, rec in pairs(drt[tech.name].effects) do
                 if rec ~= nil then
                     table.insert(cleanedtable, rec)
                 end
             end
         end
 
-        data.raw.technology[tech.name].effects = cleanedtable
+        drt[tech.name].effects = cleanedtable
 
-        --log(serpent.block(data.raw.technology[tech.name]))
+        --log(serpent.block(drt[tech.name]))
     end
 end
 
@@ -711,7 +750,7 @@ function overrides.HAB(blist)
     end
     if blist ~= nil then
         for _, bl in pairs(blist) do
-            if data.raw.recipe[bl] ~= nil then
+            if drr[bl] ~= nil then
                 hab[bl] = true
             end
         end
@@ -721,7 +760,7 @@ end
 --add 50 hot-air ingredient, output +2
 function overrides.hotairrecipes()
     --gather recipes for the advanced-foundry
-    local recipes = table.deepcopy(data.raw.recipe)
+    local recipes = table.deepcopy(drr)
     local afrecipes = {}
     local afrecipesnames = {}
     local afrcount = 0
@@ -747,13 +786,13 @@ function overrides.hotairrecipes()
                         local ing = recipe.ingredients
                         recipe.ingredients = {}
                         table.insert(recipe.ingredients, {type = 'item', name = ing[1][1], amount = ing[1][2]})
-                        if data.raw.item['solid-hot-air'] ~= nil then
+                        if dri['solid-hot-air'] ~= nil then
                             table.insert(recipe.ingredients, {type = 'item', name = 'solid-hot-air', amount = 50})
                         else
                             table.insert(recipe.ingredients, {type = 'fluid', name = 'hot-air', amount = 50})
                         end
                     elseif recipe.ingredients[1].name then
-                        if data.raw.item['solid-hot-air'] ~= nil then
+                        if dri['solid-hot-air'] ~= nil then
                             table.insert(recipe.ingredients, {type = 'item', name = 'solid-hot-air', amount = 50})
                         else
                             table.insert(recipe.ingredients, {type = 'fluid', name = 'hot-air', amount = 50})
@@ -764,13 +803,13 @@ function overrides.hotairrecipes()
                         local ing = recipe.ingredients
                         recipe.ingredients = {}
                         table.insert(recipe.ingredients, {type = 'item', name = ing[2][1], amount = ing[2][2]})
-                        if data.raw.item['solid-hot-air'] ~= nil then
+                        if dri['solid-hot-air'] ~= nil then
                             table.insert(recipe.ingredients, {type = 'item', name = 'solid-hot-air', amount = 50})
                         else
                             table.insert(recipe.ingredients, {type = 'fluid', name = 'hot-air', amount = 50})
                         end
                     elseif recipe.ingredients[2].name then
-                        if data.raw.item['solid-hot-air'] ~= nil then
+                        if dri['solid-hot-air'] ~= nil then
                             table.insert(recipe.ingredients, {type = 'item', name = 'solid-hot-air', amount = 50})
                         else
                             table.insert(recipe.ingredients, {type = 'fluid', name = 'hot-air', amount = 50})
@@ -806,13 +845,13 @@ function overrides.hotairrecipes()
                             local ing = recipe.normal.ingredients
                             recipe.normal.ingredients = {}
                             table.insert(recipe.normal.ingredients, {type = 'item', name = ing[1][1], amount = ing[1][2]})
-                            if data.raw.item['solid-hot-air'] ~= nil then
+                            if dri['solid-hot-air'] ~= nil then
                                 table.insert(recipe.normal.ingredients, {type = 'item', name = 'solid-hot-air', amount = 50})
                             else
                                 table.insert(recipe.normal.ingredients, {type = 'fluid', name = 'hot-air', amount = 50})
                             end
                         else
-                            if data.raw.item['solid-hot-air'] ~= nil then
+                            if dri['solid-hot-air'] ~= nil then
                                 table.insert(recipe.normal.ingredients, {type = 'item', name = 'solid-hot-air', amount = 50})
                             else
                                 table.insert(recipe.normal.ingredients, {type = 'fluid', name = 'hot-air', amount = 50})
@@ -837,13 +876,13 @@ function overrides.hotairrecipes()
                             local ing = recipe.expensive.ingredients
                             recipe.expensive.ingredients = {}
                             table.insert(recipe.expensive.ingredients, {type = 'item', name = ing[1][1], amount = ing[1][2]})
-                            if data.raw.item['solid-hot-air'] ~= nil then
+                            if dri['solid-hot-air'] ~= nil then
                                 table.insert(recipe.expensive.ingredients, {type = 'item', name = 'solid-hot-air', amount = 50})
                             else
                                 table.insert(recipe.expensive.ingredients, {type = 'fluid', name = 'hot-air', amount = 50})
                             end
                         else
-                            if data.raw.item['solid-hot-air'] ~= nil then
+                            if dri['solid-hot-air'] ~= nil then
                                 table.insert(recipe.expensive.ingredients, {type = 'item', name = 'solid-hot-air', amount = 50})
                             else
                                 table.insert(recipe.expensive.ingredients, {type = 'fluid', name = 'hot-air', amount = 50})
@@ -867,7 +906,7 @@ function overrides.hotairrecipes()
             end
             --find tech unlock of og recipe
             local unlock
-            for _, t in pairs(data.raw.technology) do
+            for _, t in pairs(drt) do
                 --log(serpent.block(t))
                 if t.effects ~= nil then
                     for _, u in pairs(t.effects) do
@@ -898,15 +937,15 @@ function overrides.hotairrecipes()
                 altrec = altrec + 1
                 if recipe.enabled == false then
                     if unlock ~= nil then
-                        table.insert(data.raw.technology[unlock].effects, {type = 'unlock-recipe', recipe = hname})
+                        table.insert(drt[unlock].effects, {type = 'unlock-recipe', recipe = hname})
                     end
                 elseif recipe.enabled == true then
-                    data.raw.recipe[hname].enabled = true
+                    drr[hname].enabled = true
                 elseif recipe.enabled == nil then
                     --log(recipe.name)
                     --log(serpent.block(recipe))
-                    data.raw.recipe[hname].enabled = true
-                --log(serpent.block(data.raw.recipe[hname]))
+                    drr[hname].enabled = true
+                --log(serpent.block(drr[hname]))
                 end
             end
             if recipe.normal or recipe.expensive then
@@ -937,25 +976,25 @@ function overrides.hotairrecipes()
                 altrec = altrec + 1
                 if recipe.normal.enabled == false or recipe.expensive.enabled == false then
                     if unlock ~= nil then
-                        table.insert(data.raw.technology[unlock].effects, {type = 'unlock-recipe', recipe = hname})
+                        table.insert(drt[unlock].effects, {type = 'unlock-recipe', recipe = hname})
                     end
                 elseif recipe.normal.enabled == true or recipe.expensive.enabled == true then
                     if recipe.normal.enabled == true then
-                        data.raw.recipe[hname].normal.enabled = true
+                        drr[hname].normal.enabled = true
                     end
                     if recipe.expensive.enabled == true then
-                        data.raw.recipe[hname].expensive.enabled = true
+                        drr[hname].expensive.enabled = true
                     end
                 end
             end
-        --log(serpent.block(data.raw.recipe[hname]))
+        --log(serpent.block(drr[hname]))
         end
     end
     --log(serpent.block(afrecipesnames))
     --log(afrcount)
     --log(altrec)
     --[[
-for _, r in pairs(data.raw.recipe) do
+for _, r in pairs(drr) do
 	if r.name == "iron-plate" then
 	log(serpent.block(r))
 	end
@@ -968,16 +1007,16 @@ end
 end
 
 function overrides.enable_recipe(recipe)
-    if data.raw.recipe[recipe] ~= nil and data.raw.recipe[recipe].normal == nil and data.raw.recipe[recipe].expensive == nil then
-        data.raw.recipe[recipe].enabled = true
+    if drr[recipe] ~= nil and drr[recipe].normal == nil and drr[recipe].expensive == nil then
+        drr[recipe].enabled = true
     end
-    if data.raw.recipe[recipe].normal ~= nil then
-        data.raw.recipe[recipe].normal.enabled = true
+    if drr[recipe].normal ~= nil then
+        drr[recipe].normal.enabled = true
     end
-    if data.raw.recipe[recipe].expensive ~= nil then
-        data.raw.recipe[recipe].expensive.enabled = true
+    if drr[recipe].expensive ~= nil then
+        drr[recipe].expensive.enabled = true
     end
-    for t, tech in piars(data.raw.technology) do
+    for t, tech in piars(drt) do
         if tech.effects~= nil then
             for e,effect in pairs(tech.effects) do
                 if effect.type == 'unlock-recipe' and effect.recipe == recipe then
@@ -993,17 +1032,17 @@ end
 
 --adds recipe to tech for unlock if tech and recipe exists
 function overrides.tech_add_recipe(tech, recipe)
-    if data.raw.technology[tech] ~= nil then
-        if data.raw.recipe[recipe] ~= nil then
-            table.insert(data.raw.technology[tech].effects, {type = 'unlock-recipe', recipe = recipe})
+    if drt[tech] ~= nil then
+        if drr[recipe] ~= nil then
+            table.insert(drt[tech].effects, {type = 'unlock-recipe', recipe = recipe})
         end
     end
 end
 
 --removes recipe from tech if tech exists and includes recipe in effects
 function overrides.tech_remove_recipe(tech, recipe)
-    if data.raw.technology[tech] ~= nil and data.raw.recipe[recipe] ~= nil then
-        local effects = data.raw.technology[tech].effects
+    if drt[tech] ~= nil and drr[recipe] ~= nil then
+        local effects = drt[tech].effects
         local neweffects = {}
         for _, e in pairs(effects) do
             if e.recipe ~= recipe then
@@ -1011,19 +1050,19 @@ function overrides.tech_remove_recipe(tech, recipe)
             end
         end
         if next(neweffects) ~= nil then
-            data.raw.technology[tech].effects = neweffects
+            drt[tech].effects = neweffects
         end
     end
 end
 
 function overrides.tech_add_prerequisites(tech, prereq)
-    if data.raw.technology[tech] ~= nil then
-        if data.raw.technology[prereq] ~= nil then
+    if drt[tech] ~= nil then
+        if drt[prereq] ~= nil then
             if type(techs) ~= "table" then
-                table.insert(data.raw.technology[tech].prerequisites, prereq)
+                table.insert(drt[tech].prerequisites, prereq)
             else
                 for _, v in pairs(tech) do
-                    table.insert(data.raw.technology[tech].prerequisites, v)
+                    table.insert(drt[tech].prerequisites, v)
                 end
             end
         end
@@ -1031,19 +1070,19 @@ function overrides.tech_add_prerequisites(tech, prereq)
 end
 
 function overrides.tech_remove(tech, prereq_patch)
-    if data.raw.technology[tech] ~= nil then
-        data.raw.technology[tech].enabled = false
-        data.raw.technology[tech].hidden = true
+    if drt[tech] ~= nil then
+        drt[tech].enabled = false
+        drt[tech].hidden = true
         if prereq_patch ~= nil and prereq_patch == true then
-            for _, t in pairs(data.raw.technology) do
+            for _, t in pairs(drt) do
 			--log(serpent.block(t))
                 if t.prerequisites ~= nil then
                     for p, prereq in pairs(t.prerequisites) do
                         if prereq == tech then
 						--log(serpent.block(p))
 						--log(serpent.block(t))
-						--log(serpent.block(data.raw.technology[t].prerequisites))
-                            table.remove(data.raw.technology[t.name].prerequisites, p)
+						--log(serpent.block(drt[t].prerequisites))
+                            table.remove(drt[t.name].prerequisites, p)
                         end
                     end
                 end
@@ -1055,7 +1094,7 @@ end
 local techlist = {}
 
 function overrides.findtechswithpack(scipack)
-	for t,tech in pairs(data.raw.technology) do
+	for t,tech in pairs(drt) do
 	--log(tech.name)
 		for p, pack in pairs(tech.unit.ingredients) do
 		--log(serpent.block(pack))
@@ -1079,12 +1118,12 @@ end
 function overrides.addscipack(scipack)
 local scilist = {}
 	for tn,tname in pairs(techlist) do
-		for t, tech in pairs(data.raw.technology) do
+		for t, tech in pairs(drt) do
 			for s, sci in pairs(tech.unit.ingredients) do
 				scilist[sci[1]] = true
 			end
 			if not scilist[scipack] then
-				table.insert(data.raw.technology[tech.name].unit.ingredients,{"science-pack-0",1})
+				table.insert(drt[tech.name].unit.ingredients,{"science-pack-0",1})
 			end
 		end
 	end
@@ -1097,22 +1136,22 @@ function overrides.removescipack(techs,scipack)
 		techs = {techs}
 	end
 	for t,tech in pairs(techs) do
-		if data.raw.technology[tech] ~= nil then
-			for s, shortpack in pairs(data.raw.technology[tech].unit.ingredients) do
+		if drt[tech] ~= nil then
+			for s, shortpack in pairs(drt[tech].unit.ingredients) do
 				if shortpack[1] == scipack then
-                    data.raw.technology[tech].unit.ingredients[s] = nil
+                    drt[tech].unit.ingredients[s] = nil
                 elseif shortpack.name == scipack then
-                    data.raw.technology[tech].unit.ingredients[s] = nil
+                    drt[tech].unit.ingredients[s] = nil
                 else
                     --[[for longpack in pairs(shortpack) do
                         log(serpent.block(longpack))
                         if longpack[2] == scipack then
-                            data.raw.technology[tech].unit.ingredients[k] = nil
+                            drt[tech].unit.ingredients[k] = nil
                         end 
                     ]]--end
                 end
-			  end
-     end
+			end
+        end
 	end
 end
 
@@ -1134,17 +1173,17 @@ function overrides.replace(tbl, old, new)
 end
 
 function overrides.global_prereq_replacer(old, new)
-    if data.raw.technology[old] ~= nil and data.raw.technology[new] ~= nil then
-        for _, tech in pairs(data.raw.technology) do
+    if drt[old] ~= nil and drt[new] ~= nil then
+        for _, tech in pairs(drt) do
             if tech.prerequisites then
                 for i, prereq in pairs(tech.prerequisites) do
                     if prereq == old then
-                        for k, v in pairs(data.raw.technology[prereq].prerequisites) do
+                        for k, v in pairs(drt[prereq].prerequisites) do
                             if v ~= new then
                                 tech.prerequisites[i] = new
                             end
                         end
-                        for k, v in pairs(data.raw.technology[prereq].prerequisites) do
+                        for k, v in pairs(drt[prereq].prerequisites) do
                             if v == old then
                                 tbl[k] = nil
                             end
