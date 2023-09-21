@@ -35,6 +35,12 @@ if mods['angelspetrochem'] then
     end
 end
 
+if mods['angelsbioprocessing'] then
+    if mods['pyalternativeenergy'] then
+        TECHNOLOGY('silicon-mk01'):add_prereq('bio-processing-crystal-splinter-1')
+    end
+end
+
 if mods['angelsaddons-storage'] then
     if mods['pyalternativeenergy'] then
         TECHNOLOGY('pressure-tanks'):add_prereq('intermetallics-mk02'):add_pack("py-science-pack-2")

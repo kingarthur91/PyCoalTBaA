@@ -53,4 +53,10 @@ if mods['angelsindustries'] then
     OV.remove_prereq('angels-rocket-fusion-reactor', 'angels-fusion-power-1')
 
     RECIPE('angels-rocket-fusion-reactor'):replace_ingredient('angels-dueterium-fuel-cell', 'uranium-fuel-cell')
+    if mods['pyalienlife'] then
+        TECHNOLOGY('angels-components-construction-2'):add_pack('py-science-pack-1')
+        TECHNOLOGY('angels-components-batteries-1'):add_pack('py-science-pack-1')
+    end
+
+    RECIPE('py-burner'):remove_ingredient('construction-frame-4')
 end
