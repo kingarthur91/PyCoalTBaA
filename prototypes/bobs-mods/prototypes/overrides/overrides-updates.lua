@@ -5,7 +5,9 @@ if mods['bobelectronics'] then
         data.raw.recipe['silicon-wafer'].enabled = false
         data.raw.recipe['bob-rubber'].enabled = false
         data.raw.recipe['bob-rubber'].hidden = true
+        if not mods['angelsindustries'] then goto skipangels end
         if not settings.startup["angels-enable-components"].value then
+            ::skipangels::
 
             data.raw.recipe['wooden-board'].enabled = false
             data.raw.recipe['basic-circuit-board'].enabled = false
