@@ -22,3 +22,11 @@ data:extend({
     default_value = true,
   },
  })
+data:extend({
+  {
+    type = "string-setting",
+    name = "log-technology",
+    setting_type = "startup",
+    default_value = " ",
+  },
+})

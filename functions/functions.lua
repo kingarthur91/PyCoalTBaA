@@ -5,10 +5,6 @@ local drf = dr.fluid
 local drr = dr.recipe
 local drt = dr.technology
 
-local noise = require("noise")
-local tne = noise.to_noise_expression
-local resource_autoplace = require("resource-autoplace")
-
 --add item/fluid to recipe ingredients
 -- ingredient contains name, amount, and type if its a fluid
 function overrides.add_ingredient(recipe, ingredient)
@@ -1129,6 +1125,7 @@ local scilist = {}
 	end
 	techlist = {}
 end
+
 
 --use Angel's function, OV.remove_science_pack
 function overrides.removescipack(techs,scipack)
