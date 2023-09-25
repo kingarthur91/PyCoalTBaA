@@ -14,6 +14,10 @@ require('prototypes/madclowns-mods/data-fixes')
 
 require('functions/global-item-replacer')
 
+if data.raw.technology[settings.startup["log-technology"].value] ~= nil then
+    log(serpent.block(data.raw.technology[settings.startup["log-technology"].value]))
+end
+
 if debugmode.techcheck then
     --This code is by fgardt
     for _, tech in pairs(data.raw.technology) do

@@ -16,6 +16,6 @@
 	"?pypetroleumhandling >= 1.0.0",
 	"?pyrawores >= 1.0.3",
 	"?pyalienlife >= 1.4.4",
-	"?bobsmodules4py >= 1.1.3"
+	"bobsmodules4py >= 1.1.3"
 	]
 }

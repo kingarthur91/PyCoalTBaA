@@ -5,6 +5,7 @@ if mods['bobelectronics'] then
         data.raw.recipe['silicon-wafer'].enabled = false
         data.raw.recipe['bob-rubber'].enabled = false
         data.raw.recipe['bob-rubber'].hidden = true
+        
         if mods["angelsindustries"] and not settings.startup["angels-enable-components"].value then
 
             data.raw.recipe['wooden-board'].enabled = false

@@ -1,14 +1,14 @@
 ---------------------------------------------------------------------------------------------------
 Version 1.2.1
-Date: 2023-5-2
+Date: 2023-9-25
   Changes:
-    - Fixed crash woth pure Bob's
+    - Added a setting to log technologies
 ---------------------------------------------------------------------------------------------------
 Version 1.2.0
 Date: 2023-5-2
   Changes:
-    - Made Bob's Moules4Py a required dependency
-    - Did a lot of balanceing
+    - Made Bob'sMoules4Py a required dependency
+    - Tech and recipe changes
     - Fixed multiple crashes with Angel mods
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.1
