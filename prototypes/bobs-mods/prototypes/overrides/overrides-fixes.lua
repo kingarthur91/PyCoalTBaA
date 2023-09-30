@@ -13,6 +13,9 @@ if mods['bobplates'] then
 
     data.raw['assembling-machine']['assembling-machine-3'].module_specification.module_slots = 0
     if mods['pyrawores'] then
+        if not mods['angelspetrochem'] then
+            fun.global_prereq_replacer('electrolysis-1', 'electrolysis')
+        end
         data.raw.technology['electrolysis-1'] = nil
 
         RECIPE('ball-mill-mk01'):add_ingredient({type = "item", name = "steel-bearing-ball", amount = 1000})

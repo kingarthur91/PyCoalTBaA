@@ -2,18 +2,6 @@ if mods['bobrevamp'] then
 	if mods['pyalienlife'] then
 		RECIPE('bio-oil-4'):replace_result('petroleum-gas', 'sour-gas')
 	end
-	if data.raw.technology['chemical-plant-4'] ~= nil then
-		data.raw.technology['chemical-plant-4'] = nil
-	end
-	if data.raw.technology['chemical-plant-3'] ~= nil then
-		data.raw.technology['chemical-plant-3'] = nil
-	end
-	if data.raw.technology['chemical-plant-2'] ~= nil then
-		data.raw.technology['chemical-plant-2'] = nil
-	end
-	if data.raw.technology['chemical-plant'] ~= nil then
-		data.raw.technology['chemical-plant'] = nil
-	end
 end
 
 if mods['bobelectronics'] then

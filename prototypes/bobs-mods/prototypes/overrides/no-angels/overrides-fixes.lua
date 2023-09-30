@@ -2,6 +2,24 @@ if mods['bobassembly'] then
 	data.raw['assembling-machine']['chemical-plant'].next_upgrade = nil
 end
 
+if mods['bobrevamp'] then
+	if mods['bobplates'] then
+		fun.global_prereq_replacer('chemical-plant', 'machines-mk01')
+	end
+	if data.raw.technology['chemical-plant-4'] ~= nil then
+		data.raw.technology['chemical-plant-4'] = nil
+	end
+	if data.raw.technology['chemical-plant-3'] ~= nil then
+		data.raw.technology['chemical-plant-3'] = nil
+	end
+	if data.raw.technology['chemical-plant-2'] ~= nil then
+		data.raw.technology['chemical-plant-2'] = nil
+	end
+	if data.raw.technology['chemical-plant'] ~= nil then
+		data.raw.technology['chemical-plant'] = nil
+	end
+end
+
 if mods['bobequipment'] then
 	if mods['pyalternativeenergy'] then
 		TECHNOLOGY('exoskeleton-equipment'):remove_prereq('machine-components-mk04'):remove_prereq('power-armor')

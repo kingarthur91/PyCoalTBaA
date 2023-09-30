@@ -1,4 +1,3 @@
-local fun = fun
 
 --angel mods
 require('prototypes/angels-mods/Data-Final-Fixes')
