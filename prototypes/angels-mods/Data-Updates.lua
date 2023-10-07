@@ -9,7 +9,6 @@ if mods['angelsindustries'] then
 	end
 end
 
-
 if mods['angelsrefining'] and mods['angelsinfiniteores'] then
 	require('prototypes/angels-mods/prototypes/ores/inf-ores')
 	angelsmods.functions.make_resource()

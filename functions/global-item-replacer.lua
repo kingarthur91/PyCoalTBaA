@@ -173,6 +173,7 @@ global_item_replacer('pressured-air','gas-compressed-air')
 --global_item_replacer('pcb1','circuit-red')
 global_item_replacer('cellulose','cellulose-fiber')
 global_item_replacer('quartz-crucible','angels-quartz-crucible')
+global_item_replacer('tinned-copper-cable','tinned-cable')
 --aluminium
 global_item_replacer('ore-aluminium','bauxite-ore')
 global_item_replacer('aluminium-plate','angels-plate-aluminium')

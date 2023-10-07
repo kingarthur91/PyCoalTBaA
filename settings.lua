@@ -1,6 +1,14 @@
 data:extend({
   {
     type = "bool-setting",
+    name = "prod-for-sinners",
+    setting_type = "startup",
+    default_value = false,
+  },
+ })
+data:extend({
+  {
+    type = "bool-setting",
     name = "burner-start",
     setting_type = "startup",
     default_value = true,

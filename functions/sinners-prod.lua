@@ -1,6 +1,9 @@
 
-if settings.startup['prod_for_sinners'].value then
 --mk03
+data.raw.module['tree-mk03'].effect.productivity = {bonus = 0.01}
+data.raw.module['seaweed-mk03'].effect.productivity = {bonus = 0.01}
+data.raw.module['moss-mk03'].effect.productivity = {bonus = 0.01}
+data.raw.module['sap-tree-mk03'].effect.productivity = {bonus = 0.01}
 data.raw.module['ulric-mk03'].effect.productivity = {bonus = 0.01}
 data.raw.module['sea-sponge-mk03'].effect.productivity = {bonus = 0.01}
 data.raw.module['ralesias-mk03'].effect.productivity = {bonus = 0.01}
@@ -32,8 +35,17 @@ data.raw.module['korlex-mk03'].effect.productivity = {bonus = 0.01}
 data.raw.module['fawogae-mk03'].effect.productivity = {bonus = 0.01}
 data.raw.module['moondrop-mk03'].effect.productivity = {bonus = 0.01}
 data.raw.module['cottongut-mk03'].effect.productivity = {bonus = 0.01}
+data.raw.module['guar-mk03'].effect.productivity = {bonus = 0.01}
+data.raw.module['arqad-mk03'].effect.productivity = {bonus = 0.01}
+data.raw.module['simik-mk03'].effect.productivity = {bonus = 0.01}
+data.raw.module['zungror-mk03'].effect.productivity = {bonus = 0.01}
+data.raw.module['numal-mk03'].effect.productivity = {bonus = 0.01}
 
 --mk04
+data.raw.module['tree-mk04'].effect.productivity = {bonus = 0.02}
+data.raw.module['seaweed-mk04'].effect.productivity = {bonus = 0.02}
+data.raw.module['moss-mk04'].effect.productivity = {bonus = 0.02}
+data.raw.module['sap-tree-mk04'].effect.productivity = {bonus = 0.02}
 data.raw.module['ulric-mk04'].effect.productivity = {bonus = 0.02}
 data.raw.module['sea-sponge-mk04'].effect.productivity = {bonus = 0.02}
 data.raw.module['ralesias-mk04'].effect.productivity = {bonus = 0.02}
@@ -65,13 +77,18 @@ data.raw.module['korlex-mk04'].effect.productivity = {bonus = 0.02}
 data.raw.module['fawogae-mk04'].effect.productivity = {bonus = 0.02}
 data.raw.module['moondrop-mk04'].effect.productivity = {bonus = 0.02}
 data.raw.module['cottongut-mk04'].effect.productivity = {bonus = 0.02}
+data.raw.module['guar-mk04'].effect.productivity = {bonus = 0.02}
+data.raw.module['arqad-mk04'].effect.productivity = {bonus = 0.02}
+data.raw.module['simik-mk04'].effect.productivity = {bonus = 0.02}
+data.raw.module['zungror-mk04'].effect.productivity = {bonus = 0.02}
+data.raw.module['numal-mk04'].effect.productivity = {bonus = 0.02}
 
-  --[[
+--[[
 local mods3 = {}
 local mods4 = {}
 
 for m, mod in pairs(data.raw.module) do
-    log(mod.name)
+    --log(mod.name)
     if string.match(mod.name, 'mk03') == 'mk03' then
         local modname = mod.name
         table.insert(mods3, modname)
@@ -89,4 +106,3 @@ log(serpent.block(mods3))
 
 log(serpent.block(mods4))
 ]]--
-end

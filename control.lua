@@ -1,22 +1,18 @@
-  script.on_event(defines.events.on_player_created, function(event)
-	local player = game.players[event.player_index].insert
-	
-	if game.active_mods["aai-industry"] then
-	player{name="burner-turbine", count=5}
-	player{name="small-electric-pole", count=10}
-	player{name="electric-mining-drill", count=3}
-	
-	if game.active_mods["pyrawores"] then
-	
-	player{name="tinned-cable", count=50}
-	
-	elseif game.active_mods["bobelectronics"] then
-	
-	player{name="tinned-copper-cable", count=50}
-	
+--[[
+script.on_init(function(event)
+	if remote.interfaces["freeplay"] then
+		game.print('PyCoalTBaA loaded succesfully!')
+		local items_to_insert = remote.call("freeplay", "get_created_items")
+		if script.active_mods["angelsrefining"] then
+			items_to_insert["soil-extractormk01"] = (items_to_insert["soil-extractormk01"] or 0) + 1
+		end  	
 	end
-	
-	player{name="pipe", count=100}
-		end
-	
-	end)
+end)
+script.on_event(defines.events.on_player_joined_game, function(event)
+  	local player_index = event.player_index
+  	if player_index then
+    	local items_to_insert = remote.call("freeplay", "get_created_items")
+    	items_to_insert["soil-extractormk01"] = (items_to_insert["soil-extractormk01"] or 0) + 1
+	end
+end)
+]]--

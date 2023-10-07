@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version 1.2.23
+Date: 2023-10-7
+  Changes:
+    - Readded Productivity for farm modules
+    - Fixed bug where basic solder casting didn't exist
+    - Worked on PyBob
+    - Added incompatibilities with Nullius and Seablock
+---------------------------------------------------------------------------------------------------
 Version 1.2.22
 Date: 2023-9-30
   Changes:
