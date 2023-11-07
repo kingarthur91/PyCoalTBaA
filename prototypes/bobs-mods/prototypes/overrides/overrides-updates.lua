@@ -27,7 +27,7 @@ if mods['bobelectronics'] then
             RECIPE('assembling-machine-1'):add_ingredient({type = "item", name = "inductor1", amount = 3})
 
             TECHNOLOGY('automation'):add_prereq('coal-processing-1')
-            if settings.startup["bobmods-logistics-beltoverhaul"].value == true then
+            if settings.startup["bobmods-logistics-beltoverhaul"].value then
                 TECHNOLOGY('logistics-0'):add_prereq('coal-processing-1')
             end
             
@@ -41,10 +41,16 @@ end
 
 if mods['boblogistics'] then
     data.raw.recipe['underground-belt'].enabled = false
+    RECIPE('underground-belt'):add_unlock('logistics')
+
     RECIPE('repair-pack-2'):remove_ingredient("iron-gear-wheel"):add_ingredient("repair-pack")
-    if settings.startup['bobmods-logistics-inserteroverhaul'].value == true then
+
+    if settings.startup['bobmods-logistics-inserteroverhaul'].value then
         fun.ingredient_replace('rare-earth-mine','fast-inserter','red-inserter')
+
+        RECIPE('yellow-filter-inserter'):add_unlock('logistics')
     end
+
     if mods['pyindustry'] then
         fun.tech_remove_recipe('fluid-handling', 'bob-storage-tank-all-corners')
     end
@@ -59,11 +65,30 @@ if mods['boblogistics'] then
       RECIPE('roboport-antenna-1'):replace_ingredient("advanced-circuit", "electronic-circuit")
       RECIPE('roboport-chargepad-1'):replace_ingredient("advanced-circuit", "electronic-circuit")
     end
+    
     settings.startup["bobmods-logistics-beltperlevel"].hidden = true
-    if settings.startup["bobmods-logistics-beltoverhaul"].value == true then
+
+    if settings.startup["bobmods-logistics-beltoverhaul"].value then
         data.raw['underground-belt']['basic-underground-belt'].max_distance = 5
         data.raw['underground-belt']['turbo-underground-belt'].max_distance = 65
         data.raw['underground-belt']['ultimate-underground-belt'].max_distance = 129
+    end
+end
+
+if mods['bobmining'] then
+    if mods['pyalienlife'] and mods['pyhightech'] then
+        if settings.startup["bobmods-mining-miningdrills"].value then
+            data.raw["mining-drill"]["bob-mining-drill-1"].input_fluid_box = nil
+            data.raw["mining-drill"]["bob-mining-drill-2"].input_fluid_box = nil
+            data.raw["mining-drill"]["bob-mining-drill-3"].input_fluid_box = nil
+            data.raw["mining-drill"]["bob-mining-drill-4"].input_fluid_box = nil
+            if data.raw["mining-drill"]["bob-area-mining-drill-1"] then
+                data.raw["mining-drill"]["bob-area-mining-drill-1"].input_fluid_box = nil
+                data.raw["mining-drill"]["bob-area-mining-drill-2"].input_fluid_box = nil
+                data.raw["mining-drill"]["bob-area-mining-drill-3"].input_fluid_box = nil
+                data.raw["mining-drill"]["bob-area-mining-drill-4"].input_fluid_box = nil
+            end
+        end
     end
 end
 
@@ -81,6 +106,17 @@ if mods['bobpower'] then
     if mods['pyalienlife'] then
         fun.ingredient_replace('collector','steam-engine','bob-burner-generator')
     end
+    if mods['pyalternativeenergy'] then
+        fun.tech_remove_recipe("advanced-material-processing-2", "heat-pipe")
+        fun.tech_remove_recipe("advanced-material-processing-2", "heat-exchanger")
+
+        fun.tech_remove_recipe("bob-steam-turbine-1", "steam-turbine")
+
+        TECHNOLOGY("bob-steam-turbine-2"):remove_prereq("bob-steam-turbine-1")
+
+        data.raw.technology["bob-steam-turbine-1"].hidden = true
+        data.raw.technology["bob-steam-turbine-1"].enabled = false
+    end
     if mods['pyhardmode'] then
         data.raw['heat-pipe']['heat-pipe'].heat_buffer.min_temperature_gradient = 3
         data.raw['heat-pipe']['heat-pipe-2'].heat_buffer.min_temperature_gradient = 2
@@ -90,7 +126,7 @@ if mods['bobpower'] then
 end
 
 if mods['bobassembly'] then
-    if settings.startup["burner-start"].value == true then
+    if settings.startup["burner-start"].value then
         local burner = {
             type = "burner",
             fuel_categories = {"chemical", "biomass"},
@@ -100,29 +136,25 @@ if mods['bobassembly'] then
             emissions_per_minute = 12,
         }
         --modify assembly machine 4
-        data.raw['assembling-machine']['assembling-machine-4'].ingredient_count = 6
         data.raw['assembling-machine']['assembling-machine-4'].crafting_speed = 6
         data.raw['assembling-machine']['assembling-machine-4'].energy_source = table.deep_copy(burner)
         table.insert(data.raw['assembling-machine']['assembling-machine-4'].energy_source.fuel_categories, "jerry")
         data.raw['assembling-machine']['assembling-machine-4'].allowed_effects = {}
         data.raw['assembling-machine']['assembling-machine-4'].module_specification.module_slots = 0
         --modify assembly machine 5
-        data.raw['assembling-machine']['assembling-machine-5'].ingredient_count = 7
         data.raw['assembling-machine']['assembling-machine-5'].crafting_speed = 8
         data.raw['assembling-machine']['assembling-machine-5'].energy_source = table.deep_copy(burner)
         table.insert(data.raw['assembling-machine']['assembling-machine-5'].energy_source.fuel_categories, "jerry")
         data.raw['assembling-machine']['assembling-machine-5'].allowed_effects = {}
         data.raw['assembling-machine']['assembling-machine-5'].module_specification.module_slots = 0
         --modify assembly machine 6
-        data.raw['assembling-machine']['assembling-machine-6'].ingredient_count = 8
         data.raw['assembling-machine']['assembling-machine-6'].crafting_speed = 10
         data.raw['assembling-machine']['assembling-machine-6'].energy_source = table.deep_copy(burner)
         table.insert(data.raw['assembling-machine']['assembling-machine-6'].energy_source.fuel_categories, "jerry")
         data.raw['assembling-machine']['assembling-machine-6'].allowed_effects = {}
         data.raw['assembling-machine']['assembling-machine-6'].module_specification.module_slots = 0
         --modify steam assembly machine
-        if settings.startup["bobmods-assembly-burner"].value == true then
-            data.raw['assembling-machine']['steam-assembling-machine'].ingredient_count =3
+        if settings.startup["bobmods-assembly-burner"].value then
             data.raw['assembling-machine']['steam-assembling-machine'].crafting_speed = 0.5
             data.raw['assembling-machine']['steam-assembling-machine'].allowed_effects = {}
             --mechanical assembler
@@ -161,6 +193,9 @@ if mods['bobassembly'] then
         data.raw['assembling-machine']['chipshooter-mk03'].crafting_speed = 6
         table.insert(data.raw['assembling-machine']['chipshooter-mk04'].crafting_categories, 'circuits')
         data.raw['assembling-machine']['chipshooter-mk04'].crafting_speed = 8
+        data.raw['assembling-machine']['electronics-machine-1'].energy_usage = "300kW"
+        data.raw['assembling-machine']['electronics-machine-2'].energy_usage = "600kW"
+        data.raw['assembling-machine']['electronics-machine-3'].energy_usage = "1MW"
         if not mods['angelsindustries'] then
             TECHNOLOGY('electronics-machine-1'):add_prereq('vacuum-tube-electronics')
         end
@@ -183,7 +218,7 @@ end
 if mods['bobgreenhouse'] then
     data.raw['assembling-machine']['bob-greenhouse'].energy_usage = "300kW"
     data.raw['assembling-machine']['bob-greenhouse'].allowed_effects = {}
-    if mods ['pyalienlife'] and not mods['angelsbioprocessing'] then
+    if mods['pyalienlife'] and not mods['angelsbioprocessing'] then
         require('__PyCoalTBaA__/prototypes/bobs-mods/prototypes/recipes/charcoal')
         TECHNOLOGY('energy-3'):add_prereq('bob-greenhouse')
     end
@@ -203,6 +238,15 @@ if mods['bobrevamp'] then
 end
 
 if mods['bobclasses'] then
+    table.insert(data.raw['character']['bob-character-miner'].flags, 'not-in-made-in')
+    table.insert(data.raw['character']['bob-character-fighter'].flags, 'not-in-made-in')
+    table.insert(data.raw['character']['bob-character-builder'].flags, 'not-in-made-in')
+    table.insert(data.raw['character']['bob-character-balanced-2'].flags, 'not-in-made-in')
+    table.insert(data.raw['character']['bob-character-miner-2'].flags, 'not-in-made-in')
+    table.insert(data.raw['character']['bob-character-fighter-2'].flags, 'not-in-made-in')
+    table.insert(data.raw['character']['bob-character-builder-2'].flags, 'not-in-made-in')
+    table.insert(data.raw['character']['bob-character-engineer'].flags, 'not-in-made-in')
+    table.insert(data.raw['character']['bob-character-prospector'].flags, 'not-in-made-in')
     if mods['pyhightech'] then
         RECIPE('player-power-core'):set_fields{ category = "pa" }:set_fields{energy_required = 45}
         RECIPE('player-power-core'):remove_ingredient('battery-mk01'):remove_ingredient('rtg'):remove_ingredient('processing-unit')
@@ -361,12 +405,25 @@ if mods['bobtech'] then
         table.insert(data.raw.lab["lab-2"].inputs, 'py-science-pack-3')
         table.insert(data.raw.lab["lab-2"].inputs, 'py-science-pack-4')
 
-        data.raw.recipe['alien-science-pack'].category = 'research'
-        data.raw.recipe['alien-science-pack-blue'].category = 'research'
-        data.raw.recipe['alien-science-pack-orange'].category = 'research'
-        data.raw.recipe['alien-science-pack-purple'].category = 'research'
-        data.raw.recipe['alien-science-pack-yellow'].category = 'research'
-        data.raw.recipe['alien-science-pack-green'].category = 'research'
-        data.raw.recipe['alien-science-pack-red'].category = 'research'
+        data.raw.recipe['advanced-logistic-science-pack'].category = 'research'
+
+        if
+            data.raw.item["alien-artifact"]
+            and data.raw.item["alien-artifact-blue"]
+            and data.raw.item["alien-artifact-orange"]
+            and data.raw.item["alien-artifact-purple"]
+            and data.raw.item["alien-artifact-yellow"]
+            and data.raw.item["alien-artifact-green"]
+            and data.raw.item["alien-artifact-red"]
+        then
+            data.raw.recipe['science-pack-gold'].category = 'research'
+            data.raw.recipe['alien-science-pack'].category = 'research'
+            data.raw.recipe['alien-science-pack-blue'].category = 'research'
+            data.raw.recipe['alien-science-pack-orange'].category = 'research'
+            data.raw.recipe['alien-science-pack-purple'].category = 'research'
+            data.raw.recipe['alien-science-pack-yellow'].category = 'research'
+            data.raw.recipe['alien-science-pack-green'].category = 'research'
+            data.raw.recipe['alien-science-pack-red'].category = 'research'
+        end
     end
 end

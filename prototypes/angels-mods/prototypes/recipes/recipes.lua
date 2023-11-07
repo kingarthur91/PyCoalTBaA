@@ -26,9 +26,9 @@ if mods['angelsbioprocessing'] then
     	results = {
         	{type = 'item', name = 'algae-green', amount = 25},
         	{type = 'item', name = 'algae-brown', amount = 5},
-        	{type = 'fluid', name = 'coal-gas', amount = 30},
+        	{type = 'item', name = 'coal', amount = 10},
     	},
-    	main_product = "coal-gas",
+    	main_product = "algae-green",
     	icon = "__PyCoalTBaA__/graphics/icons/coalgas-from-seaweed.png",
     	icon_size = 64,
     }:add_unlock('bio-processing-brown')

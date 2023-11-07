@@ -1,4 +1,5 @@
 -- DATA UPDATES STAGE OVERRIDES
+local FUN = require '__pycoalprocessing__/prototypes/functions/functions'
 
 if mods['angelsrefining'] then
     OV = angelsmods.functions.OV
@@ -15,30 +16,46 @@ if mods['angelsrefining'] then
         end
     end
     --merge angel's washers to py's
-    table.insert(data.raw['assembling-machine']['washer'].crafting_categories, 'filtering')
-    data.raw.recipe['washing-plant'] = nil
-    fun.remove_recipe_unlock('washing-plant')
+    table.insert(data.raw['assembling-machine']['washing-plant'].crafting_categories, 'washer')
+    data.raw.recipe['washing-washer'] = nil
+    fun.remove_recipe_unlock('washer')
     --merge angels filters to py
     table.insert(data.raw['assembling-machine']['carbon-filter'].crafting_categories, 'filtering')
     data.raw.recipe['filtration-unit'] = nil
     fun.remove_recipe_unlock('filtration-unit')
+    if mods['pyalienlife'] then TECHNOLOGY('soil-washing'):add_prereq('water-washing-1') end
     if mods['pyrawores'] then
         --mk02
         table.insert(data.raw['assembling-machine']['carbon-filter-mk02'].crafting_categories, 'filtering')
+        table.insert(data.raw['assembling-machine']['carbon-filter-mk02'].crafting_categories, 'filtering-2')
         data.raw.recipe['filtration-unit-2'] = nil
         fun.remove_recipe_unlock('filtration-unit-2')
         --mk03
         table.insert(data.raw['assembling-machine']['carbon-filter-mk03'].crafting_categories, 'filtering')
+        table.insert(data.raw['assembling-machine']['carbon-filter-mk03'].crafting_categories, 'filtering-2')
+        table.insert(data.raw['assembling-machine']['carbon-filter-mk03'].crafting_categories, 'filtering-3')
         data.raw.recipe['filtration-unit-3'] = nil
         fun.remove_recipe_unlock('filtration-unit-3')
         --mk04
         table.insert(data.raw['assembling-machine']['carbon-filter-mk04'].crafting_categories, 'filtering')
+        table.insert(data.raw['assembling-machine']['carbon-filter-mk04'].crafting_categories, 'filtering-2')
+        table.insert(data.raw['assembling-machine']['carbon-filter-mk04'].crafting_categories, 'filtering-3')
         --merge angel's washers to py's
         --mk02
-        table.insert(data.raw['assembling-machine']['washer-mk02'].crafting_categories, 'filtering')
-        data.raw.recipe['washing-plant-2'] = nil
-        fun.remove_recipe_unlock('washing-plant-2')
-    -- merge angels flotation cell into pys cell
+        table.insert(data.raw['assembling-machine']['washing-plant-2'].crafting_categories, 'washer')
+        data.raw.recipe['washer-mk02'] = nil
+        fun.remove_recipe_unlock('washer-mk02')
+        if mods['ExtendedAngels'] then
+            --mk03
+            table.insert(data.raw['assembling-machine']['washing-plant-3'].crafting_categories, 'washer')
+            data.raw.recipe['washer-mk03'] = nil
+            fun.remove_recipe_unlock('washer-mk03')
+            --mk04
+            table.insert(data.raw['assembling-machine']['washing-plant-4'].crafting_categories, 'washer')
+            data.raw.recipe['washer-mk04'] = nil
+            fun.remove_recipe_unlock('washer-mk04')
+        end
+        -- merge angels flotation cell into pys cell
         -- mk01
         table.insert(data.raw['assembling-machine']['flotation-cell-mk01'].crafting_categories, 'ore-refining-t2')
         data.raw.recipe['ore-floatation-cell'] = nil
@@ -53,7 +70,7 @@ if mods['angelsrefining'] then
         fun.remove_recipe_unlock('ore-floatation-cell-3')
         -- add category to py mk04
         table.insert(data.raw['assembling-machine']['flotation-cell-mk04'].crafting_categories, 'ore-refining-t2')
-    -- merge angels leaching stations into pys stati9ons
+        -- merge angels leaching stations into pys stati9ons
         -- mk01
         table.insert(data.raw['assembling-machine']['leaching-station-mk01'].crafting_categories, 'ore-refining-t3')
         data.raw.recipe['ore-leaching-plant'] = nil
@@ -78,9 +95,13 @@ if mods['angelsrefining'] then
         RECIPE('empty-planter-box'):remove_ingredient('stone-brick'):add_ingredient({type = "item", name = "stone-brick", amount = 2})
     end
     if mods['pyrawores'] then
+        if mods['SeaBlock'] then goto skipseablock end
         if angelsmods.trigger.ores["lead"] then
             data.raw.resource['ore-lead'] = nil
             data.raw['autoplace-control']['ore-lead'] = nil
+            data.raw.resource['angels-ore5'].category = 'basic-with-fluid'
+            data.raw.resource['angels-ore5'].minable.fluid_amount = 100
+            data.raw.resource['angels-ore5'].minable.required_fluid = 'acetylene'
             fun.tech_add_prerequisites('solder-mk01', 'ore-crushing')
         end
         if angelsmods.trigger.ores["nickel"] then
@@ -92,6 +113,9 @@ if mods['angelsrefining'] then
             data.raw.resource['ore-tin'] = nil
             data.raw['autoplace-control']['ore-tin'] = nil
             data.raw.recipe['tin-plate-1'].hidden = true
+            data.raw.resource['angels-ore6'].category = 'basic-with-fluid'
+            data.raw.resource['angels-ore6'].minable.fluid_amount = 100
+            data.raw.resource['angels-ore6'].minable.required_fluid = 'steam'
             fun.tech_remove_recipe('mining-with-fluid', 'tin-plate-1')
             fun.tech_add_prerequisites('solder-mk01', 'ore-crushing')
         end
@@ -100,6 +124,7 @@ if mods['angelsrefining'] then
             data.raw['autoplace-control']['ore-zinc'] = nil
             fun.tech_add_prerequisites('solder-mk01', 'ore-crushing')
         end
+        ::skipseablock::
     end
     if mods['pyhardmode'] then
         data.raw.recipe['stone-crushed'].normal.enabled = false
@@ -128,14 +153,20 @@ if mods['angelspetrochem'] then
     if mods['pyrawores'] then
         data.raw.recipe['air-separation'] = nil
         fun.remove_recipe_unlock('air-separation')
+        data.raw['assembling-machine']['advanced-chemical-plant'].ingredient_count = 5
+        data.raw['assembling-machine']['advanced-chemical-plant-2'].ingredient_count = 5
+        --data.raw['assembling-machine']['advanced-chemical-plant-3'].ingredient_count = 5
+        --data.raw['assembling-machine']['advanced-chemical-plant-3'].ingredient_count = 5
     end
     if mods['pyfusionenergy'] then
         fun.tech_remove_recipe('fluid-pressurization', 'pressured-air')
         RECIPE('angels-air-filter'):replace_ingredient('basic-circuit-board', 'small-parts-01')
         if mods['pyhightech'] then
             TECHNOLOGY('water-treatment'):remove_prereq('angels-fluid-control')
-            TECHNOLOGY('basic-chemistry'):add_prereq('vacuum-tube-electronics')
             TECHNOLOGY('vacuum-tube-electronics'):add_prereq('angels-nitrogen-processing-1')
+            if not mods['SeaBlock'] then
+                TECHNOLOGY('basic-chemistry'):add_prereq('vacuum-tube-electronics')
+            end
         end
     end
     if mods['pyhardmode'] then
@@ -220,6 +251,13 @@ if mods['angelssmelting'] then
 end
 
 if mods['angelsindustries'] then
+    if mods['pyalternativeenergy'] then
+        table.insert(data.raw['assembling-machine']['centrifuge-mk02'].crafting_categories, 'centrifuging-2')
+        table.insert(data.raw['assembling-machine']['centrifuge-mk03'].crafting_categories, 'centrifuging-2')
+        table.insert(data.raw['assembling-machine']['centrifuge-mk03'].crafting_categories, 'centrifuging-3')
+        table.insert(data.raw['assembling-machine']['centrifuge-mk04'].crafting_categories, 'centrifuging-2')
+        table.insert(data.raw['assembling-machine']['centrifuge-mk04'].crafting_categories, 'centrifuging-3')
+    end
 end
 
 if mods['angelsbioprocessing'] then
@@ -229,6 +267,9 @@ if mods['angelsbioprocessing'] then
         data.raw.recipe['algae-green-simple'] = nil
 
         fun.remove_recipe_unlock('algae-green-simple')
+
+        FUN.add_result('puffer-butchery-1', {'gas-bladder', 1})
+        data.raw.recipe['puffer-butchery-1'].main_product = "gas-bladder"
     end
     if mods['pyalternativeenergy'] then
         RECIPE('eg-si'):add_ingredient({type = "item", name = "crystal-grindstone", amount = 1})

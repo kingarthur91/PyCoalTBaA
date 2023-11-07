@@ -633,7 +633,6 @@ end
 
 --replace an item/fluid in every recipes ingredients/results
 --best used to merge items that are duplicated in mods that should be the same
---[[
 function overrides.global_item_replacer(old, new, blackrecipe)
     for prototype in pairs(defines.prototypes.item) do
         if drf[old] ~= nil or dr[prototype][old] ~= nil then
@@ -664,7 +663,7 @@ function overrides.global_item_replacer(old, new, blackrecipe)
         end
     end
 end
-]]--
+
 --used to remove a whole category of recipes
 --use case wipe all recipes from a building
 function overrides.recipe_category_remove(category, blacklist)
@@ -1189,6 +1188,12 @@ function overrides.global_prereq_replacer(old, new)
                 end
             end
         end
+    end
+end
+
+function overrides.tech_merge_effects(old, new)
+    for _, v in pairs(data.raw.technology[old].effects) do
+        table.insert(data.raw.technology[new].effects, v)
     end
 end
 

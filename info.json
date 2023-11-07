@@ -10,9 +10,9 @@
 	"dependencies": [
 	"base >= 0.13.0",
 	"pycoalprocessing >= 2.1.5",
+	"~ PyPPTBaA >= 1.0.0",
 	"bobsmodules4py >= 1.1.8",
 	"?pyalternativeenergy >= 1.2.6",
-	"!nullius >= 1.6.6",
-	"!SeaBlock >= 0.5.13"
+	"!nullius >= 1.6.6"
 	]
 }

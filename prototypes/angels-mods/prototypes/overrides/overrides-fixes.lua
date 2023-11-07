@@ -1,5 +1,4 @@
 -- DATA FINAL FIXES STAGE OVERRIDES
-
 if mods['angelssmelting'] then
     data.raw.recipe['steel-plate'].normal.enabled = true
     data.raw.recipe['steel-plate'].normal.hidden = false

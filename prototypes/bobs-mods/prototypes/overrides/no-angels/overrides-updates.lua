@@ -57,9 +57,34 @@ if mods['bobplates'] then
 
         RECIPE('gold-precipitate'):add_ingredient({type = "item", name = "gold-ore", amount = 5})
 
-        log(serpent.block(data.raw.recipe['coated-container']))
+        TECHNOLOGY('nickel-mk01'):add_prereq('nickel-procesing')
+
+        TECHNOLOGY('invar-processing'):remove_prereq('logistic-science-pack')
+        TECHNOLOGY('invar-processing'):remove_pack('logistic-science-pack')
 	end
     RECIPE('silicon-nitride'):add_ingredient({type = "item", name = "ceramic", amount = 5})
+
+    if settings.startup["bobmods-plates-purewater"].value and settings.startup["bobmods-assembly-distilleries"].value then
+        for i, machine in pairs(data.raw['assembling-machine']) do
+            for c, machinecat in pairs(machine.crafting_categories) do
+                if machinecat == 'distillery' then
+                    machine.crafting_categories[c] = nil
+                end
+            end
+        end
+
+        bobmods.lib.machine.add_category(data.raw['assembling-machine']['bob-distillery'], 'distillery')
+        bobmods.lib.machine.add_category(data.raw['assembling-machine']['bob-distillery-2'], 'distillery')
+        bobmods.lib.machine.add_category(data.raw['assembling-machine']['bob-distillery-3'], 'distillery')
+        bobmods.lib.machine.add_category(data.raw['assembling-machine']['bob-distillery-4'], 'distillery')
+        bobmods.lib.machine.add_category(data.raw['assembling-machine']['bob-distillery-5'], 'distillery')
+
+        data.raw.furnace['bob-distillery'].allowed_effects = {"speed", "consumption"}
+        data.raw.furnace['bob-distillery-2'].allowed_effects = {"speed", "consumption"}
+        data.raw.furnace['bob-distillery-3'].allowed_effects = {"speed", "consumption"}
+        data.raw.furnace['bob-distillery-4'].allowed_effects = {"speed", "consumption"}
+        data.raw.furnace['bob-distillery-5'].allowed_effects = {"speed", "consumption"}
+    end
 end
 
 if mods['bobelectronics'] then
@@ -72,7 +97,7 @@ if mods['bobelectronics'] then
 	end
 
     if mods['pyrawores'] then
-        data.raw.recipe['tinned-copper-cable'].hidden = true
+        --data.raw.recipe['tinned-copper-cable'].hidden = true
     end
 
 	if mods['pypetroleumhandling'] then
@@ -111,4 +136,21 @@ if mods['bobelectronics'] then
 	if mods['pyalienlife'] then
 		RECIPE('bob-resin-oil'):remove_ingredient('heavy-oil'):add_ingredient({type = "fluid", name = "heavy-oil", amount = 1}):replace_result('saps', {'saps', amount = 2})
 	end
+end
+
+if mods['bobrevamp'] then
+    if bobmods.plates and settings.startup["bobmods-revamp-rtg"].value and settings.startup["bobmods-revamp-hardmode"].value then
+        bobmods.lib.recipe.remove_result('ammoniated-brine', 'ammoniated-brine')
+        bobmods.lib.recipe.add_result("ammoniated-brine", { type = "fluid", name = "ammoniated-brine", amount = 35 })
+        if mods['pyalternativeenergy'] then
+            require('__PyCoalTBaA__/prototypes/bobs-mods/prototypes/recipes/sodium-carbonate')
+            bobmods.lib.recipe.remove_result('ammonium-chloride-recycling', 'ammonia')
+                bobmods.lib.recipe.add_result("ammonium-chloride-recycling", { type = "fluid", name = "ammonia", amount = 30 })
+
+            bobmods.lib.tech.add_prerequisite('nuclear-power-mk02', 'rtg')
+            bobmods.lib.tech.add_prerequisite('spidertron', 'nuclear-power-mk02')
+
+            fun.tech_remove_recipe('rtg', 'rtg')
+        end
+    end
 end

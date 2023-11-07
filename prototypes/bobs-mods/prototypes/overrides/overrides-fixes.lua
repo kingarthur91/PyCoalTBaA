@@ -11,10 +11,12 @@ end
 if mods['bobplates'] then
     data.raw.recipe['nitrogen'].hidden = false
 
-    data.raw['assembling-machine']['assembling-machine-3'].module_specification.module_slots = 0
+    data.raw['assembling-machine']['assembling-machine-3'].allowed_effects = {"consumption", "speed", "productivity", "pollution"}
     if mods['pyrawores'] then
         if not mods['angelspetrochem'] then
             fun.global_prereq_replacer('electrolysis-1', 'electrolysis')
+            fun.tech_merge_effects('electrolysis-1', 'electrolysis')
+            fun.tech_remove_recipe('electrolysis', 'electrolyser')
         end
         data.raw.technology['electrolysis-1'] = nil
 

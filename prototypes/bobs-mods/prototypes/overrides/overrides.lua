@@ -30,8 +30,12 @@ if mods['bobgreenhouse'] then
 end
 
 if mods['bobmining'] then
-   fun.replace(data.raw.technology["bob-drills-1"].prerequisites, 'electronics', 'vacuum-tube-electronics')
-   fun.replace(data.raw.technology["bob-area-drills-1"].prerequisites, 'electronics', 'vacuum-tube-electronics')
+   if settings.startup["bobmods-mining-miningdrills"].value then
+      fun.replace(data.raw.technology["bob-drills-1"].prerequisites, 'electronics', 'vacuum-tube-electronics')
+      if data.raw["mining-drill"]["bob-area-mining-drill-1"] then
+         fun.replace(data.raw.technology["bob-area-drills-1"].prerequisites, 'electronics', 'vacuum-tube-electronics')
+      end
+   end
    TECHNOLOGY("steel-axe-3"):add_prereq("logistic-science-pack")
    TECHNOLOGY("steel-axe-4"):add_prereq("chemical-science-pack")
    TECHNOLOGY("steel-axe-5"):add_prereq("production-science-pack")

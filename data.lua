@@ -1,13 +1,3 @@
-debugmode = debugmode or {}
-debugmode.techcheck = settings.startup["debug-techcheck"].value
-debugmode.logging = settings.startup["debug-logging"].value
-if debugmode.logging then 
-log(serpent.block(settings.startup)) 
-if not mods['aai-loaders'] then
-log(serpent.block(mods)) 
-end
-end
-
 fun = require("functions/functions")
 --log(serpent.block(fun))
 
@@ -32,3 +22,11 @@ require('prototypes/bobs-mods/Data')
 
 --madclown mods
 require('prototypes/madclowns-mods/data')
+
+--msp
+if mods['MoreSciencePacks-for1_1'] then
+	require('prototypes/msp/Data')
+end
+
+--apm mods
+require('prototypes/apm-mods/Data')

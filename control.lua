@@ -1,3 +1,8 @@
+script.on_init(function(event)
+	if remote.interfaces["freeplay"] then
+		game.print('PyCoalTBaA loaded succesfully!')
+	end
+end)
 --[[
 script.on_init(function(event)
 	if remote.interfaces["freeplay"] then

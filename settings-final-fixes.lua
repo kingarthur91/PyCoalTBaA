@@ -8,3 +8,9 @@ if mods['bobmining'] then
 	data.raw["bool-setting"]["bobmods-mining-miningdrills"].forced_value = true
 	data.raw["bool-setting"]["bobmods-mining-miningdrills"].hidden = true
 end
+if mods['MoreSciencePacks-for1_1'] then
+	data.raw["bool-setting"]["moresciencepack-GameProgressionFix"].forced_value = true
+	data.raw["bool-setting"]["moresciencepack-GameProgressionFix"].hidden = true
+	data.raw["bool-setting"]["moresciencepack-no-lab-slots"].forced_value = true
+	data.raw["bool-setting"]["moresciencepack-no-lab-slots"].hidden = true
+end

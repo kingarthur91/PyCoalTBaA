@@ -1,4 +1,4 @@
-if mods['pyalternativeenergy'] then
+if mods['pyalternativeenergy'] and not mods['SeaBlock'] then
 	data.raw.resource['infinite-antimonium'].minable.required_fluid = 'pressured-water'
 	data.raw.resource['infinite-borax'].minable.required_fluid = 'refsyngas'
 	data.raw.resource['infinite-niobium'].minable.required_fluid = 'aromatics'
