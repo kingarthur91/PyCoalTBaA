@@ -18,4 +18,4 @@ if mods['MoreSciencePacks-for1_1'] then
 end
 
 --apm mods
-require('prototypes/apm-mods/Data-updates')
+require('prototypes/apm-mods/Data-Updates')
