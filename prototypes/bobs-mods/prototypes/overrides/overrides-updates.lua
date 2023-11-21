@@ -94,7 +94,7 @@ end
 
 if mods['bobplates'] then
     if mods['pyalienlife'] then
-        fun.tech_remove_recipe('grinding', 'silicon-carbide')
+        RECIPE('silicon-carbide'):remove_unlock('grinding')
 
         data.raw.recipe['silicon-carbide'] = nil
 

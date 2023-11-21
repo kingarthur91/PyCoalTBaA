@@ -1,9 +1,8 @@
 -- DATA FINAL FIXES STAGE OVERRIDES
 if mods['angelssmelting'] then
-    data.raw.recipe['steel-plate'].normal.enabled = true
     data.raw.recipe['steel-plate'].normal.hidden = false
-    data.raw.recipe['steel-plate'].expensive.enabled = true
     data.raw.recipe['steel-plate'].expensive.hidden = false
+    RECIPE('steel-plate'):add_unlock('steel-processing'):remove_ingredient('gas-oxygen')
 
     if mods['pyrawores'] then
         TECHNOLOGY('angels-solder-smelting-basic'):add_prereq('acetylene')
@@ -31,6 +30,12 @@ if mods['angelspetrochem'] then
         TECHNOLOGY('angels-nitrogen-processing-1'):remove_prereq('basic-chemistry')
         TECHNOLOGY('vacuum-tube-electronics'):add_prereq('angels-nitrogen-processing-1')
         TECHNOLOGY('mining-with-fluid'):remove_prereq('steel-processing')
+    end
+    if mods['pyalienlife'] then
+        if mods['pypetroleumhandling'] then
+            TECHNOLOGY('angels-nitrogen-processing-4'):remove_prereq('angels-advanced-chemistry-5'):remove_pack('utility-science-pack')
+            TECHNOLOGY('angels-nitrogen-processing-4'):add_prereq('py-science-pack-3')
+        end
     end
 end
 

@@ -46,3 +46,10 @@ if mods['bobmining'] then
       TECHNOLOGY("steel-axe-2"):add_prereq("logistic-science-pack")
    end
 end
+
+if mods['bobplates'] then
+   if mods['pyalienlife'] then
+      --fix crash with PyAL update, version 2.1.11
+      data.raw.fluid['xyhiphoe-blood'].auto_barrel = false
+   end
+end

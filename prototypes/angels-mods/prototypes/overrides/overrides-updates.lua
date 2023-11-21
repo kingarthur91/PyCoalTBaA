@@ -150,6 +150,13 @@ if mods['angelspetrochem'] then
             end
         end
     end
+    if mods['pypetroleumhandling'] then
+        data.raw.recipe['rocket-fuel'].ingredients = {}
+        --RECIPE('rocket-fuel'):remove_ingredient('gas-oxygen'):remove_ingredient('kerosene')
+        RECIPE('rocket-fuel'):add_ingredient({type = "item", name = "rocket-fuel-capsule", amount = 10}):add_ingredient({type = "item", name = "rocket-oxidizer-capsule", amount = 10})
+        RECIPE('rocket-fuel-capsule'):add_ingredient({type = "fluid", name = "kerosene", amount = 50})
+        RECIPE('rocket-oxidizer-capsule'):add_ingredient({type = "fluid", name = "gas-oxygen", amount = 75})
+    end
     if mods['pyrawores'] then
         data.raw.recipe['air-separation'] = nil
         fun.remove_recipe_unlock('air-separation')

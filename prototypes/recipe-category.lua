@@ -17,12 +17,6 @@ data:extend(
 --SUBGROUPS
   {
       type = "item-subgroup",
-      name = "py-hightech-tier-0",
-      group = "py-hightech",
-      order = "fz"
-  },
-  {
-      type = "item-subgroup",
       name = "py-cp-buildings-mk00",
       group = "coal-processing",
       order = "a"
