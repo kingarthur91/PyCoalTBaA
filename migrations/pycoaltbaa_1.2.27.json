@@ -1,0 +1,24 @@
+{
+    "item": [
+        ["yellow-filter-inserter", "inserter"],
+        ["red-filter-inserter", "red-inserter"],
+        ["filter-inserter", "fast-inserter"],
+        ["turbo-filter-inserter", "turbo-inserter"],
+        ["express-filter-inserter", "express-inserter"],
+        ["red-stack-filter-inserter", "red-stack-inserter"],
+        ["stack-filter-inserter", "stack-inserter"],
+        ["turbo-stack-filter-inserter", "turbo-stack-inserter"],
+        ["express-stack-filter-inserter", "express-stack-inserter"]
+    ],
+    "recipe": [
+        ["yellow-filter-inserter", "inserter"],
+        ["red-filter-inserter", "red-inserter"],
+        ["filter-inserter", "fast-inserter"],
+        ["turbo-filter-inserter", "turbo-inserter"],
+        ["express-filter-inserter", "express-inserter"],
+        ["red-stack-filter-inserter", "red-stack-inserter"],
+        ["stack-filter-inserter", "stack-inserter"],
+        ["turbo-stack-filter-inserter", "turbo-stack-inserter"],
+        ["express-stack-filter-inserter", "express-stack-inserter"]
+    ]
+}

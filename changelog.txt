@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version 1.2.27
+Date: 2024-1-19
+  Changes:
+    - Removed filter inserters
+    - Added recipe  builder fallbacks
+    - Changed Angel's resin a bit
+    - Changed the Throvin bicycles a bit
+---------------------------------------------------------------------------------------------------
 Version 1.2.26
 Date: 2023-11-21
   Changes:

@@ -1197,6 +1197,13 @@ function overrides.tech_merge_effects(old, new)
     end
 end
 
+function overrides.tech_merge(old, new)
+    overrides.tech_merge_effects(old, new)
+    overrides.global_prereq_replacer(old, new)
+    data.raw.technology[old].effects = nil
+    data.raw.technology[old].hidden = true
+end
+
 function overrides.remove_recipe_difficulties(recipes)
     for name, recipe in pairs(recipes) do
         local keep = recipe.normal or recipe.expensive

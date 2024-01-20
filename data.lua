@@ -14,6 +14,9 @@ end
 --angel mods
 require('prototypes/angels-mods/Data')
 
+--aai
+require('prototypes/aai/Data')
+
 --bobs mods
 require('prototypes/bobs-mods/Data')
 

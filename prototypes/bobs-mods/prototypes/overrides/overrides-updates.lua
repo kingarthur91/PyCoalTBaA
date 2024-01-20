@@ -186,13 +186,17 @@ if mods['bobassembly'] then
         data.raw['assembling-machine']['electronics-machine-2'].allowed_effects = { 'speed', 'consumption', 'pollution' }
         data.raw['assembling-machine']['electronics-machine-3'].allowed_effects = { 'speed', 'consumption', 'pollution' }
         table.insert(data.raw['assembling-machine']['chipshooter-mk01'].crafting_categories, 'circuits')
-        data.raw['assembling-machine']['chipshooter-mk01'].crafting_speed = 2
+        data.raw['assembling-machine']['chipshooter-mk01'].module_specification = { module_slots = 2 },
+        data.raw['assembling-machine']['chipshooter-mk01'].crafting_speed == 2
         table.insert(data.raw['assembling-machine']['chipshooter-mk02'].crafting_categories, 'circuits')
-        data.raw['assembling-machine']['chipshooter-mk02'].crafting_speed = 4
+        data.raw['assembling-machine']['chipshooter-mk02'].module_specification = { module_slots = 4 },
+        data.raw['assembling-machine']['chipshooter-mk02'].crafting_speed == 4
         table.insert(data.raw['assembling-machine']['chipshooter-mk03'].crafting_categories, 'circuits')
-        data.raw['assembling-machine']['chipshooter-mk03'].crafting_speed = 6
+        data.raw['assembling-machine']['chipshooter-mk03'].module_specification = { module_slots = 6 },
+        data.raw['assembling-machine']['chipshooter-mk03'].crafting_speed == 6
         table.insert(data.raw['assembling-machine']['chipshooter-mk04'].crafting_categories, 'circuits')
-        data.raw['assembling-machine']['chipshooter-mk04'].crafting_speed = 8
+        data.raw['assembling-machine']['chipshooter-mk04'].module_specification = { module_slots = 8 },
+        data.raw['assembling-machine']['chipshooter-mk04'].crafting_speed == 8
         data.raw['assembling-machine']['electronics-machine-1'].energy_usage = "300kW"
         data.raw['assembling-machine']['electronics-machine-2'].energy_usage = "600kW"
         data.raw['assembling-machine']['electronics-machine-3'].energy_usage = "1MW"
@@ -221,6 +225,21 @@ if mods['bobgreenhouse'] then
     if mods['pyalienlife'] and not mods['angelsbioprocessing'] then
         require('__PyCoalTBaA__/prototypes/bobs-mods/prototypes/recipes/charcoal')
         TECHNOLOGY('energy-3'):add_prereq('bob-greenhouse')
+    end
+end
+
+if mods['bobwarfare'] then
+    fun.tech_remove_recipe('rocket-silo', 'rocket-engine')
+    data.raw.recipe['rocket-engine'].ingredients = nil
+    RECIPE('rocket-engine'):add_ingredient({type = "item", name = "low-density-structure", amount = 5})
+    data.raw.technology['bob-rocket'].prerequisits = {
+        'rocketry',
+        'military-3',
+        'low-density-structure'
+    }
+    if mods['pyrawores'] then
+        RECIPE('rocket-engine'):add_ingredient({type = "item", name = "solder", amount = 20})
+        RECIPE('rocket-engine'):add_ingredient({type = "item", name = "super-steel", amount = 10})
     end
 end
 

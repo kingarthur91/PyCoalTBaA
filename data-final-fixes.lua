@@ -2,6 +2,9 @@
 --angel mods
 require('prototypes/angels-mods/Data-Final-Fixes')
 
+--aai
+require('prototypes/aai/Data-fixes')
+
 --bobs mods
 require('prototypes/bobs-mods/Data-Final-Fixes')
 

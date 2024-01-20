@@ -1,4 +1,26 @@
 -- DATA FINAL FIXES STAGE OVERRIDES
+local function set_to_py1(techname)
+    if not data.raw.technology[techname] then return end 
+    data.raw.technology[techname].unit.ingredients = {
+        {"automation-science-pack", 2},
+        {"py-science-pack-1", 1}
+    }
+end
+local function set_to_py1_with_bio(techname)
+    if not data.raw.technology[techname] then return end 
+    data.raw.technology[techname].unit.ingredients = {
+        {"token-bio", 1},
+        {"automation-science-pack", 2},
+        {"py-science-pack-1", 1}
+    }
+end
+if mods['angelsrefining'] then
+    if mods['pyalienlife'] then
+        set_to_py1('ore-floatation')
+        set_to_py1('water-treatment-2')
+    end
+end
+
 if mods['angelssmelting'] then
     data.raw.recipe['steel-plate'].normal.hidden = false
     data.raw.recipe['steel-plate'].expensive.hidden = false
@@ -32,6 +54,17 @@ if mods['angelspetrochem'] then
         TECHNOLOGY('mining-with-fluid'):remove_prereq('steel-processing')
     end
     if mods['pyalienlife'] then
+        for i, ingredient in pairs(data.raw.technology['basic-chemistry-3'].unit.ingredients) do
+            if ingredient.name == "logistic-science-pack" then
+                data.raw.technology['basic-chemistry-3'].unit.ingredients[i] = nil
+            end
+        end
+
+        set_to_py1('angels-advanced-chemistry-1')
+        set_to_py1('basic-chemistry-3')
+        set_to_py1('resins')
+        set_to_py1('resin-1')
+        set_to_py1('angels-sulfur-processing-1')
         if mods['pypetroleumhandling'] then
             TECHNOLOGY('angels-nitrogen-processing-4'):remove_prereq('angels-advanced-chemistry-5'):remove_pack('utility-science-pack')
             TECHNOLOGY('angels-nitrogen-processing-4'):add_prereq('py-science-pack-3')
@@ -40,6 +73,31 @@ if mods['angelspetrochem'] then
 end
 
 if mods['angelsbioprocessing'] then
+    data.raw.technology['angels-alien-artifact-red'].unit.ingredients = {
+        { type = "item", name = "alien-artifact-red-tool", amount = 1 },
+        }
+    data.raw.technology['angels-alien-artifact-orange'].unit.ingredients = {
+        { type = "item", name = "alien-artifact-orange-tool", amount = 1 },
+        }
+    data.raw.technology['angels-alien-artifact-yellow'].unit.ingredients = {
+        { type = "item", name = "alien-artifact-yellow-tool", amount = 1 },
+        }
+    data.raw.technology['angels-alien-artifact-green'].unit.ingredients = {
+        { type = "item", name = "alien-artifact-green-tool", amount = 1 },
+        }
+    data.raw.technology['angels-alien-artifact-blue'].unit.ingredients = {
+        { type = "item", name = "alien-artifact-blue-tool", amount = 1 },
+        }
+    data.raw.technology['angels-alien-artifact-purple'].unit.ingredients = {
+        { type = "item", name = "alien-artifact-purple-tool", amount = 1 },
+        }
+    data.raw.technology['angels-alien-artifact'].unit.ingredients = {
+        { type = "item", name = "alien-artifact-tool", amount = 1 },
+        }
+    if mods['pyalienlife'] then
+        set_to_py1_with_bio('bio-fermentation')
+        set_to_py1_with_bio('bio-arboretum-temperate-1')
+    end
     if mods['pyalternativeenergy'] then
         TECHNOLOGY('silicon-mk01'):add_prereq('bio-processing-crystal-splinter-1')
     end

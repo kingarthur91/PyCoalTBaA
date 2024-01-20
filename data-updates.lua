@@ -3,6 +3,9 @@
 --angel mods
 require('prototypes/angels-mods/Data-Updates')
 
+--aai
+require('prototypes/aai/Data-updates')
+
 --bob mods
 require('prototypes/bobs-mods/Data-Updates')
 

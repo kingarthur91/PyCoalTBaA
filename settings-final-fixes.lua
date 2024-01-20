@@ -13,4 +13,7 @@ if mods['MoreSciencePacks-for1_1'] then
 	data.raw["bool-setting"]["moresciencepack-GameProgressionFix"].hidden = true
 	data.raw["bool-setting"]["moresciencepack-no-lab-slots"].forced_value = true
 	data.raw["bool-setting"]["moresciencepack-no-lab-slots"].hidden = true
+	--Just use legacy mode (it's easier)
+	data.raw["bool-setting"]["moresciencepack-Omni-Ignored"].forced_value = true
+	data.raw["bool-setting"]["moresciencepack-Omni-Ignored"].hidden = true
 end

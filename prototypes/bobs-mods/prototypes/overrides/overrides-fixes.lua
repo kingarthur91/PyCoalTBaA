@@ -1,3 +1,28 @@
+
+if mods['boblogistics'] then
+    data.raw.inserter["steam-inserter"].filter_count = 1
+    data.raw.inserter["inserter"].filter_count = 2
+    data.raw.inserter["long-handed-inserter"].filter_count = 3
+    data.raw.inserter["fast-inserter"].filter_count = 4
+    data.raw.inserter["turbo-inserter"].filter_count = 5
+    data.raw.inserter["express-inserter"].filter_count = 5
+
+    data.raw.inserter["red-stack-inserter"].filter_count = 3
+    data.raw.inserter["stack-inserter"].filter_count = 4
+    data.raw.inserter["turbo-stack-inserter"].filter_count = 5
+    data.raw.inserter["express-stack-inserter"].filter_count = 5
+
+    RECIPE("yellow-filter-inserter"):remove_unlock("logistics")
+    RECIPE("red-filter-inserter"):remove_unlock("fast-inserter")
+    RECIPE("filter-inserter-2"):remove_unlock("fast-inserter-2")
+    RECIPE("red-stack-filter-inserter"):remove_unlock("stack-inserter")
+    RECIPE("filter-inserter"):remove_unlock("express-inserters")
+    RECIPE("stack-filter-inserter-2"):remove_unlock("stack-inserter-2")
+    RECIPE("turbo-filter-inserter"):remove_unlock("turbo-inserter")
+    RECIPE("turbo-stack-filter-inserter"):remove_unlock("stack-inserter-3")
+    RECIPE("express-filter-inserter"):remove_unlock("ultimate-inserter")
+    RECIPE("express-stack-filter-inserter"):remove_unlock("stack-inserter-4")
+end
 if mods['bobassembly'] then
     TECHNOLOGY('automation'):add_prereq('basic-automation')
     if mods['pyalternativeenergy'] then
@@ -7,6 +32,7 @@ if mods['bobassembly'] then
         data.raw["assembling-machine"]["centrifuge-3"].next_upgrade = nil
         ]]--
     end
+
 end
 if mods['bobplates'] then
     data.raw.recipe['nitrogen'].hidden = false
@@ -24,5 +50,11 @@ if mods['bobplates'] then
         RECIPE('ball-mill-mk02'):add_ingredient({type = "item", name = "steel-bearing-ball", amount = 1000})
         RECIPE('ball-mill-mk03'):add_ingredient({type = "item", name = "steel-bearing-ball", amount = 1000})
         RECIPE('ball-mill-mk04'):add_ingredient({type = "item", name = "steel-bearing-ball", amount = 1000})
+    end
+end
+
+if mods['bobwarfare'] then
+    if mods['pyalienlife'] then
+        TECHNOLOGY('bob-rocket'):remove_pack("production-science-pack"):remove_pack("production-science-pack")
     end
 end

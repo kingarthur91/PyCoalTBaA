@@ -91,9 +91,6 @@ if mods['angelsrefining'] then
         data.raw.recipe['barreling-pump'] = nil
         fun.remove_recipe_unlock('barreling-pump')
     end
-    if mods['pyalienlife'] then
-        RECIPE('empty-planter-box'):remove_ingredient('stone-brick'):add_ingredient({type = "item", name = "stone-brick", amount = 2})
-    end
     if mods['pyrawores'] then
         if mods['SeaBlock'] then goto skipseablock end
         if angelsmods.trigger.ores["lead"] then
@@ -125,6 +122,12 @@ if mods['angelsrefining'] then
             fun.tech_add_prerequisites('solder-mk01', 'ore-crushing')
         end
         ::skipseablock::
+    end
+    if mods['pyhightech'] then
+        TECHNOLOGY('water-treatment'):add_prereq('vacuum-tube-electronics')
+    end
+    if mods['pyalienlife'] then
+        RECIPE('empty-planter-box'):remove_ingredient('stone-brick'):add_ingredient({type = "item", name = "stone-brick", amount = 2})
     end
     if mods['pyhardmode'] then
         data.raw.recipe['stone-crushed'].normal.enabled = false
@@ -175,6 +178,18 @@ if mods['angelspetrochem'] then
                 TECHNOLOGY('basic-chemistry'):add_prereq('vacuum-tube-electronics')
             end
         end
+    end
+    if mods['pyhightech'] then
+        TECHNOLOGY('melamine'):add_prereq('resins')
+        RECIPE('melamine-resin'):add_ingredient({type = "fluid", name = "saps", amount = 10})
+        require('__PyCoalTBaA__/prototypes/angels-mods/prototypes/recipes/urea')
+    end
+    if mods['pyalienlife'] then
+        TECHNOLOGY('basic-chemistry-3'):add_prereq('py-science-pack-mk01')
+        TECHNOLOGY('resin-1'):remove_prereq('angels-nitrogen-processing-2')
+        TECHNOLOGY('melamine'):add_prereq('resins')
+
+        RECIPE('solid-resin'):set_fields{ results = {{type = "item", name = "saps", amount = 40}} }
     end
     if mods['pyhardmode'] then
         --This code is by NotNotMelon
@@ -268,7 +283,12 @@ if mods['angelsindustries'] then
 end
 
 if mods['angelsbioprocessing'] then
-    TECHNOLOGY('bio-processing-green'):add_prereq('vacuum-tube-electronics')
+    if mods['pyhightech'] then
+        TECHNOLOGY('bio-processing-green'):add_prereq('vacuum-tube-electronics')
+        fun.tech_merge('plastic-1', 'plastics-mk02')
+        fun.tech_merge('plastic-2', 'plastics-mk03')
+        fun.tech_merge('plastic-3', 'plastics-mk04')
+    end
 
     if mods['pyalienlife'] then
         data.raw.recipe['algae-green-simple'] = nil
@@ -280,6 +300,14 @@ if mods['angelsbioprocessing'] then
     end
     if mods['pyalternativeenergy'] then
         RECIPE('eg-si'):add_ingredient({type = "item", name = "crystal-grindstone", amount = 1})
+    end
+end
+
+if mods['angelsexploration'] then
+    TECHNOLOGY('angels-turbo-bike'):remove_prereq('steel-processing'):add_prereq('engine')
+    RECIPE('angels-turbo-bike'):remove_ingredient('steel-plate'):add_ingredient({type = "item", name = "engine-unit", amount = 2})
+    if mods['pyalienlife'] then
+        TECHNOLOGY('automobilism'):add_prereq('py-science-pack-mk01')
     end
 end
 
