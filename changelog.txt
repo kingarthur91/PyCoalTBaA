@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version 1.2.28
+Date: 2024-1-25
+  Changes:
+    - Added a plan
+    - Cleaned up some useless files
+  Bugfixes:
+    - Fixed crash when Angel's refining was not enabled
+---------------------------------------------------------------------------------------------------
 Version 1.2.27
 Date: 2024-1-19
   Changes:

@@ -1,4 +1,8 @@
 --FALLBACKS
+--Check to see if we can set fallbacks
+if not angelsmods then return end
+if not angelsmods.functions then return end
+if not angelsmods.functions.RB then return end
 --CIRCUITS
 angelsmods.functions.RB.set_fallback(
   "item",
