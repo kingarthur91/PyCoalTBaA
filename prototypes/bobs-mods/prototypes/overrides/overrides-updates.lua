@@ -103,6 +103,39 @@ if mods['bobplates'] then
 end
 
 if mods['bobpower'] then
+    if settings.startup["bobmods-power-steam"].value == true then
+        --Change Bob's boiler's and engines to be in line with Py's
+        data.raw.boiler['boiler-2'].target_temperature = 300
+        data.raw.boiler['boiler-2'].energy_consumption = '5.50125MW'
+        data.raw.boiler['boiler-3'].target_temperature = 350
+        data.raw.boiler['boiler-3'].energy_consumption = '7.30125MW'
+        data.raw.boiler['boiler-4'].target_temperature = 400
+        data.raw.boiler['boiler-4'].energy_consumption = '9.10125MW'
+        data.raw.boiler['boiler-5'].target_temperature = 450
+        data.raw.boiler['boiler-5'].energy_consumption = '10.90125MW'
+
+        data.raw.boiler['boiler-2'].energy_source.fuel_categories = {'chemical', 'biomass'}
+        data.raw.boiler['boiler-3'].energy_source.fuel_categories = {'chemical', 'biomass'}
+        data.raw.boiler['boiler-4'].energy_source.fuel_categories = {'chemical', 'biomass'}
+        data.raw.boiler['boiler-5'].energy_source.fuel_categories = {'chemical', 'biomass'}
+
+        data.raw.generator['steam-engine'].maximum_temperature = 250
+        data.raw.generator['steam-engine-2'].maximum_temperature = 300
+        data.raw.generator['steam-engine-3'].maximum_temperature = 350
+        data.raw.generator['steam-engine-4'].maximum_temperature = 400
+        data.raw.generator['steam-engine-5'].maximum_temperature = 450
+
+        data.raw.generator['steam-engine-2'].destroy_non_fuel_fluid = false
+        data.raw.generator['steam-engine-3'].destroy_non_fuel_fluid = false
+        data.raw.generator['steam-engine-4'].destroy_non_fuel_fluid = false
+        data.raw.generator['steam-engine-5'].destroy_non_fuel_fluid = false
+
+        data.raw.generator['steam-engine'].fluid_usage_per_tick = 0.25
+        data.raw.generator['steam-engine-2'].fluid_usage_per_tick = 0.25
+        data.raw.generator['steam-engine-3'].fluid_usage_per_tick = 0.25
+        data.raw.generator['steam-engine-4'].fluid_usage_per_tick = 0.25
+        data.raw.generator['steam-engine-5'].fluid_usage_per_tick = 0.25
+    end
     if mods['pyalienlife'] then
         fun.ingredient_replace('collector','steam-engine','bob-burner-generator')
     end
