@@ -92,6 +92,18 @@ if mods['bobmining'] then
     end
 end
 
+if mods['bobores'] then
+    if mods['pyrawores'] then
+        data.raw.resource['ore-aluminium'].minable.results = {
+            {
+                type = 'item',
+                name = 'bauxite-ore',
+                amount = 1
+            }
+        }
+    end
+end
+
 if mods['bobplates'] then
     if mods['pyalienlife'] then
         RECIPE('silicon-carbide'):remove_unlock('grinding')

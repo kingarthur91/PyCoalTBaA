@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version 1.2.30
+Date: 2024-1-28
+  Bugfixes:
+    - Fixed that aluminum ore didn't output the correct aluminium
+---------------------------------------------------------------------------------------------------
 Version 1.2.29
-Date: 2024-1-25
+Date: 2024-1-27
   Bugfixes:
     - Fixed that wood didn't burn
     - Changed Bob's boilers and engines to be more in-line with Py's
