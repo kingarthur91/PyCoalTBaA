@@ -24,6 +24,11 @@ if mods['angelsrefining'] then
     data.raw.recipe['filtration-unit'] = nil
     fun.remove_recipe_unlock('filtration-unit')
     if mods['pyalienlife'] then TECHNOLOGY('soil-washing'):add_prereq('water-washing-1') end
+    -- change barreling machine
+    if mods['pyindustry'] then
+        data.raw.recipe['barreling-pump'] = nil
+        fun.remove_recipe_unlock('barreling-pump')
+    end
     if mods['pyrawores'] then
         --mk02
         table.insert(data.raw['assembling-machine']['carbon-filter-mk02'].crafting_categories, 'filtering')
@@ -85,13 +90,6 @@ if mods['angelsrefining'] then
         fun.remove_recipe_unlock('ore-leaching-plant-3')
         -- add category to py mk04
         table.insert(data.raw['assembling-machine']['leaching-station-mk04'].crafting_categories, 'ore-refining-t3')
-    end
-    -- change barreling machine
-    if mods['pyindustry'] then
-        data.raw.recipe['barreling-pump'] = nil
-        fun.remove_recipe_unlock('barreling-pump')
-    end
-    if mods['pyrawores'] then
         if mods['SeaBlock'] then goto skipseablock end
         if angelsmods.trigger.ores["lead"] then
             data.raw.resource['ore-lead'] = nil
@@ -122,6 +120,9 @@ if mods['angelsrefining'] then
             fun.tech_add_prerequisites('solder-mk01', 'ore-crushing')
         end
         ::skipseablock::
+
+        RECIPE('washing-plant'):remove_ingredient('electronic-circuit')
+        RECIPE('washing-plant'):add_ingredient({type = "item", name = "small-parts-01", amount = 10})
     end
     if mods['pyhightech'] then
         TECHNOLOGY('water-treatment'):add_prereq('vacuum-tube-electronics')
