@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version 1.2.32
+Date: 2024-5-23
+  Bugfixes:
+    - Fixed crash with advanced fluid handeling
+    - Fixed crash when ferric chloride solution was removed
+---------------------------------------------------------------------------------------------------
 Version 1.2.31
 Date: 2024-3-5
   Bugfixes:

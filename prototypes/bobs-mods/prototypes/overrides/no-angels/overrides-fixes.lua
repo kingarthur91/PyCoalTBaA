@@ -1,3 +1,30 @@
+if mods['boblogistics'] then
+	if mods['pyindustry'] then
+		if mods['underground-pipe-pack'] then
+			data.raw['pipe-to-ground']['underground-i-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['underground-L-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['underground-t-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['underground-cross-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-one-forward-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-one-left-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-one-right-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-one-reverse-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-two-perpendicular-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-two-parallel-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-two-perpendicular-secondary-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-two-parallel-secondary-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-two-L-FL-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-two-L-FR-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-two-L-RR-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-two-L-RL-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-three-forward-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-three-left-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-three-right-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-three-reverse-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-four-t3-pipe'].next_upgrade = nil
+		end
+	end
+end
 if mods['bobassembly'] then
 	data.raw['assembling-machine']['chemical-plant'].next_upgrade = nil
 end
