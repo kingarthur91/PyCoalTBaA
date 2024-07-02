@@ -89,7 +89,7 @@ end
 
 if mods['bobelectronics'] then
 	if mods['pycoalprocessing'] then
-        if data.raw.recipe['ferric-chloride-solution'] then
+		if data.raw.recipe['ferric-chloride-solution'] then
             RECIPE('ferric-chloride-solution'):add_unlock('sulfur-processing')
             RECIPE('ferric-chloride-solution'):set_fields{ category = "chemistry" }:set_fields{energy_required = 3}
             RECIPE('ferric-chloride-solution'):remove_ingredient('iron-ore')

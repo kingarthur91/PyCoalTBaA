@@ -1,27 +1,35 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.33
+Date: 2024-7-1
+  Changes:
+    - Balanced iron processing
+    - Merged Py's canisters and Bob's canisters
+  Bugfixes:
+    - Made barreling unlocked earlier, allowing vrauks to be crafted
+---------------------------------------------------------------------------------------------------
 Version 1.2.32
 Date: 2024-5-23
   Bugfixes:
     - Fixed crash with advanced fluid handeling
     - Fixed crash when ferric chloride solution was removed
 ---------------------------------------------------------------------------------------------------
-Version 1.2.31
+Version: 1.2.31
 Date: 2024-3-5
   Bugfixes:
     - Fixed that washing plants were uncraftable
 ---------------------------------------------------------------------------------------------------
-Version 1.2.30
+Version: 1.2.30
 Date: 2024-1-28
   Bugfixes:
     - Fixed that aluminum ore didn't output the correct aluminium
 ---------------------------------------------------------------------------------------------------
-Version 1.2.29
+Version: 1.2.29
 Date: 2024-1-27
   Bugfixes:
     - Fixed that wood didn't burn
     - Changed Bob's boilers and engines to be more in-line with Py's
 ---------------------------------------------------------------------------------------------------
-Version 1.2.28
+Version: 1.2.28
 Date: 2024-1-25
   Changes:
     - Added a plan
@@ -29,7 +37,7 @@ Date: 2024-1-25
   Bugfixes:
     - Fixed crash when Angel's refining was not enabled
 ---------------------------------------------------------------------------------------------------
-Version 1.2.27
+Version: 1.2.27
 Date: 2024-1-19
   Changes:
     - Removed filter inserters
@@ -37,7 +45,7 @@ Date: 2024-1-19
     - Changed Angel's resin a bit
     - Changed the Throvin bicycles a bit
 ---------------------------------------------------------------------------------------------------
-Version 1.2.26
+Version: 1.2.26
 Date: 2023-11-21
   Changes:
     - Changed rocket fuel recipe
@@ -45,12 +53,12 @@ Date: 2023-11-21
   Bugfixes:
     - Fixed crash with new Py update
 ---------------------------------------------------------------------------------------------------
-Version 1.2.25
+Version: 1.2.25
 Date: 2023-11-7
   Bugfixes:
     - Fixed case sensitive crash for linux users
 ---------------------------------------------------------------------------------------------------
-Version 1.2.24
+Version: 1.2.24
 Date: 2023-11-6
   Changes:
     - Did a lot of stuff, not going to mention it all here because I forget
@@ -59,7 +67,7 @@ Date: 2023-11-6
   Compatibility:
     - MSP Compat
 ---------------------------------------------------------------------------------------------------
-Version 1.2.23
+Version: 1.2.23
 Date: 2023-10-7
   Changes:
     - Readded Productivity for farm modules
@@ -67,27 +75,27 @@ Date: 2023-10-7
     - Worked on PyBob
     - Added incompatibilities with Nullius and Seablock
 ---------------------------------------------------------------------------------------------------
-Version 1.2.22
+Version: 1.2.22
 Date: 2023-9-30
   Changes:
     - Fix crash with bob's and not angels
 ---------------------------------------------------------------------------------------------------
-Version 1.2.21
+Version: 1.2.21
 Date: 2023-9-30
   Changes:
     - Fix crash without angel's industries
 ---------------------------------------------------------------------------------------------------
-Version 1.2.20
+Version: 1.2.20
 Date: 2023-9-26
   Changes:
     - Fix code I forgot to commit
 ---------------------------------------------------------------------------------------------------
-Version 1.2.1
+Version: 1.2.1
 Date: 2023-9-25
   Changes:
     - Added a setting to log technologies
 ---------------------------------------------------------------------------------------------------
-Version 1.2.0
+Version: 1.2.0
 Date: 2023-5-2
   Changes:
     - Made Bob'sMoules4Py a required dependency

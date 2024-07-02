@@ -25,6 +25,7 @@ if mods['boblogistics'] then
 		end
 	end
 end
+
 if mods['bobassembly'] then
 	data.raw['assembling-machine']['chemical-plant'].next_upgrade = nil
 end

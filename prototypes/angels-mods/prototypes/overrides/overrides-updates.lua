@@ -122,7 +122,9 @@ if mods['angelsrefining'] then
         ::skipseablock::
 
         RECIPE('washing-plant'):remove_ingredient('electronic-circuit')
-        RECIPE('washing-plant'):add_ingredient({type = "item", name = "small-parts-01", amount = 10})
+        RECIPE('washing-plant'):add_ingredient({type = "item", name = "small-parts-01", amount = 15})
+        RECIPE('seafloor-pump'):remove_ingredient('electronic-circuit')
+        RECIPE('seafloor-pump'):add_ingredient({type = "item", name = "small-parts-01", amount = 10})
     end
     if mods['pyhightech'] then
         TECHNOLOGY('water-treatment'):add_prereq('vacuum-tube-electronics')
@@ -246,6 +248,48 @@ if mods['angelssmelting'] then
         fun.tech_add_recipe('angels-solder-smelting-basic', 'lead-plate-1')
 
         data.raw.recipe['solder-0'] = nil
+
+        local function divide_result(recipe, n)
+            local results = data.raw.recipe[recipe].results
+            if not results then return end
+            results[1].amount = results[1].amount / n
+        end
+
+        local function multiply_result(recipe, n)
+            local results = data.raw.recipe[recipe].results
+            if not results then return end
+            results[1].amount = results[1].amount * n
+        end
+
+        if angelsmods.trigger.smelting_products["iron"].ingot then
+            divide_result('iron-ore-smelting', 2)
+            divide_result('processed-iron-smelting', 2)
+            divide_result('pellet-iron-smelting', 2)
+
+            divide_result('molten-iron-smelting-1', 5)
+            divide_result('molten-iron-smelting-2', 5)
+            divide_result('molten-iron-smelting-3', 5)
+
+            RECIPE('molten-iron-05'):remove_ingredient('processed-iron-ore')
+            RECIPE('molten-iron-05'):add_ingredient({type = "item", name = "iron-ingot", amount = 4})
+            RECIPE('iron-ore-processing'):remove_ingredient('iron-ore')
+            RECIPE('iron-ore-processing'):add_ingredient({type = "item", name = "processed-iron-ore", amount = 4})
+            RECIPE('grade-2-iron'):remove_ingredient('processed-iron-ore')
+            RECIPE('grade-2-iron'):add_ingredient({type = "item", name = "processed-iron", amount = 5})
+            RECIPE('iron-processed-processing'):remove_ingredient('processed-iron')
+            RECIPE('iron-processed-processing'):add_ingredient({type = "item", name = "unslimed-iron", amount = 2})
+            RECIPE('iron-pulp-02'):remove_ingredient('unslimed-iron')
+            RECIPE('iron-pulp-02'):add_ingredient({type = "item", name = "pellet-iron", amount = 2})
+
+            OV.disable_recipe({
+                'molten-iron-01',
+                'molten-iron-02',
+                'molten-iron-03',
+                'molten-iron-04',
+            })
+
+            TECHNOLOGY('iron-mk02'):add_prereq('angels-iron-casting-2')
+        end
     end
     if mods['pyalienlife'] then
         TECHNOLOGY('angels-metallurgy-1'):add_prereq('hot-air-mk01')

@@ -38,6 +38,11 @@ if mods['bobplates'] then
     data.raw.recipe['nitrogen'].hidden = false
 
     data.raw['assembling-machine']['assembling-machine-3'].allowed_effects = {"consumption", "speed", "productivity", "pollution"}
+
+    fun.tech_merge('fluid-canister-processing', 'plastics')
+    TECHNOLOGY('plastics'):add_prereq('fluid-handling')
+    TECHNOLOGY('gas-canisters'):add_prereq('fluid-barrel-processing')
+    TECHNOLOGY('gas-canisters'):remove_pack('logistic-science-pack'):remove_pack('py-science-pack-1')
     if mods['pyrawores'] then
         if not mods['angelspetrochem'] then
             fun.global_prereq_replacer('electrolysis-1', 'electrolysis')
@@ -50,6 +55,9 @@ if mods['bobplates'] then
         RECIPE('ball-mill-mk02'):add_ingredient({type = "item", name = "steel-bearing-ball", amount = 1000})
         RECIPE('ball-mill-mk03'):add_ingredient({type = "item", name = "steel-bearing-ball", amount = 1000})
         RECIPE('ball-mill-mk04'):add_ingredient({type = "item", name = "steel-bearing-ball", amount = 1000})
+    end
+    if mods['pyalienlife'] then
+        TECHNOLOGY('vrauks'):remove_prereq('fluid-handling'):add_prereq('fluid-barrel-processing')
     end
 end
 

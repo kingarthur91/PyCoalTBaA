@@ -111,6 +111,10 @@ if mods['bobplates'] then
         data.raw.recipe['silicon-carbide'] = nil
 
         TECHNOLOGY('grinding'):add_prereq('silicon-carbide')
+
+        TECHNOLOGY('fluid-barrel-processing'):add_prereq('fluid-handling')
+        TECHNOLOGY('fluid-barrel-processing'):remove_prereq('logistic-science-pack')
+        TECHNOLOGY('fluid-barrel-processing'):remove_pack('logistic-science-pack'):remove_pack('py-science-pack-1')
     end
 end
 
@@ -231,17 +235,17 @@ if mods['bobassembly'] then
         data.raw['assembling-machine']['electronics-machine-2'].allowed_effects = { 'speed', 'consumption', 'pollution' }
         data.raw['assembling-machine']['electronics-machine-3'].allowed_effects = { 'speed', 'consumption', 'pollution' }
         table.insert(data.raw['assembling-machine']['chipshooter-mk01'].crafting_categories, 'circuits')
-        data.raw['assembling-machine']['chipshooter-mk01'].module_specification = { module_slots = 2 },
-        data.raw['assembling-machine']['chipshooter-mk01'].crafting_speed == 2
+        data.raw['assembling-machine']['chipshooter-mk01'].module_specification = { module_slots = 2 }
+        data.raw['assembling-machine']['chipshooter-mk01'].crafting_speed = 2
         table.insert(data.raw['assembling-machine']['chipshooter-mk02'].crafting_categories, 'circuits')
-        data.raw['assembling-machine']['chipshooter-mk02'].module_specification = { module_slots = 4 },
-        data.raw['assembling-machine']['chipshooter-mk02'].crafting_speed == 4
+        data.raw['assembling-machine']['chipshooter-mk02'].module_specification = { module_slots = 4 }
+        data.raw['assembling-machine']['chipshooter-mk02'].crafting_speed = 4
         table.insert(data.raw['assembling-machine']['chipshooter-mk03'].crafting_categories, 'circuits')
-        data.raw['assembling-machine']['chipshooter-mk03'].module_specification = { module_slots = 6 },
-        data.raw['assembling-machine']['chipshooter-mk03'].crafting_speed == 6
+        data.raw['assembling-machine']['chipshooter-mk03'].module_specification = { module_slots = 6 }
+        data.raw['assembling-machine']['chipshooter-mk03'].crafting_speed = 6
         table.insert(data.raw['assembling-machine']['chipshooter-mk04'].crafting_categories, 'circuits')
-        data.raw['assembling-machine']['chipshooter-mk04'].module_specification = { module_slots = 8 },
-        data.raw['assembling-machine']['chipshooter-mk04'].crafting_speed == 8
+        data.raw['assembling-machine']['chipshooter-mk04'].module_specification = { module_slots = 8 }
+        data.raw['assembling-machine']['chipshooter-mk04'].crafting_speed = 8
         data.raw['assembling-machine']['electronics-machine-1'].energy_usage = "300kW"
         data.raw['assembling-machine']['electronics-machine-2'].energy_usage = "600kW"
         data.raw['assembling-machine']['electronics-machine-3'].energy_usage = "1MW"
@@ -253,13 +257,13 @@ if mods['bobassembly'] then
     if mods['pyalternativeenergy'] then
         -- merge bobs centrifuges into pys centrifuges
         -- mk01
-        data.raw["assembling-machine"]["centrifuge"].minable = { mining_time = 0.5, result = "centrifuge-mk01" },
+        data.raw["assembling-machine"]["centrifuge"].minable = { mining_time = 0.5, result = "centrifuge-mk01" }
         fun.remove_recipe_unlock('centrifuge')
         -- mk02
-        data.raw["assembling-machine"]["centrifuge-2"].minable = { mining_time = 0.5, result = "centrifuge-mk02" },
+        data.raw["assembling-machine"]["centrifuge-2"].minable = { mining_time = 0.5, result = "centrifuge-mk02" }
         fun.remove_recipe_unlock('centrifuge-2')
         -- mk03
-        data.raw["assembling-machine"]["centrifuge-3"].minable = { mining_time = 0.5, result = "centrifuge-mk03" },
+        data.raw["assembling-machine"]["centrifuge-3"].minable = { mining_time = 0.5, result = "centrifuge-mk03" }
         fun.remove_recipe_unlock('centrifuge-3')
     end
 end

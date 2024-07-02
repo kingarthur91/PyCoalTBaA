@@ -689,8 +689,6 @@ end
 function overrides.remove_recipe_unlock(recipe_list)
     local recipelist = {}
 
-    --log(serpent.block(recipelist))
-
     if type(recipe_list) ~= 'table' and recipe_list ~= nil then
         recipelist[recipe_list] = true
     elseif recipe_list ~= nil then
@@ -699,26 +697,15 @@ function overrides.remove_recipe_unlock(recipe_list)
         end
     end
 
-    --log(serpent.block(recipelist))
-
     for t, tech in pairs(drt) do
         if tech.effects ~= nil then
             for u, unlock in pairs(tech.effects) do
-                --log(serpent.block(unlock))
-                --log(serpent.block(recipelist[unlock.recipe]))
-                --log(serpent.block(tech))
-
                 if recipelist[unlock.recipe] ~= nil then
-                    --log(serpent.block(drt[tech.name].effects[u]))
                     drt[tech.name].effects[u] = nil
 
-                --log(serpent.block(drt[tech.name].effects[u]))
-                --log(serpent.block(drt[tech.name].effects))
                 end
             end
         end
-        --log(serpent.block(drt[tech.name]))
-        --clean up tech effects table to not be full of nil values to avoid errors
 
         local cleanedtable = {}
 
@@ -731,8 +718,6 @@ function overrides.remove_recipe_unlock(recipe_list)
         end
 
         drt[tech.name].effects = cleanedtable
-
-        --log(serpent.block(drt[tech.name]))
     end
 end
 
