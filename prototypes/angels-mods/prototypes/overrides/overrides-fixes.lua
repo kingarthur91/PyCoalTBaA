@@ -6,6 +6,7 @@ local function set_to_py1(techname)
         {"py-science-pack-1", 1}
     }
 end
+
 local function set_to_py1_with_bio(techname)
     if not data.raw.technology[techname] then return end 
     data.raw.technology[techname].unit.ingredients = {
@@ -14,10 +15,48 @@ local function set_to_py1_with_bio(techname)
         {"py-science-pack-1", 1}
     }
 end
+
 if mods['angelsrefining'] then
     if mods['pyalienlife'] then
         set_to_py1('ore-floatation')
         set_to_py1('water-treatment-2')
+
+        fun.tech_merge('soil-washing', 'water-washing-1')
+    end
+end
+
+
+if mods['angelspetrochem'] then
+    if mods['pypetroleumhandling'] then
+        fun.tech_merge('angels-oil-processing', 'petroleum-gas-mk01')
+
+        TECHNOLOGY('petroleum-gas-mk01'):add_prereq('oil-gas-extraction')
+        TECHNOLOGY('petroleum-gas-mk01'):remove_prereq('drilling-fluid-mk01')
+        TECHNOLOGY('scrude'):add_prereq('oil-machines-mk01')
+    end
+    if mods['pyhightech'] then
+        TECHNOLOGY('angels-nitrogen-processing-1'):remove_prereq('basic-chemistry')
+        TECHNOLOGY('vacuum-tube-electronics'):add_prereq('angels-nitrogen-processing-1')
+        TECHNOLOGY('mining-with-fluid'):remove_prereq('steel-processing')
+    end
+    if mods['pyalienlife'] then
+        for i, ingredient in pairs(data.raw.technology['basic-chemistry-3'].unit.ingredients) do
+            if ingredient.name == "logistic-science-pack" then
+                data.raw.technology['basic-chemistry-3'].unit.ingredients[i] = nil
+            end
+        end
+
+        set_to_py1('angels-advanced-chemistry-1')
+        set_to_py1('angels-sulfur-processing-1')
+        set_to_py1('basic-chemistry-3')
+        set_to_py1('resin-1')
+        set_to_py1('resins')
+        set_to_py1('scrude')
+
+        if mods['pypetroleumhandling'] then
+            TECHNOLOGY('angels-nitrogen-processing-4'):remove_prereq('angels-advanced-chemistry-5'):remove_pack('utility-science-pack')
+            TECHNOLOGY('angels-nitrogen-processing-4'):add_prereq('py-science-pack-3')
+        end
     end
 end
 
@@ -41,34 +80,15 @@ if mods['angelssmelting'] then
 
         data.raw.recipe['extract-limestone-01'].enabled = false
         data.raw.recipe['extract-limestone-01'].hidden = true
+
+        TECHNOLOGY('iron-mk01'):add_prereq('angels-iron-smelting-1')
+        TECHNOLOGY('iron-mk02'):add_prereq('angels-iron-casting-2')
+        TECHNOLOGY('iron-mk03'):add_prereq('angels-iron-smelting-3')
+
+        TECHNOLOGY('copper-mk03'):add_prereq('angels-copper-smelting-3')
     end
     if mods['pyalternativeenergy'] then
         fun.tech_add_prerequisites('silicon-mk01', 'angels-silicon-smelting-1')
-    end
-end
-
-if mods['angelspetrochem'] then
-    if mods['pyhightech'] then
-        TECHNOLOGY('angels-nitrogen-processing-1'):remove_prereq('basic-chemistry')
-        TECHNOLOGY('vacuum-tube-electronics'):add_prereq('angels-nitrogen-processing-1')
-        TECHNOLOGY('mining-with-fluid'):remove_prereq('steel-processing')
-    end
-    if mods['pyalienlife'] then
-        for i, ingredient in pairs(data.raw.technology['basic-chemistry-3'].unit.ingredients) do
-            if ingredient.name == "logistic-science-pack" then
-                data.raw.technology['basic-chemistry-3'].unit.ingredients[i] = nil
-            end
-        end
-
-        set_to_py1('angels-advanced-chemistry-1')
-        set_to_py1('basic-chemistry-3')
-        set_to_py1('resins')
-        set_to_py1('resin-1')
-        set_to_py1('angels-sulfur-processing-1')
-        if mods['pypetroleumhandling'] then
-            TECHNOLOGY('angels-nitrogen-processing-4'):remove_prereq('angels-advanced-chemistry-5'):remove_pack('utility-science-pack')
-            TECHNOLOGY('angels-nitrogen-processing-4'):add_prereq('py-science-pack-3')
-        end
     end
 end
 

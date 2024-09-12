@@ -1,6 +1,15 @@
 local table = require "__stdlib__.stdlib.utils.table"
 
 if mods['bobelectronics'] then
+    if mods['pycoalprocessing'] then
+        if data.raw.recipe['ferric-chloride-solution'] then
+            RECIPE('ferric-chloride-solution'):add_unlock('sulfur-processing')
+            RECIPE('ferric-chloride-solution'):set_fields{ category = "chemistry" }:set_fields{energy_required = 3}
+            RECIPE('ferric-chloride-solution'):remove_ingredient('iron-ore')
+            RECIPE('ferric-chloride-solution'):add_ingredient({type = "fluid", name = "acidgas", amount = 5}):add_ingredient({type = "item", name = "iron-ore", amount = 10})
+            table.insert(data.raw.recipe['ferric-chloride-solution'].results, {type = "fluid", name = "acidgas", amount = 6, probability = 0.5})
+        end
+    end
     if mods['pyhightech'] then
         data.raw.recipe['silicon-wafer'].enabled = false
         data.raw.recipe['bob-rubber'].enabled = false
@@ -41,9 +50,15 @@ end
 
 if mods['boblogistics'] then
     data.raw.recipe['underground-belt'].enabled = false
-    RECIPE('underground-belt'):add_unlock('logistics')
 
     RECIPE('repair-pack-2'):remove_ingredient("iron-gear-wheel"):add_ingredient("repair-pack")
+    RECIPE('turbo-inserter'):remove_ingredient("processing-unit")
+    RECIPE('turbo-inserter'):add_ingredient({type = "item", name = "processing-unit", amount = 5})
+    RECIPE('turbo-stack-inserter'):remove_ingredient("processing-unit")
+    RECIPE('turbo-stack-inserter'):add_ingredient({type = "item", name = "processing-unit", amount = 10})
+    RECIPE('underground-belt'):add_unlock('logistics')
+
+    TECHNOLOGY('express-inserters'):remove_prereq('logistics-3'):add_prereq('logistics-2')
 
     if settings.startup['bobmods-logistics-inserteroverhaul'].value then
         fun.ingredient_replace('rare-earth-mine','fast-inserter','red-inserter')
@@ -54,6 +69,27 @@ if mods['boblogistics'] then
     if mods['pyindustry'] then
         fun.tech_remove_recipe('fluid-handling', 'bob-storage-tank-all-corners')
     end
+
+    if mods['pyfusionenergy'] then
+        RECIPE('turbo-inserter'):add_ingredient({type = "item", name = "super-alloy", amount = 5})
+        RECIPE('turbo-stack-inserter'):add_ingredient({type = "item", name = "super-alloy", amount = 10})
+    end
+
+    if mods['pypetroleumhandling'] then
+        RECIPE('red-stack-inserter'):add_ingredient({type = "item", name = "belt", amount = 5})
+        RECIPE('red-stack-inserter'):add_ingredient({type = "item", name = "small-parts-02", amount = 5})
+        RECIPE('fast-inserter'):remove_ingredient("belt")
+        RECIPE('fast-inserter'):add_ingredient({type = "item", name = "belt", amount = 5})
+        RECIPE('turbo-inserter'):add_ingredient({type = "item", name = "belt", amount = 10})
+        RECIPE('turbo-inserter'):add_ingredient({type = "item", name = "small-parts-03", amount = 10})
+        RECIPE('turbo-stack-inserter'):add_ingredient({type = "item", name = "belt", amount = 15})
+        RECIPE('turbo-stack-inserter'):add_ingredient({type = "item", name = "small-parts-03", amount = 15})
+    end
+
+    if mods['pyrawores'] then
+        RECIPE('stack-inserter-2'):add_ingredient({type = "item", name = "nbfe-alloy", amount = 5})
+    end
+
     if mods['pyhightech'] then
       --more robot stuff
       RECIPE('repair-pack-2'):remove_ingredient("electronic-circuit"):add_ingredient("pcb1")
@@ -65,13 +101,30 @@ if mods['boblogistics'] then
       RECIPE('roboport-antenna-1'):replace_ingredient("advanced-circuit", "electronic-circuit")
       RECIPE('roboport-chargepad-1'):replace_ingredient("advanced-circuit", "electronic-circuit")
     end
-    
-    settings.startup["bobmods-logistics-beltperlevel"].hidden = true
+
+    if mods['pyalienlife'] then
+        RECIPE('red-stack-inserter'):add_ingredient({type = "item", name = "advanced-circuit", amount = 10})
+        RECIPE('red-stack-inserter'):add_ingredient({type = "item", name = "electric-engine-unit", amount = 5})
+    end
+
+    if mods['pyalternativeenergy'] then
+        RECIPE('red-stack-inserter'):add_ingredient({type = "item", name = "self-assembly-monolayer", amount = 2})
+        RECIPE('stack-inserter-2'):remove_ingredient("self-assembly-monolayer")
+
+        RECIPE('red-stack-inserter'):add_ingredient({type = "item", name = "mechanical-parts-01", amount = 2})
+        RECIPE('stack-inserter-2'):add_ingredient({type = "item", name = "mechanical-parts-02", amount = 2})
+        RECIPE('turbo-stack-inserter'):add_ingredient({type = "item", name = "mechanical-parts-03", amount = 2})
+        RECIPE('express-stack-inserter'):add_ingredient({type = "item", name = "mechanical-parts-04", amount = 2})
+    end
 
     if settings.startup["bobmods-logistics-beltoverhaul"].value then
-        data.raw['underground-belt']['basic-underground-belt'].max_distance = 5
-        data.raw['underground-belt']['turbo-underground-belt'].max_distance = 65
-        data.raw['underground-belt']['ultimate-underground-belt'].max_distance = 129
+        local logilevel = settings.startup["bobmods-logistics-beltperlevel"].value
+        data.raw['underground-belt']['basic-underground-belt'].max_distance = 5 + logilevel
+        data.raw['underground-belt']['underground-belt'].max_distance = 9 + logilevel
+        data.raw['underground-belt']['fast-underground-belt'].max_distance = 17 + logilevel
+        data.raw['underground-belt']['express-underground-belt'].max_distance = 33 + logilevel
+        data.raw['underground-belt']['turbo-underground-belt'].max_distance = 65 + logilevel
+        data.raw['underground-belt']['ultimate-underground-belt'].max_distance = 129 + logilevel
     end
 end
 
@@ -467,6 +520,18 @@ end
 
 if mods['bobtech'] then
     data.raw.lab['lab-2'].allowed_effects = {"consumption", "speed", "productivity"}
+
+    RECIPE('advanced-logistic-science-pack'):replace_ingredient('express-transport-belt', 'fast-transport-belt')
+
+    TECHNOLOGY('advanced-logistic-science-pack'):remove_prereq('logistics-3'):add_prereq('logistics-2')
+    
+    if mods['boblogistics'] then
+        bobmods.lib.tech.add_science_pack("logistics-4", "production-science-pack", 1)
+        bobmods.lib.tech.add_science_pack("more-inserters-2", "production-science-pack", 1)
+        bobmods.lib.tech.add_science_pack("stack-inserter-3", "production-science-pack", 1)
+        bobmods.lib.tech.add_science_pack("turbo-inserter", "production-science-pack", 1)
+    end
+
     if mods['pyalienlife'] then
         table.insert(data.raw.lab["lab-2"].inputs, 'py-science-pack-1')
         table.insert(data.raw.lab["lab-2"].inputs, 'py-science-pack-2')

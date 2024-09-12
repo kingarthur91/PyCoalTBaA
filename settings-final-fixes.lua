@@ -1,8 +1,9 @@
 if mods['angelsindustries'] then
-	--data.raw["bool-setting"]["angels-enable-components"].default_value = true
-	--data.raw["bool-setting"]["angels-enable-components"].hidden = true
 	data.raw["bool-setting"]["angels-enable-industries"].forced_value = true
 	data.raw["bool-setting"]["angels-enable-industries"].hidden = true
+end
+if mods['boblogistics'] then
+	data.raw["int-setting"]["bobmods-logistics-beltperlevel"].default_value = 0
 end
 if mods['bobmining'] then
 	data.raw["bool-setting"]["bobmods-mining-miningdrills"].forced_value = true

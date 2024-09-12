@@ -12,8 +12,8 @@ if mods['boblogistics'] then
       fun.remove_recipe_unlock('construction-robot')
    end
    if mods['pyalienlife'] then
-        TECHNOLOGY("bob-drills-1"):add_pack("py-science-pack-1"):add_prereq("electric-mining-drill"):remove_prereq("vacuum-tube-electronics")
-        TECHNOLOGY("bob-area-drills-1"):add_pack("py-science-pack-1"):add_prereq("electric-mining-drill"):remove_prereq("vacuum-tube-electronics")
+        TECHNOLOGY("bob-drills-1"):add_pack("py-science-pack-1")
+        TECHNOLOGY("bob-area-drills-1"):add_pack("py-science-pack-1")
    end
    if mods['pyrawores'] then
       fun.ingredient_replace('bob-storage-tank-all-corners','iron-plate','lead-plate')
@@ -31,9 +31,7 @@ end
 
 if mods['bobmining'] then
    if settings.startup["bobmods-mining-miningdrills"].value then
-      fun.replace(data.raw.technology["bob-drills-1"].prerequisites, 'electronics', 'vacuum-tube-electronics')
       if data.raw["mining-drill"]["bob-area-mining-drill-1"] then
-         fun.replace(data.raw.technology["bob-area-drills-1"].prerequisites, 'electronics', 'vacuum-tube-electronics')
       end
    end
    TECHNOLOGY("steel-axe-3"):add_prereq("logistic-science-pack")

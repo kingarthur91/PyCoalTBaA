@@ -22,7 +22,34 @@ if mods['boblogistics'] then
     RECIPE("turbo-stack-filter-inserter"):remove_unlock("stack-inserter-3")
     RECIPE("express-filter-inserter"):remove_unlock("ultimate-inserter")
     RECIPE("express-stack-filter-inserter"):remove_unlock("stack-inserter-4")
+    
+    if mods['pyindustry'] then
+		if mods['underground-pipe-pack'] then
+			data.raw['pipe-to-ground']['underground-i-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['underground-L-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['underground-t-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['underground-cross-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-one-forward-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-one-left-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-one-right-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-one-reverse-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-two-perpendicular-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-two-parallel-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-two-perpendicular-secondary-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-two-parallel-secondary-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-two-L-FL-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-two-L-FR-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-two-L-RR-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-two-L-RL-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-three-forward-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-three-left-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-three-right-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-three-reverse-t3-pipe'].next_upgrade = nil
+			data.raw['pipe-to-ground']['one-to-four-t3-pipe'].next_upgrade = nil
+		end
+	end
 end
+
 if mods['bobassembly'] then
     TECHNOLOGY('automation'):add_prereq('basic-automation')
     if mods['pyalternativeenergy'] then
@@ -34,6 +61,7 @@ if mods['bobassembly'] then
     end
 
 end
+
 if mods['bobplates'] then
     data.raw.recipe['nitrogen'].hidden = false
 
@@ -58,6 +86,24 @@ if mods['bobplates'] then
     end
     if mods['pyalienlife'] then
         TECHNOLOGY('vrauks'):remove_prereq('fluid-handling'):add_prereq('fluid-barrel-processing')
+    end
+end
+
+if mods['bobtech'] then
+    if settings.startup["bobmods-burnerphase"].value then
+        data.raw.technology['automation-science-pack'].unit.ingredients = {{ "steam-science-pack", 1 }}
+        data.raw.technology['basic-automation'].unit.ingredients = {{ "steam-science-pack", 1 }}
+        data.raw.technology['electricity'].unit.ingredients = {{ "steam-science-pack", 1 }}
+        data.raw.technology['steam-power'].unit.ingredients = {{ "steam-science-pack", 1 }}
+        data.raw.technology['lab'].unit.ingredients = {{ "steam-science-pack", 1 }}
+
+        bobmods.lib.tech.add_prerequisite("coal-processing-1", "automation-science-pack")
+        bobmods.lib.tech.add_prerequisite("gun-turret", "automation-science-pack")
+        bobmods.lib.tech.add_prerequisite("mining-with-fluid", "automation-science-pack")
+        bobmods.lib.tech.add_prerequisite("stone-wall", "automation-science-pack")
+
+        bobmods.lib.tech.add_prerequisite("automation", "electricity")
+        bobmods.lib.tech.add_prerequisite("coal-processing-1", "electricity")
     end
 end
 

@@ -19,13 +19,6 @@ if mods['angelsrefining'] then
     end
 end
 
-if mods['angelsbioprocessing'] then
-    TECHNOLOGY('bio-processing-brown'):add_prereq('seaweed-mk01')
-    if not mods['bobelectronics'] then
-        RECIPE('algae-farm-2'):replace_ingredient('t1-circuit', 'electronic-circuit')
-    end
-end
-
 if mods['angelssmelting'] then
     if mods['pypetroleumhandling'] then
         local drr = data.raw.recipe
@@ -48,5 +41,12 @@ if mods['angelssmelting'] then
             }
             fun.remove_recipe_difficulties(omnirecipes)
         end
+    end
+end
+
+if mods['angelsbioprocessing'] then
+    TECHNOLOGY('bio-processing-brown'):add_prereq('seaweed-mk01')
+    if not mods['bobelectronics'] then
+        RECIPE('algae-farm-2'):replace_ingredient('t1-circuit', 'electronic-circuit')
     end
 end

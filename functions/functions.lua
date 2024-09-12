@@ -1177,8 +1177,12 @@ function overrides.global_prereq_replacer(old, new)
 end
 
 function overrides.tech_merge_effects(old, new)
-    for _, v in pairs(data.raw.technology[old].effects) do
-        table.insert(data.raw.technology[new].effects, v)
+    for _, oe in pairs(data.raw.technology[old].effects) do
+        for _, ne in pairs (data.raw.technology[new].effects) do
+            if oe == ne then goto skip_effect_merge end
+        end
+        table.insert(data.raw.technology[new].effects, oe)
+        ::skip_effect_merge::
     end
 end
 

@@ -89,13 +89,11 @@ end
 
 if mods['bobelectronics'] then
 	if mods['pycoalprocessing'] then
-		if data.raw.recipe['ferric-chloride-solution'] then
-            RECIPE('ferric-chloride-solution'):add_unlock('sulfur-processing')
-            RECIPE('ferric-chloride-solution'):set_fields{ category = "chemistry" }:set_fields{energy_required = 3}
-            RECIPE('ferric-chloride-solution'):remove_ingredient('iron-ore')
-            RECIPE('ferric-chloride-solution'):add_ingredient({type = "fluid", name = "acidgas", amount = 5}):add_ingredient({type = "item", name = "iron-ore", amount = 10})
-            table.insert(data.raw.recipe['ferric-chloride-solution'].results, {type = "fluid", name = "acidgas", amount = 6, probability = 0.5})
-        end
+		RECIPE('ferric-chloride-solution'):add_unlock('sulfur-processing')
+		RECIPE('ferric-chloride-solution'):set_fields{ category = "chemistry" }:set_fields{energy_required = 3}
+		RECIPE('ferric-chloride-solution'):remove_ingredient('iron-ore')
+		RECIPE('ferric-chloride-solution'):add_ingredient({type = "fluid", name = "acidgas", amount = 5}):add_ingredient({type = "item", name = "iron-ore", amount = 10})
+		table.insert(data.raw.recipe['ferric-chloride-solution'].results, {type = "fluid", name = "acidgas", amount = 6, probability = 0.5})
 	end
 
     if mods['pyrawores'] then
